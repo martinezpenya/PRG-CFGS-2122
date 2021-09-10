@@ -1,12 +1,11 @@
 ---
 title: "UD01: Elementos de un programa informático"
-version: 20210824
 language: ES
 author: David Martínez Peña [www.martinezpenya.es]
 subject: Programación
 keywords: [PRG, 2021, Programacion, Java]
 IES: IES Mestre Ramón Esteve (Catadau) [iesmre.es]
-header: ${title} - ${subject} (${version}) 
+header: ${title} - ${subject} (ver. ${today}) 
 footer: ${author} - ${IES} - ${pageNo} / ${pageCount}
 ---
 # Problemas, algoritmos y programas.
