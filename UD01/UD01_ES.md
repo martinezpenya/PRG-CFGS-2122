@@ -8,7 +8,7 @@ IES: IES Mestre Ramón Esteve (Catadau) [iesmre.es]
 header: ${title} - ${subject} (ver. ${today}) 
 footer: ${author} - ${IES} - ${pageNo} / ${pageCount}
 ---
-# Problemas, algoritmos y programas.
+# Problemas, algoritmos y programas
 
 ## Problemas
 
