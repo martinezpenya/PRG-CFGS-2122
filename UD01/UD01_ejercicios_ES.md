@@ -1,12 +1,11 @@
 ﻿---
 title: "Ejercicios de la UD01"
-version: 20210819
 language: ES
 author: David Martínez Peña [www.martinezpenya.es]
 subject: Programación
 keywords: [PRG, 2021, Programacion, Java]
 IES: IES Mestre Ramón Esteve (Catadau) [iesmre.es]
-header: ${title} - ${subject} (${version}) 
+header: ${title} - ${subject} (ver. ${today}) 
 footer: ${author} - ${IES} - ${pageNo} / ${pageCount}
 ---
 # Retos
@@ -423,7 +422,7 @@ Solución: `m >= 18`
     Para tener un 7 en el trimestre necesitas sacar un 6.33 en el segundo examen.
     ```
 
-20. Realizar un programa que dado un importe en euros nos indique el mínimo número de billetes y la cantidad sobrante de euros. Deberas usar el operador condicional `?:`
+20. Realizar un programa que dado un importe en euros nos indique el mínimo número de billetes y la cantidad sobrante de euros. Debes usar el operador condicional `?:`
 
     ```java
     ¿Cuántos euros tienes?: 232

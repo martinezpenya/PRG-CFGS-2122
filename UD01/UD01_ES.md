@@ -379,6 +379,8 @@ Java dispone de los siguientes tipos de datos simples:
 | **boolean**      | Dato  lógico                                                 |                  - |                                true ó false |                 false | Boolean            |
 | **void**         | -                                                            |                  - |                                           - |                     - | Void               |
 
+> OJO!: Sobre valores por defecto y inicialización de variables: https://stackoverflow.com/questions/19131336/default-values-and-initialization-in-java
+
 Ejemplo de declaración y asignación de valores a variables:
 
 | Tipo de datos | código                                                       |
@@ -434,11 +436,11 @@ En el siguiente ejemplo puedes comprobar el uso que se hace de los tipos de dato
 
 ```java
 public class tiposEnumerados {
-    public enum Dias {Lunes, Martes, Miercoles, Jueves, Viernes, Sábado, Domingo}
+    public enum dias {Lunes, Martes, Miercoles, Jueves, Viernes, Sábado, Domingo};
     
     public static void main(String[] args) {
-        Dias diaActual = Dias.Martes;
-        Dias diaSiguiente = Dias.Miercoles;
+        dias diaActual = dias.Martes;
+        dias diaSiguiente = dias.Miercoles;
         
         System.out.print("Hoy es:");
         System.out.println(diaActual);
@@ -509,7 +511,7 @@ Ejemplo:
 double num1, num2, suma, resta, producto, division, resto;
 num1 =8;
 num2 =5;
-suma = num1+num2;        // 13
+suma = num1 + num2;        // 13
 resta = num1 - num2;     // 3
 producto = num1 * num2;  // 40
 division = num1 / num2;  // 1.6
