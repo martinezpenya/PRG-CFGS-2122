@@ -108,7 +108,7 @@ footer: ${author} - ${IES} - ${pageNo} / ${pageCount}
 
    1. Lea desde teclado dos valores enteros. Llama a las variables v1 y v2.
    2. Muestre los valores introducidos por el usuario
-   3. Intercambie el valor de v1 y v2 (v1 pasa a  valer lo que valía v1 y viceversa)
+   3. Intercambie el valor de v1 y v2 (v1 pasa a  valer lo que valía v2 y viceversa)
    4. Muestre de nuevo los valores, ahora con su valor intercambiado
 
    Ejemplo de ejecución:
