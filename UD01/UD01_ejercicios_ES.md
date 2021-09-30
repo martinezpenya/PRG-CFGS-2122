@@ -362,9 +362,10 @@ Solución: `m >= 18`
 
     ```java
     public class activ11 {
-    	public static void main(String[] args) { int numero = 2;
-    	cuad = numero * número;
-    	System.out.println("EL CUADRADO DE "+NUMERO+" ES: "+cuad);
+    	public static void main(String[] args) { 
+           	int numero = 2;
+    		cuad = numero * número;
+    		System.out.println("EL CUADRADO DE "+NUMERO+" ES: "+cuad);
     	}
     }
     ```
@@ -393,9 +394,9 @@ Solución: `m >= 18`
     }
     ```
 
-14. Realizar un programa que calcule la longitud de una circunferencia de radio 3 metros. (`longitud = 2 * pi * radio`)
+14. Realizar un programa que calcule la longitud de una circunferencia de radio 3 metros. (longitud = 2 * pi * radio)
 
-15. Realizar un programa que calcule el área de una circunferencia de radio 5,2 centímetros. (`área = pi * radio2`)
+15. Realizar un programa que calcule el área de una circunferencia de radio 5,2 centímetros. (área = pi * radio^2^)
 
 16. Realizar un programa que muestre por pantalla respetando los saltos de carro el siguiente texto (con un solo `println`):
 
