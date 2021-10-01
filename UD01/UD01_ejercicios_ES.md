@@ -194,15 +194,16 @@ footer: ${author} - ${IES} - ${pageNo} / ${pageCount}
 13. (UltimaCifra) Escribir un programa que muestre la última cifra de un número entero que introduce el usuario por teclado. *Pista: ¿Qué devuelve a%10 ?*
 
     ```sh
+    Introduce un número entero:
     3761
-    La última cifra de 3661 es 1
+    La última cifra de 3761 es 1
     ```
 
 14. (PenultimaCifra) Escribir un programa que muestre la penúltima cifra de un número entero que introduce el usuario por teclado.
 
     ```sh
     Introduce un número entero:
-    3661
+    3761
     La última cifra de 3761 es 6
     ```
 
@@ -215,7 +216,7 @@ footer: ${author} - ${IES} - ${pageNo} / ${pageCount}
     Ejemplo de ejecución:
 
     ```sh
-    Introduce un número entero:
+    Introduce un número real:
     35.5289
     El número, redondeado a un decimal es 35.5
     ```
