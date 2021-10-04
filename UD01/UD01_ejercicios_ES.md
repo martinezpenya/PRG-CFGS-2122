@@ -4,7 +4,6 @@ language: ES
 author: David Martínez Peña [www.martinezpenya.es]
 subject: Programación
 keywords: [PRG, 2021, Programacion, Java]
-IES: IES Mestre Ramón Esteve (Catadau) [iesmre.es]
 header: ${title} - ${subject} (ver. ${today}) 
 footer: ${author} - ${IES} - ${pageNo} / ${pageCount}
 ---
@@ -194,31 +193,28 @@ footer: ${author} - ${IES} - ${pageNo} / ${pageCount}
 13. (UltimaCifra) Escribir un programa que muestre la última cifra de un número entero que introduce el usuario por teclado. *Pista: ¿Qué devuelve a%10 ?*
 
     ```sh
-    Introduce un número entero:
-    3761
+    Introduce un número entero: 3761
     La última cifra de 3761 es 1
     ```
-
+    
 14. (PenultimaCifra) Escribir un programa que muestre la penúltima cifra de un número entero que introduce el usuario por teclado.
 
     ```sh
-    Introduce un número entero:
-    3761
+    Introduce un número entero: 3761
     La última cifra de 3761 es 6
     ```
-
+    
     Una vez hayas comprobado que el programa funciona correctamente, prueba qué ocurre si el usuario introduce un valor de una sola cifra (por ejemlo 4). Explica el resultado mostrado por el programa.
-
-15. (Redondear1) `Math.round(x)` redondea x de manera que este queda sin decimales. (*`Math.round(35.5289)` da como resultado `35.0`)*
+    
+15. (Redondear1) `Math.round(x)` redondea x de manera que este queda sin decimales. (*`Math.round(35.5289)` da como resultado `36`)*
 
     Trata de escribir un programa en el que el usuario introduzca un número real y a continuación se muestre redondeado a un decimal. *Pista : combinar productos, divisiones y Math.round()*
 
     Ejemplo de ejecución:
 
     ```sh
-    Introduce un número real:
-    35.5289
-    El número, redondeado a un decimal es 35.5
+    Introduce un número real: 35.5289
+    El número 35.5289, redondeado a un decimal es 35.5
     ```
 16. Cuál es el valor resultante de dada una de las siguientes expresiones
 
@@ -245,12 +241,12 @@ footer: ${author} - ${IES} - ${pageNo} / ${pageCount}
 
     2. ```java
        int a=3,b=0;
-       b = b – 1;
+       b = b - 1;
        a = a + b;
        ```
 
     3. ```java
-       int a, b=5
+       int a, b=5;
        b++;
        ++b;
        a= b+1;
@@ -395,11 +391,7 @@ Solución: `m >= 18`
     }
     ```
 
-14. Realizar un programa que calcule la longitud de una circunferencia de radio 3 metros. (longitud = 2 * pi * radio)
-
-15. Realizar un programa que calcule el área de una circunferencia de radio 5,2 centímetros. (área = pi * radio^2^)
-
-16. Realizar un programa que muestre por pantalla respetando los saltos de carro el siguiente texto (con un solo `println`):
+14. Realizar un programa que muestre por pantalla respetando los saltos de carro el siguiente texto (con un solo `println`):
 
     ```sh
     Me gusta la programación
