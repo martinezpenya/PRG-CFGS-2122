@@ -1,12 +1,11 @@
 ---
 title:"UD02: Utilización de Objetos y Clases"
-version: ${today}
 language: ES
 author: David Martínez Peña [www.martinezpenya.es]
 subject: Programación
 keywords: [PRG, 2021, Programacion, Java]
 IES: IES Mestre Ramón Esteve (Catadau) [iesmre.es]
-header: ${title} - ${subject} (${version})
+header: ${title} - ${subject} (${today})
 footer: ${author} - ${IES} - ${pageNo} / ${pageCount}
 ---
 # Introducción a la POO
