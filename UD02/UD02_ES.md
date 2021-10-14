@@ -1,5 +1,5 @@
 ---
-title: "UD02: Utilización de Objetos y Clases"
+title:"UD02: Utilización de Objetos y Clases"
 version: ${today}
 language: ES
 author: David Martínez Peña [www.martinezpenya.es]
