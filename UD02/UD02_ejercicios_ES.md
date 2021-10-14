@@ -5,7 +5,6 @@ language: ES
 author: David Martínez Peña [www.martinezpenya.es]
 subject: Programación
 keywords: [PRG, 2021, Programacion, Java]
-IES: IES Mestre Ramón Esteve (Catadau) [iesmre.es]
 header: ${title} - ${subject} (${version}) 
 footer: ${author} - ${IES} - ${pageNo} / ${pageCount}
 ---
@@ -26,7 +25,10 @@ footer: ${author} - ${IES} - ${pageNo} / ${pageCount}
 
    ```java
    public class Moto {
-       private int velocidad; Moto() {
+       
+       private int velocidad;
+       
+       Moto() {
    	    velocidad=0;
        }
    }
@@ -38,7 +40,7 @@ footer: ${author} - ${IES} - ${pageNo} / ${pageCount}
 
    - `void frena(int menos)`. Permite reducir la velocidad del objeto moto.
 
-3. Crea una clase rebajas con un método `descubrePorcentaje()` que descubra el descuento aplicado en un producto. El método recibe el precio original del producto y el rebajado y devuelve el porcentaje aplicado. Podemos calcular el descuento realizando la operación:
+3. Crea una clase Rebajas con un método `descubrePorcentaje()` que descubra el descuento aplicado en un producto. El método recibe el precio original del producto y el rebajado y devuelve el porcentaje aplicado. Podemos calcular el descuento realizando la operación:
    $$
    porcentajeDescuento = \frac{Precio-PrecioActual}{Precio}
    $$

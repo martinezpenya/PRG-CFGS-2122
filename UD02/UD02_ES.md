@@ -534,7 +534,7 @@ El método constructor tiene las siguientes particularidades:
 
 > Cuando definimos constructores personalizados, el constructor por defecto deja de existir, y si no definimos nosotros un constructor sin argumentos cuando intentemos utilizar el constructor por defecto nos dará un error de compilación. 
 
-## El operador this.
+## El operador `this`.
 
 Los constructores y métodos de un objeto suelen utilizar el operador `this`. Este operador sirve para referirse a los atributos de un objeto cuando estamos dentro de él. Sobre todo se utiliza cuando existe ambigüedad entre el nombre de un parámetro y el nombre de un atributo, entonces en lugar del nombre del atributo solamente escribiremos `this.nombre_atributo`, y así no habrá duda de a qué elemento nos estamos refiriendo.
 
@@ -568,8 +568,8 @@ Fijémonos en esta secuencia de instrucciones
 
 ```java
 //Creamos dos círculos de radio 100  en distintas posiciones
-Círculo c1 = new Circulo(50,50,100); 
-Círculo c2 = new Circulo(80,80,100); 
+Circulo c1 = new Circulo(50,50,100); 
+Circulo c2 = new Circulo(80,80,100); 
 ...
 //Aumentamos el radio del primer círculo a 200
 c1.setRadio(200);
@@ -856,7 +856,7 @@ Scanner tec = new Scanner(System.in);
 //De lo que introduce el usuario, lee la 1º palabra.
 String nombre = tec.next();
 //Lee lo que introduce el usuario hasta que pulsa intro.
-String nombreCompleto = tex.nextLine(); 
+String nombreCompleto = tec.nextLine(); 
 ```
 
 ### Ejemplos de la UD01 pero utilizando `Scanner` (compatible con los IDE's)
@@ -1039,7 +1039,10 @@ public class Pajaro {
     int posX, posY;
 
     public Pajaro() {
+    }
 
+    public Pajaro(String nombre) {
+        this.nombre = nombre;
     }
 
     public Pajaro(String nombre, int posX, int posY) {
