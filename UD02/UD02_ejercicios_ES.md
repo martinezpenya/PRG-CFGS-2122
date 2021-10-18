@@ -1,11 +1,10 @@
 ﻿---
 title: "Ejercicios de la UD02"
-version: 20210819
 language: ES
 author: David Martínez Peña [www.martinezpenya.es]
 subject: Programación
 keywords: [PRG, 2021, Programacion, Java]
-header: ${title} - ${subject} (${version}) 
+header: ${title} - ${subject} (${today}) 
 footer: ${author} - ${IES} - ${pageNo} / ${pageCount}
 ---
 # Actividades
