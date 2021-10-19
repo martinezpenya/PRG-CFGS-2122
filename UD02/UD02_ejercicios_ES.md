@@ -8,6 +8,7 @@ header: ${title} - ${subject} (${today})
 footer: ${author} - ${IES} - ${pageNo} / ${pageCount}
 ---
 
+
 # Actividades
 
 1. Crear una clase llamada Temperatura con dos métodos:
