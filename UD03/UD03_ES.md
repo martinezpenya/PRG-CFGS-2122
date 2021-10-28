@@ -34,17 +34,17 @@ Además de las sentencias típicas de control de flujo, en esta unidad haremos u
 
 Este epígrafe lo utilizaremos para reafirmar cuestiones que son obvias y que en el transcurso de anteriores unidades se han dado por sabidas. Aunque, a veces, es conveniente recordar. Lo haremos como un conjunto de FAQs:
 
-- ¿Cómo se escribe un programa sencillo? Si queremos que un programa sencillo realice instrucciones o sentencias para obtener un determinado resultado, es necesario colocar éstas una detrás de la otra, exactamente en el orden en que deben ejecutarse.
+- **¿Cómo se escribe un programa sencillo?** Si queremos que un programa sencillo realice instrucciones o sentencias para obtener un determinado resultado, es necesario colocar éstas una detrás de la otra, exactamente en el orden en que deben ejecutarse.
 
-- ¿Podrían colocarse todas las sentencias una detrás de otra, separadas por puntos y comas en una misma línea?, claro que sí, pero no es muy recomendable. Cada sentencia debe estar escrita en una línea, de esta manera tu código será mucho más legible y la localización de errores en tus programas será más sencilla y rápida. De hecho, cuando se utilizan herramientas de programación, los errores suelen asociarse a un número o números de línea.
+- **¿Podrían colocarse todas las sentencias una detrás de otra, separadas por puntos y comas en una misma línea?**, claro que sí, pero no es muy recomendable. Cada sentencia debe estar escrita en una línea, de esta manera tu código será mucho más legible y la localización de errores en tus programas será más sencilla y rápida. De hecho, cuando se utilizan herramientas de programación, los errores suelen asociarse a un número o números de línea.
 
-- ¿Puede una misma sentencia ocupar varias líneas en el programa?, sí. Existen sentencias que, por su tamaño, pueden generar varias líneas. Pero siempre finalizarán con un punto y coma.
+- **¿Puede una misma sentencia ocupar varias líneas en el programa?**, sí. Existen sentencias que, por su tamaño, pueden generar varias líneas. Pero siempre finalizarán con un punto y coma.
 
-- ¿En Java todas las sentencias se terminan con punto y coma?, Efectivamente. Si detrás de una sentencia ha de venir otra, pondremos un punto y coma. Escribiendo la siguiente sentencia en una nueva línea. Pero en algunas ocasiones, sobre todo cuando utilizamos estructuras de control de flujo, detrás de la cabecera de una estructura de este tipo no debe colocarse punto y coma. No te preocupes, lo entenderás cuando analicemos cada una de ellas.
+- **¿En Java todas las sentencias se terminan con punto y coma?**, Efectivamente. Si detrás de una sentencia ha de venir otra, pondremos un punto y coma. Escribiendo la siguiente sentencia en una nueva línea. Pero en algunas ocasiones, sobre todo cuando utilizamos estructuras de control de flujo, detrás de la cabecera de una estructura de este tipo no debe colocarse punto y coma. No te preocupes, lo entenderás cuando analicemos cada una de ellas.
 
-- ¿Qué es la sentencia nula en Java? La sentencia nula es una línea que no contiene ninguna instrucción y en la que sólo existe un punto y coma. Como su nombre indica, esta sentencia no hace nada.
+- **¿Qué es la sentencia nula en Java?** La sentencia nula es una línea que no contiene ninguna instrucción y en la que sólo existe un punto y coma. Como su nombre indica, esta sentencia no hace nada.
 
-- ¿Qué es un bloque de sentencias? Es un conjunto de sentencias que se encierra entre llaves y que se ejecutaría como si fuera una única orden. Sirve para agrupar sentencias y para clarificar el código. Los bloques de sentencias son utilizados en Java en la práctica totalidad de estructuras de control de flujo, clases, métodos, etc. La siguiente tabla muestra dos formas de construir un bloque de sentencias.
+- **¿Qué es un bloque de sentencias?** Es un conjunto de sentencias que se encierra entre llaves y que se ejecutaría como si fuera una única orden. Sirve para agrupar sentencias y para clarificar el código. Los bloques de sentencias son utilizados en Java en la práctica totalidad de estructuras de control de flujo, clases, métodos, etc. La siguiente tabla muestra dos formas de construir un bloque de sentencias.
 
   | Bloque de sentencias 1                           | Bloque de sentencias 2                                       |
   | ------------------------------------------------ | ------------------------------------------------------------ |
@@ -134,11 +134,11 @@ public class Organizacion_sentencias_3 {
 
 En este tercer archivo, podrás apreciar que se ha organizado el código en las siguientes partes: declaración de variables, petición de datos de entrada, procesamiento de dichos datos y obtención de la salida. Este tipo de organización está más estandarizada y hace que nuestros programas ganen en legibilidad.
 
-Construyas de una forma o de otra tus programas, debes tener en cuenta siempre en Java las siguientes premisas:
-
-- Declara cada variable antes de utilizarla.
-- Inicializa con un valor cada variable la primera vez que la utilices.
-- No es recomendable usar variables no inicializadas en nuestros programas, pueden provocar errores o resultados imprevistos.
+> Construyas de una forma o de otra tus programas, debes tener en cuenta siempre en Java las siguientes premisas:
+>
+> - Declara cada variable antes de utilizarla.
+> - Inicializa con un valor cada variable la primera vez que la utilices.
+> - No es recomendable usar variables no inicializadas en nuestros programas, pueden provocar errores o resultados imprevistos.
 
 # Estructuras de selección
 
@@ -165,7 +165,7 @@ La estructura `if` puede presentarse de las siguientes formas:
 
 ```java
 if (expresión-lógica)
-	sentencia1;
+    sentencia1;
 ```
 ```java
 if (expresión-lógica)
@@ -189,8 +189,7 @@ else
 ```
 
 ```java
-if (expresión-lógica)
-{
+if (expresión-lógica){
     sentencia1;
     ...;
     sentenciaN;
@@ -260,7 +259,7 @@ switch (expresion) {
         sentencia1_2;
         ....
         break;
-    ....
+    case valor2:
     ....
         case valorN:
         sentenciaN_1;

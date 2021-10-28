@@ -1,14 +1,14 @@
 ﻿---
 title: "Ejercicios de la UD03"
-version: 20210821
 language: ES
 author: David Martínez Peña [www.martinezpenya.es]
 subject: Programación
 keywords: [PRG, 2021, Programacion, Java]
 IES: IES Mestre Ramón Esteve (Catadau) [iesmre.es]
-header: ${title} - ${subject} (${version}) 
+header: ${title} - ${subject} (${today}) 
 footer: ${author} - ${IES} - ${pageNo} / ${pageCount}
 ---
+
 # Retos
 
 1. Repte 1: modifiqueu el programa perquè, en lloc de fer un descompte del 8% si la compra és de 100 € o més, apliqui una penalització de 2 € si el preu és inferior a 30 €.
@@ -166,17 +166,17 @@ footer: ${author} - ${IES} - ${pageNo} / ${pageCount}
 
 ## `if else`
 
-1. (MenorDeDos) Escribir un programa que muestre el menor de dos números enteros introducidos por teclado. Haz dos versiones: una utilizando los operadores lógicos necesarios (&&,||, ...) y otra sin utilizar ninguno (habrá que usar sentencias `if else` anidadas)
+1. (MenorDeDos) Escribir un programa que muestre el menor de dos números enteros introducidos por teclado.
 
 2. (MenorDeTres) Escribir un programa que muestre el menor de tres números enteros introducidos por teclado. Haz dos versiones: una utilizando los operadores lógicos necesarios (&&,||, ...) y otra sin utilizar ninguno (habrá que usar sentencias if else anidadas)
 
-3. (IntermedioDeTres) Escribir un programa que muestre el intermedio de tres números introducidos por teclado. Haz dos versiones: una utilizando los operadores lógicos necesarios (&&,||, ...) y otra sin utilizar ninguno (habrá que usar sentencias if else anidadas)
+3. (IntermedioDeTres) Escribir un programa que muestre el intermedio de tres números introducidos por teclado.
 
 4. (NotasTexto) Escribir un programa que acepte del usuario la nota de un examen (valor numérico entre 1 y 10) y muestre el literal correspondiente a dicha nota según (insuficiente, suficiente, bien, notable, sobresaliente).
 
-5. (LetraNif) Escribir un programa que lea de teclado un nif. Si el nif introducido lleva la letra, se comprobará si ésta es correcta y se le indicará al usuario si lo es o no. Si el nif no lleva letra, se calculará la que le corresponde y se mostrará al usuario.
+5. (LetraNif) Escribir un programa que lea de teclado un nif (sin guiones ni puntos). Si el nif introducido lleva la letra, se comprobará si ésta es correcta y se le indicará al usuario si lo es o no. Si el nif no lleva letra, se calculará la que le corresponde y se mostrará al usuario. Te aconsejo que dividas el problema en partes: tieneLetra(), extraerUltimoChar(),  extraeNumero(), validarLetra(), calcularLetra()...
 
-6. (División) Escribir un programa que pida al usuario dos números enteros y le muestre el resultado de la división. Tener en cuenta que si dividimos un número por cero se producirá un error de ejecución.
+6. (División) Escribir un programa que pida al usuario dos números enteros y le muestre el resultado de la división. Tener en cuenta que si dividimos un número por cero se producirá un error de ejecución y debemos evitarlo.
 
 7. (Raiz) Se desea calcular la raíz cuadrada real de un número real cualquiera pedido inicialmente al usuario. Como dicha operación no está definida para los números negativos es necesario tratar, de algún modo, dicho posible error sin que el programa detenga su ejecución.
 
