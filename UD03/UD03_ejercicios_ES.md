@@ -260,7 +260,7 @@ footer: ${author} - ${IES} - ${pageNo} / ${pageCount}
     2. (nImpares) Dado un nº entero `n` introducido por el usuario, mostrar los `n` primeros números impares. Por ejemplo, si `n` es 3 mostrará 1 3 5 (3 primeros impares)
     3. (cuentaAtras) Dado un entero `n` introducido por el usuario, mostrar una cuenta atrás partiendo de `n`: `n`, `n-1`, …. 5, 4, 3, 2, 1, 0
     4. (sumaNPrimeros) Dado un entero `n` introducido por el usuario, mostrar la suma de los números entre 1 y `n`.
-    5. (MostrarDivisoresN) Dado un entero `n` introducido por el usuario, mostrar todos sus divisores, incluidos el 1 y el mismo `n`. Por ejemplo, si `n` es 12 mostraría 1, 2, 3, 4, 6 y 12
+    5. (mostrarDivisoresN) Dado un entero `n` introducido por el usuario, mostrar todos sus divisores, incluidos el 1 y el mismo `n`. Por ejemplo, si `n` es 12 mostraría 1, 2, 3, 4, 6 y 12
     6. (sumaDivisoresN) Dado un entero `n` introducido por el usuario, mostrar la suma de todos sus divisores, sin incluir al propio `n`. Por ejemplo, si `n` es 12 sumará 1, 2, 3, 4 y 6 = 16
     
 22. Crear una clase llamada "SencillosFor" y crear en él los mismos métodos que en el ejercicio anterior, pero utilizando la sentencia `for` en lugar de `while`
@@ -677,7 +677,7 @@ footer: ${author} - ${IES} - ${pageNo} / ${pageCount}
         case 3: System.out.println ("\nBebida");
         		System.out.println ("\nPostre");
         		break;
-        default: printf("\nCafé");
+        default: System.out.println("\nCafé");
     }
     ```
 
