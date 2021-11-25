@@ -32,17 +32,14 @@ public class P3_2_condicional_switch {
             case 6:
                 calificacion = "BIEN";
                 break;
-            case 7:
-                calificacion = "NOTABLE";
-                break;
-            case 8:
+            case 7,8:
                 calificacion = "NOTABLE";
                 break;
             case 9:
                 calificacion = "SOBRESALIENTE";
                 break;
             case 10:
-                calificacion = "SOBRESALIENTE";
+                calificacion = "MATRICULA";
                 break;
             default:
                 calificacion = "INSUFICIENTE";

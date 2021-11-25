@@ -1,8 +1,10 @@
 package UD03;
+
 public class P3_1_Sentencias_condicionales {
+
     /*Vamos a realizar el cálculo de la nota de un examen
      * de tipo test. Para ello, tendremos en cuenta el número
-     * total de pregunta, los aciertos y los errores. Dos errores
+     * total de preguntas, los aciertos y los errores. Dos errores
      * anulan una respuesta correcta.
      *
      * Finalmente, se muestra por pantalla la nota obtenida, así
@@ -21,6 +23,12 @@ public class P3_1_Sentencias_condicionales {
         String calificacion = "";
         //Procesamiento de datos
         nota = ((num_aciertos - (num_errores / 2)) * 10) / num_preguntas;
+
+        if (nota < 5) {
+            //true
+        } else {
+            //false
+        }
 
         if (nota < 5) {
             calificacion = "INSUFICIENTE";
@@ -42,6 +50,33 @@ public class P3_1_Sentencias_condicionales {
             }
             if (nota >= 9 && nota <= 10) {
                 calificacion = "SOBRESALIENTE";
+            }
+        }
+
+        if (nota < 5) {
+            calificacion = "INSUFICIENTE";
+        } else {
+            /* Cada expresión lógica de estos if está compuesta por dos
+             * expresiones lógicas combinadas a través del operador Y o AND
+             * que se representa con el símbolo &&. De tal manera, que para
+             * que la expresión lógica se cumpla (sea verdadera) la variable
+             * nota debe satisfacer ambas condiciones simultáneamente
+             */
+            if (nota >= 5 && nota < 6) {
+                calificacion = "SUFICIENTE";
+            } else {
+                if (nota >= 6 && nota < 7) {
+                    calificacion = "BIEN";
+                } else {
+                    if (nota >= 7 && nota < 9) {
+                        calificacion = "NOTABLE";
+                    } else {
+                        if (nota >= 9 && nota <= 10) {
+                            calificacion = "SOBRESALIENTE";
+                        }
+
+                    }
+                }
             }
         }
         //Salida de información

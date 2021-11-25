@@ -7,13 +7,13 @@ public class P4_1_repetitiva_for {
     public static void main(String[] args) {
         // Declaración e inicialización de variables
         int numero = 7;
-        int contador;
+        //int contador;
         int resultado = 0;
         //Salida de información
         System.out.println("Tabla de multiplicar del " + numero);
         System.out.println(".............................. ");
         //Utilizamos ahora el bucle for
-        for (contador = 1; contador <= 10; contador++) {
+        for (int contador = 10; contador > 0; contador--) {
             /* La cabecera del bucle incorpora la inicialización de la variable
              * de control, la condición de multiplicación hasta el 10 y el
              * incremento de dicha variable de uno en uno en cada iteración del
