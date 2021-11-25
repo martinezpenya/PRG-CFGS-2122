@@ -5,7 +5,7 @@ author: David Martínez Peña [www.martinezpenya.es]
 subject: Programación
 keywords: [PRG, 2021, Programacion, Java]
 IES: IES Mestre Ramón Esteve (Catadau) [www.iesmre.es]
-header: ${title} - ${subject} (${today}) 
+header: ${title} - ${subject} (${today})
 footer: ${author} - ${IES} - ${pageNo} / ${pageCount}
 ---
 
@@ -183,7 +183,7 @@ footer: ${author} - ${IES} - ${pageNo} / ${pageCount}
 
 17. Crea una clase llamada `Cuenta` que tendrá los siguientes atributos: `titular` y `cantidad` (puede tener decimales).
 
-    Al crear una instancia del objeto Cuenta, el titular será obligatorio y la cantidad es opcional. Crea dos constructores que cumpla lo anterior, es decir debemos crear dos métodos constructores con el mismo nombre que será el nombre del objeto.
+    Al crear una instancia del objeto Cuenta, el titular será obligatorio y la cantidad es opcional. Crea dos constructores que cumplan lo anterior, es decir debemos crear dos métodos constructores con el mismo nombre que será el nombre del objeto.
 
     Crea sus métodos get, set y el método `mostrarDatos` que muestre los datos de la cuenta. Tendrá dos métodos especiales:
 
