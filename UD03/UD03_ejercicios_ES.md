@@ -5,9 +5,10 @@ author: David Martínez Peña [www.martinezpenya.es]
 subject: Programación
 keywords: [PRG, 2021, Programacion, Java]
 IES: IES Mestre Ramón Esteve (Catadau) [iesmre.es]
-header: ${title} - ${subject} (${today}) 
+header: ${title} - ${subject} (ver: ${today}) 
 footer: ${author} - ${IES} - ${pageNo} / ${pageCount}
 ---
+
 
 # Retos
 
@@ -243,7 +244,7 @@ footer: ${author} - ${IES} - ${pageNo} / ${pageCount}
 
     Y muestre el coste del trayecto
 
-19. (Nombre) Escribir un programa en el que el usuario pueda escribir su nombre. El programa le dirá si la primera y la última letra del nombre coinciden o no. Pruébalo con "Ana", "ana", "Angel" y "Amanda"
+19. (Nombre) Escribir un programa en el que el usuario pueda escribir su nombre. El programa le dirá si la primera y la última letra del nombre coinciden o no. Pruébalo con "Ana", "ana", "Angel", "Amanda" y "David"
 
 20.  (Validar) Se desea implementar un programa que determine si dos datos `x` e `y` de entrada son válidos. Un par de datos es válido si es uno de los que aparecen en la siguiente tabla:
 
@@ -426,9 +427,9 @@ footer: ${author} - ${IES} - ${pageNo} / ${pageCount}
     Fin del programa
     ```
 
-30. (dibujarFiguras1) Escribe una clase que contenga los métodos que se indican a continuación. En el método main solicita al usuario las dimensiones de las figuras necesarias en cada caso y llama al método correspondiente para que se muestre por pantalla
+30. (DibujarFiguras1) Escribe una clase que contenga los métodos que se indican a continuación. En el método main solicita al usuario las dimensiones de las figuras necesarias en cada caso y llama al método correspondiente para que se muestre por pantalla
 
-    1. (`void dibRecAsteriscos(int ancho, int alto)` dibuja un rectángulo utilizando asteriscos, como el siguiente. En el ejemplo ancho es 7 y alto es 3
+    1. (`void dibRecAsteriscos (int ancho, int alto)` dibuja un rectángulo utilizando asteriscos, como el siguiente. En el ejemplo ancho es 7 y alto es 3
 
        ```sh
        * * * * * * *
@@ -436,7 +437,7 @@ footer: ${author} - ${IES} - ${pageNo} / ${pageCount}
        * * * * * * *
        ```
 
-    2. (`void dibRecNumeros1(int ancho, int alto)` dibuja un rectángulo utilizando números, como el siguiente. En el ejemplo ancho es 7 y alto es 3
+    2. (`void dibRecNumeros1 (int ancho, int alto)` dibuja un rectángulo utilizando números, como el siguiente. En el ejemplo ancho es 7 y alto es 3
 
        ```sh
        1 2 3 4 5 6 7
@@ -444,7 +445,7 @@ footer: ${author} - ${IES} - ${pageNo} / ${pageCount}
        1 2 3 4 5 6 7
        ```
 
-    3. (`void dibRecNumeros2(int ancho, int alto)` dibuja un rectángulo utilizando números, como el siguiente. En el ejemplo ancho es 7 y alto es 3
+    3. (`void dibRecNumeros2 (int ancho, int alto)` dibuja un rectángulo utilizando números, como el siguiente. En el ejemplo ancho es 7 y alto es 3
 
        ```sh
        7 6 5 4 3 2 1
@@ -452,7 +453,7 @@ footer: ${author} - ${IES} - ${pageNo} / ${pageCount}
        7 6 5 4 3 2 1
        ```
 
-    4. (`void dibRecNumeros3(int ancho, int alto)` dibuja un rectángulo utilizando números, como el siguiente. En el ejemplo ancho es 7 y alto es 3
+    4. (`void dibRecNumeros3 (int ancho, int alto)` dibuja un rectángulo utilizando números, como el siguiente. En el ejemplo ancho es 7 y alto es 3
 
        ```sh
        01 02 03 04 05 06 07
@@ -460,7 +461,7 @@ footer: ${author} - ${IES} - ${pageNo} / ${pageCount}
        15 16 17 18 19 20 21
        ```
 
-    5. (`void dibDiagonal(int ancho, int alto)` dibuja un rectángulo con ceros y unos. Los 1 están en las posiciones en las que fila y columna coinciden. En el ejemplo ancho es 7 y alto es 3
+    5. (`void dibDiagonal (int ancho, int alto)` dibuja un rectángulo con ceros y unos. Los 1 están en las posiciones en las que fila y columna coinciden. En el ejemplo ancho es 7 y alto es 3
 
        ```java
        1 0 0 0 0 0 0
@@ -468,7 +469,7 @@ footer: ${author} - ${IES} - ${pageNo} / ${pageCount}
        0 0 1 0 0 0 0
        ```
 
-    6. (`void dibRecLetras(int ancho, int alto)` dibuja un rectángulo letras sucesivas comenzando por la "a". En el ejemplo ancho es 7 y alto es 3
+    6. (`void dibRecLetras (int ancho, int alto)` dibuja un rectángulo letras sucesivas comenzando por la "a". En el ejemplo ancho es 7 y alto es 3
 
        ```sh
        a a a a a a a
@@ -476,7 +477,7 @@ footer: ${author} - ${IES} - ${pageNo} / ${pageCount}
        c c c c c c c
        ```
 
-    7. (`void dibRecLetras2(int ancho, int alto)` dibuja un rectángulo letras sucesivas terminando por la "a". En el ejemplo ancho es 7 y alto es 3
+    7. (`void dibRecLetras2 (int ancho, int alto)` dibuja un rectángulo letras sucesivas terminando por la "a". En el ejemplo ancho es 7 y alto es 3
 
        ```sh
        c c c c c c c
@@ -484,7 +485,7 @@ footer: ${author} - ${IES} - ${pageNo} / ${pageCount}
        a a a a a a a
        ```
 
-    8. (`void dibRecLetras3(int ancho, int alto)` dibuja un rectángulo letras sucesivas comenzando por la "a". En el ejemplo ancho es 7 y alto es 3
+    8. (`void dibRecLetras3 (int ancho, int alto)` dibuja un rectángulo letras sucesivas comenzando por la "a". En el ejemplo ancho es 7 y alto es 3
 
        ```sh
        a b c d e f g
@@ -494,7 +495,7 @@ footer: ${author} - ${IES} - ${pageNo} / ${pageCount}
 
 51. (dibujarFiguras2) Escribe una clase que contenga los métodos que se indican a continuación. En el método main solicita al usuario las dimensiones de las figuras necesarias en cada caso y llama al método correspondiente para que se muestre por pantalla
 
-    1. `void dibRectNumeros3(int ancho, int alto` dibuja un rectángulo 	utilizando números, como el siguiente. En el ejemplo ancho es 7 y alto es 3
+    1. `void dibRectNumeros3 (int ancho, int alto` dibuja un rectángulo 	utilizando números, como el siguiente. En el ejemplo ancho es 7 y alto es 3
 
        ```sh
        1 2 3 4 5 6 7 7 6 5 4 3 2 1
@@ -526,7 +527,7 @@ footer: ${author} - ${IES} - ${pageNo} / ${pageCount}
        * * * * * * *
        ```
 
-    5. `void dibTriangulo1(int base)` dibuja un triángulo utilizando asteriscos (*) y espacios en blanco, como el siguiente. En el ejemplo base es 5
+    5. `void dibTriangulo1 (int base)` dibuja un triángulo utilizando asteriscos (*) y espacios en blanco, como el siguiente. En el ejemplo base es 5
 
        ```sh
        *
@@ -546,7 +547,7 @@ footer: ${author} - ${IES} - ${pageNo} / ${pageCount}
        * * * * *
        ```
 
-    7. `void dibTriangulo3 (int altura)* dibuja un triángulo utilizando asteriscos (*) y 	espacios en blanco, como el siguiente. En el ejemplo altura es 5
+    7. `void dibTriangulo3 (int altura)` dibuja un triángulo utilizando asteriscos (*) y espacios en blanco, como el siguiente. En el ejemplo altura es 5
 
        ```sh
                *
@@ -801,26 +802,25 @@ Indica cual será la salida producida por los siguientes programas, teniendo en 
           x = tec.nextInt();
           y = tec.nextInt();
           a = calcular(y,x);
-          doble(x);
           System.out.format("%d%n%d%n%d%n",x,y,a);
       }
       public static int calcular (int x, int y){
       	return x-y;
       }
       ```
-
+      
    9. ```java
       public static void main (String[] args){
-      Scanner tec = new Scanner(System.in);
-      int x,y,a;
-      x = tec.nextInt();
-      y = tec.nextInt();
-      y = calcular(x);
-      a = calcular(y);
-      System.out.format("%d%n%d%n%d%n",x,y,a);
+      	Scanner tec = new Scanner(System.in);
+      	int x,y,a;
+      	x = tec.nextInt();
+      	y = tec.nextInt();
+      	y = calcular(x);
+      	a = calcular(y);
+      	System.out.format("%d%n%d%n%d%n",x,y,a);
       }
-      public int calcular (int x){
-      return x*x;
+      public static int calcular (int x){
+      	return x*x;
       }
       ```
 
@@ -1376,7 +1376,7 @@ Indica cual será la salida producida por los siguientes programas, teniendo en 
 
 9. Pedir números hasta que se teclee uno negativo, y mostrar cuántos números se han introducido.
 
-10. Realizar un juego para adivinar un número. Para ello pedir un número `N`, y luego ir pidiendo números indicando "mayor" o "menor" según sea mayor o menor con respecto a `N`. El proceso termina cuando el usuario acierta.
+10. Realizar un juego para adivinar un número `X`. Para ello pedir un número `N`, y luego ir pidiendo números indicando "mayor" o "menor" según sea mayor o menor con respecto a `X`. El proceso termina cuando el usuario acierta.
 
 11. Pedir números hasta que se teclee un 0, mostrar la suma de todos los números introducidos.
 
