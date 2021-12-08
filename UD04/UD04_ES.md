@@ -380,7 +380,7 @@ public static boolean hayAlguienDe36(int edad[]) {
             der = m - 1;
         } else {
             // El elemento central tiene menos de 36.
-            //Continuamos la búsqueda en la mitad derecha. Es decir,
+            // Continuamos la búsqueda en la mitad derecha. Es decir,
             // entre las posiciones m+1 y der
             izq = m + 1;
         } // del if
@@ -572,7 +572,7 @@ En este caso, para un funcionamiento correcto del recorrido sería necesario que
 
 En el punto anterior hemos visto que podemos definir arrays cuyos elementos son a la vez arrays, obteniendo una estructura de datos a la que se accede mediante dos subíndices, que hemos llamado arrays bidimensionales o matrices.
 
-Este “anidamiento” de estructuras se puede generalizar, de forma que podríamos construir arrays de más de dos dimensiones. En realidad Java no pone límite al número de subíndices de un array. Podríamos hacer declaraciones como las siguientes:
+Este *anidamiento* de estructuras se puede generalizar, de forma que podríamos construir arrays de más de dos dimensiones. En realidad Java no pone límite al número de subíndices de un array. Podríamos hacer declaraciones como las siguientes:
 
 ```java
 int notas[][][] = new int[10][5][3]; //Notas de 10 alum. en 5 asign. en 3 eval.
@@ -631,8 +631,8 @@ Dentro de la estructura de selección siempre debe haber al menos un caso base y
 
 Como ejemplo del funcionamiento de un método recursivo, se empezará con un caso sencillo. Se trata del cálculo de la llamada operación **factorial** de un valor entero positivo. Esta es unaria y se expresa con el operador exclamación (por ejemplo, 4!, 20!, 3!). El resultado de esta operación es la multiplicación de todos los valores desde el 1 hasta el indicado (7! = 1 * 2 * 3 * 4 * 5 * 6 * 7). Normalmente, la definición matemática de esta operación se hace de manera recursiva:
 
-- 0! = 1 (caso base)
-- n! = N * (n - 1)! (caso recursivo)
+- 0! = 1 **<--  caso base**
+- n! = N * (n - 1)! **<-- caso recursivo**
 
 Así pues, tened en cuenta que el caso recursivo realiza un cálculo que depende de usar la propia definición de la operación, pero cuando lo hace es con un nuevo valor inferior al original, por lo que se garantiza que, en algún momento, se hará una llamada recursiva que desembocará en el caso base. Cuando esto ocurra, la cadena de llamadas recursivas acabará. Una manera de ver esto es desarrollando paso a paso esta definición:
 1. `4! = 4 * (4 - 1)! = 4 * (3)! `
