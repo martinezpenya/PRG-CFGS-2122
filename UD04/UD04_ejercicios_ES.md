@@ -1,12 +1,11 @@
 ﻿---
 title: "Ejercicios de la UD04"
-version: 20210825
 language: ES
 author: David Martínez Peña [www.martinezpenya.es]
 subject: Programación
 keywords: [PRG, 2021, Programacion, Java]
 IES: IES Mestre Ramón Esteve (Catadau) [iesmre.es]
-header: ${title} - ${subject} (${version}) 
+header: ${title} - ${subject} (ver: ${today}) 
 footer: ${author} - ${IES} - ${pageNo} / ${pageCount}
 ---
 
