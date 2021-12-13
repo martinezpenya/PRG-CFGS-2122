@@ -38,14 +38,16 @@ footer: ${author} - ${IES} - ${pageNo} / ${pageCount}
 
    Para resolver el problema se desarrollarán los siguientes métodos:
 
-3. 1. `public static void leerArray (double v[], String nombreFichero)`, que rellena el array v con datos que se encuentran en el fichero especificado. El número de datos a leer vendrá determinado por el tamaño del array y no por la cantidad de datos que hay en el fichero.
+   1. `public static void leerArray (double v[], String nombreFichero)`, que rellena el array v con datos que se encuentran en el fichero especificado. El número de datos a leer vendrá determinado por el tamaño del array y no por la cantidad de datos que hay en el fichero.
    2. `public static double suma(double v[])`, que devuelve la suma de los elementos del array v
    3. `public static double media(double v[])`, que devuelve la media de los elementos del array v. Se puede hacer uso del método del apartado anterior.
-   4. `public static double maximo(double v[])`, que devuelve el valor más grande almacenado en el array v.
-   5. `public static double mínimo(double v[])`, que devuelve el valor más pequeño almacenado en el array v.
+   3. `public static int contarMayorQueMedia(double v[])`, que devuelve la cantidad de elementos del array v que son mayores que la media. Se puede hacer uso del método del apartado anterior.
+   5. `public static double maximo(double v[])`, que devuelve el valor más grande almacenado en el array v.
+   5. `public static double minimo(double v[])`, que devuelve el valor más pequeño almacenado en el array v.
    6. `public static int posMaximo(double v[])`, que devuelve la posición del elemento más grande de v. Si éste se repite en el array es suficiente devolver la posición en que aparece por primera vez.
    7. `public static int posMinimo(double v[])`, que devuelve la posición del elemento más pequeño de v. Si éste se repite en el array es suficiente devolver la posición en que aparece por primera vez.
    8. `public static int contarApariciones(double v[], double x)`, que devuelve el número de veces que el valor *x* aparece en el array v.
+   8. `public static double contarMayorQueMedia(double v[])`, que devuelve la cantidad de elementos del array v que son mayores que la media. Se puede hacer uso del método del apartado anterior.
    9. `public static double sumaParcial(double v[], int izq, der)`, que devuelve la suma de los elementos del array v que están entre las posiciones *izq* y *der.*
    10.  `public static int menoresQueElSiguiente(double v[])`, que devuelve el número de elementos de v que son menores que el elemento que tienen a continuación. 
 
