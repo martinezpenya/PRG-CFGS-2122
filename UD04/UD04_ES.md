@@ -51,14 +51,14 @@ tipo[] nombreVariable = new tipo[numElementos];
 En la declaración se establece el nombre de la variable y el tipo de los componentes. Por ejemplo:
 
 ```java
-double lluvia1[ ]; // lluvia1 es un array de double
+double lluvia1[]; // lluvia1 es un array de double
 double[] lluvia2;  // lluvia2 es un array de double
 ```
 
 En la declaración anterior no se ha establecido el número de componentes. El número de componentes se indica en la creación, que se hace utilizando el operador `new`:
 
 ```java
-lluvia1 = new double [31];
+lluvia1 = new double[31];
 ```
 
 Con esta instrucción se establece que el número de elementos del array `lluvia` son 31, reservando con ello el compilador espacio consecutivo para 31 componentes individuales de tipo `double`.
@@ -66,7 +66,7 @@ Con esta instrucción se establece que el número de elementos del array `lluvia
 Las dos instrucciones anteriores se pueden unir en una sola:
 
 ```java
-double lluvia2[] = new double[31];
+double[] lluvia2 = new double[31];
 ```
 
 El valor mediante el cual se define el número de elementos del array tiene que ser una expresión entera, pero no tiene por qué ser un literal como en el ejemplo anterior. El tamaño de un array se puede establecer durante la ejecución, como en el siguiente ejemplo:
@@ -78,7 +78,7 @@ El valor mediante el cual se define el número de elementos del array tiene que 
 Scanner teclado = new Scanner(System.in);
 System.out.print("Introduce cuantos elementos debe tener el array edad[]:");
 int numPersonas = teclado.nextInt();
-int edad[] = new int[numPersonas];
+int[] edad = new int[numPersonas];
 ```
 
 ## Acceso a los componentes
@@ -95,13 +95,13 @@ Con cada una de las componentes del array de `double` lluvia es posible efectuar
 
 ```java
 System.out.print("Introduce el dato para el componente 0: ");
-edad[0] = teclado.nextInt();
+edad[0] = teclado.nextInt(); //25
 System.out.println("El componente [0] vale " + edad[0]);
 edad[1] = edad[0] + 1;
 edad[2] = edad[0] + edad[1];
 edad[2]++;
-System.out.println("El componente [1] vale " + edad[1]);
-System.out.println("El componente [2] vale " + edad[2]);
+System.out.println("El componente [1] vale " + edad[1]); //26
+System.out.println("El componente [2] vale " + edad[2]); //52
 ```
 
 Además, hay que tener en cuenta que el subíndice ha de ser una expresión entera, por lo que también son válidas expresiones como las siguientes:
@@ -171,7 +171,7 @@ En el paso de parámetros por referencia lo que se pasa en realidad al método e
 En el siguiente ejemplo, la variable `a`, de tipo primitivo, no cambia de valor tras la llamada al método. Sin embargo la variable `v`, array de enteros, si se ve afectada por los cambios que se han realizado sobre ella en el método:
 
 ```java
-public static void main(String args[]){
+public static void main(String[] args){
     int a = 1;
     int v[] = {1,1,1};
     metodo(v,a); //Pasar un array como parámetro
@@ -199,21 +199,27 @@ double estatura[] = new double[25];
 System.out.println(estatura.length); // Mostrará por pantalla: 25
 ```
 
-El método `main` puede recibir argumentos desde la línea de comandos. Para ello, el método `main` recibe un parámetro (`String args[]`). Vemos que se trata de un array de `Strings`. El uso del atributo `length` nos permite comprobar si se ha llamado al programa de forma correcta o no. Veamos un ejemplo para validar fechas. Se habrá llamado correctamente si el array `args` contiene tres componentes (día, mes y año):
+## `String[] args` en el `main`
+
+El método `main` puede recibir argumentos desde la línea de comandos. Para ello, el método `main` recibe un parámetro (`String args[]`). Vemos que se trata de un array de `Strings`. El uso del atributo `length` nos permite comprobar si se ha llamado al programa de forma correcta o no. Veamos un ejemplo para saber si es Navidad. Se habrá llamado correctamente si el array `args` contiene dos componentes (día, mes):
 
 ```java
-public static void main (String args[]){
-    if (args.length != 3) {
-        System.out.println("ERROR:");
-        System.out.println("Llame al programa de la siguiente forma:");
-        System.out.println("java ValidarFecha dia mes año");
-    } else {
-        // args[0] es el día
-        // args[1] es el mes
-        // args[2] es el año
-        ...
+public class EsNavidad {
+    public static void main(String args[]) {
+        if (args.length != 2) {
+            System.out.println("ERROR:");
+            System.out.println("Llame al programa de la siguiente forma:");
+            System.out.println("java EsNavidad dia mes");
+        } else {
+            // args[0] es el día
+            // args[1] es el mes
+            if ((Integer.valueOf(args[0]) == 25) && (Integer.valueOf(args[1]) == 12)) {
+                    System.out.println("ES NAVIDAD!");
+            } else {
+                System.out.println("No es navidad.");
+            }
+        }
     }
-    ...
 }
 ```
 
