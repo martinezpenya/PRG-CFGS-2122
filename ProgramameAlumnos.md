@@ -29,3 +29,6 @@
 366 -> [Los niños buenos](https://www.aceptaelreto.com/problem/statement.php?id=366) (Necesitamos algoritmos de ordenación que no hemos visto todavía, en todo caso dejadlo para el final)
 
 367 -> [Repartiendo regalos en tu calle](https://www.aceptaelreto.com/problem/statement.php?id=367)  (Necesitamos algoritmos de ordenación que no hemos visto todavía, en todo caso dejadlo para el final)
+
+### Seguimiento
+Si no hay una sugerencia mejor, que uno de los miembros del equipo me envie un email a davidmartinez@iesmre.com con una captura de pantalla donde se vea el número de problema y que el juez online ha aceptado la solución.
