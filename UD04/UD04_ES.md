@@ -189,7 +189,7 @@ Como podemos observar, para pasar un array a un método, simplemente usamos el n
 
 En la cabecera del método, sin embargo, tenemos que utilizar los corchetes `[]` para indicar que el parámetro es un array.
 
-## El atributo length
+## El atributo `length`
 
 Todas las variables de tipo array tienen un atributo `length` que permite consultar el número de componentes del array. Su uso se realiza posponiendo `.length` al nombre de la variable:
 
@@ -205,7 +205,7 @@ El método `main` puede recibir argumentos desde la línea de comandos. Para ell
 
 ```java
 public class EsNavidad {
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         if (args.length != 2) {
             System.out.println("ERROR:");
             System.out.println("Llame al programa de la siguiente forma:");
@@ -264,7 +264,7 @@ public static double pluviosidadMediaDescendente(double lluvia[]){
 También realizamos un recorrido para obtener la pluviosidad máxima del mes (la cantidad de lluvia más grande caída en un día), es decir, el elemento más grande del array:
 
 ```java
-public static double pluviosidadMaxima(double lluvia[]){
+public static double pluviosidadMaxima(double[] lluvia){
     // Suponemos el la pluviosidad máxima se produjo el primer día
     double max = lluvia[0];
     //Recorremos el array desde la posición 1, comprobando si hay una pluviosidad mayor
