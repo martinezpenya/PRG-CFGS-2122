@@ -428,9 +428,46 @@ public static void seleccionDirecta(int v[]) {
 
 El método consiste en recorrer el array ascendentemente a partir de la posición cero.
 
-En cada posición (`i`) localizamos el elemento que tiene que ocupar dicha posición cuando el array esté ordenado, es decir, el mínimo de los elementos que quedan a su derecha.
+En cada posición (`i`) localizamos el elemento que tiene que ocupar dicha posición cuando el array esté ordenado, es decir, el menor de los elementos que quedan a su derecha.
 
-Cuando se ha determinado el mínimo se coloca en su posición realizando un intercambio con el elemento de la posición `i`. Con ello, el array queda ordenado hasta la posición `i`.
+Cuando se ha determinado el menor se coloca en su posición realizando un intercambio con el elemento de la posición `i`. Con ello, el array queda ordenado hasta la posición `i`.
+
+> **NOTA**: Ejemplos visuales de distintos métodos de ordenación, con distintos tipos de entradas: https://www.toptal.com/developers/sorting-algorithms
+
+## Bucle for each (for-loop)
+
+En el tema anterior vimos algún tipo de bucles que explicariamos cuandos los pudiesemos utilizar, en este grupo estan los bucles for each o for-loops. Aquí tenemos un ejemplo de recorrido de un array con la sintaxis que ya conocemos:
+
+```java
+int array[] = { 1, 2, 3, 4, 5, 6, 7, 8 };
+for (int i = 0; i < array.length; i++) {
+    System.out.print(array[i] + " ");
+}
+```
+
+el anterior fragmento genera la siguiente salida:
+
+```sh
+1 2 3 4 5 6 7 8
+```
+
+Este mismo código se puede escribir de la siguiente manera:
+
+```java
+int array[] = { 1, 2, 3, 4, 5, 6, 7, 8 };
+for (int i : array) { //mentalmente podemos traducir por:
+    //"para cada entero "i" que encontremos en el array"
+    System.out.print(i + " ");
+}
+```
+
+la salida seguirá siendo la misma:
+
+```sh
+1 2 3 4 5 6 7 8
+```
+
+> **NOTA**: Ojo! con el segundo método no tenemos acceso a la posición o índice del array, este método no serviría para métodos en los que necesitamos conocer la posición o utilizarla de alguna manera.
 
 # Arrays bidimensionales: matrices
 

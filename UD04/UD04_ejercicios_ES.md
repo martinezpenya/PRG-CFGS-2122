@@ -124,7 +124,7 @@ footer: ${author} - ${IES} - ${pageNo} / ${pageCount}
 
 2. (Tocayos) Disponemos de los nombres de dos grupos de personas (dos arrays de `String`). Dentro de cada grupo todas las personas tienen nombres distintos, pero queremos saber cuántas personas del primer grupo tienen algún tocayo en el segundo grupo, es decir, el mismo nombre que alguna persona del segundo grupo. Escribir un programa que resuelva el problema (inicializa los dos arrays con los valores que quieras y diseña los métodos que consideres necesarios).
 
-   Por ejemplo, si los nombres son {"miguel","**josé**","**ana**","maría"} y {"**ana**", "**josé**", "luján", "juan", "**josé**", "pepa", "ángela", "sofía", "andrés", "bartolo") , el programa mostraría:
+   Por ejemplo, si los nombres son {"miguel","**josé**","**ana**","maría"} y {"**ana**", "luján", "juan", "**josé**", "pepa", "ángela", "sofía", "andrés", "bartolo"} , el programa mostraría:
 
    ```sh
    josé tiene tocayo en el segundo grupo.
@@ -134,9 +134,9 @@ footer: ${author} - ${IES} - ${pageNo} / ${pageCount}
 
    Optimiza el algoritmo para que no tenga en cuenta si se escribe el nombre en mayúsculas, minúsculas o cualquier combinación.
 
-3. (PrimerImpar) Escribir un método que, dado un array de enteros, devuelva la suma de los elementos que aparecen tras el primer valor impar. Usar `main` para probar el método.
+3. (SumaDespuesImpar) Escribir un método que, dado un array de enteros, devuelva la suma de los elementos que aparecen tras el primer valor impar. Usar `main` para probar el método.
 
-   Para determinar si existe algún valor par en un array se proponen varias soluciones. Indica cual/cuales son válidas para resolver el problema.
+3. (HayPares) Para determinar si existe algún valor par en un array se proponen varias soluciones. Indica cual/cuales son válidas para resolver el problema.
 
    ```java
    public static boolean haypares1(int v[]) {
@@ -260,14 +260,14 @@ footer: ${author} - ${IES} - ${pageNo} / ${pageCount}
        return false;
    
    }
-
+   
 4. (Capicúa) Escribir un método para determinar si un array de palabras (`String`) es capicúa, esto es, si la primera y última palabra del array son la misma, la segunda y la penúltima palabras también lo son, y así sucesivamente. Escribir el método main para probar el método anterior.
 
 5. (Subsecuencia) Escribir un método que, dado un array, determine la posición de la primera subsecuencia del array que comprenda al menos tres números enteros consecutivos en posiciones consecutivas del array. De no existir dicha secuencia devolverá -1. 
 
    Por ejemplo: en el array {23, 8, 12, 6, 7, **9, 10, 11**, 2} hay 3 números consecutivos en tres posiciones consecutivas, a partir de la posición 5: {9,10,11}
 
-6. Se desea comprobar si dos arrays de `double` contienen los mismos valores, aunque sea en orden distinto. Para ello se ha escrito el siguiente método, que aparece incompleto:
+6. (MismosValores) Se desea comprobar si dos arrays de `double` contienen los mismos valores, aunque sea en orden distinto. Para ello se ha escrito el siguiente método, que aparece incompleto:
 
    ```java
    public static boolean mismosValores(double v1[], double v2[]) {
@@ -305,6 +305,8 @@ footer: ${author} - ${IES} - ${pageNo} / ${pageCount}
    6. ¿Hay algún alumno que suspenda todas las asignaturas?
    7. ¿Hay alguna asignatura en la que suspendan todos los alumnos?
 
+   Generar la matriz (al menos 5x5) en el método main, rellenarla, y comprobar los métodos anteriores.
+
 2. (Ventas). Una empresa comercializa 10 productos para lo cual tiene 5 distribuidores.
 
    Los datos de ventas los tenemos almacenados en una matriz de 5 filas x 10 columnas, `ventas`, con el número de unidades de cada producto que ha vendido cada distribuidor. Cada fila corresponde a las ventas de un distribuidor (la primera fila, del primer distribuidor, etc.), mientras que cada columna corresponde a un producto :
@@ -329,13 +331,13 @@ footer: ${author} - ${IES} - ${pageNo} / ${pageCount}
 
 3. (Utiles) Dada una matríz con el mismo número de filas y de columnas, diseñar los siguientes métodos:
 
-   - `public static void mostrarDiagonal(int m[][])` que muestre por pantalla los elementos de la diagonal principal.
+   - `public static void mostrarDiagonal(int[][] m)` que muestre por pantalla los elementos de la diagonal principal.
 
-   - `public static int filaDelMayor (int m[][])`, que devuelva la fila en que se encuentra el mayor elemento de la matriz.
+   - `public static int filaDelMayor (int[][] m)`, que devuelva la fila en que se encuentra el mayor elemento de la matriz.
 
-   - `public static void intercambiarFilas(int f1, int f2)`, que intercambie los elementos de las filas indicadas.
+   - `public static void intercambiarFilas(int[][] m, int f1, int f2)`, que intercambie los elementos de las filas indicadas.
 
-   - Escribir un método `public static boolean esSimetrica (int m[][])` que devuelva true si la matriz m es simétrica. Una matriz es simétrica si tiene el mismo número de filas que de columnas y además `m[i][j] = m[j][i]` para todo par de índices `i,j`.
+   - Escribir un método `public static boolean esSimetrica (int[][] m)` que devuelva true si la matriz m es simétrica. Una matriz es simétrica si tiene el mismo número de filas que de columnas y además `m[i][j] = m[j][i]` para todo par de índices `i,j`.
 
      Por ejemplo, es simétrica:
 
@@ -350,14 +352,28 @@ footer: ${author} - ${IES} - ${pageNo} / ${pageCount}
    <img src="assets/tetris.png" alt="Tetris" style="zoom:75%;" />
 
    Escribir un método que reciba la matriz y elimine las filas completas, haciendo caer las piezas que hay por encima de las celdas eliminadas tal y como se hace en el juego.
+   
+   > NOTA: Puede ser útil para ver resultados crear un método `public static void imprimePartida(int[][] partida)` que imprima el estado actual de la matriz `partida`
 
 # Recursividad
 
-1. Implemente, tanto de forma recursiva como de forma iterativa, una función que nos diga si una cadena de caracteres es simétrica (un palíndromo). Por ejemplo,  "DABALEARROZALAZORRAELABAD" es un palíndromo.
+1. Implemente, tanto de forma recursiva como de forma iterativa, una función que nos diga si una cadena de caracteres es simétrica (un palíndromo). Por ejemplo, "DABALEARROZALAZORRAELABAD" es un palíndromo.
+
+    "La ruta nos aporto otro paso natural"
+
+    "Nada, yo soy Adan"
+
+    "A mama Roma le aviva el amor a papa y a papa Roma le aviva el amor a mama"
+
+    "Ana, la tacaña catalana"
+
+    "Yo hago yoga hoy"
+
+    > NOTA: ¿Te atreves a implementar una solución que permita la entrada con espacios? ¿Y permitiendo espacios y signos de puntuación?"
 
 2. Implemente, tanto de forma recursiva como de forma iterativa, una función que le dé la vuelta a una cadena de caracteres. 
 
-   NOTA: Obviamente, si la cadena es un palíndromo, la cadena y su inversa coincidirán.
+   > NOTA: Obviamente, si la cadena es un palíndromo, la cadena y su inversa coincidirán.
 
 3. Implemente, tanto de forma recursiva como de forma iterativa, una función que permitan calcular el número de combinaciones de `n` elementos tomados de `m` en `m`. 
 
@@ -394,7 +410,7 @@ footer: ${author} - ${IES} - ${pageNo} / ${pageCount}
 
     ```
     Algoritmo:
-    - Se comienza en la casilla (0,0) y se termina en la casilla (N-1,N-1) 
+    - Se comienza en la casilla (0,0) y se termina en la casilla (N-1, N-1) 
     - Nos movemos a una celda adyacente si esto es posible. 
     - Cuando llegamos a una situación en la que no podemos realizar ningún movimiento que nos lleve a una celda que no hayamos visitado ya, retrocedemos sobre nuestros pasos y buscamos un camino alternativo. 
     ```
