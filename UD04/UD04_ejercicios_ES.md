@@ -9,7 +9,6 @@ header: ${title} - ${subject} (ver: ${today})
 footer: ${author} - ${IES} - ${pageNo} / ${pageCount}
 ---
 
-
 # Ejercicios
 
 ## Arrays. Ejercicios de recorrido
@@ -382,7 +381,7 @@ footer: ${author} - ${IES} - ${pageNo} / ${pageCount}
 4. Implemente, tanto de forma recursiva como de forma iterativa, una función que nos devuelva el máximo común divisor de dos números enteros utilizando el algoritmo de Euclides. 
 
    ```
-   ALGORITMO DE EUCLIDES 
+   ALGORITMO DE EUCLIDES
    Dados dos números enteros positivos m y n, tal que m > n, para encontrar su máximo común divisor (es decir, el mayor entero positivo que divide a ambos): 
    - Dividir m por n para obtener el resto r (0 ≤ r < n) 
    - Si r = 0, el MCD es n. 
@@ -402,7 +401,7 @@ footer: ${author} - ${IES} - ${pageNo} / ${pageCount}
     ```
     Algoritmo: 
     - Colocar la reina i en la primera casilla válida de la fila i 
-    - Si una reina no puede llegar a colocarse en ninguna casilla, se vuelve atrás y se cambia la posición de la reina i-1
+    - Si una reina no puede llegar a colocarse en ninguna casilla, se vuelve atrás y se cambia la posición de la reina de la fila i-1
     - Intentar colocar las reinas restantes en las filas que quedan 
     ```
 

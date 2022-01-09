@@ -673,8 +673,8 @@ Dentro de la estructura de selección siempre debe haber al menos un caso base y
 
 Como ejemplo del funcionamiento de un método recursivo, se empezará con un caso sencillo. Se trata del cálculo de la llamada operación **factorial** de un valor entero positivo. Esta es unaria y se expresa con el operador exclamación (por ejemplo, 4!, 20!, 3!). El resultado de esta operación es la multiplicación de todos los valores desde el 1 hasta el indicado (7! = 1 * 2 * 3 * 4 * 5 * 6 * 7). Normalmente, la definición matemática de esta operación se hace de manera recursiva:
 
-- 0! = 1 **<--  caso base**
-- n! = N * (n - 1)! **<-- caso recursivo**
+- `0! = 1` **:arrow_left:  caso base**
+- `n! = N * (n - 1)!` **:arrow_left: caso recursivo**
 
 Así pues, tened en cuenta que el caso recursivo realiza un cálculo que depende de usar la propia definición de la operación, pero cuando lo hace es con un nuevo valor inferior al original, por lo que se garantiza que, en algún momento, se hará una llamada recursiva que desembocará en el caso base. Cuando esto ocurra, la cadena de llamadas recursivas acabará. Una manera de ver esto es desarrollando paso a paso esta definición:
 1. `4! = 4 * (4 - 1)! = 4 * (3)! `
@@ -758,7 +758,7 @@ public class Recursividad {
     public static int BusquedaBinaria(int[] array, int inicio, int fin, int valor) {
         if (inicio > fin) {
             //Caso base: No se ha encontrado el valor
-            return - 1;
+            return -1;
         }
         //Es calcula la posició central entre els dos índexs de cerca
         int pos = inicio + (fin - inicio) / 2;
