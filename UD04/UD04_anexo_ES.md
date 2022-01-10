@@ -8,7 +8,10 @@ IES: IES Mestre Ramón Esteve (Catadau) [iesmre.es]
 header: ${title} - ${subject} (ver: ${today}) 
 footer: ${author} - ${IES} - ${pageNo} / ${pageCount}
 ---
-# Cheatsheet Strings en Java
+
+[toc]
+
+# Introducción
 
 Desde el punto de vista de la programación diaria, uno de los tipos de datos más importantes de Java es **String**. *String* define y admite cadenas de caracteres. En algunos otros lenguajes de  programación, una cadena o string es una matriz o array de caracteres.  Este no es el caso con Java. En Java, **los String son objetos**.
 
@@ -20,9 +23,9 @@ System.out.println("En Java, los String son objetos");
 
 La clase String es bastante grande, y solo veremos una pequeña parte aquí.
 
-## Construyendo String
+## Construyendo `String`
 
-Puede construir un *String* igual que construye cualquier otro tipo de objeto: utilizando new y llamando al constructor *String*. Por ejemplo:
+Puede construir un `String` igual que construye cualquier otro tipo de objeto: utilizando new y llamando al constructor *String*. Por ejemplo:
 
 ```java
 String str = new String("Hola");
@@ -70,7 +73,7 @@ Se construyen de varias maneras
 Se construyen de varias maneras
 ```
 
-## 2. Operando con Métodos de la clase String
+## Operando con Métodos de la clase `String`
 
 La clase String contiene varios métodos que operan en cadenas. Aquí se detallan todos los métodos:
 
@@ -215,7 +218,7 @@ String str2 = str.replaceAll("\\s", ""); //retorna Guru99issueproporcionarTutori
 
 > Más información sobre expresiones regulares en java: https://www.vogella.com/tutorials/JavaRegularExpressions/article.html
 
-## Ejemplo de todos los métodos de String
+## Ejemplo de todos los métodos de `String`
 
 ```java
 // Código Java para ilustrar diferentes constructores y métodos
@@ -324,7 +327,7 @@ String Original: Guru99 is a site providing free tutorials
 Eliminando todos los espacios en blanco -> Guru99issueproporcionarTutorialesfreet
 ```
 
-## Arrays de Strings
+## Arrays de `String`
 
 Al igual que cualquier otro tipo de datos, los String se pueden ensamblar en arrays. Por ejemplo:
 
@@ -363,7 +366,7 @@ Array Modificado:
 JavaCursoOnline
 ```
 
-## 5. Los String son inmutables
+## Los `String` son inmutables
 
 El contenido de un objeto String es inmutable. Es decir, una vez creada, la secuencia de caracteres que compone la cadena **no se puede modificar**. Esta restricción permite a Java implementar cadenas de manera más  eficiente. Aunque esto probablemente suene como un serio inconveniente,  no lo es.
 
@@ -401,7 +404,7 @@ substr: desde Cero
 
 Como puede ver, la cadena original `str` no se modifica, y `substr` contiene la subcadena.
 
-## String en Argumentos de Línea de Comandos
+## `String` en Argumentos de Línea de Comandos
 
 Ahora que conoce la clase String, puede comprender el parámetro *args* en main() que ha estado en cada programa mostrado hasta ahora. Muchos programas aceptan lo que se llaman **argumentos de línea de comandos**. Un argumento de línea de comandos es la información que sigue  directamente el nombre del programa en la línea de comando cuando se  ejecuta.
 
@@ -421,7 +424,7 @@ class DemoLC{
 }
 ```
 
-Si DemoLC se ejecuta de esta manera,
+Si `DemoLC` se ejecuta de esta manera,
 
 ```sh
 java DemoLC uno dos tres
