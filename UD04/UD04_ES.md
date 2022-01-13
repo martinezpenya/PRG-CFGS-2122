@@ -351,7 +351,17 @@ public static int ultimoDiaSinLluvia(double lluvia[]){
 
 ### Búsqueda en un array ordenado: búsqueda binaria
 
-Cuando buscamos en un array que tiene sus elementos ordenados, la búsqueda se puede optimizar.
+Suponga que una amiga apunta un número entre el 0 y el 99 en una hoja de papel y vosotros debéis adivinarlo. Cada vez que conteste, le dirá si el valor que ha dicho es mayor o menor que el que ha de adivinar. ¿Qué estrategia seguiría para lograrlo? Hay que pensar un algoritmo a seguir para resolver este problema.
+
+Una aproximación muy ingenua podría ser ir diciendo todos los valores uno por uno, empezando por 0. Está claro que cuando llegue al 99 lo habréis adivinado. En el mejor caso, si había escrito el 0, acertará en la primera, mientras que en el peor caso, si había escrito el 99, necesitareis 100 intentos. Si estaba por medio, tal vez con 40-70 basta. Este sería un algoritmo eficaz (hace lo que tiene que hacer), pero no muy eficiente (lo hace de la mejor manera posible). Ir probando valores al azar en lugar de hacer esto tampoco mejora gran cosa el proceso, y viene a ser lo mismo.
+
+Si alguna vez habeis jugado a este juego, lo que habreis hecho es ser un poco más astutos y empezar por algún valor del medio. En este caso, por ejemplo, podría ser el 50. Entonces, en caso de fallar, una vez está seguro de si el valor secreto es mayor o menor que su respuesta, en el intento siguiente probar un valor más alto o más bajo , e ir haciendo esto repetidas veces.
+
+Generalmente, la mejor estrategia para adivinar un número secreto entre 0 y N sería primer probar N/2. Si no se ha acertado, entonces si el número secreto es más alto se intenta adivinar entre (N/2 + 1) y N. Si era más bajo, se intenta adivinar el valor entre 0 y N-1. Para cada caso, se vuelve a probar el valor que hay en el medio del nuevo intervalo. Y así sucesivamente, haciendo cada vez más pequeño el intervalo de búsqueda, hasta adivinarlo. En el caso de 100 valores, esto garantiza que, en el peor de los casos, en 7 intentos seguro que se adivina. Esto es una mejora muy grande respecto al primer algoritmo, donde hacían falta 100 intentos, y por tanto, este sería un algoritmo más eficiente. Concretamente, siempre se adivinará en log~2~ (N) intentos como máximo.
+
+Si os fijáis, el ejemplo que se acaba de explicar, en realidad, no es más que un esquema de búsqueda en una secuencia de valores, como puede ser dentro de un array, partiendo de la condición que todos los elementos estén ordenados de menor a mayor. De hecho, hasta ahora, para hacer una búsqueda de un valor dentro de un array se ha usado el sistema "ingenuo", mirando una por una todas las posiciones. Pero si los elementos están ordenados previamente, se podría usar el sistema "astuto" para diseñar un algoritmo mucho más eficiente, y hasta cierto punto, más "inteligente".
+
+El algoritmo basado en esta estrategia se conoce como **búsqueda binaria o dicotómica**.
 
 Para ello iniciaremos la búsqueda en la posición central del array.
 
@@ -410,15 +420,18 @@ Como ejemplo vamos a ver como se realiza la ordenación de un array de enteros u
 
 ```java
 public static void seleccionDirecta(int v[]) {
-    for (int i = 0; i < v.length - 1; i++) {
+    for (int i = 0; i < v.length-1; i++) {
         //Localizamos elemento que tiene que ir en la posición i
         int posMin = i;
+        //buscar el menor a la derecha
         for (int j = i + 1; j < v.length; j++) {
             if (v[j] < v[posMin]) {
                 posMin = j;
             }
         }
+        //al llegar aquí posMin tendrá la posición del elemento menor
         //Intercambiamos los elementos de las posiciones i y posMin
+        //v[i]<=>v[posMin];
         int aux = v[posMin];
         v[posMin] = v[i];
         v[i] = aux;
@@ -511,7 +524,7 @@ Esto, que no es igual en otros lenguajes de programación, tiene ciertas consecu
 El código siguiente declara una matriz (array bidimensional) de elementos de tipo `double`, y la crea para que tenga `5` filas y `4` columnas (matriz de 5x4):
 
 ```java
-double m1 [][] = new double[5][4];
+double m1[][] = new double[5][4];
 ```
 
 La siguiente declaración es equivalente a la anterior aunque en la práctica es menos utilizada a no ser que queramos que cada fila tenga un número distinto de elementos:
@@ -546,8 +559,7 @@ int m4 [][] = {
                 {8,2,5},
                 {9,4,3},
                 {1,2,4}
-            };
-
+              };
 ```
 
 ![Screenshot_20210821_090653](assets/matrizInt4x3.png)
@@ -561,9 +573,9 @@ El siguiente fragmento de código recorre una matriz `m4` para imprimir sus elem
 ```java
 //recorrido por filas
 System.out.println("\nRecorrido por filas: ");
-for (int r = 0; r < m4.length; r++) {
-    for (int s = 0; s < m4[r].length; s++) {
-        System.out.print(m4[r][s] + " ");
+for (int f = 0; f < m4.length; f++) {
+    for (int c = 0; c < m4[f].length; c++) {
+        System.out.print(m4[f][c] + " ");
     }
     System.out.println("");
 }
@@ -582,9 +594,9 @@ También es posible hacer el recorrido por columnas: imprimir la columna 0, lueg
 System.out.println("\nRecorrido por columnas: ");
 int numFilas = m4.length;
 int numColumnas = m4[0].length;
-for (int j = 0; j < numColumnas; j++) {
-    for (int k = 0; k < numFilas; k++) {
-        System.out.print(m4[k][j] + " ");
+for (int c = 0; c < numColumnas; c++) {
+    for (int f = 0; f < numFilas; f++) {
+        System.out.print(m4[f][c] + " ");
     }
     System.out.println("");
 }
@@ -596,9 +608,9 @@ for (int j = 0; j < numColumnas; j++) {
 o, directamente ...
 ```java
 System.out.println("\nRecorrido por columnas versión 2: ");
-for (int j = 0; j < m4[0].length; j++) {
-    for (int k = 0; k < m4.length; k++) {
-        System.out.print(m4[k][j] + " ");
+for (int c = 0; c < m4[0].length; c++) {
+    for (int f = 0; f < m4.length; f++) {
+        System.out.print(m4[f][c] + " ");
     }
     System.out.println("");
 }
@@ -618,6 +630,7 @@ Este *anidamiento* de estructuras se puede generalizar, de forma que podríamos 
 
 ```java
 int notas[][][] = new int[10][5][3]; //Notas de 10 alum. en 5 asign. en 3 eval.
+notas[2][3][1]=5;//El alumno 2, para la asignatura 3 de la primera evaluación ha sacado un 5
 double w[][][][][] = new double [2][7][10][4][10];
 ```
 
@@ -626,18 +639,6 @@ double w[][][][][] = new double [2][7][10][4][10];
 # Recursividad
 
 A la hora de crear programas complejos, uno de los aspectos que diferencia el buen programador del aficionado es su capacidad de hacer algoritmos eficientes. O sea, que sean capaces de resolver el problema planteado en el mínimo de pasos. En el caso de un programa, esto significa la necesidad de ejecutar el mínimo número de instrucciones posible. Ciertamente, si el resultado tiene que ser exactamente el mismo, siempre será mejor hacer una tarea en 10 pasos que en 20, intentando evitar pasos que en realidad son innecesarias. Por lo tanto, la etapa de diseño de un algoritmo es bastante importante y hay que pensar bien una estrategia eficiente. Ahora bien, normalmente, los algoritmos más eficientes también son más difíciles de pensar y codificar, ya que no siempre son evidentes.
-
-Un ejemplo muy sencillo de esto es la resolución del problema siguiente. Suponga que una amiga apunta un número entre el 0 y el 99 en una hoja de papel y vosotros debéis adivinarlo. Cada vez que conteste, le dirá si el valor que ha dicho es mayor o menor que el que ha de adivinar. ¿Qué estrategia seguiría para lograrlo? Hay que pensar un algoritmo a seguir para resolver este problema.
-
-Una aproximación muy ingenua podría ser ir diciendo todos los valores uno por uno, empezando por 0. Está claro que cuando llegue al 99 lo habréis adivinado. En el mejor caso, si había escrito el 0, acertará en la primera, mientras que en el peor caso, si había escrito el 99, necesitareis 100 intentos. Si estaba por medio, tal vez con 40-70 basta. Este sería un algoritmo eficaz (hace lo que tiene que hacer), pero no muy eficiente (lo hace de la mejor manera posible). Ir probando valores al azar en lugar de hacer esto tampoco mejora gran cosa el proceso, y viene a ser lo mismo.
-
-Si alguna vez habeis jugado a este juego, lo que habreis hecho es ser un poco más astutos y empezar por algún valor del medio. En este caso, por ejemplo, podría ser el 50. Entonces, en caso de fallar, una vez está seguro de si el valor secreto es mayor o menor que su respuesta, en el intento siguiente probar un valor más alto o más bajo , e ir haciendo esto repetidas veces.
-
-Generalmente, la mejor estrategia para adivinar un número secreto entre 0 y N sería primer probar N/2. Si no se ha acertado, entonces si el número secreto es más alto se intenta adivinar entre (N/2 + 1) y N. Si era más bajo, se intenta adivinar el valor entre 0 y N-1. Para cada caso, se vuelve a probar el valor que hay en el medio del nuevo intervalo. Y así sucesivamente, haciendo cada vez más pequeño el intervalo de búsqueda, hasta adivinarlo. En el caso de 100 valores, esto garantiza que, en el peor de los casos, en 7 intentos seguro que se adivina. Esto es una mejora muy grande respecto al primer algoritmo, donde hacían falta 100 intentos, y por tanto, este sería un algoritmo más eficiente. Concretamente, siempre se adivinará en log~2~ (N) intentos como máximo.
-
-Si os fijáis, el ejemplo que se acaba de explicar, en realidad, no es más que un esquema de búsqueda en una secuencia de valores, como puede ser dentro de un array, partiendo de la condición que todos los elementos estén ordenados de menor a mayor. De hecho, hasta ahora, para hacer una búsqueda de un valor dentro de un array se ha usado el sistema "ingenuo", mirando una por una todas las posiciones. Pero si los elementos están ordenados previamente, se podría usar el sistema "astuto" para diseñar un algoritmo mucho más eficiente, y hasta cierto punto, más "inteligente".
-
-El algoritmo basado en esta estrategia se conoce como **búsqueda binaria o dicotómica**.
 
 ## Aplicación de la recursividad
 
@@ -760,7 +761,7 @@ public class Recursividad {
             //Caso base: No se ha encontrado el valor
             return -1;
         }
-        //Es calcula la posició central entre els dos índexs de cerca
+        //Se calcula la posición central entre los dos índices de búsqueda
         int pos = inicio + (fin - inicio) / 2;
         if (array[pos] > valor) {
             //Caso recursivo: Si el valor es menor que la posición que se ha 
