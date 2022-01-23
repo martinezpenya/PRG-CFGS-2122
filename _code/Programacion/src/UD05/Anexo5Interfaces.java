@@ -13,12 +13,12 @@ interface B extends A {
     void metodoB();
 }
 
-public class Anexo6Interfaces implements B {
+public class Anexo5Interfaces implements B {
 
     private long b;
     private Date fechaCreacion = new Date();
 
-    public Anexo6Interfaces(int factor) {
+    public Anexo5Interfaces(int factor) {
         b = VALOR_B * factor;
         ULTIMA_CREACION.setTime(fechaCreacion.getTime());
     }
@@ -33,7 +33,7 @@ public class Anexo6Interfaces implements B {
 
     public static void main(String args[]) {
         System.out.println("Inicialmente, ULTIMA_CREACION = " + ULTIMA_CREACION);
-        Anexo6Interfaces obj = new Anexo6Interfaces(5);
+        Anexo5Interfaces obj = new Anexo5Interfaces(5);
         obj.metodoA();
         obj.metodoB();
         A pa = obj;

@@ -1,12 +1,11 @@
 ---
 title: "Anexo UD05: Utilización avanzada de clases"
-version: 20210827
 language: ES
 author: David Martínez Peña [www.martinezpenya.es]
 subject: Programación
 keywords: [PRG, 2021, Programacion, Java]
 IES: IES Mestre Ramón Esteve (Catadau) [iesmre.es]
-header: ${title} - ${subject} (${version})
+header: ${title} - ${subject} (ver: ${today})
 footer: ${author} - ${IES} - ${pageNo} / ${pageCount}
 ---
 # Wrappers (Envoltorios)
@@ -178,15 +177,15 @@ Date d = new Date();
 GregorianCalendar c = new GregorianCalendar(); 
 System.out.println("Fecha: "+d);  //Fecha: Thu Aug 19 20:06:14 CEST 2021
 System.out.println("Info: "+c); //Info: java.util.GregorianCalendar[time=1629396374723,
-//areFieldsSet=true,areAllFieldsSet=true,lenient=true,zone=sun.util.calendar.ZoneInfo
-//[id="Europe/Madrid",offset=3600000,dstSavings=3600000,useDaylight=true,transitions=163,
-//lastRule=java.util.SimpleTimeZone[id=Europe/Madrid,offset=3600000,dstSavings=3600000,
-//useDaylight=true,startYear=0,startMode=2,startMonth=2,startDay=-1,startDayOfWeek=1,
-//startTime=3600000,startTimeMode=2,endMode=2,endMonth=9,endDay=-1,endDayOfWeek=1,
-//endTime=3600000,endTimeMode=2]],firstDayOfWeek=2,minimalDaysInFirstWeek=4,ERA=1,
-//YEAR=2021,MONTH=7,WEEK_OF_YEAR=33,WEEK_OF_MONTH=3,DAY_OF_MONTH=19,DAY_OF_YEAR=231,
-//DAY_OF_WEEK=5,DAY_OF_WEEK_IN_MONTH=3,AM_PM=1,HOUR=8,HOUR_OF_DAY=20,MINUTE=6,SECOND=14,
-//MILLISECOND=723,ZONE_OFFSET=3600000,DST_OFFSET=3600000]
+								//areFieldsSet=true,areAllFieldsSet=true,lenient=true,zone=sun.util.calendar.ZoneInfo
+								//[id="Europe/Madrid",offset=3600000,dstSavings=3600000,useDaylight=true,transitions=163,
+                                //lastRule=java.util.SimpleTimeZone[id=Europe/Madrid,offset=3600000,dstSavings=3600000,
+                                //useDaylight=true,startYear=0,startMode=2,startMonth=2,startDay=-1,startDayOfWeek=1,
+                                //startTime=3600000,startTimeMode=2,endMode=2,endMonth=9,endDay=-1,endDayOfWeek=1,
+                                //endTime=3600000,endTimeMode=2]],firstDayOfWeek=2,minimalDaysInFirstWeek=4,ERA=1,
+                                //YEAR=2021,MONTH=7,WEEK_OF_YEAR=33,WEEK_OF_MONTH=3,DAY_OF_MONTH=19,DAY_OF_YEAR=231,
+                                //DAY_OF_WEEK=5,DAY_OF_WEEK_IN_MONTH=3,AM_PM=1,HOUR=8,HOUR_OF_DAY=20,MINUTE=6,SECOND=14,
+                                //MILLISECOND=723,ZONE_OFFSET=3600000,DST_OFFSET=3600000]
 c.setTime(d); 
 System.out.print(c.get(Calendar.DAY_OF_MONTH));
 System.out.print("/"); 
@@ -931,7 +930,7 @@ public class Interfaces implements B {
         System.out.println("En metodoB, b = " + b);
     }
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         System.out.println("Inicialmente, ULTIMA_CREACION = " + ULTIMA_CREACION);
         Interfaces obj = new Interfaces(5);
         obj.metodoA();
@@ -1289,7 +1288,7 @@ public class Anexo3Casting {
 ```java
 package UD05;
 
-// Clase Personal que solo dispone de nombre
+// Clase Persona que solo dispone de nombre
 public class Persona {
 
     String nombre;
@@ -1373,7 +1372,7 @@ public class Encargado extends Empleado {
 }
 ```
 
-## `Anexo5ClasesAnidadas`
+## `Anexo4ClasesAnidadas`
 
 ```java
 package UD05;
@@ -1421,7 +1420,7 @@ public class Anexo5ClasesAnidadas {
 }
 ```
 
-## `Anexo6Interfaces`
+## `Anexo5Interfaces`
 
 ```java
 package UD05;
@@ -1457,7 +1456,7 @@ public class Anexo6Interfaces implements B {
         System.out.println("En metodoB, b = " + b);
     }
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         System.out.println("Inicialmente, ULTIMA_CREACION = " + ULTIMA_CREACION);
         Anexo6Interfaces obj = new Anexo6Interfaces(5);
         obj.metodoA();

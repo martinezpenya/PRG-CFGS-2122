@@ -1,12 +1,11 @@
 ---
 title: "UD05: Desarrollo de clases"
-version: 20210820
 language: ES
 author: David Martínez Peña [www.martinezpenya.es]
 subject: Programación
 keywords: [PRG, 2021, Programacion, Java]
 IES: IES Mestre Ramón Esteve (Catadau) [iesmre.es]
-header: ${title} - ${subject} (${version})
+header: ${title} - ${subject} (ver: ${today})
 footer: ${author} - ${IES} - ${pageNo} / ${pageCount}
 ---
 # Introducción
@@ -588,8 +587,7 @@ Dado que `this` es una referencia a la propia clase en la que te encuentras en e
 En el ejemplo de la clase `Punto`, podríamos utilizar la referencia `this` si el nombre del parámetro del método coincidiera con el del atributo que se desea modificar. Por ejemplo:
 
 ```java
-void establecerX (int x)
-{
+void establecerX (int x){
 	this.x= x;
 }
 ```
@@ -1214,6 +1212,7 @@ public double calcularSuperficie () {
     // Devolución del valor de retorno
     return area;
 }
+
 public double calcularPerimetro () {
     double perimetro, base, altura; // Variables locales
     // Cálculo de la base
@@ -1360,7 +1359,7 @@ Si utilizamos la referencia `this` en este método, entonces podremos utilizar c
 
 ```java
 public void establecerNombrev2 (String nombre) {
-	this.nombre= nombre;
+	this.nombre = nombre;
 }
 ```
 
@@ -1665,7 +1664,7 @@ class Rectangulov2 {
 }
 ```
 
-## Clase DNI
+## Clase `DNI`
 
 ```java
 public class DNI {

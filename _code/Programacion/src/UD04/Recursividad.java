@@ -48,12 +48,12 @@ public class Recursividad {
         if (array[pos] > valor) {
             //Caso recursivo: Si el valor es menor que la posición que se ha 
             //consultado, entonces hay que seguir buscando por la parte 
-            //"derecha" del array
+            //"izquierda" del array
             return BusquedaBinaria(array, inicio, pos - 1, valor);
         } else if (array[pos] < valor) {
             //Caso recursivo: Si el valor es mayor que la posición que se ha
             //consultado, entonces hay que seguir buscando por la parte 
-            //"izquierda" del array
+            //"derecha" del array
             return BusquedaBinaria(array, pos + 1, fin, valor);
         } else {
             //caso base: Es igual, por tanto, se ha encontrado
