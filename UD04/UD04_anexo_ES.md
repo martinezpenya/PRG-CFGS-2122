@@ -273,7 +273,7 @@ class DemoMetodosString
         System.out.println("Comprobando la igualdad: " + out);
 
         int out1 = s1.compareTo(s2);
-        System.out.println("Si s1 = s2: " + out);
+        System.out.println("Si s1 = s2: " + out1);
 
         // Conversión de cases
         String palabra1 = "JavadesdeCero";
@@ -317,7 +317,7 @@ String concatenado = JavadesdeCero
 Comprobando la igualdad: false
 Comprobando la igualdad: true
 Comprobando la igualdad: false
-Si s1 = s2: false
+Si s1 = s2: -26
 Cambiando a minúsculas: javadesdecero
 Cambiando a MAYÚSCULAS: JAVADESDECERO
 Recortando la palabra: JavadesdeCero
