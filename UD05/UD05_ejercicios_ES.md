@@ -1,12 +1,14 @@
 ﻿---
-	title: "Ejercicios de la UD05"
-	language: ES
-	author: David Martínez Peña [www.martinezpenya.es]
-	subject: Programación
-	keywords: [PRG, 2021, Programacion, Java]
-	IES: IES Mestre Ramón Esteve (Catadau) [iesmre.es]
-	header: ${title} - ${subject} (ver: ${today}) 
-	footer: ${author} - ${IES} - ${pageNo} / ${pageCount}
+
+title: "Ejercicios de la UD05"
+language: ES
+author: David Martínez Peña [www.martinezpenya.es]
+subject: Programación
+keywords: [PRG, 2021, Programacion, Java]
+IES: IES Mestre Ramón Esteve (Catadau) [iesmre.es]
+header: ${title} - ${subject} (ver: ${today}) 
+footer: ${author} - ${IES} - ${pageNo} / ${pageCount}
+
 ---
 
 [toc]
@@ -109,15 +111,25 @@ Se desea realizar una aplicación para gestionar el ingreso y el alta de pacient
      Pepe Pérez 46 5
      ```
 
-   - `public int compareTo(Object o)`. Permite comparar dos pacientes. Se considera menor el paciente más leve. A igual gravedad, se considera menor el paciente más joven.
+   - `public int compareTo(Paciente o)`. Permite comparar dos pacientes. Se considera menor el paciente más leve. A igual gravedad, se considera menor el paciente más joven. Ejemplo:
+
+     - Teniendo a `David 40 3`, `Pepe 25 3` y `Juan 35 5`:
+
+       ```sh
+       David.compareTo(Juan) = 2
+       Pepe.compareTo(Juan) = -2
+       David.compateTo(Pepe) = -15
+       ```
 
 1. Diseñar una clase Java `TestPaciente` que permita probar la clase `Paciente` y sus métodos. Para ello se desarrollará el método `main` en el que:
 
-   - Se crearán dos pacientes: "Juan" de 20 años y "Miguel" de 30 años.
+   - Se crearán dos pacientes: "Antonio" de 20 años y "Miguel" de 30 años.
+   - Imprimir el estado inicial de los dos pacientes.
    - Mostrar los datos del que se considere menor (según el criterio de `compareTo` de la clase `Paciente`).
    - Aplicar "mejoras" al paciente más grave hasta que los dos pacientes tengan el mismo estado.
+   - Imprimir el estado final de los dos pacientes.
 
-1. La clase **Hospital** contiene la información de las camas de un hospital, así como de los pacientes que las ocupan. Un Hospital tiene un número máximo de camas `MAXC` = 200 y para representarlas se utilizará un array (llamado `listaCamas`) de objetos de tipo Paciente junto con un atributo (`numLibres`) que indique el número de camas libres del hospital en un momento dado. El número de cada cama coincide con su posición en el array de pacientes (la posición 0 no se utiliza), de manera que `listaCamas[i]` es el Paciente que ocupa la cama i o es `null` si la cama está libre. Las operaciones de esta clase son:
+1. La clase **Hospital** contiene la información de las camas de un hospital, así como de los pacientes que las ocupan. Un Hospital tiene un número máximo de camas `MAXC` = 200 y para representarlas se utilizará un array (llamado `listaCamas`) de objetos de tipo Paciente junto con un atributo (`numLibres`) que indique el número de camas libres del hospital en un momento dado. El número de cada cama coincide con su posición en el array de pacientes (la posición 0 no se utiliza), de manera que `listaCamas[i]` es el Paciente que ocupa la cama `i` o es `null` si la cama está libre. Las operaciones de esta clase son:
 
    - `public Hospital()`. Constructor de un hospital. Cuando se crea un hospital, todas las camas están libres.
 
