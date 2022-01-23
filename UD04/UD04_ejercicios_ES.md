@@ -278,6 +278,7 @@ footer: ${author} - ${IES} - ${pageNo} / ${pageCount}
            while (j < v2.length && !encontrado2) {
                if (v1[?] == v2[?]) {
                    encontrado2 = true;
+                   i++;
                } else {
                    ?
                }
@@ -289,7 +290,7 @@ footer: ${author} - ${IES} - ${pageNo} / ${pageCount}
        return !encontrado;
    }
    ```
-
+   
    Completa el programa en los lugares donde aparece el símbolo :question:
 
 ## Matrices
