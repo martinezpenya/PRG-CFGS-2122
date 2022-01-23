@@ -1,18 +1,19 @@
 ﻿---
-title: "Ejercicios de la UD05"
-language: ES
-author: David Martínez Peña [www.martinezpenya.es]
-subject: Programación
-keywords: [PRG, 2021, Programacion, Java]
-IES: IES Mestre Ramón Esteve (Catadau) [iesmre.es]
-header: ${title} - ${subject} (ver: ${today}) 
-footer: ${author} - ${IES} - ${pageNo} / ${pageCount}
+	title: "Ejercicios de la UD05"
+	language: ES
+	author: David Martínez Peña [www.martinezpenya.es]
+	subject: Programación
+	keywords: [PRG, 2021, Programacion, Java]
+	IES: IES Mestre Ramón Esteve (Catadau) [iesmre.es]
+	header: ${title} - ${subject} (ver: ${today}) 
+	footer: ${author} - ${IES} - ${pageNo} / ${pageCount}
 ---
 
+[toc]
 
 # Ejercicios
 
-## Paquete: **`UD05._1.gestionEmpleados`**
+## Paquete: `UD05._1.gestionEmpleados`
 
 Una empresa quiere hacer una gestión informatizada básica de sus empleados. Para ello, de cada empleado le interesa:
 
@@ -48,7 +49,7 @@ Una empresa quiere hacer una gestión informatizada básica de sus empleados. Pa
    
    - `public int compareTo(Object o)`. Se considera menor (mayor) el empleado que tiene menor (mayor) DNI.
    
-   - Metodo estático `public static double calcularIRPF(double salario)`. Determina el % de  IRPF que corresponde a un salario determinado, según la siguiente tabla:
+   - Método estático `public static double calcularIRPF(double salario)`. Determina el % de  IRPF que corresponde a un salario (mensual) determinado, según la siguiente tabla:
      | Desde salario (incluido) | Hasta salario (no incluido) | % IRPF |
      | -----------------------: | --------------------------: | -----: |
      | 0                      | 800                       | 3    |
@@ -79,7 +80,7 @@ Una empresa quiere hacer una gestión informatizada básica de sus empleados. Pa
 
 4. Diseñar una clase Java `TestEmpresa` que permita probar la clase `Empresa` y sus métodos. Para ello, desarrolla el método `main` y en él …:
 
-   - Crea una empresa, de nombre "MatisseDAM".
+   - Crea una empresa, de nombre "CataDaw".
    - Contrata a varios empleados (con el nombre, DNI, etc. que quieras).
    - Usa el método `subirTrienio` para subir un 10% el salario de los empleados que cumplen un trienio en el año actual.
    - Despide a alguno de los empleados.
