@@ -8,6 +8,8 @@ IES: IES Mestre Ramón Esteve (Catadau) [iesmre.es]
 header: ${title} - ${subject} (ver: ${today})
 footer: ${author} - ${IES} - ${pageNo} / ${pageCount}
 ---
+[toc]
+
 # Introducción
 
 Como ya has visto en anteriores unidades, las clases están compuestas por atributos y métodos. Una clase especifica las características comunes de un conjunto de objetos. 
@@ -105,13 +107,23 @@ Un ejemplo básico pero completo podría ser:
 ```java
 class Punto {
     // Atributos
-    int x,y;
+    private int x,y;
+    
     // Métodos
-    int obtenerX () { return x; }
-    int obtenerY() {return y;}
-    void establecerX (int vx) { x= vx; };
-    void establecerY (int vy) { y= vy; };
+    int obtenerX () {
+        return x;
+    }
+    int obtenerY() {
+        return y;
+    }
+    void establecerX (int nuevoX) {
+        x = nuevoX;
+    }
+    void establecerY (int nuevoY) {
+        y= nuevoY;
+    }
 }
+Math.random()
 ```
 
 En este caso se trata de una clase muy sencilla en la que el cuerpo de la clase (el área entre las llaves) contiene el código y las declaraciones necesarias para que los objetos que se construyan (basándose en esta clase) puedan funcionar apropiadamente en un programa (declaraciones de atributos para contener el estado del objeto y métodos que implementen el comportamiento de la clase y los objetos creados a partir de ella).
@@ -199,19 +211,27 @@ Sabremos que cada uno de esos objetos `p1`, `p2` y `p3` contendrán un par de co
 Por otro lado, la clase `Punto` también definía una serie de métodos:
 
 - ```java
-  int obtenerX () { return x; }
+  int obtenerX () {
+      return x;
+  }
   ```
-
+  
 - ```java
-  int obtenerY() { return y;}
+  int a;int obtenerY() {
+      return y;
+  }
   ```
-
+  
 - ```java
-  void establecerX (int vx) { x= vx; };
+  void establecerX (int nuevoX) {
+      x= nuevoX; 
+  }
   ```
-
+  
 - ```java
-  void establecerY (int vy) { y= vy; };
+  void establecerY (int nuevoY) {
+      y= nuevoY; 
+  }
   ```
 
 Cada uno de esos métodos puede ser llamado desde cualquier objeto que sea una instancia de la clase `Punto`. Se trata de operaciones que permiten manipular los datos (atributos) contenidos en el objeto bien para calcular otros datos o bien para modificar los propios atributos.
@@ -441,7 +461,7 @@ En Java un ejemplo típico de métodos estáticos se encuentra en la clase `Math
 
 Un método `final` es un método que no permite ser sobrescrito por las clases descendientes de la clase a la quepertenece el método. Volverás a ver este modificador cuando estudies en detalle la herencia.
 
-El modifica dor `native` es utilizado para señalar que un método ha sido implementado en código nativo (en unlenguaje que ha sido compilado a lenguaje máquina, como por ejemplo C o C++). En estos casos simplementese indica la cabecera del método, pues no tiene cuerpo escrito en Java.
+El modifica dor `native` es utilizado para señalar que un método ha sido implementado en código nativo (en un lenguaje que ha sido compilado a lenguaje máquina, como por ejemplo C o C++). En estos casos simplemente se indica la cabecera del método, pues no tiene cuerpo escrito en Java.
 
 Un método `abstract` (método abstracto) es un método que no tiene implementación (el cuerpo está vacío). La implementación será realizada en las clases descendientes. Un método sólo puede ser declarado como `abstract` si se encuentra dentro de una clase `abstract`. También volverás a este modificador en unidades posteriores cuando trabajes con la herencia.
 
@@ -515,9 +535,9 @@ En ambos casos lo único que hace el método es precisamente devolver un valor (
 Además de esos dos métodos, la clase también disponía de otros dos que sirven para la función opuesta (`establecerX` y `establecerX`). Veamos uno de ellos:
 
 ```java
-void establecerX (int vx)
+void establecerX (int nuevoX)
 {
-	x= vx;
+	x= nuevoX;
 }
 ```
 
@@ -675,11 +695,19 @@ Si recuerdas la clase `Punto` que hemos utilizado como ejemplo, ya hiciste algo 
 ```java
 private int x, y;
 // Métodos get
-public int obtenerX () { return x; }
-public int obtenerY () { return y; }
+public int obtenerX () {
+    return x;
+}
+public int obtenerY () {
+    return y;
+}
 // Métodos set
-public void establecerX (int x) { this.x= x; }
-public void establecerY (int y) { this.y= y; }
+public void establecerX (int x) {
+    this.x= x;
+}
+public void establecerY (int y) {
+    this.y= y;
+}
 ```
 
 Así, para poder obtener el valor del atributo `x` de un objeto de tipo `Punto` será necesario utilizar el `métodoobtenerX()` y no se podrá acceder directamente al atributo `x` del objeto.
@@ -1100,7 +1128,7 @@ Este proceso ya lo has debido de llevar a cabo en unidades anteriores al compila
 
 Imagina que quieres escribir una clase que represente un rectángulo en el plano. Para ello has pensado en los siguientes atributos:
 
-- Atributos `x1`, y1, que representan la coordenadas del vértice inferior izquierdo del rectángulo. Ambos de tipo `double` (números reales).
+- Atributos `x1`, `y1`, que representan la coordenadas del vértice inferior izquierdo del rectángulo. Ambos de tipo `double` (números reales).
 - Atributos `x2`, `y2`, que representan las coordenadas del vértice superior derecho del rectángulo. También de tipo `double` (números reales).
 
 Con estos dos puntos (`x1`, `y1`) y (`x2`, `y2`) se puede definir perfectamente la ubicación de un rectángulo en el plano.
@@ -1434,7 +1462,7 @@ Vamos a intentar implementar una clase `DNI` que incluya todo lo que has visto h
     private static int extraerNumeroNIF (String nif)
     ```
 
-Para calcular la letra `NIF` correspondiente a un número de `DNI` puedes consultar el artículo sobre el `NIF` de la Wikipedia: http://es.wikipedia.org/wiki/N%C3%BAmero_de_identificaci%C3%B3n_fiscal
+Para calcular la letra `NIF` correspondiente a un número de `DNI` puedes consultar el artículo sobre el `NIF` de la [Wikipedia](http://es.wikipedia.org/wiki/N%C3%BAmero_de_identificaci%C3%B3n_fiscal)
 
 **Respuesta**:
 
