@@ -1,5 +1,5 @@
 ---
-title: "UD05: Desarrollo de  clases"
+title: "UD05: Desarrollo de clases"
 language: ES
 author: David Martínez Peña [www.martinezpenya.es]
 subject: Programación
