@@ -1,5 +1,4 @@
 ﻿---
-
 title: "Ejercicios de la UD05"
 language: ES
 author: David Martínez Peña [www.martinezpenya.es]
@@ -8,7 +7,6 @@ keywords: [PRG, 2021, Programacion, Java]
 IES: IES Mestre Ramón Esteve (Catadau) [iesmre.es]
 header: ${title} - ${subject} (ver: ${today}) 
 footer: ${author} - ${IES} - ${pageNo} / ${pageCount}
-
 ---
 
 [toc]
@@ -24,7 +22,7 @@ Una empresa quiere hacer una gestión informatizada básica de sus empleados. Pa
 - Año de ingreso (número entero)
 - Sueldo bruto anual (número real)
 
-2. Diseñar una clase Java **Empleado**, que contenga los atributos (privados) que caracterizan a un empleado e implemente los métodos adecuados para:
+2. Diseñar una clase Java `Empleado`, que contenga los atributos (privados) que caracterizan a un empleado e implemente los métodos adecuados para:
 
    - Crear objetos de la clase: **Constructor** que reciba todos los datos del empleado a crear.
 

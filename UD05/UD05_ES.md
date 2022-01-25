@@ -1,5 +1,5 @@
 ---
-title: "UD05: Desarrollo de clases"
+title: "UD05: Desarrollo de  clases"
 language: ES
 author: David Martínez Peña [www.martinezpenya.es]
 subject: Programación
@@ -260,7 +260,7 @@ public int y;
 
 De esta manera estarías indicando que ambos atributos son públicos, es decir, accesibles por cualquier parte del código programa que tenga acceso a un objeto de esa clase.
 
-Como ya verás más adelante al estudiar el concepto de encapsulación, lo normal es declarar todos los atributos (o al menos la mayoría) como privados (`private`) de manera que si se desea acceder o manipular algún atributo se tenga que hacer a través de los métodos proporcionados por la clase.
+> Como ya verás más adelante al estudiar el concepto de encapsulación, lo normal es declarar todos los atributos (o al menos la mayoría) como privados (`private`) de manera que si se desea acceder o manipular algún atributo se tenga que hacer a través de los métodos proporcionados por la clase.
 
 ## Declaración de atributos.
 
@@ -275,9 +275,10 @@ Ejemplos:
 ```java
 int x;
 public int elementoX, elementoY;
-private int x, y, z;
+private int x1, y1, z1;
 static double descuentoGeneral;
-final bool casado;
+final boolean CASADO;
+private Punto p1;
 ```
 
 Te suena bastante, ¿verdad? La declaración de los atributos en una clase es exactamente igual a la declaración de cualquier variable tal y como has estudiado en las unidades anteriores y similar a como se hace en cualquier lenguaje de programación. Es decir mediante la indicación del tipo y a continuación el nombre del atributo, pudiéndose declarar varios atributos del mismo tipo mediante una lista de nombres de atributos separada por comas (exactamente como ya has estudiado al declarar variables).
@@ -312,21 +313,21 @@ Vamos a estudiar con detalle cada uno de ellos.
 
 Los modificadores de acceso disponibles en Java para un atributo son:
 
-- **Modificador de acceso por omisión** (o **de paquete**). Si no se indica ningún modificador de acceso en la declaración del atributo, se utilizará este tipo de acceso. Se permitirá el acceso a este atributo desde todas las clases que estén dentro del mismo paquete (`package`) que esta clase (la que contiene el atributo que se está declarando). No es necesario escribir ninguna palabra reservada. Si no se pone nada se supone se desea indicar este modo de acceso.
 - **Modificador de acceso `public`**. Indica que cualquier clase (por muy ajena o lejana que sea) tiene acceso a ese atributo. No es muy habitual declarar atributos públicos (`public`).
-- **Modificador de acceso `private`**. Indica que sólo se puede acceder al atributo desde dentro de la propia clase. El atributo estará "oculto" para cualquier otra zona de código fuera de la clase en la que está declarado el atributo. Es lo opuesto a lo que permite `public`.
 - **Modificador de acceso `protected`**. En este caso se permitirá acceder al atributo desde cualquier subclase (lo verás más adelante al estudiar la herencia) de la clase en la que se encuentre declarado el atributo, y también desde las clases del mismo paquete.
+- **Modificador de acceso por omisión** (o **de paquete**). Si no se indica ningún modificador de acceso en la declaración del atributo, se utilizará este tipo de acceso. Se permitirá el acceso a este atributo desde todas las clases que estén dentro del mismo paquete (`package`) que esta clase (la que contiene el atributo que se está declarando). No es necesario escribir ninguna palabra reservada. Si no se pone nada se supone se desea indicar este modo de acceso.
+- **Modificador de acceso `private`**. Indica que sólo se puede acceder al atributo desde dentro de la propia clase. El atributo estará "oculto" para cualquier otra zona de código fuera de la clase en la que está declarado el atributo. Es lo opuesto a lo que permite `public`.
 
 A continuación puedes observar un resumen de los distintos niveles accesibilidad que permite cada modificador:
 
-|                 modificador | Misma clase | Subclase | Mismo paquete | Otro paquete |
-| --------------------------: | :---------: | :------: | :-----------: | :----------: |
-| Sin modificador (`package`) |      ✔      |    ❌     |       ✔       |      ❌       |
-|                    `public` |      ✔      |    ✔     |       ✔       |      ✔       |
-|                   `private` |      ✔      |    ❌     |       ❌       |      ❌       |
-|                 `protected` |      ✔      |    ✔     |       ✔       |      ❌       |
+|                 modificador | Misma clase | Mismo paquete | Subclase | Otro paquete |
+| --------------------------: | :---------: | :-----------: | :------: | :----------: |
+|                    `public` |      ✔      |       ✔       |    ✔     |      ✔       |
+|                 `protected` |      ✔      |       ✔       |    ✔     |      ❌       |
+| Sin modificador (`package`) |      ✔      |       ✔       |    ❌     |      ❌       |
+|                   `private` |      ✔      |       ❌       |    ❌     |      ❌       |
 
-> ¡Recuerda que los modificadores de acceso son excluyentes! Sólo se puede utilizar uno de ellos en la declaración de un atributo.
+> ¡Recuerda que **los modificadores de acceso son excluyentes**! Sólo se puede utilizar uno de ellos en la declaración de un atributo.
 
 ## Modificadores de contenido.
 
@@ -362,7 +363,6 @@ class Punto {
     private int x, y;
     // Atributos de clase: cantidad de puntos creados hasta el momento
     public static cantidadPuntos;
-    public static final nombre;
 ```
 
 Obviamente, para que esto funcione como estás pensando, también habrá que escribir el código necesario para que cada vez que se cree un objeto de la clase `Punto` se incremente el valor del atributo `cantidadPuntos`.
@@ -398,8 +398,7 @@ Los elementos mínimos que deben aparecer en la declaración de un método son:
 Por ejemplo, en la clase `Punto` que se ha estado utilizando en los apartados anteriores podrías encontrar el siguiente método:
 
 ```java
-int obtenerX ()
-{
+int obtenerX(){
     // Cuerpo del método
     ...
 }
@@ -440,11 +439,11 @@ Algunos ejemplos de métodos que siguen este convenio podrían ser: `ejecutar`, 
 En el ejemplo de la clase `Punto`, puedes observar cómo los métodos `obtenerX` y `obtenerY` siguen el convenio de nombres para los métodos, devuelven en ambos casos un tipo `int`, su lista de parámetros es vacía (no tienen parámetros) y no lanzan ningún tipo de excepción:
 
 - ```java
-  int obtenerX ()
+  abstract int obtenerX()
   ```
 
 - ```java
-  int obtenerY ()
+  int obtenerY()
   ```
 
 ## Modificadores en la declaración de un método.
@@ -455,7 +454,7 @@ En la declaración de un método también pueden aparecer modificadores (como en
 - **Modificadores de contenido**. Son también los mismos que en el caso de los atributos (`static` y `final`) aunque su significado no es el mismo.
 - **Otros modificadores** (no son aplicables a los atributos, sólo a los métodos): `abstract`, `native`, `synchronized`.
 
-Un método `static` es un método cuya implementación es igual para todos los objetosde la clase y sólo tendrá acceso a los atributos estáticos de la clase (dado que se tratade un método de clase y no de objeto, sólo podrá acceder a la información de clase y no la de un objeto en particular). Este tipo de métodos pueden ser llamados sin necesidad de tener un objeto de la clase instanciado.
+Un método `static` es un método cuya implementación es igual para todos los objetos de la clase y sólo tendrá acceso a los atributos estáticos de la clase (dado que se trata de un método de clase y no de objeto, sólo podrá acceder a la información de clase y no la de un objeto en particular). Este tipo de métodos pueden ser llamados sin necesidad de tener un objeto de la clase instanciado.
 
 En Java un ejemplo típico de métodos estáticos se encuentra en la clase `Math`, cuyos métodos son todos estáticos (`Math.abs`, `Math.sin`, `Math.cos`, etc.). Como habrás podido comprobar en este ejemplo, la llamada a métodos estáticos se hace normalmente usando el nombre de la propia clase y no el de una instancia (objeto), pues se trata realmente de un método de clase. En cualquier caso, los objetos también admiten la invocación de los métodos estáticos de su clase y funcionaría correctamente.
 
@@ -524,8 +523,7 @@ El interior de un método (cuerpo) está compuesto por una serie de sentencias e
 En el ejemplo de la clase `Punto`, tenías los métodos `obtenerX` y `obtenerY`. Veamos uno de ellos:
 
 ```java
-int obtenerX ()
-{
+int obtenerX(){
 	return x;
 }
 ```
@@ -535,8 +533,7 @@ En ambos casos lo único que hace el método es precisamente devolver un valor (
 Además de esos dos métodos, la clase también disponía de otros dos que sirven para la función opuesta (`establecerX` y `establecerX`). Veamos uno de ellos:
 
 ```java
-void establecerX (int nuevoX)
-{
+void establecerX (int nuevoX){
 	x= nuevoX;
 }
 ```
@@ -630,7 +627,7 @@ Algunos ejemplos de operaciones que suelen realizarse desde métodos estáticos:
 En la biblioteca de Java es muy habitual encontrarse con clases que proporcionan métodos estáticos que pueden resultar muy útiles para cálculos auxiliares, conversiones de tipos, etc. Por ejemplo, la mayoría de las clases del paquete `java.lang` que representan tipos (`Integer`, `String`, `Float`, `Double`, `Boolean`, etc.) ofrecen métodos estáticos para hacer conversiones. Aquí tienes algunos ejemplos:
 
 - ```java
-  static String valueOf (int i)
+  static String valueOf(int i)
   ```
 
   Devuelve la representación en formato `String` (cadena) de un valor `int`. Se trata de un método que no tiene que ver nada en absoluto con instancias de concretas de `String`, sino de un método auxiliar que puede servir como herramienta para ser usada desde otras clases. Se utilizaría directamente con el nombre de la clase. Por ejemplo: 
@@ -640,7 +637,7 @@ En la biblioteca de Java es muy habitual encontrarse con clases que proporcionan
     ```
 
 - ```java
-  static String valueOf (float f)
+  static String valueOf(float f)
   ```
 
   Algo similar para un valor de tipo `float`. Ejemplo de uso:
@@ -650,7 +647,7 @@ En la biblioteca de Java es muy habitual encontrarse con clases que proporcionan
     ```
 
 - ```java
-  static int parseInt (String s)
+  static int parseInt(String s)
   ```
 
   En este caso se trata de un método estático de la clase `Integer`. Analiza la cadena pasada como parámetro y la transforma en un `int`. Ejemplo de uso: 
@@ -675,7 +672,7 @@ Los modificadores de acceso determinan si una clase puede utilizar determinados 
 En el caso de la clase, ya estudiaste que los niveles de visibilidad podían ser:
 
 - Público (modificador `public`), en cuyo caso la clase era visible a cualquier otra clase (cualquier otro fragmento de código del programa).
-- Privada al paquete (sin modificador o modificador "por omisión"). En este caso, la clase sólo será visible a las demás clases del mismo paquete, pero no al resto del código del programa (otros paquetes).
+- Privada al paquete (`package`)(sin modificador o modificador "por omisión"). En este caso, la clase sólo será visible a las demás clases del mismo paquete, pero no al resto del código del programa (otros paquetes).
 
 En el caso de los miembros, disponías de otras dos posibilidades más de niveles de accesibilidad, teniendo un total de cuatro opciones a la hora de definir el control de acceso al miembro:
 
@@ -695,17 +692,17 @@ Si recuerdas la clase `Punto` que hemos utilizado como ejemplo, ya hiciste algo 
 ```java
 private int x, y;
 // Métodos get
-public int obtenerX () {
+public int obtenerX() {
     return x;
 }
-public int obtenerY () {
+public int obtenerY() {
     return y;
 }
 // Métodos set
-public void establecerX (int x) {
+public void establecerX(int x) {
     this.x= x;
 }
-public void establecerY (int y) {
+public void establecerY(int y) {
     this.y= y;
 }
 ```
@@ -808,9 +805,11 @@ Por ejemplo, en el caso de los objetos de tipo `Punto` que has declarado e insta
 
 ```java
 Punto p1, p2, p3;
+
 p1= new Punto();
 p1.x= 5;
 p1.y= 6;
+
 System.out.printf ("p1.x: %d\np1.y: %d\n", p1.x, p1.y);
 System.out.printf ("p1.x: %d\np1.y: %d\n", p1.obtenerX(), p1.obtenerY());
 p1.establecerX(25);
