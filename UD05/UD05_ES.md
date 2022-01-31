@@ -604,8 +604,15 @@ Dado que `this` es una referencia a la propia clase en la que te encuentras en e
 En el ejemplo de la clase `Punto`, podríamos utilizar la referencia `this` si el nombre del parámetro del método coincidiera con el del atributo que se desea modificar. Por ejemplo:
 
 ```java
-void establecerX (int x){
-	this.x= x;
+class Punto{
+    private int x,y;
+	
+    void establecerX (int nuevaX){
+		x = 1; //<<<--- metodo
+        this.x = 1; //<<<--- clase
+        this.x=x;
+        this.x=nuevaX;
+	}
 }
 ```
 
@@ -673,13 +680,14 @@ En el caso de la clase, ya estudiaste que los niveles de visibilidad podían ser
 
 - Público (modificador `public`), en cuyo caso la clase era visible a cualquier otra clase (cualquier otro fragmento de código del programa).
 - Privada al paquete (`package`)(sin modificador o modificador "por omisión"). En este caso, la clase sólo será visible a las demás clases del mismo paquete, pero no al resto del código del programa (otros paquetes).
+- (protected), lo podrán ver las clases del mismo paquete y también las clases herederas.
 
 En el caso de los miembros, disponías de otras dos posibilidades más de niveles de accesibilidad, teniendo un total de cuatro opciones a la hora de definir el control de acceso al miembro:
 
 - Público (modificador `public`), igual que en el caso global de la clase y con el mismo significado (miembro visible desde cualquier parte del código).
 - Del paquete (sin modificador), también con el mismo significado que en el caso de la clase (miembro visible sólo desde clases del mismo paquete, ni siquiera será visible desde una subclase salvo si ésta está en el mismo paquete).
 - Privado (modificador `private`), donde sólo la propia clase tiene acceso al miembro.
-- Protegido (modificador `protected`)
+- Protegido (modificador `protected`), lo podrán ver las clases del mismo paquete y también las clases herederas.
 
 ## Ocultación de atributos. Métodos de acceso.
 
@@ -691,6 +699,7 @@ Si recuerdas la clase `Punto` que hemos utilizado como ejemplo, ya hiciste algo 
 
 ```java
 private int x, y;
+
 // Métodos get
 public int obtenerX() {
     return x;
@@ -774,19 +783,19 @@ Cuando escribas el código de una clase no es necesario que implementes el méto
 Algunos ejemplos de instanciación o creación de objetos podrían ser:
 
 ```java
-p1 = new Punto ();
-r1 = new Rectangulo ();
+p1 = new Punto();
+r1 = new Rectangulo();
 r2 = new Rectangulo;
 cocheAntonio = new Coche();
-palabra = String;
+palabra = new String; //palabra = new String("");
 ```
 
-En el caso de los constructores, si éstos no tienen parámetros, pueden omitirse los paréntesis vacíos.
+> En el caso de los constructores, si éstos no tienen parámetros, pueden omitirse los paréntesis vacíos.
 
 Un objeto puede ser declarado e instanciado en la misma línea. Por ejemplo:
 
 ```java
-Punto p1 = new Punto ();
+Punto p1 = new Punto();
 ```
 
 ## Manipulación de un objeto: utilización de métodos y atributos.
@@ -863,6 +872,7 @@ Una vez que incluyas un constructor personalizado a una clase, el compilador ya 
 Cuando se escribe el código de una clase normalmente se pretende que los objetos de esa clase se creen de una determinada manera. Para ello se definen uno o más constructores en la clase. En la definición de un constructor se indican:
 
 - El tipo de acceso.
+- lo que devuelve!!
 - El nombre de la clase (el nombre de un método constructor es siempre el nombre de la propia clase).
 - La lista de parámetros que puede aceptar.
 - Si lanza o no excepciones.
@@ -1323,10 +1333,10 @@ Por ejemplo:
 
 ```java
 Rectangulo r1= new Rectangulo ();
-r1.x= 0;
-r1.y= 0;
-r2.x= 10;
-r2.y= 10;
+r1.x1= 0;
+r1.y1= 0;
+r1.x2= 10;
+r1.y2= 10;
 area= r1.calcularSuperficie ();
 perímetro= r1.calcularPerimetro ();
 ```

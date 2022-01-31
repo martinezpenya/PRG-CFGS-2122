@@ -176,11 +176,11 @@ Se quiere realizar una aplicación para registrar las posiciones y tiempos de ll
 
    - `public void setTiempo( double t)throws IllegalArgumentException`. Establece el tiempo tardado por el corredor. Lanzará la excepción si el tiempo indicado es negativo.
 
-   - `public void setTiempo( Tiempo t1, Tiempo t2) throws IllegalArgumentException`. Establece el tiempo tardado por el corredor. 
+   - `public void setTiempo(double t1, double t2) throws IllegalArgumentException`. Establece el tiempo tardado por el corredor. 
 
-     Los segundos tardados se calculan a partir de dos objetos de tipo Tiempo. Para ello, añadir a la clase `PeriodoDeTiempo` un método `estático` que calcule la diferencia en segundos entre dos objetos de tipo Tiempo dados: `int diferencia(Tiempo t1, Tiempo t2)`. Utilizar dicho método para calcular el tiempo tardado.
+     `t1` indica la hora de comienzo y `t2` la hora de finalización (expresada en segundos). La diferencia en segundos entre los dos datos servirá para establecer el tiempo tardado por el `Corredor`.
 
-     Lanzará la excepción si el tiempo indicado es negativo
+     Lanzará la excepción si el tiempo resultante es negativo
 
    - `public String toString()`. Devuelve un String con los datos del corredor, de la forma:
 
