@@ -9,6 +9,8 @@ header: ${title} - ${subject} (ver: ${today})
 footer: ${author} - ${IES} - ${pageNo} / ${pageCount}
 ---
 
+[toc]
+
 # Ejercicios
 
 ## Arrays. Ejercicios de recorrido
