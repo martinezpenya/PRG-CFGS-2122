@@ -1,13 +1,18 @@
 ---
-title: "Anexo UD05: Utilización avanzada de clases"
+title: Anexo UD05: Utilización avanzada de clases
 language: ES
 author: David Martínez Peña [www.martinezpenya.es]
 subject: Programación
 keywords: [PRG, 2021, Programacion, Java]
 IES: IES Mestre Ramón Esteve (Catadau) [iesmre.es]
 header: ${title} - ${subject} (ver: ${today})
-footer: ${author} - ${IES} - ${pageNo} / ${pageCount}
+footer:${currentFileName}.pdf - ${author} - ${IES} - ${pageNo}/${pageCount}
+typora-root-url:${filename}/../
+typora-copy-images-to:${filename}/../assets
+imgcover:/media/DADES/NextCloud/DOCENCIA/PRG_2122/PRG-CFGS-2122/UD05/assets/cover.png
 ---
+[toc]
+
 # Wrappers (Envoltorios)
 
 Los wrappers permiten "envolver" datos primitivos en objetos, también se llaman clases contenedoras. La diferencia entre un tipo primitivo y un wrapper es que este último es una clase y por tanto, cuando trabajamos con wrappers estamos trabajando con objetos. Como  son objetos debemos tener cuidado en el paso como parámetro en métodos ya que en el wrapper se realiza por referencia.

@@ -1,12 +1,15 @@
 ﻿---
-title: "Ejercicios de la UD04"
-language: ES
-author: David Martínez Peña [www.martinezpenya.es]
-subject: Programación
-keywords: [PRG, 2021, Programacion, Java]
-IES: IES Mestre Ramón Esteve (Catadau) [iesmre.es]
-header: ${title} - ${subject} (ver: ${today}) 
-footer: ${author} - ${IES} - ${pageNo} / ${pageCount}
+    title: Ejercicios de la UD04
+    language: ES
+    author: David Martínez Peña [www.martinezpenya.es]
+    subject: Programación
+    keywords: [PRG, 2021, Programacion, Java]
+    IES: IES Mestre Ramón Esteve (Catadau) [iesmre.es]
+    header: ${title} - ${subject} (ver: ${today}) 
+    footer:${currentFileName}.pdf - ${author} - ${IES} - ${pageNo}/${pageCount}
+    typora-root-url:${filename}/../
+    typora-copy-images-to:${filename}/../assets
+    imgcover:/media/DADES/NextCloud/DOCENCIA/PRG_2122/PRG-CFGS-2122/UD04/assets/cover.png
 ---
 
 [toc]

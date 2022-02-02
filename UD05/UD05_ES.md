@@ -1,12 +1,15 @@
 ---
-title: "UD05: Desarrollo de clases"
+title: UD05: Desarrollo de clases
 language: ES
 author: David Martínez Peña [www.martinezpenya.es]
 subject: Programación
 keywords: [PRG, 2021, Programacion, Java]
 IES: IES Mestre Ramón Esteve (Catadau) [iesmre.es]
 header: ${title} - ${subject} (ver: ${today})
-footer: ${author} - ${IES} - ${pageNo} / ${pageCount}
+footer:${currentFileName}.pdf - ${author} - ${IES} - ${pageNo}/${pageCount}
+typora-root-url:${filename}/../
+typora-copy-images-to:${filename}/../assets
+imgcover:/media/DADES/NextCloud/DOCENCIA/PRG_2122/PRG-CFGS-2122/UD05/assets/cover.png
 ---
 [toc]
 
@@ -872,7 +875,6 @@ Una vez que incluyas un constructor personalizado a una clase, el compilador ya 
 Cuando se escribe el código de una clase normalmente se pretende que los objetos de esa clase se creen de una determinada manera. Para ello se definen uno o más constructores en la clase. En la definición de un constructor se indican:
 
 - El tipo de acceso.
-- lo que devuelve!!
 - El nombre de la clase (el nombre de un método constructor es siempre el nombre de la propia clase).
 - La lista de parámetros que puede aceptar.
 - Si lanza o no excepciones.
@@ -886,7 +888,7 @@ Como puedes observar, la estructura de los constructores es similar a la de cual
 Un ejemplo de constructor para la clase Punto podría ser:
 
 ```java
-public Punto (int x, int y) {
+public Punto(int x, int y) {
     this.x= x;
     this.y= y;
     cantidadPuntos++; // Suponiendo que tengamos un atributo estático cantidadPuntos
@@ -902,7 +904,7 @@ Un ejemplo de utilización del constructor que has creado para la clase `Punto` 
 
 ```java
 Punto p1;
-p1= new Punto (10, 7);
+p1= new Punto(10, 7);
 ```
 
 En este caso no se estaría utilizando el constructor por defecto sino el constructor que acabas de implementar en el cual además de reservar memoria se asigna un valor a algunos de los atributos.
@@ -918,7 +920,7 @@ Un constructor copia es un método constructor como los que ya has utilizado per
 Un ejemplo de constructor copia para la clase Punto podría ser:
 
 ```java
-public Punto (Punto p){
+public Punto(Punto p){
     this.x = p.obtenerX();
     this.y = p.obtenerY();
 }
@@ -1205,7 +1207,7 @@ class Rectangulo { // Sin modificador "public" para que sólo sea accesible desd
 
 Vamos a seguir ampliando la clase en la que se representa un rectángulo en el plano (clase `Rectangulo`). Para ello has pensado en los siguientes métodos públicos:
 
-- Métodos `obtenerNombre` y `establecerNombre`, que permiten el acceso y modificación del atributo nombre del rectángulo.
+- Métodos `getNombre` y `setNombre`, que permiten el acceso y modificación del atributo nombre del rectángulo.
 - Método `calcularSuperfice`, que calcula el área encerrada por el rectángulo.
 - Método `calcularPerímetro`, que calcula la longitud del perímetro del rectángulo.
 - Método `desplazar`, que mueve la ubicación del rectángulo en el plano en una cantidad `X` (para el `ejeX`) y otra cantidad `Y` (para el eje `Y`). Se trata simplemente de sumar el desplazamiento `X` a las coordenadas `x1` y `x2`, y el desplazamiento `Y` a las coordenadas `y1` e `y2`. Los parámetros de entrada de este método serán por tanto `X` e `Y`, de tipo `double`.
@@ -1349,7 +1351,7 @@ Vamos a ampliar el ejemplo anterior creando una clase `RectanguloV2`, ampliando 
 
 1. **Un constructor sin parámetros** (para sustituir al constructor por defecto) que haga que los valores iniciales de las esquinas del rectángulo sean (0,0) y (1,1);
 2. **Un constructor con cuatro parámetros**, `x1`, `y1`, `x2`, `y2`, que rellene los valores iniciales de los atributos del rectángulo con los valores proporcionados a través de los parámetros.
-3. **Un constructor con dos parámetros**, base y altura, que cree un rectángulo donde el vértice inferior derecho esté ubicado en la posición (0,0) y que tenga una base y una altura tal y como indican los dos parámetros proporcionados.
+3. **Un constructor con dos parámetros**, base y altura, que cree un rectángulo donde el vértice inferior izquierdo esté ubicado en la posición (0,0) y que tenga una base y una altura tal y como indican los dos parámetros proporcionados.
 
 **Respuesta**
 En el caso del primer constructor lo único que hay que hacer es "rellenar" los atributos `x1`, `y1`, `x2`, `y2` con los valores 0, 0, 1, 1:
@@ -1563,7 +1565,7 @@ class Rectangulo {
         System.out.printf("Perimetro: %4.2f\nSuperficie: % 4.2f\n",
                 r1.CalcularPerimetro(), r1.CalcularSuperficie());
         System.out.printf("Desplazamos X=3, Y=3\n");
-        r1.desplazar(3, 3);
+        r1.desplazar(-3, 3);
         System.out.printf("r1.x1: %4.2f\nr1.y1: %4.2f\n", r1.x1, r1.y1);
         System.out.printf("r1.x2: %4.2f\nr1.y2: %4.2f\n", r1.x2, r1.y2);
     }
@@ -1644,6 +1646,7 @@ class Rectangulov2 {
         y1 = 0.0;
         x2 = 1.0;
         y2 = 1.0;
+        numRectangulos++;
     }
 
     //constructor con los 4 vertices
@@ -1652,6 +1655,7 @@ class Rectangulov2 {
         this.y1 = y1;
         this.x2 = x2;
         this.y2 = y2;
+        numRectangulos++;
     }
 
     //constructor con base y altura
@@ -1660,6 +1664,7 @@ class Rectangulov2 {
         this.y1 = 0.0;
         this.x2 = base;
         this.y2 = altura;
+        numRectangulos++;
     }
 
     //referencia this
@@ -1669,10 +1674,12 @@ class Rectangulov2 {
 
     // Constructor copia
     public Rectangulov2(Rectangulov2 r) {
+        this.nombre=r.nombre;//supongo que también quiero copiar el nombre
         this.x1 = r.x1;
         this.y1 = r.y1;
         this.x2 = r.x2;
         this.y2 = r.y2;
+        numRectangulos++;
     }
 
     public static void main(String[] args) {

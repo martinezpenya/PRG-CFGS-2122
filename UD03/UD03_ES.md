@@ -1,13 +1,19 @@
 ---
-title: "UD03: Estructuras de control y Excepciones"
-language: ES
-author: David Martínez Peña [www.martinezpenya.es]
-subject: Programación
-keywords: [PRG, 2021, Programacion, Java]
-IES: IES Mestre Ramón Esteve (Catadau) [iesmre.es]
-header: ${title} - ${subject} (ver:${today})
-footer: ${author} - ${IES} - ${pageNo} / ${pageCount}
+    title: "UD03: Estructuras de control y Excepciones"
+    language: ES
+    author: David Martínez Peña [www.martinezpenya.es]
+    subject: Programación
+    keywords: [PRG, 2021, Programacion, Java]
+    IES: IES Mestre Ramón Esteve (Catadau) [iesmre.es]
+    header: ${title} - ${subject} (ver:${today})
+    footer: ${author} - ${IES} - ${pageNo} / ${pageCount}
+    footer:${currentFileName}.pdf - ${author} - ${IES} - ${pageNo}/${pageCount}
+    typora-root-url:${filename}/../
+    typora-copy-images-to:${filename}/../assets
+    imgcover:/media/DADES/NextCloud/DOCENCIA/PRG_2122/PRG-CFGS-2122/UD03/assets/cover.png
 ---
+[toc]
+
 # Introducción
 
 En unidades anteriores has podido aprender cuestiones básicas sobre el lenguaje JAVA: definición de variables, tipos de datos, asignación de valores, uso de literales, diferentes operadores que se pueden aplicar, conversiones de tipos, inserción de comentarios, etc. Posteriormente, nos sumergimos de lleno en el mundo de los objetos. Primero hemos conocido su filosofía, para más tarde ir recorriendo los conceptos y técnicas más importantes relacionadas con ellos: Propiedades, métodos, clases, declaración y uso de objetos, librerías, etc.

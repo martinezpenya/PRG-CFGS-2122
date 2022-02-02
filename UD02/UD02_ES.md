@@ -1,13 +1,17 @@
 ---
-title:"UD02: Utilización de Objetos y Clases"
-language: ES
-author: David Martínez Peña [www.martinezpenya.es]
-subject: Programación
-keywords: [PRG, 2021, Programacion, Java]
-IES: IES Mestre Ramón Esteve (Catadau) [iesmre.es]
-header: ${title} - ${subject} (${today})
-footer: ${author} - ${IES} - ${pageNo} / ${pageCount}
+    title: UD02: Utilización de Objetos y Clases
+    language: ES
+    author: David Martínez Peña [www.martinezpenya.es]
+    subject: Programación
+    keywords: [PRG, 2021, Programacion, Java]
+    IES: IES Mestre Ramón Esteve (Catadau) [iesmre.es]
+    header: ${title} - ${subject} (${today})
+    footer:${currentFileName}.pdf - ${author} - ${IES} - ${pageNo}/${pageCount}
+    typora-root-url:${filename}/../
+    typora-copy-images-to:${filename}/../assets
+    imgcover:/media/DADES/NextCloud/DOCENCIA/PRG_2122/PRG-CFGS-2122/UD02/assets/cover.png
 ---
+[toc]
 # Introducción a la POO
 
 **Orientado a objetos** hace referencia a una forma diferente de acometer la tarea del desarrollo de software, frente a otros modelos como el de la programación imperativa, la programación funcional o la programación lógica. Supone una reconsideración de los métodos de programación, de la forma de estructurar la información y, ante todo, de la forma de pensar en la resolución de problemas.

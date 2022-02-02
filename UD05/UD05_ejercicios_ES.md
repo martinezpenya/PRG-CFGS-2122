@@ -1,16 +1,17 @@
 ﻿---
-title: "Ejercicios de la UD05"
-language: ES
-author: David Martínez Peña [www.martinezpenya.es]
-subject: Programación
-keywords: [PRG, 2021, Programacion, Java]
-IES: IES Mestre Ramón Esteve (Catadau) [iesmre.es]
-header: ${title} - ${subject} (ver: ${today}) 
-footer: ${author} - ${IES} - ${pageNo} / ${pageCount}
+    title: Ejercicios de la UD05
+    language: ES
+    author: David Martínez Peña [www.martinezpenya.es]
+    subject: Programación
+    keywords: [PRG, 2021, Programacion, Java]
+    IES: IES Mestre Ramón Esteve (Catadau) [iesmre.es]
+    header: ${title} - ${subject} (ver: ${today}) 
+    footer:${currentFileName}.pdf - ${author} - ${IES} - ${pageNo}/${pageCount}
+    typora-root-url:${filename}/../
+    typora-copy-images-to:${filename}/../assets
+    imgcover:/media/DADES/NextCloud/DOCENCIA/PRG_2122/PRG-CFGS-2122/UD05/assets/cover.png
 ---
-
 [toc]
-
 # Ejercicios
 
 ## Paquete: `UD05._1.gestionEmpleados`
@@ -162,7 +163,7 @@ Se desea realizar una aplicación para gestionar el ingreso y el alta de pacient
    - Realizar el proceso de `darAltas` mientras que el número de habitaciones libres del hospital no llegue a una cantidad (por ejemplo 198).
    - Mostrar los datos del hospital cuando se considere oportuno para comprobar la corrección de las operaciones que se hacen.
 
-## Paquete: `UD05.3.contrarreloj`
+## Paquete: `UD05._3.contrarreloj`
 
 Se quiere realizar una aplicación para registrar las posiciones y tiempos de llegada en una carrera ciclista contrarreloj. 
 
@@ -202,7 +203,7 @@ Se quiere realizar una aplicación para registrar las posiciones y tiempos de ll
 
 3. La clase `ListaCorredores` permite representar a un conjunto de corredores. En la lista, como máximo habrá 200 corredores, aunque puede haber menos de ese número. Se utilizará un array, llamado lista, de 200 elementos junto con una propiedad `numCorredores` que permita saber cuentos corredores hay realmente. Métodos:
 
-   - `public ListaCorredores ()`. **Construtor**. Crea la lista de corredores, incicialmente vacía.
+   - `public ListaCorredores ()`. Construtor. Crea la lista de corredores, incicialmente vacía.
 
    - `public void añadir(Corredor c) throws ElementoDuplicadoException`. Añade un corredor al final de la lista de corredores, siempre y cuando el corredor no esté ya en la lista, en cuyo caso se lanzará `ElementoDuplicadoException`
 
@@ -445,7 +446,7 @@ Se desea realizar una aplicación `GestorVuelos` para gestionar la reserva y can
      - Pediremos al usuario el identificador del vuelo en que quiere hacer la reserva.
      - Buscaremos el vuelo que tiene el identificador indicado. Si existe realizaremos la reserva y mostraremos un mensaje por pantalla. En caso contrario mostraremos un mensaje de error por pantalla.
 
-## Paquete: UD05._8.`maquinaExpendedora`
+## Paquete: `UD05._8.maquinaExpendedora`
 
 Se desea simular el funcionamiento de una máquina expendedora. Se trata de una expendedora sencilla que, por el momento, será capaz de dispensar únicamente un producto.
 
