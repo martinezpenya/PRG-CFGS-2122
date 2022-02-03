@@ -9,7 +9,6 @@
     footer:${currentFileName}.pdf - ${author} - ${IES} - ${pageNo}/${pageCount}
     typora-root-url:${filename}/../
     typora-copy-images-to:${filename}/../assets
-    imgcover:/media/DADES/NextCloud/DOCENCIA/PRG_2122/PRG-CFGS-2122/UD05/assets/cover.png
 ---
 [toc]
 # Ejercicios
@@ -48,7 +47,7 @@ Una empresa quiere hacer una gestión informatizada básica de sus empleados. Pa
 
    - `public boolean equals(Object o)`. Método para comprobar si dos empleados son iguales. Dos empleados se consideran iguales si tienen el mismo DNI.
    
-   - `public int compareTo(Object o)`. Se considera menor (mayor) el empleado que tiene menor (mayor) DNI.
+   - `public int compareTo(Empleado o)`. Se considera menor o mayor el empleado que tiene menor o mayor DNI (el mismo criterio que al comparar dos strings).
    
    - Método estático `public static double calcularIRPF(double salario)`. Determina el % de  IRPF que corresponde a un salario (mensual) determinado, según la siguiente tabla:
      | Desde salario (incluido) | Hasta salario (no incluido) | % IRPF |
@@ -203,7 +202,7 @@ Se quiere realizar una aplicación para registrar las posiciones y tiempos de ll
 
 3. La clase `ListaCorredores` permite representar a un conjunto de corredores. En la lista, como máximo habrá 200 corredores, aunque puede haber menos de ese número. Se utilizará un array, llamado lista, de 200 elementos junto con una propiedad `numCorredores` que permita saber cuentos corredores hay realmente. Métodos:
 
-   - `public ListaCorredores ()`. Construtor. Crea la lista de corredores, incicialmente vacía.
+   - `public ListaCorredores()`. Construtor. Crea la lista de corredores, incicialmente vacía.
 
    - `public void añadir(Corredor c) throws ElementoDuplicadoException`. Añade un corredor al final de la lista de corredores, siempre y cuando el corredor no esté ya en la lista, en cuyo caso se lanzará `ElementoDuplicadoException`
 
