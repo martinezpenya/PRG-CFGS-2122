@@ -115,8 +115,8 @@ Se desea realizar una aplicación para gestionar el ingreso y el alta de pacient
 
        ```sh
        David.compareTo(Juan) = 2
-       Pepe.compareTo(Juan) = -2
-       David.compateTo(Pepe) = -15
+       Juan.compareTo(Pere) = -2
+       David.compateTo(Pepe) = 15
        ```
 
 1. Diseñar una clase Java `TestPaciente` que permita probar la clase `Paciente` y sus métodos. Para ello se desarrollará el método `main` en el que:
@@ -139,7 +139,7 @@ Se desea realizar una aplicación para gestionar el ingreso y el alta de pacient
 
    - `public void ingresarPaciente(String n, int e) throws HospitalLlenoException` Si hay camas libres, la primera de ellas (la de número menor) pasa a estar ocupada por el paciente de nombre `n` y edad `e`. Si no hay camas libres, lanza una excepción.
 
-   - `private void darAltaPaciente(int i)`. La cama i del hospital pasa a estar libre. (Afectará al número de camas libres)
+   - `private void darAltaPaciente(int i)`. La cama `i` del hospital pasa a estar libre. (Afectará al número de camas libres)
 
    - `public void darAltas()`. Se mejora el estado (método `mejorar()` de `Paciente`) de cada uno de los pacientes del hospital y a aquellos pacientes sanos (cuyo estado es 6) se les da el alta médica (invocando al método `darAltaPaciente`).
 
