@@ -91,7 +91,7 @@ Una empresa quiere hacer una gestión informatizada básica de sus empleados. Pa
 
 Se desea realizar una aplicación para gestionar el ingreso y el alta de pacientes de un hospital. Una de las clases que participará en la aplicación será la clase `Paciente`, que se detalla a continuación :
 
-1. La clase `Paciente` permite representar un paciente mediante los atributos: `nombre` (cadena), `edad` (entero), estado (entero entre 1 -más grave- y 5 -menos grave-, 6 si está curado), y con las siguientes operaciones:
+1. La clase `Paciente` permite representar un paciente mediante los atributos: `nombre` (cadena), `edad` (entero), `estado` (entero entre 1 -más grave- y 5 -menos grave-, 6 si está curado), y con las siguientes operaciones:
 
    - `public Paciente (String n, int e)`. Constructor de un objeto `Paciente` de nombre `n`, de `e` años y cuyo estado es un valor aleatorio entre 1 y 5.
 
@@ -152,7 +152,7 @@ Se desea realizar una aplicación para gestionar el ingreso y el alta de pacient
      4 Juan López 50 1
      5 libre
      ...
-     200 Andrés Sánchez 29 3
+     199 Andrés Sánchez 29 3
      ```
 
 1. En la clase `GestorHospital` se probará el comportamiento de las clases anteriores. El programa deberá:
@@ -171,6 +171,8 @@ Se quiere realizar una aplicación para registrar las posiciones y tiempos de ll
    - `public Corredor(int d, String n)`. Constructor a partir del dorsal y el nombre. Por defecto el tiempo tardado es 0
 
    - `public double getTiempo()`. Devuelve el tiempo tardado por el corredor
+
+   - `public String getDorsal()`. Devuelve el dorsal del corredor
 
    - `public String getNombre()`. Devuelve el nombre del corredor
 
@@ -208,31 +210,34 @@ Se quiere realizar una aplicación para registrar las posiciones y tiempos de ll
 
    - `public void insertarOrdenado(Corredor c)`. Inserta un corredor en la posición adecuada de la lista de manera que esta se mantenga ordenada crecientemente por el tiempo de llegada. Para poder realizar la inserción debe averiguarse la posición que debe ocupar el nuevo elemento y, antes de añadirlo al array, desplazar el elemento que ocupa esa posición y todos los posteriores, una posición a la derecha.
 
-   - `public Corredor quitar(int dorsal) throws ElementoNoEncontradoException`. Quita de la lista al corredor cuyo dorsal se indica. El array debe mantenerse compacto, es decir, todos los elementos posteriores al eliminado deben desplazarse una posición a la izquierda. El método devuelve el Corredor quitado de la lista. Si no se encuentra se lanza `ElementoNoEncontradoException`. `public String toString()` Devuelve un `String` con la información de la lista de corredores. Por ejemplo:
+   - `public Corredor quitar(int dorsal) throws ElementoNoEncontradoException`. Quita de la lista al corredor cuyo dorsal se indica. El array debe mantenerse compacto, es decir, todos los elementos posteriores al eliminado deben desplazarse una posición a la izquierda. El método devuelve el Corredor quitado de la lista. Si no se encuentra se lanza `ElementoNoEncontradoException`. 
+
+   - `public String toString()` Devuelve un `String` con la información de la lista de corredores. Los minutos apareceran formateados con 2 decimales. Por ejemplo:
 
      ```sh
-     Posición: 1
-     Dorsal: 234
-     Nombre: Juan Ramirez
-     Tiempo: 25.97 minutos
+     Posición: 0
+      Dorsal: 234
+      Nombre: Juan Ramirez
+      Tiempo: 25.97 minutos
      
-     Posición: 2
-     Dorsal: 26
-     Nombre: José González
-     Tiempo: 29.7 minutos
+     Posición: 1
+      Dorsal: 26
+      Nombre: José González
+      Tiempo: 29.70 minutos
      ```
 
-4. (Clase `ContrarReloj`) Realizar un programa que simule una contrarreloj. Para llevar el control de una carrera contrarreloj se mantienen dos listas de corredores (dos objetos de tipo `ListaCorredores`):
 
-   - (`hanSalido`) Una con los que han salido, que tiene a los corredores por orden de salida. El atributo tiempo de estos corredores será 0. Para que los corredores se mantengan por orden de salida, se añadiran a la lista utilizando el método añadir.
-   - (`hanLlegado`) Otra con los corredores que hay llegado a la meta. A medida que los corredores llegan a la meta se les extrae de la primera lista, se les asigna un tiempo y se les inserta ordenadamente en esta segunda lista.
+(Clase ContrarReloj) Realizar un programa que simule una contrarreloj. Para llevar el control de una carrera contrarreloj se mantienen dos listas de corredores (dos objetos de tipo ListaCorredores):
 
-   En el método `main` realizar un programa que muestre un menú con las siguientes opciones:
+- (`hanSalido`) Una con los que han salido, que tiene a los corredores por orden de salida. El atributo tiempo de estos corredores será 0. Para que los corredores se mantengan por orden de salida, se añadiran a la lista utilizando el método añadir.
+- (`hanLlegado`) Otra con los corredores que hay llegado a la meta. A medida que los corredores llegan a la meta se les extrae de la primera lista, se les asigna un tiempo y se les inserta ordenadamente en esta segunda lista.
 
-   1. `Salida`: Para registrar que una corredor ha comenzado la contrarreloj y sale de la línea de salida. Solicita al usuario el nombre de un corredor y su dorsal, y lo añade a la lista de corredores que han salido.
-   2. `Llegada`: Para registrar que un corredor ha llegado a la meta. Solicita al usuario el dorsal de un corredor y el tiempo de llegada. Quita al corredor de la lista de corredores que `hanSalido`, le asigna el tiempo que ha tardado y lo inserta (ordenadamente) en la lista de corredores que `hanLlegado`
-   3. `Clasificación`: Muestra la lista de corredores que `hanLlegado`. Dado que esta lista está ordenada por tiempo, mostrarla por pantalla nos da la clasificación.
-   4. `Salir`: Sale del programa
+En el método `main` realizar un programa que muestre un menú con las siguientes opciones:
+
+1. `Salida`: Para registrar que una corredor ha comenzado la contrarreloj y sale de la línea de salida. Solicita al usuario el nombre de un corredor y su dorsal, y lo añade a la lista de corredores que han salido.
+2. `Llegada`: Para registrar que un corredor ha llegado a la meta. Solicita al usuario el dorsal de un corredor y el tiempo de llegada (en segundos). Quita al corredor de la lista de corredores que `hanSalido`, le asigna el tiempo que ha tardado y lo inserta (ordenadamente) en la lista de corredores que `hanLlegado`
+3. `Clasificación`: Muestra la lista de corredores que `hanLlegado`. Dado que esta lista está ordenada por tiempo, mostrarla por pantalla nos da la clasificación.
+4. `Salir`: Sale del programa
 
 ## Paquete: `UD05._4.reservasLibreria`
 
