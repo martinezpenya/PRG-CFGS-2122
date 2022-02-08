@@ -115,8 +115,8 @@ Se desea realizar una aplicación para gestionar el ingreso y el alta de pacient
 
        ```sh
        David.compareTo(Juan) = 2
-       Juan.compareTo(Pere) = -2
-       David.compateTo(Pepe) = 15
+       Juan.compareTo(Pepe) = -2
+       David.compareTo(Pepe) = 15
        ```
 
 1. Diseñar una clase Java `TestPaciente` que permita probar la clase `Paciente` y sus métodos. Para ello se desarrollará el método `main` en el que:
@@ -172,7 +172,7 @@ Se quiere realizar una aplicación para registrar las posiciones y tiempos de ll
 
    - `public double getTiempo()`. Devuelve el tiempo tardado por el corredor
 
-   - `public String getDorsal()`. Devuelve el dorsal del corredor
+   - `public int getDorsal()`. Devuelve el dorsal del corredor
 
    - `public String getNombre()`. Devuelve el nombre del corredor
 
@@ -192,7 +192,7 @@ Se quiere realizar una aplicación para registrar las posiciones y tiempos de ll
 
    - `public boolean equals(Object o)`. Devuelve true si los corredores tienen el mismo dorsal y false en caso contrario
 
-   - `public int compareTo (Object o)`. Un corredor es menor que otro si tiene menor dorsal.
+   - `public int compareTo (Corredor o)`. Un corredor es menor que otro si tiene menor dorsal.
 
    - `public static int generarDorsal()`. Devuelve un número de dorsal generado secuencialmente. Para ello la clase hará uso de un atributo `static int siguienteDorsal` que incrementará cada vez que se genere un nuevo dorsal.
 
@@ -250,24 +250,24 @@ De cada reserva se almacena:
 - `Nif` del cliente (`String`)
 - `Nombre` del cliente (`String`)
 - `Teléfono` del cliente (`String`)
-- `Código` del libro reservado. (`Entero`)
+- `Código` del libro reservado. (`entero`)
 - `Numero` de ejemplares (`entero`)
 
 1. Diseñar la clase `Reserva`, de manera que contemple la información descrita e implementar:
-   - `public Reserva(String nif,String nombre, Strint tel, int codigo, int ejemplares)`. Constructor que recibe todos los datos de la reserva.
-   - `public Reserva(String nif,String nombre, Strint tel, int codigo)`. Constructor que recibe los datos del cliente y el código del libro. Establece el número de ejemplares a uno. 
+   - `public Reserva(String nif, String nombre, String tel, int codigo, int ejemplares)`. Constructor que recibe todos los datos de la reserva.
+   - `public Reserva(String nif,String nombre, String tel, int codigo)`. Constructor que recibe los datos del cliente y el código del libro. Establece el número de ejemplares a uno. 
    - Consultores de todos los atributos.
    - `public int setEjemplares(int ejemplares)`. Modificador del número de ejemplares. Establece el número de ejemplares al valor indicado como parámetro. 
    - `public String toString()` que devuelva un `String` con los datos de la reserva
    - `public boolean equals(Object o)`. Dos reservas son iguales si son del mismo cliente y reservan el mismo libro.
-   - `public int compareTo(Object o)`. Es menor la reserva cuyo libro es menor. A igual libro es menor aquella cuyo libro es menor.
+   - `public int compareTo(Object o)`. Es menor la reserva cuyo código de libro es menor. El parámetro es de tipo `Object` así que revisa si debes hacer alguna "adaptación".
 2. Diseñar una clase Java `TestReservas` que permita probar la clase `Reserva` y sus métodos. Para ello se desarrollará el método `main` en el que:
    - Se creen dos reservas con los datos que introduce el usuario. Las reservas no pueden ser iguales (equals). Si la segunda reserva es igual a la primera se pedirá de nuevo los datos de la segunda al usuario.
    - Se incremente en uno el número de ejemplares de ambas reservas.
    - Se muestre la menor y a continuación la mayor.
-3. Diseñar una clase `ListaReservas` que implemente una lista de reservas. Como máximo puede haber 100 reservas en la lista. Se utilizará un array de Reservas que ocuparemos a partir de la posición 0 y un atributo que indique el número de reservas. Las reservas existentes ocuparán las primeras posiciones del array. Implementar los siguientes métodos:
+3. Diseñar una clase `ListaReservas` que implemente una lista de reservas. Como máximo puede haber 100 reservas en la lista. Se utilizará un array de Reservas que ocuparemos a partir de la posición 0 y un atributo que indique el número de reservas. Las reservas existentes ocuparán las primeras posiciones del array (sin espacios en blanco). Implementar los siguientes métodos:
    - `public void reservar(String nif, String nombre, String telefono, int libro, int ejemplares) throws ListaLlenaException, ElementoDuplicadoException`: Crea una reserva y la añade a la lista. Lanza `ElementoDuplicadoException` si la reserva ya estaba en la lista. Lanza `ListaLlenaException` si la lista de reservas está llena.
-   - `public void cancelar(String nif, int libro) throws ElementoNoEncontradoException`. Dado un nombre de cliente y un código de libro, anular la reserva correspondiente. Lanzar `ElementoNoEncontradoException` si la reserva no existe.
+   - `public void cancelar(String nif, int libro) throws ElementoNoEncontradoException`. Dado un nif de cliente y un código de libro, anular la reserva correspondiente. Lanzar `ElementoNoEncontradoException` si la reserva no existe.
    - `public String toString()`: Devuelve un `String` con los datos de todas las reservas de la lista.
    - `public int numEjemplaresReservadosLibro(int codigo)`: Devuelve el número de ejemplares que hay reservados en total de un libro determinado.
    - `public void reservasLibro(int codigo)`: Dado un código de libro, muestra el nombre y el teléfono de todos los clientes que han reservado el libro.
