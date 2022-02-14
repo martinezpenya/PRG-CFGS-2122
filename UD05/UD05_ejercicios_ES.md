@@ -176,11 +176,11 @@ Se quiere realizar una aplicación para registrar las posiciones y tiempos de ll
 
    - `public String getNombre()`. Devuelve el nombre del corredor
 
-   - `public void setTiempo( double t)throws IllegalArgumentException`. Establece el tiempo tardado por el corredor. Lanzará la excepción si el tiempo indicado es negativo.
+   - `public void setTiempo(double t) throws IllegalArgumentException`. Establece el tiempo tardado por el corredor. Lanzará la excepción si el tiempo indicado es negativo.
 
    - `public void setTiempo(double t1, double t2) throws IllegalArgumentException`. Establece el tiempo tardado por el corredor. 
 
-     `t1` indica la hora de comienzo y `t2` la hora de finalización (expresada en segundos). La diferencia en segundos entre los dos datos servirá para establecer el tiempo tardado por el `Corredor`.
+     `t1` indica la hora de comienzo y `t2` la hora de finalización (expresadas en segundos). La diferencia en segundos entre los dos datos servirá para establecer el tiempo tardado por el `Corredor`.
 
      Lanzará la excepción si el tiempo resultante es negativo
 
@@ -227,7 +227,7 @@ Se quiere realizar una aplicación para registrar las posiciones y tiempos de ll
      ```
 
 
-(Clase ContrarReloj) Realizar un programa que simule una contrarreloj. Para llevar el control de una carrera contrarreloj se mantienen dos listas de corredores (dos objetos de tipo ListaCorredores):
+(Clase `ContrarReloj`) Realizar un programa que simule una contrarreloj. Para llevar el control de una carrera contrarreloj se mantienen dos listas de corredores (dos objetos de tipo `ListaCorredores`):
 
 - (`hanSalido`) Una con los que han salido, que tiene a los corredores por orden de salida. El atributo tiempo de estos corredores será 0. Para que los corredores se mantengan por orden de salida, se añadiran a la lista utilizando el método añadir.
 - (`hanLlegado`) Otra con los corredores que hay llegado a la meta. A medida que los corredores llegan a la meta se les extrae de la primera lista, se les asigna un tiempo y se les inserta ordenadamente en esta segunda lista.
@@ -255,7 +255,7 @@ De cada reserva se almacena:
 
 1. Diseñar la clase `Reserva`, de manera que contemple la información descrita e implementar:
    - `public Reserva(String nif, String nombre, String tel, int codigo, int ejemplares)`. Constructor que recibe todos los datos de la reserva.
-   - `public Reserva(String nif,String nombre, String tel, int codigo)`. Constructor que recibe los datos del cliente y el código del libro. Establece el número de ejemplares a uno. 
+   - `public Reserva(String nif, String nombre, String tel, int codigo)`. Constructor que recibe los datos del cliente y el código del libro. Establece el número de ejemplares a uno. 
    - Consultores de todos los atributos.
    - `public int setEjemplares(int ejemplares)`. Modificador del número de ejemplares. Establece el número de ejemplares al valor indicado como parámetro. 
    - `public String toString()` que devuelva un `String` con los datos de la reserva
@@ -317,9 +317,9 @@ Queremos realizar la parte de un programa de correo electrónico que gestiona la
 
 4. Con la clase `TestCarpetas` probaremos las clases y métodos desarrollados:
 
-   - Crea dos carpetas de correo de nombre Mensajes recibidos y Mensajes eliminados respectivamente.
-   - Crea varios mensajes y añádelos Mensajes recibidos.
-   - Mueve el mensaje de código 1 desde la Mensajes recibidos a Mensajes elimiminados.
+   - Crea dos carpetas de correo de nombre `Mensajes recibidos` y `Mensajes eliminados respectivamente`.
+   - Crea varios mensajes y añádelos `Mensajes recibidos`.
+   - Mueve el mensaje de código 1 desde la `Mensajes recibidos` a `Mensajes elimiminados`.
    - Muestra el contenido de las carpetas antes y después de cada operación (añadir, mover,...)
 
 ## Paquete: `UD05._6.juegoDeCartas`
@@ -328,15 +328,15 @@ Se está desarrollando una aplicación que usa una baraja de cartas. Para ello, 
 
 1. Una de ellas es la clase `Carta` que permite representar una carta de la baraja española. La información requerida para identificar una `Carta` es:
 
-   - su palo (oros, copas, espadas o bastos) y
-   - su valor (un entero entre 1 y 12).
+   - su `palo` (oros, copas, espadas o bastos) y
+   - su `valor` (un entero entre 1 y 12).
 
    Para dicha clase, se pide:
 
    - Definir 4 constantes, atributos de clase (estáticos) públicos enteros, para representar cada uno de los palos de la baraja (`OROS` será el valor 0, `COPAS` el 1, `ESPADAS` el 2 y `BASTOS` el 3). 
-   - Definir los atributos (privados): palo y valor.
+   - Definir los atributos (privados): `palo` y `valor`.
    - Escribir dos constructores: uno para construir una carta de forma aleatoria (sin parámetros) y otro para construir una carta de acuerdo a dos datos: su palo y su valor (si los datos son incorrectos se lanzará `IllegalArgumentException`)
-   - Escribir dos métodos consultores y dos métodos modificadores de los valores de los atributos.
+   - Escribir los métodos `consultores` y `modificadores` de los valores de los atributos.
    - Escribir un método `compareTo` para comprobar si la carta actual es menor que otra carta dada. El criterio de ordenación es por palos (el menor es oros, después copas, a continuación espadas y, finalmente, bastos) y dentro de cada palo por valor (1, 2, ..., 12).
    - Escribir un método `equals` para comprobar la igualdad de dos cartas. Dos cartas son iguales si tienen el mismo palo y valor.
    - Escribir un método `sigPalo` para devolver una nueva carta con el mismo valor que el de la carta actual pero del palo siguiente, según la ordenación anterior y sabiendo que el siguiente al palo bastos es oros.
