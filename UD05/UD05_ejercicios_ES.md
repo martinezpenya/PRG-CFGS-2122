@@ -227,7 +227,7 @@ Se quiere realizar una aplicación para registrar las posiciones y tiempos de ll
      ```
 
 
-(Clase `ContrarReloj`) Realizar un programa que simule una contrarreloj. Para llevar el control de una carrera contrarreloj se mantienen dos listas de corredores (dos objetos de tipo `ListaCorredores`):
+(Clase `Contrarreloj`) Realizar un programa que simule una contrarreloj. Para llevar el control de una carrera contrarreloj se mantienen dos listas de corredores (dos objetos de tipo `ListaCorredores`):
 
 - (`hanSalido`) Una con los que han salido, que tiene a los corredores por orden de salida. El atributo tiempo de estos corredores será 0. Para que los corredores se mantengan por orden de salida, se añadiran a la lista utilizando el método añadir.
 - (`hanLlegado`) Otra con los corredores que hay llegado a la meta. A medida que los corredores llegan a la meta se les extrae de la primera lista, se les asigna un tiempo y se les inserta ordenadamente en esta segunda lista.
@@ -344,7 +344,7 @@ Se está desarrollando una aplicación que usa una baraja de cartas. Para ello, 
 
 2. Implementar una clase `JuegoCartas` con los métodos siguientes:
 
-   - Un método de clase (estático) `public static int ganadora( Carta c1, Carta c2)` que dados dos objetos `Carta` y un número entero representando el palo de triunfo (o palo ganador), determine cuál es la carta ganadora. El método debe devolver 0 si las dos cartas son iguales. En caso contrario, devolverá -1 cuando la primera carta es la ganadora y 1 si la segunda carta es la ganadora.
+   - Un método de clase (estático) `public static int ganadora( Carta c1, Carta c2, int triunfo)` que dados dos objetos `Carta` y un número entero representando el palo de triunfo (o palo ganador), determine cuál es la carta ganadora. El método debe devolver 0 si las dos cartas son iguales. En caso contrario, devolverá -1 cuando la primera carta es la ganadora y 1 si la segunda carta es la ganadora.
 
      Para determinar la carta ganadora se aplicarán las siguientes reglas:
 
@@ -355,9 +355,9 @@ Se está desarrollando una aplicación que usa una baraja de cartas. Para ello, 
 
    - Un método `main` en el que se debe:
 
-     - Crear una `Carta` a partir de un palo y un valor dados (solicitados al usuario desde teclado), y mostrar sus datos por pantalla.
      - Crear una `Carta` aleatoriamente y mostrar sus datos por pantalla.
      - Generar aleatoriamente un entero en el rango [0..3] representando el palo de triunfo, y mostrar por pantalla a qué palo corresponde.
+     - Crear una `Carta` a partir de un palo y un valor dados (solicitados al usuario desde teclado), y mostrar sus datos por pantalla.
      - Mostrar por pantalla la carta ganadora (invocando al método del apartado anterior con el objeto `Carta` del usuario.
 
 ## Paquete: `UD05._7.gestorVuelos`
@@ -550,9 +550,21 @@ Durante el proceso se pueden producir diversas incidencias, como por ejemplo, qu
 
 4. Introducir por teclado dos valores numéricos enteros y la operación que queremos realizar (`suma`, `resta` o `multiplicación`). Realizar la operación y mostrar el resultado en `Binario`, `Hexadecimal` y `Octal`.
 
+   Ejemplo de ejecución:
+
+   ```sh
+   Introduce el primer valor numérico: 14
+   Introduce el segundo valor numérico: 4
+   Introduce la operación: resta
+   EL RESULTADO:
+    en binario: 1010
+    en octal: 12
+    en binario: a
+   ```
+
 5. Mostrar los segundos transcurridos desde el `1 de Enero de 1970 a las 0:00:00` hasta `hoy`.
 
-6. Mostrar la `fecha` y `hora` de hoy con los siguientes formatos (para todos los ejemplos se supone que hoy es 26 de agosto de 2021 a las 17 horas 16 minutos y 8 segundos):
+6. Mostrar la `fecha` y `hora` de hoy con los siguientes formatos (para todos los ejemplos se supone que hoy es 26 de agosto de 2021 a las 17 horas 16 minutos y 8 segundos, tu deberas mostrar la fecha y hora de tu sistema en el momento de ejecuc):
 
    a) `August 26, 2021, 5:16 pm`
    b) `08.26.21`
@@ -618,9 +630,9 @@ Durante el proceso se pueden producir diversas incidencias, como por ejemplo, qu
 
 25. Realiza un método estático que dada la `fecha de nacimiento` de una persona indique si es mayor de edad.
 
-26. Crear la clase `Dado`, la cual desciende de la clase `Sorteo`. La clase `Dado`, en la llamada `lanzar()` mostrará un número aleatorio del 1 al 6. Crear la clase `Moneda`, la cual desciende de la clase `Sorteo`. Esta clase en la llamada al método `lanzar()` mostrará las palabras cara o cruz.
+26. Crear la clase `Dado`, la cual desciende de la clase `Sorteo`. La clase `Dado`, en la llamada `lanzar()` mostrará un número aleatorio del 1 al 6. Crear la clase `Moneda`, la cual desciende de la clase `Sorteo`. Esta clase en la llamada al método `lanzar()` mostrará las palabras cara o cruz. Realizar una clase con un método `main` que compruebe todo lo realizado.
 
-27. Realiza una clase `Conversor` que tenga las siguientes características: Toma como parámetro en el constructor un valor entero. Tiene un método `getNumero` que dependiendo del parámetro devolverá el mismo número en el siguiente `B Binario`, H Hexadecimal, `O Octal`. Realiza un método `main` en la clase para probar todo lo anterior.
+27. Realiza una clase `Conversor` que tenga las siguientes características: Toma como parámetro en el constructor un valor entero. Tiene un método `getNumero` que dependiendo del parámetro devolverá el mismo número en el siguiente `B Binario`, `H Hexadecimal`, `O Octal`. Realiza un método `main` en la clase para probar todo lo anterior.
 
 28. Realiza una clase `ConversorFechas` que tenga los siguientes métodos:
     - `String normalToAmericano(String)`. Este método convierte una fecha en formato normal `dd/mm/yyyy` a formato americano `mm/dd/yyyy`

@@ -349,6 +349,8 @@ LocalDate mifecha = LocalDate.parse(fechaCadena, formato);
 System.out.println(formato.format(mifecha)); //16/08/2016
 ```
 
+Más detalles sobre los formatos: https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html
+
 ## Manipulación
 
 1. Manipulando `LocalDate`
@@ -712,27 +714,51 @@ Las reglas a la hora de realizar casting es que:
 
 # Acceso a métodos de la superclase.
 
-Para acceder a los métodos de la superclase se utiliza la sentencia **super**. La sentencia this permite acceder a los campos y métodos de la clase y la sentencia super permite acceder a los campos y métodos de la superclase.
-
-Podemos mostrar el nombre de la clase y el nombre de la clase de la que hereda con `getClass()` y `getSuperclass()`.
-
-Ejemplo:
+Para acceder a los métodos de la superclase se utiliza la sentencia **`super`**. La sentencia **`this`** permite acceder a los campos y métodos de la clase y la sentencia super permite acceder a los campos y métodos de la superclase. Ejemplo
 
 ```java
-public class Super {
+public class Persona {
+
+    private String nombre;
+
+	public Persona(String nombre) {
+		this.nombre = nombre;
+	}
+ 
+	public String getNombre() {
+		return nombre;
+	}
+ 
+    public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+}
+```
+```java
+public class Deportista extends Persona{
+	public Deportista(String nombre) {
+		super(nombre);
+	}
+ }
+```
+
+Podemos mostrar el nombre de la clase y el nombre de la clase de la que hereda con `getClass()` y `getSuperclass()`. Ejemplo:
+
+```java
+public class EjemploGetClass {
 
     public static void main(String[] args) {
-        Empleado empleadoCarniceria = new Empleado("Rosa Ramos", 0);
+        Deportista deportistaNatacion = new Deportista("Rosa Ramos");
 
-        // Muestra los datos de la Persona que es Encargado
-        System.out.println(empleadoCarniceria instanceof Encargado); //false
-        System.out.println(empleadoCarniceria.getClass()); //class Empleado
-        System.out.println(empleadoCarniceria.getClass().getSuperclass()); //class Persona
+        // Muestra los datos de la Persona que es Deportista
+        System.out.println(deportistaNatacion instanceof Vehiculo); //false
+        System.out.println(deportistaNatacion.getClass()); //class Deportista
+        System.out.println(deportistaNatacion.getClass().getSuperclass()); //class Persona
     }
 }
 ```
 
-# Clases Anidadas, Clases Internas o Inner Class.
+# Clases Anidadas, Clases Internas (Inner Class).
 
 Una clase anidada es una clase que es miembro de otra clase. La clase anidada al ser miembro de la clase externa tienen acceso a todos sus métodos y atributos.
 
@@ -871,7 +897,7 @@ El cuerpo de la interfaz es la lista de métodos y/o constantes que contiene la 
 La sintaxis para declarar una clase que implemente una o más interfaces es:
 
 ```java
-[final] [public] class <NombreClase> [extends <NombreClaseBase>] implements <NombreInterfaz1>,							<NomInterfaz2>... {
+[final] [public] class <NombreClase> [extends <NombreClaseBase>] implements <NombreInterfaz1>, <NomInterfaz2>... {
 	<CuerpoDeLaClase>
 }
 ```
@@ -886,8 +912,8 @@ Así, por ejemplo:
 public interface DiasSemana {
     int LUNES = 1, MARTES=2, MIERCOLES=3, JUEVES=4;
     int VIERNES=5, SABADO=6, DOMINGO=7;
-    String [] NOMBRES_DIAS = {"", "lunes", "martes", "miércoles", 
-                           "jueves", "viernes", "sábado", "domingo"};
+    String[] NOMBRES_DIAS = {"", "lunes", "martes", "miércoles", 
+                             "jueves", "viernes", "sábado", "domingo"};
 }
 ```
 
