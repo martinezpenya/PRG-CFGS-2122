@@ -15,17 +15,19 @@ imgcover:/media/DADES/NextCloud/DOCENCIA/PRG_2122/PRG-CFGS-2122/UD05/assets/cove
 
 # Wrappers (Envoltorios)
 
-Los wrappers permiten "envolver" datos primitivos en objetos, también se llaman clases contenedoras. La diferencia entre un tipo primitivo y un wrapper es que este último es una clase y por tanto, cuando trabajamos con wrappers estamos trabajando con objetos. Como  son objetos debemos tener cuidado en el paso como parámetro en métodos ya que en el wrapper se realiza por referencia.
+Los wrappers permiten "envolver" datos primitivos en objetos, también se llaman clases contenedoras. La diferencia entre un tipo primitivo y un wrapper es que este último es una clase y por tanto, cuando trabajamos con wrappers estamos trabajando con objetos. 
+
+> Como  son objetos debemos tener cuidado en el paso como parámetro en métodos ya que en el wrapper se realiza por referencia.
 
 Una de las principales ventajas del uso de wrappers son la facilidad de conversión entre tipos primitivos y cadenas.
 
-Hay una clase contenedora por cada uno de los tipos primitivos de en Java. Los datos primitivos se escriben en minúsculas y los wrappers se escriben con la primera letra en mayúsculas.
+Hay una clase contenedora por cada uno de los tipos primitivos de Java. Los datos primitivos se escriben en minúsculas y los wrappers se escriben con la primera letra en mayúsculas.
 
 | Tipo primitivo | Wrapper asociado |
 | -------------- | ---------------- |
 | byte           | Byte             |
 | short          | Short            |
-| int            | Int              |
+| int            | Integer          |
 | long           | Long             |
 | float          | Float            |
 | double         | Double           |
@@ -154,7 +156,7 @@ Para resumir, los métodos esenciales para las conversiones son:
 
 # Clase `Date`
 
-La clase Date es una utilidad contenida en el paquete `java.util` y permiten trabajar con fechas y horas. La fechas y hora se almacenan en un entero de tipo `Long` que almacena los  milisegundos transcurridos desde el 1 de Enero de de 1970 que se obtienen con `getTime()`. (Importamos `java.util.Date`).
+La clase Date es una utilidad contenida en el paquete `java.util` y permiten trabajar con fechas y horas. La fechas y hora se almacenan en un entero de tipo `Long` que almacena los milisegundos transcurridos desde el 1 de Enero de de 1970 que se obtienen con `getTime()`. (Importamos `java.util.Date`).
 
 Ejemplo:
 
@@ -181,16 +183,19 @@ Ejemplo 2:
 Date d = new Date();
 GregorianCalendar c = new GregorianCalendar(); 
 System.out.println("Fecha: "+d);  //Fecha: Thu Aug 19 20:06:14 CEST 2021
-System.out.println("Info: "+c); //Info: java.util.GregorianCalendar[time=1629396374723,
-								//areFieldsSet=true,areAllFieldsSet=true,lenient=true,zone=sun.util.calendar.ZoneInfo
-								//[id="Europe/Madrid",offset=3600000,dstSavings=3600000,useDaylight=true,transitions=163,
-                                //lastRule=java.util.SimpleTimeZone[id=Europe/Madrid,offset=3600000,dstSavings=3600000,
-                                //useDaylight=true,startYear=0,startMode=2,startMonth=2,startDay=-1,startDayOfWeek=1,
-                                //startTime=3600000,startTimeMode=2,endMode=2,endMonth=9,endDay=-1,endDayOfWeek=1,
-                                //endTime=3600000,endTimeMode=2]],firstDayOfWeek=2,minimalDaysInFirstWeek=4,ERA=1,
-                                //YEAR=2021,MONTH=7,WEEK_OF_YEAR=33,WEEK_OF_MONTH=3,DAY_OF_MONTH=19,DAY_OF_YEAR=231,
-                                //DAY_OF_WEEK=5,DAY_OF_WEEK_IN_MONTH=3,AM_PM=1,HOUR=8,HOUR_OF_DAY=20,MINUTE=6,SECOND=14,
-                                //MILLISECOND=723,ZONE_OFFSET=3600000,DST_OFFSET=3600000]
+System.out.println("Info: "+c); //Info:
+//java.util.GregorianCalendar[time=1629396374723,areFieldsSet=true
+//,areAllFieldsSet=true
+//,lenient=true,zone=sun.util.calendar.ZoneInfo[id="Europe/Madrid",offset=3600000
+//,dstSavings=3600000,useDaylight=true,transitions=163
+//,lastRule=java.util.SimpleTimeZone[id=Europe/Madrid,offset=3600000
+//,dstSavings=3600000,useDaylight=true,startYear=0,startMode=2,startMonth=2
+//,startDay=-1,startDayOfWeek=1,startTime=3600000,startTimeMod2.1e=2,endMode=2
+//,endMonth=9,endDay=-1,endDayOfWeek=1,endTime=3600000,endTimeMode=2]]
+//,firstDayOfWeek=2,minimalDaysInFirstWeek=4,ERA=1,YEAR=2021,MONTH=7,WEEK_OF_YEAR=33
+//,WEEK_OF_MONTH=3,DAY_OF_MONTH=19,DAY_OF_YEAR=231,DAY_OF_WEEK=5
+//,DAY_OF_WEEK_IN_MONTH=3,AM_PM=1,HOUR=8,HOUR_OF_DAY=20,MINUTE=6,SECOND=14
+//,MILLISECOND=723,ZONE_OFFSET=3600000,DST_OFFSET=3600000]
 c.setTime(d); 
 System.out.print(c.get(Calendar.DAY_OF_MONTH));
 System.out.print("/"); 
@@ -343,11 +348,13 @@ Podemos introducir la fecha como una cadena con el formato que deseemos y poster
 Ejemplo:
 
 ```java
-DateTimeFormatter formato = DateTimeFormatter.ofPattern("d/MM/yyyy"); 
+DateTimeFormatter formato = DateTimeFormatter.ofPattern("d/MM/u"); 
 String fechaCadena = "16/08/2016";
 LocalDate mifecha = LocalDate.parse(fechaCadena, formato);
 System.out.println(formato.format(mifecha)); //16/08/2016
 ```
+
+> Ojo! a partir de Java 8 `y` es para el año de la era (BC AD), y para el año debemos usar `u`
 
 Más detalles sobre los formatos: https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html
 
@@ -571,7 +578,7 @@ El patrón del formato se realiza en función a la siguiente tabla de símbolos:
 | M       | Mes del Año              | 7; 07; Jul; July; J |
 | d       | Día del Mes              | 10                  |
 | w       | Semana del Año           | 27                  |
-| EEE     | Día de la Semana         | Tue; Tuesday; T     |
+| E       | Día de la Semana         | Tue; Tuesday; T     |
 | F       | Semana del Mes           | 3                   |
 | a       | AM/PM                    | PM                  |
 | K       | Hora AM/PM (0-11)        | 0                   |
