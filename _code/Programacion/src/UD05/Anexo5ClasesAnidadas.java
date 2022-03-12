@@ -27,7 +27,7 @@ class Pc {
     }
 }
 
-public class Anexo4ClasesAnidadas {
+public class Anexo5ClasesAnidadas {
 
     public static void main(String[] args) {
         Pc miPc = new Pc();

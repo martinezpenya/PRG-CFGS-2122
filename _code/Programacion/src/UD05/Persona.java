@@ -1,6 +1,6 @@
 package UD05;
 
-// Clase Personal que solo dispone de nombre
+// Clase Persona que solo dispone de nombre
 public class Persona {
 
     String nombre;
@@ -19,6 +19,6 @@ public class Persona {
 
     @Override
     public String toString() {
-        return "Nombre: " + nombre + "\n";
+        return "Nombre: " + nombre;
     }
 }

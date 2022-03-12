@@ -20,6 +20,6 @@ public class Empleado extends Persona {
 
     @Override
     public String toString() {
-        return super.toString() + "Sueldo Base: " + sueldoBase + "\n";
+        return super.toString() + "\nSueldo Base: " + sueldoBase;
     }
 }

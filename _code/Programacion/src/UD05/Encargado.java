@@ -20,6 +20,6 @@ public class Encargado extends Empleado {
 
     @Override
     public String toString() {
-        return super.toString() + "Sección:" + seccion + "\n";
+        return super.toString() + "\nSección:" + seccion ;
     }
 }
