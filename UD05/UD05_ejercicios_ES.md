@@ -318,7 +318,7 @@ Queremos realizar la parte de un programa de correo electrónico que gestiona la
 4. Con la clase `TestCarpetas` probaremos las clases y métodos desarrollados:
 
    - Crea dos carpetas de correo de nombre `Mensajes recibidos` y `Mensajes eliminados respectivamente`.
-   - Crea varios mensajes y añádelos `Mensajes recibidos`.
+   - Crea varios mensajes y añádelos a `Mensajes recibidos`.
    - Mueve el mensaje de código 1 desde la `Mensajes recibidos` a `Mensajes elimiminados`.
    - Muestra el contenido de las carpetas antes y después de cada operación (añadir, mover,...)
 
@@ -458,39 +458,13 @@ Se está desarrollando una aplicación que usa una baraja de cartas. Para ello, 
 
 22. Introducir en un array `nombre`, `apellidos` y `sueldo` de varios trabajadores y la `fecha de alta` en la empresa. Las fechas deberán introducirse como fechas. Recorrer el array y mostrar para cada trabajador la retención que debe aplicarse sobre el sueldo teniendo en cuenta que los trabajadores incorporados antes de 1980 tienen una retención del 20%, los trabajadores con fecha entre 1980 y 2000 una retención del 15% y los trabajadores con fecha posterior al 2000 la retención que aplicaremos será el 5% del sueldo.
 
-23. Realizar una aplicación para la gestión de la información de las personas vinculadas a una `Facultad`, que se pueden clasificar en tres tipos: estudiantes, profesores y personal de servicio.
-    A continuación, se detalla qué tipo de información debe gestionar esta aplicación:
-
-    - Por cada `Persona`, se debe conocer, al menos, su `nombre` y `apellidos`, su `número de identificación` y su `estado civil`.
-    - Con respecto a los `Empleados`, sean del tipo que sean, hay que saber su `año de incorporación` a la facultad y qué `número de despacho` tienen asignado.
-    - En cuanto a los `Estudiantes`, se requiere almacenar el `curso` en el que están matriculados.
-    - Por lo que se refiere a los `Profesores`, es necesario gestionar a qué `departamento` pertenecen (`lenguajes`, `matemáticas`, `arquitectura`, ...).
-    - Sobre el `Personal de servicio`, hay que conocer a qué `sección` están asignados (`biblioteca`, `decanato`, `secretaría`, ...).
-
-    El ejercicio consiste, en primer lugar, en definir la jerarquía de clases de esta aplicación. A continuación, debe programar las clases definidas en las que, además de los constructores, hay que desarrollar los métodos correspondientes a las siguientes acciones:
-
-    - Cambio del estado civil de una persona.
-    - Reasignación de despacho a un empleado.
-    - Matriculación de un estudiante en un nuevo curso.
-    - Cambio de departamento de un profesor.
-    - Traslado de sección de un empleado del personal de servicio.
-    - Imprimir toda la información de cada tipo de individuo.
-
-    En el método `main` crear un array de `personas`. Crear diferentes instancias de las subclases e insertarlas en el array. Probar los diferentes métodos desarrollados.
-
-24. Crea una clase `Empleado` y una subclase `Encargado`. Los encargados reciben un 10% más de sueldo base que un empleado normal aunque realicen el mismo trabajo. Implementa dichas clases en el paquete objetos y sobrescribe el método `getSueldo()` para ambas clases.
-
-25. Realiza un método estático que dada la `fecha de nacimiento` de una persona indique si es mayor de edad.
-
-26. Crear la clase `Dado`, la cual desciende de la clase `Sorteo`. La clase `Dado`, en la llamada `lanzar()` mostrará un número aleatorio del 1 al 6. Crear la clase `Moneda`, la cual desciende de la clase `Sorteo`. Esta clase en la llamada al método `lanzar()` mostrará las palabras cara o cruz. Realizar una clase con un método `main` que compruebe todo lo realizado.
-
-27. Realiza una clase `Conversor` que tenga las siguientes características: Toma como parámetro en el constructor un valor entero. Tiene un método `getNumero` que dependiendo del parámetro devolverá el mismo número en el siguiente `B Binario`, `H Hexadecimal`, `O Octal`. Realiza un método `main` en la clase para probar todo lo anterior.
+23. Realiza un método estático que dada la `fecha de nacimiento` de una persona indique si es mayor de edad.
+    
+26. Realiza una clase `Conversor` que tenga las siguientes características: Toma como parámetro en el constructor un valor entero. Tiene un método `getNumero` que dependiendo del parámetro devolverá el mismo número en el siguiente `B Binario`, `H Hexadecimal`, `O Octal`. Realiza un método `main` en la clase para probar todo lo anterior.
 
 28. Realiza una clase `ConversorFechas` que tenga los siguientes métodos:
     - `String normalToAmericano(String)`. Este método convierte una fecha en formato normal `dd/mm/yyyy` a formato americano `mm/dd/yyyy`
     - `String americanoToNormal(String)`. Este método realiza el paso contrario, convierte fechas en formato americano a formato normal.
-
-29. Realiza una clase `Huevo` con un atributo `tamaño` (`S`, `M`, `L`, `XL`) con el método `toString`. La clase `Huevo` está compuesta por dos clases internas, una `Clara` y otra `Yema`. Ambas clases tiene un atributo `color` y el método `toString`. Realiza un método `main` en el que se cree un objeto de tipo `Huevo`, `Clara` y `Yema`. Se le asigne valor a sus atributos y se muestren dichos valores.
 
 
 # Fuentes de información
