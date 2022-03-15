@@ -72,7 +72,7 @@ Los wrapper disponen de una serie de métodos que permiten realizar funciones de
 | String toBinaryString(int)<br/>String toHexString(int)<br/>String toOctalString(int) | Conversión a otros sistemas de numeración    |
 | MAX_VALUE, MIN_VALUE, TYPE                                   | Constantes                                   |
 
-## Métodos `valueOf()`.
+## Métodos `valueOf()`
 
 El método `valueOf()` permite crear objetos wrapper y se le pasa un parámetro `String` y opcionalmente otro parámetro que indica la base en la que será representado el primer parámetro.
 
@@ -106,7 +106,7 @@ short s2 = f4.shortValue(); // Convierte el valor de f2 en un primitivo short
 System.out.println(s2); // El resultado es 3 (truncado, no redondeado)
 ```
 
-## Métodos `parseXxxx()`.
+## Métodos `parseXxxx()`
 
 Los métodos `parseXxxx()` permiten convertir un wrapper en un dato de tipo primitivo y le pasamos como parámetro el `String` con el valor que deseamos convertir y opcionalmente la base a la que convertiremos el valor (2, 8, 10 o 16).
 
@@ -119,7 +119,7 @@ long l2 = Long.parseLong("101010", 2);	// un String binario a primitivo
 System.out.println("l2 = " + l2);	// El resultado es L2 42
 ```
 
-## Métodos `toString()`.
+## Métodos `toString()`
 
 El método `toString()` permite retornar un `String` con el valor primitivo que se encuentra en el objeto contenedor. Se le pasa un parámetro que es el wrapper y opcionalmente para `Integer` y `Long` un parámetro con la base a la que convertiremos el valor (2, 8, 10 o 16).
 
@@ -134,7 +134,7 @@ String s3 = "hex = " + Long.toString(254, 16); // s = "hex = fe"
 System.out.println("s3 = " + s3); // El resultado es d = 3.14
 ```
 
-## Métodos `toXxxxxString()` (Binario, Hexadecimal y Octal).
+## Métodos `toXxxxxString()` (Binario, Hexadecimal y Octal)
 
 Los métodos `toXxxxxString()` permiten a las clases contenedoras `Integer` y `Long` convertir números en base 10 a otras bases, retornando un `String` con el valor primitivo que se encuentra en el objeto contenedor.
 
@@ -166,7 +166,7 @@ System.out.println(fecha);           //Mon Sep 19 00:00:00 CEST 3921
 System.out.println(fecha.getTime()); //61590146400000
 ```
 
-## Clase `GregorianCalendar`.
+## Clase `GregorianCalendar`
 
 Para utilizar fechas y horas se utiliza la clase `GregorianCalendar` que dispone de variable enteras como: `DAY_OF_WEEK`, `DAY_OF_MONTH`, `YEAR`, `MONTH`, `HOUR`, `MINUTE`, `SECOND`, `MILLISECOND`, `WEEK_OF_MONTH`, `WEEK_OF_YEAR`, … (Importamos Clase `java.util.Calendar` y `java.util.GregorianCalendar`)
 
@@ -204,7 +204,7 @@ System.out.print("/");
 System.out.println(c.get(Calendar.YEAR)+1); //19/8/2022
 ```
 
-## Paquete `java.time`.
+## Paquete `java.time`
 
 El paquete `java.time` dispone de las clases `LocalDate`, `LocalTime`, `LocalDateTime`, `Duration` y `Period` para trabajar con fechas y horas.
 
@@ -341,7 +341,7 @@ long tiempo = ChronoUnit.DAYS.between(fechaInicio, fechaFin);
 System.out.println(tiempo); //2
 ```
 
-## Introducir fecha como Cadena.
+## Introducir fecha como Cadena
 
 Podemos introducir la fecha como una cadena con el formato que deseemos y posteriormente convertir a fecha con la sentencia `parse`. Debemos importar las clases `time` y `time.format`.
 
@@ -588,7 +588,7 @@ El patrón del formato se realiza en función a la siguiente tabla de símbolos:
 | n       | Nanosegundos del Segundo | 987654321           |
 | ''      | Texto                    | 'Día de la semana'  |
 
-### Día de la Semana.
+### Día de la Semana
 
 La función `getDayOfWeek()` devuelve un elemento del tipo `DayOfWeek` que corresponde el día de la semana de una fecha. Debemos importar la clase `java.time.DayOfWeek`.
 
@@ -606,7 +606,7 @@ if (lafecha.getDayOfWeek().equals(DayOfWeek.SATURDAY)) {
 //La fecha NO es Sábado
 ```
 
-# Conversión entre objetos (Casting).
+# Conversión entre objetos (Casting)
 
 La esencia de Casting permite convertir un dato de tipo primitivo en otro generalmente de más precisión.
 
@@ -709,7 +709,7 @@ package UD05;
 
 public class Anexo3Casting {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) {     
         // Casting Implicito
         Persona encargadoCarniceria = new Encargado("Rosa Ramos", 1200,
                 "Carniceria");
@@ -759,7 +759,7 @@ Las reglas a la hora de realizar casting es que:
 > ```
 > 
 
-# Acceso a métodos de la superclase.
+# Acceso a métodos de la superclase
 
 Para acceder a los métodos de la superclase se utiliza la sentencia **`super`**. La sentencia **`this`** permite acceder a los campos y métodos de la clase. La sentencia `super` permite acceder a los campos y métodos de la superclase. El uso de `super` lo hemos visto en las clases `Empleado` y `Encargado` anteriores:
 
@@ -798,7 +798,7 @@ public class Anexo4SuperClase {
 }
 ```
 
-# Clases Anidadas, Clases Internas (Inner Class).
+# Clases Anidadas, Clases Internas (*Inner Class*)
 
 Una clase anidada es una clase que es miembro de otra clase. La clase anidada al ser miembro de la clase externa tienen acceso a todos sus métodos y atributos.
 
@@ -806,15 +806,20 @@ Permiten:
 
 - acceder a los campos privados de la otra clase.
 - ocultar la clase interna de las otras clases del paquete.
-- Permite gestionar eventos.
+- ...
 
 ```java
 class Externa{
+    private String a;
     ...
     class Interna{
+        //a es accesible
         ...
     }
     ...
+}
+class Otra{
+    //a no es accesible
 }
 ```
 
@@ -869,6 +874,8 @@ public class ClaseInternaHardware {
     }
 }
 ```
+
+> Observa que estas clases se definen unas dentro de otras (anidadas o internas), mientras que por ejemplo cuando hemos añadido excepciones a nuestros ejercicios lo hemos hecho como otra clase en el mismo fichero.
 
 # Ejemplo Anexo UD05
 
