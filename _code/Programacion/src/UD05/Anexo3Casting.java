@@ -8,13 +8,15 @@ public class Anexo3Casting {
                 "Carniceria");
 
         // No tenemos disponibles los métodos de la clase Encargado:
-        //EncargadaCarniceria.setSueldoBase(1200);
-        //EncargadaCarniceria.setSeccion("Carniceria");
+        //encargadoCarniceria.setSueldoBase(1200);
+        //encargadoCarniceria.setSeccion("Carniceria");
         //Pero al imprimir se imprime con el método más específico (luego lo vemos)
-        System.out.println(encargadoCarniceria);
+        System.out.println(encargadoCarniceria.toString());
 
         // Casting Explicito
         Encargado miEncargado = (Encargado) encargadoCarniceria;
+        
+        System.out.println("sueldo: " + miEncargado.getSueldo());
         //Tenemos disponibles los métodos de la clase Encargado:       
         miEncargado.setSueldoBase(1200);
         miEncargado.setSeccion("Carniceria");

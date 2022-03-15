@@ -13,7 +13,7 @@
 [toc]
 # Ejercicios
 
-## Paquete: `UD06._7.gestorVuelos`
+## Paquete: `UD06._1.gestorVuelos`
 
 Se desea realizar una aplicación `GestorVuelos` para gestionar la reserva y cancelación de vuelos en una agencia de viajes. Dicha agencia trabaja únicamente con la compañía aérea Iberia, que ofrece vuelos desde/hacia varias ciudades de Europa. Se deben definir las clases que siguen, teniendo en cuenta que sus atributos serán privados y sus métodos sólo los que se indican en cada clase.
 
@@ -103,7 +103,7 @@ Se desea realizar una aplicación `GestorVuelos` para gestionar la reserva y can
      - Pediremos al usuario el identificador del vuelo en que quiere hacer la reserva.
      - Buscaremos el vuelo que tiene el identificador indicado. Si existe realizaremos la reserva y mostraremos un mensaje por pantalla. En caso contrario mostraremos un mensaje de error por pantalla.
 
-## Paquete: `UD06._8.maquinaExpendedora`
+## Paquete: `UD06._2.maquinaExpendedora`
 
 Se desea simular el funcionamiento de una máquina expendedora. Se trata de una expendedora sencilla que, por el momento, será capaz de dispensar únicamente un producto.
 
@@ -193,137 +193,165 @@ Durante el proceso se pueden producir diversas incidencias, como por ejemplo, qu
 
 6. Modificar la clase `TestExpendedora` para adaptarla a los cambios hechos en la clase `Expendedora`.
 
-# Actividades
+# **Los flujos estándar**
 
-1. Introducir por teclado un valor de tipo `double` , convertirlo en Wrapper e imprimirlo.
+1. (clase LeeNombre) Escribir un programa que solicite al usuario su nombre y, utilizando directamente `System.in`, lo lea de teclado y muestre por pantalla un mensaje del estilo "Su nombre es Miguel".  Recuerda que `System.in` es un objeto de tipo `InputStream`. La clase `InputStream` permite **leer bytes** utilizando el método `read()`. Será tarea nuestra ir construyendo un `String` a partir de los bytes leídos. Prueba el programa de manera que el usuario incluya en su nombre algún carácter “extraño”, por ejemplo el símbolo ""€" ¿Funciona bien el programa? ¿Por qué?
 
-2. Introducir por teclado un valor numérico en un `String` y convertirlo en entero e imprimirlo.
+2. (clase LeeEdad) Escribir un programa que solicite al usuario su edad y, utilizando directamente `System.in`, la lea de teclado y muestre por pantalla un mensaje del estilo "Su edad es 32 años". En este caso, será tarea nuestra construir un String a partir de los bytes leídos y transformarlo posteriormente en un entero. 
 
-3. Introducir por teclado un valor numérico entero en un `String` y convertirlo en un `Wrapper` e imprimirlo.
+3. (clase CambiarEstandar).  La salida estándar (`System.out`) y la salida de errores (`System.err`) están asociadas por defecto con la pantalla. Se puede cambiar este comportamiento por defecto utilizando los métodos `System.setout` y `System.seterr` respectivamente. Investiga un poco cómo se utilizan, escribe un programa que asocie la salida estándar a al fichero `salida.txt` y la salida de errores al fichero `errores.txt` y, a continuación, escriba algún mensaje en cada uno de las salidas, por ejemplo `System.out.println(“El resultado es 20”);` y `System.err.println(“ERROR: Elemento no encontrado”);`
+4. *(SumarEdades)*
+   - Escribir método `void sumaEdades()` que lea de teclado las edades de una serie de personas y muestre cuanto suman.  El método finalizará cuando el usuario introduzca una edad negativa.
+   - Escribir un método `main` que llame al método anterior para probarlo.
+   - Modificar el método `main` de forma que, antes de llamar al método `sumaEdades`, se cambie la entrada estándar para que tome los datos del fichero `edades.txt` en lugar de leerlos de teclado.
 
-4. Introducir por teclado dos valores numéricos enteros y la operación que queremos realizar (`suma`, `resta` o `multiplicación`). Realizar la operación y mostrar el resultado en `Binario`, `Hexadecimal` y `Octal`.
+# **`InputStreamReader`**
 
-   Ejemplo de ejecución:
+5. (leerByte) `System.in` (`InputStream`) está orientado a lectura de  bytes. Escribe un programa que lea un byte de teclado y muestre su valor (int) por pantalla. Pruébalo con un carácter “extraño”, por ejemplo ‘€’.
 
-   ```sh
-   Introduce el primer valor numérico: 14
-   Introduce el segundo valor numérico: 4
-   Introduce la operación: resta
-   EL RESULTADO:
-    en binario: 1010
-    en octal: 12
-    en binario: a
-   ```
+6. (leerCaracter) `InputStreamReader` (`StreamReader`) está orientado a carácteres. Escribe un programa que lea un carácter de teclado usando un `InputStreamReader` y muestre su valor (`int`) por pantalla. Pruébalo con un carácter “extraño”, por ejemplo ‘€’. ¿Se obtiene el mismo resultado que en el ejercicio anterior?.
 
-5. Mostrar los segundos transcurridos desde el `1 de Enero de 1970 a las 0:00:00` hasta `hoy`.
+# **Entrada "orientada a líneas".**
 
-6. Mostrar la `fecha` y `hora` de hoy con los siguientes formatos (para todos los ejemplos se supone que hoy es 26 de agosto de 2021 a las 17 horas 16 minutos y 8 segundos, tu deberas mostrar la fecha y hora de tu sistema en el momento de ejecuc):
+En los ejercicios anteriores, las limitaciones de la clase utilizada (`InputStream`), nos obliga a incluir en el programa instrucciones que detecten que el usuario ha terminado su entrada (ha pulsado **INTRO**). La clase `BuffereReader` dispone del método `readLine()`, capaz de leer una línea completa (la propia instrucción detecta el final de la línea) y devolver un `String`.
 
-   a) `August 26, 2021, 5:16 pm`
-   b) `08.26.21`
-   c) `26, 8, 2021`
-   d) `20210826`
-   e) `05-16-08, 26-08-21`
-   f) `Thu Aug 26 17:16:08`
-   g) `17:16:08`
+7.- Repite el ejercicio 1 utilizando un `BufferedReader` asociado a la entrada estándar. La clase `BufferedReader`, está orientada a leer caracteres en lugar de bytes. ¿Qué ocurre ahora si el usuario introduce un carácter "extraño" en su nombre?
 
-7. Introducir un día, un mes y un año y verificar si es una fecha correcta. 
+8.- Repite el ejercicio 2 utilizando un `BufferedReader` asociado a la entrada estándar.
 
-   ```sh
-   Introduce un dia para la fecha: 29
-   Introduce un mes para la fecha: 2
-   Introduce un año para la fecha: 2022
-   LA FECHA ES INCORRECTA
-   
-   Introduce un dia para la fecha: 29
-   Introduce un mes para la fecha: 2
-   Introduce un año para la fecha: 2020
-   LA FECHA ES CORRECTA
-   ```
+# **Lectura/escritura en ficheros**
 
-8. Introducir dos fechas e indicar los días transcurridos entre las dos fechas. 
+9. (EscribirFichero1) Escribe un programa que, usando las clases `FileOutputStream` y `FileInputStream`, 
 
-   ```sh
-   Introduce la fecha inicial con formato dd/mm/yyyy: 01/02/2021
-   Introduce la fecha final con formato dd/mm/yyyy: 15/03/2022
-   La fecha inicial es: 1/2/2021
-   La fecha final es: 15/3/2022
-   Entre la fecha inicial y la final hay un periodo de: P1Y1M14D
-   dias: 14
-   meses: 1
-   años: 1
-   ```
+   - escriba los caracteres de tu nombre en un fichero (`nombre.txt`).
 
-9. Introducir una fecha y devolver las fecha de los pagos a 30, 60 y 90 días. 
+   - lea el fichero creado y lo muestre por pantalla.
 
-10. Introducir tres fechas e indicar la mayor y a menor.
+   - Si abrimos el fichero creado con un editor de textos, ¿su contenido es legible?
 
-11. Introducir el día, mes, año. Crear una fecha a partir de los datos introducidos y comprobar e indicar si se trata de la fecha actual, si es una fecha pasada o una fecha futura.
 
-12. Introducir una fecha de nacimiento de un empelado e indicar cuántos años tiene el empleado.
+10. (EscribirFichero2) Repetir el ejercicio anterior utilizando las clases `FileReader` y `FileWriter`. 
 
-13. Introducir la fecha de caducidad de un producto e indicar si el producto está o no caducado. El valor por defecto será la fecha actual y solo se podrán introducir fechas del año en curso.
+# **Uso de buffers**
 
-14. Mostrar una fecha con formato dd/mm/aaaa utilizando 0 delante de los días o meses de 1 dígito.
+Los  buffers hacen que las operaciones de lectura-escritura  se realicen inicialmente en memoria y, cuando los buffers correspondientes están vacíos/llenos, se hagan definitivamente sobre el dispositivo.
 
-15. Mostrar una fecha con formato `DiaSemana`, `DiaMes` de `Mes` del `Año` a las `horas:minutos:segundos`. Por ejemplo: Miercoles, 9 de Diciembre del 2015 a las 18:45:32
+11. (TestVelocidadBuffer) Vamos a probar la diferencia de tiempo que conlleva escribir datos a un fichero directamente o hacerlo a través de un buffer. Para ello, crea un fichero de 1 Mb (1000000 de bytes aprox.) usando un la clase `FileWriter` y mide el tiempo que tarda en crearlo. Posteriormente, crea un fichero de exactamente el mismo tamaño utilizando un `BufferedWriter` y mide el tiempo que tarda. ¿Hay diferencia?. Para medir el tiempo puedes utilizar `System.currentTimeMillis()`, inmediatamente antes y después de crear el fichero y restar los valores obtenidos.
 
-16. Suma 10 años, 4 meses y 5 días a la fecha actual.
+12. (TestVelocidadBuffer2) Modifica el programa `TestVelocidadBuffer` para probar cómo afecta a la escritura con buffer la ejecución de la instrucción `flush()`. Esta instrucción fuerza el volcado del buffer a disco. ¿Disminuye la velocidad si tras cada operación de escritura ejecutamos flush()?
 
-    ```sh
-    Hoy es: dijous, 03 de març del 2022
-    Dentro de 10 años, 4 meses y 5 dias será: dijous, 08 de juliol del 2032
-    ```
+13. (TestVelocidadBuffer3) Modifica el programa `TestVelocidadBuffer` para probar cómo a la velocidad el tamaño del buffer. La clase `BufferedWriter` tiene un constructor que permite indicar el tamaño del buffer. Prueba con distintos valores.
 
-17. Resta 5 años, 11 meses y 18 días a la fecha actual.
+# **Streams para información binaria**
 
-18. Introducir el número de horas trabajadas por un empleado y la fecha en las que las trabajo. Si el día fue sábado o domingo el precio hora trabajada es 20€ en caso contrario 15€. Calcula la cantidad de dinero que habrá que pagar al empleado por las horas trabajadas.
+14. (Personas) Escribe un programa que, utilizando entre otras la clase `DataOutputStream`, almacene en un fichero llamado personas.dat la información relativa a una serie de personas que va introduciendo el usuario desde teclado:
 
-19. Introducir la fecha inicial y final de una nómina y calcular lo que debe cobrar el empleado sabiendo que cada día trabajado recibe 55 € y tiene una retención del 12% sobre el sueldo.
+    - Nombre (String)
+    - Edad (entero)
+    - Peso (double)
+    - Estatura (double)
 
-20. Crear una clase `Alumno` con los atributos `codigo`, `nombre`, `apellidos`, `fecha_nacimiento`, `calificacion`. La fecha de nacimiento deberá introducirse como una fecha. Crear constructor, métodos `setter` y `getter` y `toString`. Crear una instancia con los siguientes valores `1`, `'Luis'`, `'Mas Ros'`, `05/10/1990`, `7.5`. Mostrar los datos del alumno además de su edad.
+    La entrada del usuario terminará cuando se introduzca un nombre vacío.
 
-    ```sh
-    Alumno{codigo=1, nombre=Luis, apellidos=Mas Ros, fecha=1990-10-05, calificacion=7.5, edad= 31}
-    ```
+    **Nota**: Utiliza la clase `Scanner` para leer desde teclado y los métodos `writeDouble`, `writeInt` y `writeUTF` de la clase `DataInputStream` para escribir en el fichero)
 
-21. Introducir la fecha de entrega de un documento y nos diga si está dentro o fuera de plazo teniendo en cuenta que la fecha de entrega límite es la fecha actual.
+    Al finalizar el programa, abre el fichero resultante con un editor de texto (notepad o wordpad) ¿La información que contiene es legible?.
 
-22. Introducir en un array `nombre`, `apellidos` y `sueldo` de varios trabajadores y la `fecha de alta` en la empresa. Las fechas deberán introducirse como fechas. Recorrer el array y mostrar para cada trabajador la retención que debe aplicarse sobre el sueldo teniendo en cuenta que los trabajadores incorporados antes de 1980 tienen una retención del 20%, los trabajadores con fecha entre 1980 y 2000 una retención del 15% y los trabajadores con fecha posterior al 2000 la retención que aplicaremos será el 5% del sueldo.
+15. (AñadirPersonas) Modifica el programa anterior para que el usuario, al comienzo del programa, pueda elegir si quiere añadir datos al fichero o sobre escribir la información que contiene.
 
-23. Realizar una aplicación para la gestión de la información de las personas vinculadas a una `Facultad`, que se pueden clasificar en tres tipos: estudiantes, profesores y personal de servicio.
-    A continuación, se detalla qué tipo de información debe gestionar esta aplicación:
+16. (MostrarPersonas) Realizar un programa que lea la información del fichero `personas.dat` y la muestre por pantalla. Para determinar que no quedan más datos en el fichero podemos capturar la excepción `EOFException` 
 
-    - Por cada `Persona`, se debe conocer, al menos, su `nombre` y `apellidos`, su `número de identificación` y su `estado civil`.
-    - Con respecto a los `Empleados`, sean del tipo que sean, hay que saber su `año de incorporación` a la facultad y qué `número de despacho` tienen asignado.
-    - En cuanto a los `Estudiantes`, se requiere almacenar el `curso` en el que están matriculados.
-    - Por lo que se refiere a los `Profesores`, es necesario gestionar a qué `departamento` pertenecen (`lenguajes`, `matemáticas`, `arquitectura`, ...).
-    - Sobre el `Personal de servicio`, hay que conocer a qué `sección` están asignados (`biblioteca`, `decanato`, `secretaría`, ...).
+17. (CalculosPersonas) Realizar un programa, similar al anterior,  que lea la información del fichero `personas.dat` y muestre por pantalla la estatura que tienen de media las personas cuya edad está entre 20 y 30 años.
 
-    El ejercicio consiste, en primer lugar, en definir la jerarquía de clases de esta aplicación. A continuación, debe programar las clases definidas en las que, además de los constructores, hay que desarrollar los métodos correspondientes a las siguientes acciones:
+# **Streams de objetos. Serialización.**
 
-    - Cambio del estado civil de una persona.
-    - Reasignación de despacho a un empleado.
-    - Matriculación de un estudiante en un nuevo curso.
-    - Cambio de departamento de un profesor.
-    - Traslado de sección de un empleado del personal de servicio.
-    - Imprimir toda la información de cada tipo de individuo.
+18. (GuardaLibros)
 
-    En el método `main` crear un array de `personas`. Crear diferentes instancias de las subclases e insertarlas en el array. Probar los diferentes métodos desarrollados.
+    - (Autor) Crea la clase autor, con los atributos nombre, año de nacimiento y nacionalidad. Incorpora un constructor que reciba todos los datos y el método `toString()`.
+    - (Libro) Crea la clase Libro, con los atributos titulo, año de edición y autor (Objeto de la clase autor). Incorpora un constructor que reciba todos los datos y el método `toString()`.
+    - Escribe un programa (GuardaLibros) que cree tres libros y los almacene en el fichero `biblioteca.obj`.
+    - Las clases deberán implementar el interfaz `Serializable`.
+    
+19. (LeeLibros) Escribe una programa que lea los objetos del fichero `biblioteca.obj` y los muestre por pantalla.
 
-24. Crea una clase `Empleado` y una subclase `Encargado`. Los encargados reciben un 10% más de sueldo base que un empleado normal aunque realicen el mismo trabajo. Implementa dichas clases en el paquete objetos y sobrescribe el método `getSueldo()` para ambas clases.
+# Sockets
 
-25. Realiza un método estático que dada la `fecha de nacimiento` de una persona indique si es mayor de edad.
+20. Programar un Servidor que reciba una fecha (previamente validada por el cliente) y nos diga cual es nuestro signo del zodíaco occidental y el animal que corresponde en el zodíaco oriental (animales).
 
-26. Crear la clase `Dado`, la cual desciende de la clase `Sorteo`. La clase `Dado`, en la llamada `lanzar()` mostrará un número aleatorio del 1 al 6. Crear la clase `Moneda`, la cual desciende de la clase `Sorteo`. Esta clase en la llamada al método `lanzar()` mostrará las palabras cara o cruz. Realizar una clase con un método `main` que compruebe todo lo realizado.
+# Más ejercicios (Lionel)
 
-27. Realiza una clase `Conversor` que tenga las siguientes características: Toma como parámetro en el constructor un valor entero. Tiene un método `getNumero` que dependiendo del parámetro devolverá el mismo número en el siguiente `B Binario`, `H Hexadecimal`, `O Octal`. Realiza un método `main` en la clase para probar todo lo anterior.
+> Para probar algunos de estos ejercicios debes utilizar el archivo `Documentos.zip`. Descárgalo del aula virtual y descomprímelo en la carpeta de cada proyecto que crees.
 
-28. Realiza una clase `ConversorFechas` que tenga los siguientes métodos:
-    - `String normalToAmericano(String)`. Este método convierte una fecha en formato normal `dd/mm/yyyy` a formato americano `mm/dd/yyyy`
-    - `String americanoToNormal(String)`. Este método realiza el paso contrario, convierte fechas en formato americano a formato normal.
+1. Mostrar información de ficheros
 
-29. Realiza una clase `Huevo` con un atributo `tamaño` (`S`, `M`, `L`, `XL`) con el método `toString`. La clase `Huevo` está compuesta por dos clases internas, una `Clara` y otra `Yema`. Ambas clases tiene un atributo `color` y el método `toString`. Realiza un método `main` en el que se cree un objeto de tipo `Huevo`, `Clara` y `Yema`. Se le asigne valor a sus atributos y se muestren dichos valores.
+   Implementa un programa que pida al usuario introducir por teclado una ruta del sistema de archivos (por ejemplo, "C:/Windows" o "Documentos") y muestre información sobre dicha ruta (ver función más abajo). El proceso se repetirá una y otra vez hasta que el usuario introduzca una ruta vacía (tecla intro). Deberá manejar las posibles excepciones.
+
+   Necesitarás crear la función `void muestraInfoRuta(File ruta)` que dada una ruta de tipo `File` haga lo siguiente:
+
+   - Si es un archivo, mostrará por pantalla el nombre del archivo.
+
+   - Si es un directorio, mostrará por pantalla la lista de directorios y archivos que contiene (sus nombres). Deberá mostrar primero los directorios y luego los archivos.
+
+   - En cualquier caso, añade delante del nombre la etiqueta [*] o [A] para indicar si es un directorio o un archivo respectivamente.
+
+   - Si el path no existe lanzará un `FileNotFoundException`.
+
+2. Mostrar información de ficheros (v2)
+
+   Partiendo de una copia del programa anterior, modifica la función `muestraInfoRuta`:
+
+   - En el caso de un directorio, mostrará la lista de directorios y archivos en orden alfabético. Es decir, primero los directorios en orden alfabético y luego los archivos en orden alfabético. Te será útil `Arrays.sort()`.
+
+   - Añade un segundo argumento `boolean info` que cuando sea `true` mostrará, junto a la información de cada directorio o archivo, su tamaño en bytes y la fecha de la última modificación. Cuando `info` sea `false` mostrará la información como en el ejercicio anterior.
+
+3. Renombrando directorios y ficheros
+
+   Implementa un programa que haga lo siguiente:
+
+   - Cambiar el nombre de la carpeta `Documentos` a `DOCS`, el de la carpeta `Fotografias` a `FOTOS` y el de la carpeta `Libros` a `LECTURAS`
+   - Cambiar el nombre de todos los archivos de las carpetas `FOTOS` y `LECTURAS` quitándole la extensión. Por ejemplo, `astronauta.jpg` pasará a llamarse `astronauta`.
+
+4. Creando (y moviendo) carpetas
+
+   Implementa un programa que cree, dentro de `Documentos`, dos nuevas carpetas: `Mis Cosas` y `Alfabeto`. Mueve las carpetas `Fotografias` y `Libros` dentro de `Mis Cosas`. Luego crea dentro de `Alfabeto` una carpeta por cada letra del alfabeto (en mayúsculas): `A`, `B`, `C`... `Z`. Te serán de ayuda los códigos numéricos ASCII: [https://elcodigoascii.com.ar](https://elcodigoascii.com.ar/)
+
+5. Borrando archivos
+
+   Implementa un programa con una función `boolean borraTodo(File f)` que borre `f`: Si no existe lanzará una excepción. Si es un archivo lo borrará. Si es un directorio, borrará primero sus archivos y luego el propio directorio (recuerda que para poder borrar un directorio debe estar vacío). Devolverá `true` si pudo borrar el `File f` (`false` si no fué posible).
+
+   Prueba la función borrando las carpetas: `Documentos/Fotografias`, `Documentos/Libros` y `Documentos` (es decir, tres llamadas a la función, en ese orden).
+
+   ***Super extra challenge***: Esta función, tal y como está definida, no borrará las subcarpetas que estén dentro de una carpeta (para ello habría que borrar primero el contenido de dichas subcarpetas). ¿Se te ocurre cómo podría hacerse?
+
+6. Máximo y mínimo
+
+   Implementa un programa que muestre por pantalla los valores máximos y mínimos del archivo `numeros.txt`.
+
+7. Notas de alumnos
+
+   El archivo `alumnos_notas.txt` contiene una lista de 10 alumnos y las notas que han obtenido en cada asignatura. El número de asignaturas de cada alumno es variable. Implementa un programa que muestre por pantalla la nota media de cada alumno junto a su nombre y apellido, ordenado por nota media de mayor a menor.
+
+8. Ordenando archivos
+
+   Implementa un programa que pida al usuario un nombre de archivo `A` para lectura y otro nombre de archivo `B` para escritura. Leerá el contenido del archivo `A` (por ejemplo `usa_personas.txt`) y lo escribirá ordenado alfabéticamente en B (por ejemplo `usa_personas_sorted.txt`).
+
+9. Nombre y apellidos
+
+   Implementa un programa que genere aleatoriamente nombres de persona (combinando nombres y apellidos de `usa_nombres.txt` y `usa_apellidos.txt`). Se le pedirá al usuario cuántos nombres de persona desea generar y a qué archivo **añadirlos** (por ejemplo `usa_personas.txt`).
+
+10. Diccionario
+
+    Implementa un programa que cree la carpeta `Diccionario` con tantos archivos como letras del abecedario (`A.txt`, `B.txt`… `Z.txt`). Introducirá en cada archivo las palabras de `diccionario.txt` que comiencen por dicha letra.
+
+11. Búsqueda en PI
+
+    Implementa un programa que pida al usuario un número de cualquier longitud, como por ejemplo "1234", y le diga al usuario si dicho número aparece en el primer millón de decimales del nº pi (están en el archivo `pi-million.txt`). No está permitido utilizar ninguna librería ni clase ni método que realice la búsqueda. Debes implementar el algoritmo de búsqueda tú.
+
+12. Estadísticas
+
+    Implementa un programa que lea un documento de texto y muestre por pantalla algunos datos estadísticos: nº de líneas, nº de palabras, nº de caracteres y cuáles son las 10 palabras más comunes (y cuántas veces aparecen). Prueba el programa con los archivos de la carpeta `Libros`.
+
+    **NOTA:** *Para llevar la cuenta de cuántas veces aparece cada palabra puedes utilizar una* [*HashTable*](https://docs.oracle.com/javase/10/docs/api/java/util/Hashtable.html)*. Una tabla hash es una estructura de datos tipo colección (como el ArrayList), que* [*permite almacenar pares clave-valor*](https://juanjosecanbus.wordpress.com/2014/10/20/utilizacion-de-hashtables-en-java/)*. Por ejemplo {“elefante”, 5} o {“casa”, 10} son pares <String,Integer> que asocian una palabra (clave) con un nº entero (valor).*
 
 
 # Fuentes de información
@@ -335,3 +363,4 @@ Durante el proceso se pueden producir diversas incidencias, como por ejemplo, qu
 - [Apuntes José Luis Comesaña](https://www.sitiolibre.com/)
 - [Apuntes IOC Programació bàsica (Joan Arnedo Moreno)](https://ioc.xtec.cat/materials/FP/Recursos/fp_asx_m03_/web/fp_asx_m03_htmlindex/index.html)
 - [Apuntes IOC Programació Orientada a Objectes (Joan Arnedo Moreno)](https://ioc.xtec.cat/materials/FP/Recursos/fp_dam_m03_/web/fp_dam_m03_htmlindex/index.html)
+- [Apuntes Lionel](https://github.com/lionel-ict/ApuntesProgramacion)

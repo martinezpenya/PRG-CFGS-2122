@@ -1,4 +1,4 @@
-package UD06;
+package UD06.P1_Flujos;
 
 import java.io.BufferedReader;
 import java.io.FileWriter;
