@@ -181,8 +181,8 @@ Son clases que actúan de puente entre streams orientados a bytes y streams orie
 
 | clase                | métodos                                                      | descripción                                                  |
 | -------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| `InputStreamReader`  | `InputStreamReader(InputStream)`<br /><br /><br /><br /><br /> `int read()` | Constructor: El objeto se crea a partir de un `InputStream` (orientado a byte). Leerá información del `inputStream` asociado y la devolverá en forma de caracteres. Se puede indicar el charset a utilizar.<br /><br />Lee un carácter del InputStream asociado. |
-| `OutputStreamWriter` | `OutputStreamWriter(OutputStream)`<br /><br /><br />`write(int c)` | Constructor: Crea el objeto asociándolo a un OutputStream, en el que escribirá bytes. Se puede indicar el charset a usar.<br /><br />Escribe el carácter indicado en el OutputStream asociado. |
+| `InputStreamReader`  | `InputStreamReader(inputStream)`<br /><br /><br /><br /><br /> `int read()` | Constructor: El objeto se crea a partir de un `InputStream` (orientado a byte). Leerá información del `inputStream` asociado y la devolverá en forma de caracteres. Se puede indicar el charset a utilizar.<br /><br />Lee un carácter del `InputStream` asociado. |
+| `OutputStreamWriter` | `OutputStreamWriter(outputStream)`<br /><br /><br />`write(int c)` | Constructor: Crea el objeto asociándolo a un `outputStream`, en el que escribirá bytes. Se puede indicar el charset a usar.<br /><br />Escribe el carácter indicado en el `OutputStream` asociado. |
 
 ## Buffering
 
@@ -203,13 +203,13 @@ Realizan una transformación de la información antes de ser escrita o después 
 
 | clase                                     | métodos                                                      | descripción                                                  |
 | ----------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| `DataInputStream`<br />`DataOutputStream` | `read()`, `write()`<br>`readInt()`, `writeInt()`<br>`readDouble()`, `writeDouble()`<br>`readUTF()`, `writeUTF()`<br> … | Que permiten leer y escribir información correspondiente a los distintos tipos de datos de Java |
+| `DataInputStream`<br />`DataOutputStream` | `read()`,<br /> `write()`<br>`readInt()`, <br />`writeInt()`<br>`readDouble()`, <br />`writeDouble()`<br>`readUTF()`,<br />`writeUTF()`<br> … | Que permiten leer y escribir información correspondiente a los distintos tipos de datos de Java. |
 
 ## `PrintWriter`
 
-| clase         | métodos               | descripción                                                  |
-| ------------- | --------------------- | ------------------------------------------------------------ |
-| `PrintWriter` | `print()` `println()` | Esta clase (a la que pertenece `System.out`) tiene los conocidos métodos `print` y `println`, que escriben en el stream de salida datos binarios representados en forma de cadenas de caracteres. |
+| clase         | métodos                     | descripción                                                  |
+| ------------- | --------------------------- | ------------------------------------------------------------ |
+| `PrintWriter` | `print()` <br />`println()` | Esta clase (a la que pertenece `System.out`) tiene los conocidos métodos `print` y `println`, que escriben en el stream de salida datos binarios representados en forma de cadenas de caracteres. |
 
 ## Combinación de Streams
 
@@ -646,7 +646,7 @@ public class P2_4_EscrituraSecuencialTexto {
 
 Observa que:
 
-- Para escribir el fichero de texto usamos un FileWriter.
+- Para escribir el fichero de texto usamos un `FileWriter`.
 - Tal y como se ha creado el stream, el fichero (si ya existe) se sobreescribirá.
 - El manejo de excepciones es como el del caso previo.
 
