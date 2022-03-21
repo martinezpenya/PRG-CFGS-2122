@@ -8,9 +8,9 @@ public class P2_5_Buffers {
     final static String SALIDA = "textoMayusculas.txt";
 
     public static void main(String[] args) {
-        try (
-                BufferedReader fe = new BufferedReader(new FileReader(ENTRADA));
-                BufferedWriter fs = new BufferedWriter(new FileWriter(SALIDA))) {
+        try {
+            BufferedReader fe = new BufferedReader(new FileReader(ENTRADA));
+            BufferedWriter fs = new BufferedWriter(new FileWriter(SALIDA));
             String linea;
             while ((linea = fe.readLine()) != null) {
                 fs.write(linea.toUpperCase());

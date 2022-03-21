@@ -5,7 +5,7 @@ import java.io.IOException;
 public class P1_1_FlujoEstandarEntrada {
 
     public static void main(String[] args) {
-        // Cadena donde iremos almacenando los caracteres que se escriban
+        // Cadena donde iremos almacenando los caracteres que se escriban     
         StringBuilder str = new StringBuilder();
         char c;
         // Por si ocurre una excepción ponemos el bloque try-cath

@@ -28,7 +28,7 @@ Se desea realizar una aplicación `GestorVuelos` para gestionar la reserva y can
 
    En esta clase, se deben implementar los siguientes métodos:
 
-   - `public Vuelo(String id, String orig, String dest, Time hsal, Time hlleg)`. **Constructor** que crea un vuelo con identificador, ciudad de origen, ciudad de destino, hora de salida y hora de llegada indicados en los respectivos parámetros, y sin pasajeros.
+   - `public Vuelo(String id, String orig, String dest, LocalTime hsal, LocalTime hlleg)`. Constructor que crea un vuelo con identificador, ciudad de origen, ciudad de destino, hora de salida y hora de llegada indicados en los respectivos parámetros, y sin pasajeros.
 
    - `public String getIdenificador()`. Devuelve el `identificador`
 
@@ -66,7 +66,7 @@ Se desea realizar una aplicación `GestorVuelos` para gestionar la reserva y can
    - Mostrar el vuelo por pantalla
    - Cancelar la reserva del asiento que indique el usuario.
 
-3. Implementación de la clase `Compañía` para representar todos los vuelos de una compañía aérea. Una Compañía tiene un nombre nombre y puede ofrecer, como mucho, 10 vuelos distintos. Para representarlos se utilizará `listaVuelos`, un array de objetos `Vuelo` junto con un atributo `numVuelos` que indique el número de vuelos que la compañía ofrece en un momento dado. Las operaciones de esta clase son:
+3. Implementación de la clase `Compania` para representar todos los vuelos de una compañía aérea. Una Compañía tiene un nombre nombre y puede ofrecer, como mucho, 10 vuelos distintos. Para representarlos se utilizará `listaVuelos`, un array de objetos `Vuelo` junto con un atributo `numVuelos` que indique el número de vuelos que la compañía ofrece en un momento dado. Las operaciones de esta clase son:
 
    - `public Compania(String n) throws FileNotFoundException`. Constructor de una compañía de nombre `n`. Cuando se crea una compañía, se invoca al método privado `leeVuelos()` para cargar la información de vuelos desde un fichero. Si el fichero no existe, se propaga la excepción `FileNotFoundException`
 
@@ -138,16 +138,16 @@ Durante el proceso se pueden producir diversas incidencias, como por ejemplo, qu
 
      - Modificadores: Para simplificar, consideramos que los atributos de la máquina solo van a cambiar por operaciones derivadas de su funcionamiento, por lo que no proporcionamos modificadores públicos
 
-     - Otros métodos:
+   - Otros métodos:
 
      - `public String toString()` Devuelve un `String` de la forma:
 
-       ```
-       Credito: 3.0 euros
-       Cambio: 12.73 euros
-       Stock: 12 unidades:
-       Recaudación: 127.87 euros
-       ```
+         ```
+         Credito: 3.0 euros
+         Cambio: 12.73 euros
+         Stock: 12 unidades
+         Recaudación: 127.87 euros
+         ```
 
      - `public void introducirDinero(double importe)` Representa la operación mediante la cual el cliente añade dinero (crédito) a la máquina. Esta operación incrementa el crédito introducido por el cliente en el importe indicado como parámetro.
 
@@ -165,7 +165,25 @@ Durante el proceso se pueden producir diversas incidencias, como por ejemplo, qu
    - Consultores de los tres atributos: `getNombre`, `getPrecio` y `getStock`
    - `public int decrementarStock()`: Decrementa en 1 el stock del producto y devuelve el stock resultante.
 
-3. La clase `Surtido` representa una colección de productos. Para ello se usará un atributo `listaProductos`, array de `Productos`. El array se rellenará con los datos de productos extraidos de un fichero de texto y, una vez creado el surtido no será posible añadir o quitar productos. Así, el array de productos estará siempre completo y no es necesario ningún atributo que indique cuantos productos hay en el array.
+3. La clase `TestExpendedora` sirve para provar los métodos desarrollados en las clases `Expendedora` y `Producto`.
+
+   Crea un Objeto de tipo `Expendedora` e inicializalo con: 12 unidades de stock, 5 euros de cambio y un precio de 3.75 euros. Muestra por pantalla su estado actual.
+
+   Simula la introducción por parte del cliente de un billete de 10 euros y muestra el estado de la máquina `Expendedora`.
+
+   Simula la compra de un `producto` y muestra la cantidad devuelta.
+
+   Simula la introducción de una moneda de 2 euros y solicita la devolución sin realizar ninguna compra y muestra la cantidad devuelta.
+
+   Intenta realizar una compra sin tener suficiente crédito y gestiona la excepción.
+
+   Crea otro objeto de tipo `Expendedora` que inicialmente tenga 0 unidades de stock (el resto de valores a tu gusto), simula la compra de un producto teniendo suficiente crédito y cambio. Gestiona la excepción.
+
+   Crea un último objeto de tipo `Expendedora` que inicialmente tenga 0 euros de cambio (el resto de valores a tu gusto), simula la compra de un producto para el que la máquina tenga que devolver algún importe, gestiona la excepción.
+
+   Muestra las recaudaciones para las 3 máquinas expendedoras.
+
+4. La clase `Surtido` representa una colección de productos. Para ello se usará un atributo `listaProductos`, array de `Productos`. El array se rellenará con los datos de productos extraidos de un fichero de texto y, una vez creado el surtido no será posible añadir o quitar productos. Así, el array de productos estará siempre completo y no es necesario ningún atributo que indique cuantos productos hay en el array.
 
    Se implementarán los siguientes métodos:
 
@@ -180,18 +198,21 @@ Durante el proceso se pueden producir diversas incidencias, como por ejemplo, qu
      ```
 
      Como vemos, la primera línea del fichero indica el número de productos que contiene el surtido. Este dato lo usaremos para dar al array de productos el tamaño adecuado.
+   
+   
+      - `public int numProductos()` Devuelve el número de productos que componen el surtido
+   
+   
+      - `public Producto getProducto(int numProducto)`: Devuelve el producto que ocupa la posición `numProducto` del surtido. La primera posición válida es la `1`. La posición `0` no se utiliza.
+   
+   
+      - `public String[] getNombresProductos()` Devuelve un array con los nombres de los productos. La posición `0` del array no se utilizará (será `null`)
+   
+5. Revisar la clase `Expendedora`. Añadir los atributos y hacer los cambios necesarios en la clase para que sea capaz de dispensar varios productos.
 
-   - `public int numProductos()` Devuelve el número de productos que componen el surtido
+6. Añadir a la clase el método public Surtido `getSurtido()`, que devuelva el surtido de la máquina (`Objeto` de la clase `Surtido`)
 
-   - `public Producto getProducto(int numProducto)`: Devuelve el producto que ocupa la posición `numProducto` del surtido. La primera posición válida es la `1`. La posición `0` no se utiliza.
-
-   - `public String[] getNombresProductos()` Devuelve un array con los nombres de los productos. La posición `0` del array no se utilizará (será `null`)
-
-4. Revisar la clase `Expendedora`. Añadir los atributos y hacer los cambios necesarios en la clase para que sea capaz de dispensar varios productos.
-
-5. Añadir a la clase el método public Surtido `getSurtido()`, que devuelva el surtido de la máquina (`Objeto` de la clase `Surtido`)
-
-6. Modificar la clase `TestExpendedora` para adaptarla a los cambios hechos en la clase `Expendedora`.
+7. Modificar la clase `TestExpendedora` para adaptarla a los cambios hechos en la clase `Expendedora`.
 
 # **Los flujos estándar**
 

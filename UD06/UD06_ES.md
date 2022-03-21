@@ -159,7 +159,7 @@ Consulta los ejemplos [P1_1_FlujoEstandarEntrada](#estandar-de-entrada) y [P1_2_
 
 ## Las clases `InputStream` y `OutputStream`
 
-Como hemos dicho anteriormente, proporcionan métodos para leer y escribir, respectivamente, un byte de información, a través de sus métodos read() y write()
+Como hemos dicho anteriormente, proporcionan métodos para leer y escribir, respectivamente, un byte de información, a través de sus métodos `read()` y `write()`
 
 | clase          | métodos         | descripción                                                  |
 | -------------- | --------------- | ------------------------------------------------------------ |
@@ -179,10 +179,10 @@ Permiten, respectivamente, leer y escribir un carácter en el stream.
 
 Son clases que actúan de puente entre streams orientados a bytes y streams orientados a carácter. Podemos, por ejemplo, crear un `InputStreamReader` asociado a un `InputStream` y leer caracteres del `InputStream` asociado, a través del `InputStreamReader`
 
-| clase                | métodos                                              | descripción                                                  |
-| -------------------- | ---------------------------------------------------- | ------------------------------------------------------------ |
-| `InputStreamReader`  | `InputStreamReader(InputStream)`<br> `int read()`    | Constructor: El objeto se crea a partir de un `InputStream` (orientado a byte). Leerá información del `inputStream` asociado y la devolverá en forma de caracteres. Se puede indicar el charset a utilizar.<br><br>Lee un carácter del InputStream asociado. |
-| `OutputStreamWriter` | `OutputStreamWriter(OutputStream)`<br>`write(int c)` | Constructor: Crea el objeto asociándolo a un OutputStream, en el que escribirá bytes. Se puede indicar el charset a usar.<br>Escribe el carácter indicado en el OutputStream asociado. |
+| clase                | métodos                                                      | descripción                                                  |
+| -------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `InputStreamReader`  | `InputStreamReader(InputStream)`<br /><br /><br /><br /><br /> `int read()` | Constructor: El objeto se crea a partir de un `InputStream` (orientado a byte). Leerá información del `inputStream` asociado y la devolverá en forma de caracteres. Se puede indicar el charset a utilizar.<br /><br />Lee un carácter del InputStream asociado. |
+| `OutputStreamWriter` | `OutputStreamWriter(OutputStream)`<br /><br /><br />`write(int c)` | Constructor: Crea el objeto asociándolo a un OutputStream, en el que escribirá bytes. Se puede indicar el charset a usar.<br /><br />Escribe el carácter indicado en el OutputStream asociado. |
 
 ## Buffering
 
