@@ -3,7 +3,7 @@ package UD06.P5_Manejo;
 import java.io.*;
 import java.util.*;
 
-public class P6_1_Manejo {
+public class P5_1_Manejo {
 
     public static void main(String[] args) {
 

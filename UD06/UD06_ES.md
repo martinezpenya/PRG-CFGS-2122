@@ -334,6 +334,8 @@ Podríamos, por ejemplo, asociar un `DataInputStream` a un `FileInputStream` par
 
 En ejemplos posteriores se ilustrará cómo asociar un stream a un `File…Stream`.
 
+Observa los ejemplos [P2_3_LecturaSecuencialTexto](#lectura-de-un-fichero-secuencial-de-texto), [P2_4_EscrituraSecuencialTexto](#escritura-de-un-fichero-secuencial-de-texto), [P2_6_escritura-de-un-fichero-secuencial-binario](#lectura-de-un-fichero-secuencial-de-texto) y [P2_7_LecturaSecuencialBinario](#lectura-de-un-fichero-secuencial-binario), 
+
 ## Ficheros con buffering.
 
 Cualquier operación que implique acceder a memoria externa es muy costosa, por lo que es interesante intentar reducir al máximo las operaciones de lectura/escritura que realizamos sobre los ficheros, haciendo que cada operación lea o escriba muchos caracteres. Además, eso también permite operaciones de más alto nivel, como la de leer una línea completa y devolverla en forma de cadena.
@@ -341,6 +343,8 @@ Cualquier operación que implique acceder a memoria externa es muy costosa, por 
 En el libro Head First Java, describe los buffers de la siguiente forma: "*Si no hubiera buffers, sería como comprar sin un carrito: debería llevar los productos uno a uno hasta la caja. Los buffers te dan un lugar en el que dejar temporalmente las cosas hasta que está lleno. Por ello has de hacer menos viajes cuando usas el carrito.*"
 
 Las clases `BufferedReader`, `BufferedWritter`, `BufferedInputStream` y `BufferedOutputStream` permiten realizar buffering. Situadas "por delante" de un stream de fichero acumulan las operaciones de lectura y escritura y cuando hay suficiente información se llevan finalmente al fichero.
+
+Observa el ejemplo [P2_5_Buffers](#usando-buffers-para-leer-y-escribir-de/en-fichero)
 
 # Serialización
 
@@ -370,6 +374,8 @@ Cuando queremos evitar que cualquier campo persista en un archivo, lo marcamos c
 
 > **NOTA**: El fichero con los objetos serializados almacena los datos en un formato propio de Java, por lo que no se puede leer fácilmente con un simple editor de texto (ni editar).
 
+Observa el package de ejemplo [UD06.P3_Serializacion](#ejemplo-de-serialización)
+
 # Sockets
 
 Los sockets son un mecanismo que nos permite establecer un enlace  entre dos programas que se ejecutan independientes el uno del otro  (generalmente un programa cliente y un programa servidor) Java por medio de la librería `java.net` nos provee dos clases: `Socket` para implementar la conexión desde el lado del cliente y `ServerSocket` que nos permitirá manipular la conexión desde el lado del servidor.
@@ -377,6 +383,8 @@ Los sockets son un mecanismo que nos permite establecer un enlace  entre dos pro
 Cabe resaltar que tanto el cliente como el servidor no necesariamente deben estar implementados en Java, solo  deben conocer sus direcciones IP y el puerto por el cual se comunicarán.
 
 ![](/assets/ClientSocket.png)
+
+Observa el package de ejemplo [UD06.P4_Sockets](#ejemplo de sockets)
 
 # Manejo de ficheros y carpetas
 
@@ -423,6 +431,8 @@ Aquí exponemos algunos métodos interesantes. Hay otros que puedes consultar en
 | `Boolean delete()`                                           | Elimina el archivo o la carpeta a la que representa el objeto File. Si se trata de una carpeta tendrá que estar vacía. Devuelve true si la operación tiene éxito. |
 | `Boolean createNewFile()`                                    | Crea un archivo vacío. Devuelve true si la operación se realiza con éxito. |
 | `File createTempFile(String prefijo, String sufijo)`         | Crea un archivo vacío en la carpeta de archivos temporales. El nombre llevará el prefijo y sufijo indicados. Devuelve el objeto File que representa al nuevo archivo. |
+
+Observa el ejemplo [UD06.P5_1_Manejo](#ejemplo-de-manejo-de-ficheros-y-carpetas)
 
 # Ejemplos UD06
 
@@ -789,7 +799,7 @@ Observa que:
 - A pesar de que necesitamos solamente el nombre de cada jugador, es necesario leer también el año y la estatura. No es posible acceder al nombre del primer jugador sin leer previamente todos los datos del primer jugador. 
 - La lectura se hace a través de un bucle infinito (`while (true)`), que finalizará cuando se llegue el final del fichero y al leer de nuevo se produzca la excepción `EOFException`
 
-## Serialización
+## Ejemplo de Serialización
 
 En el siguiente ejemplo usaremos una clase persona que definiremos de la siguiente manera
 
@@ -908,7 +918,7 @@ public class Leer {
 }
 ```
 
-## Sockets
+## Ejemplo de Sockets
 
 Para nuestro ejemplo de sockets implementaremos ambos (cliente y servidor) usando Java y se comunicarán usando el puerto 10000 (es bueno elegir los puertos en el rango de 1024 hasta 65535).
 
@@ -993,7 +1003,7 @@ public class TCPClient {
 }
 ```
 
-## Manejo de Ficheros y Carpetas
+## Ejemplo de manejo de ficheros y carpetas
 
 Veamos ahora un ejemplo para mostrar información y contenido de una carpeta:
 
@@ -1003,7 +1013,7 @@ package UD06.P5_Manejo;
 import java.io.*;
 import java.util.*;
 
-public class P6_1_Manejo {
+public class P5_1_Manejo {
 
     public static void main(String[] args) {
 
