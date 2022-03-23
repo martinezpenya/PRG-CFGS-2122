@@ -7,7 +7,7 @@ public class P2_1_CrearFichero {
     public static void main(String[] args) {
         FileWriter f = null;
         try {
-            f = new FileWriter("texto.txt");
+            f = new FileWriter("src/texto.txt");
             f.write("Este texto se escribe en el fichero\n\r");
         } catch (IOException e) {
             System.out.println("Problema al abrir o escribir ");

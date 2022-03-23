@@ -1,4 +1,4 @@
-﻿---
+---
     title: Ejercicios de la UD06
     language: ES
     author: David Martínez Peña [www.martinezpenya.es]
@@ -17,18 +17,18 @@
 
 Se desea realizar una aplicación `GestorVuelos` para gestionar la reserva y cancelación de vuelos en una agencia de viajes. Dicha agencia trabaja únicamente con la compañía aérea Iberia, que ofrece vuelos desde/hacia varias ciudades de Europa. Se deben definir las clases que siguen, teniendo en cuenta que sus atributos serán privados y sus métodos sólo los que se indican en cada clase.
 
-1. Implementación de la clase **Vuelo**, que permite representar un vuelo mediante los atributos:  
+1. Implementación de la clase `Vuelo`, que permite representar un vuelo mediante los atributos:  
 
    - `identificador` (`String`)
    - `origen` (`String`)
    - `destino` (`String`)
-   - `hSalida` (`Time`)
-   - `hLlegada` (`Time`)
+   - `hSalida` (un tipo que te permita controlar la hora, no es un `String` ni un `int`, etc.)
+   - `hLlegada` (un tipo que te permita controlar la hora, no es un `String` ni un `int`, etc.)
    - Además, cada vuelo dispone de 50 asientos, es decir, pueden viajar, como mucho, 50 pasajeros en cada vuelo. Para representarlos, se hará uso de `asiento`, un array de `String` (nombres de los pasajeros) junto con un atributo `numP` que indique el número actual de asientos reservados. Si el asiento `i` está reservado, `asiento[i]` contendrá el nombre del pasajero que lo ha reservado. Si no lo está, `asiento[i]` será `null`. En el array `asiento`, las posiciones impares pertenecen a asientos de ventanilla y las posiciones pares, a asientos de pasillo (la posición 0 no se utilizará).
 
    En esta clase, se deben implementar los siguientes métodos:
 
-   - `public Vuelo(String id, String orig, String dest, LocalTime hsal, LocalTime hlleg)`. Constructor que crea un vuelo con identificador, ciudad de origen, ciudad de destino, hora de salida y hora de llegada indicados en los respectivos parámetros, y sin pasajeros.
+   - `public Vuelo(String id, String orig, String dest, LocalTime hsal, LocalTime hlleg)`. **Constructor** que crea un vuelo con identificador, ciudad de origen, ciudad de destino, hora de salida y hora de llegada indicados en los respectivos parámetros, y sin pasajeros.
 
    - `public String getIdenificador()`. Devuelve el `identificador`
 
@@ -66,7 +66,7 @@ Se desea realizar una aplicación `GestorVuelos` para gestionar la reserva y can
    - Mostrar el vuelo por pantalla
    - Cancelar la reserva del asiento que indique el usuario.
 
-3. Implementación de la clase `Compania` para representar todos los vuelos de una compañía aérea. Una Compañía tiene un nombre nombre y puede ofrecer, como mucho, 10 vuelos distintos. Para representarlos se utilizará `listaVuelos`, un array de objetos `Vuelo` junto con un atributo `numVuelos` que indique el número de vuelos que la compañía ofrece en un momento dado. Las operaciones de esta clase son:
+3. Implementación de la clase `Compañía` para representar todos los vuelos de una compañía aérea. Una Compañía tiene un nombre nombre y puede ofrecer, como mucho, 10 vuelos distintos. Para representarlos se utilizará `listaVuelos`, un array de objetos `Vuelo` junto con un atributo `numVuelos` que indique el número de vuelos que la compañía ofrece en un momento dado. Las operaciones de esta clase son:
 
    - `public Compania(String n) throws FileNotFoundException`. Constructor de una compañía de nombre `n`. Cuando se crea una compañía, se invoca al método privado `leeVuelos()` para cargar la información de vuelos desde un fichero. Si el fichero no existe, se propaga la excepción `FileNotFoundException`
 
@@ -110,8 +110,8 @@ Se desea simular el funcionamiento de una máquina expendedora. Se trata de una 
 Su funcionamiento, a grandes rasgos, es el siguiente:
 
 1. El cliente introduce dinero en la máquina. Al dinero introducido lo llamaremos `credito`.
-2. Selecciona el artículo que quiere comprar (ya hemos comentado que por el momento habrá un solo artículo).
-3. Si hay stock del artículo seleccionado, la máquina dispensa el artículo elegido y devuelve el importe sobrante (diferencia entre el crédito introducido y el precio del artículo).
+2. Selecciona el producto que quiere comprar (ya hemos comentado que por el momento habrá un solo producto).
+3. Si hay stock del producto seleccionado, la máquina dispensa el artículo elegido y devuelve el importe sobrante (diferencia entre el crédito introducido y el precio del producto).
 
 Durante el proceso se pueden producir diversas incidencias, como por ejemplo, que el cliente no haya introducido suficiente crédito para comprar el producto, que no quede producto o que no haya cambio suficiente para la devolución. La máquina también da la posibilidad de solicitar la devolución del crédito sin realizar la compra.
 
@@ -167,22 +167,15 @@ Durante el proceso se pueden producir diversas incidencias, como por ejemplo, qu
 
 3. La clase `TestExpendedora` sirve para provar los métodos desarrollados en las clases `Expendedora` y `Producto`.
 
-   Crea un Objeto de tipo `Expendedora` e inicializalo con: 12 unidades de stock, 5 euros de cambio y un precio de 3.75 euros. Muestra por pantalla su estado actual.
-
-   Simula la introducción por parte del cliente de un billete de 10 euros y muestra el estado de la máquina `Expendedora`.
-
-   Simula la compra de un `producto` y muestra la cantidad devuelta.
-
-   Simula la introducción de una moneda de 2 euros y solicita la devolución sin realizar ninguna compra y muestra la cantidad devuelta.
-
-   Intenta realizar una compra sin tener suficiente crédito y gestiona la excepción.
-
-   Crea otro objeto de tipo `Expendedora` que inicialmente tenga 0 unidades de stock (el resto de valores a tu gusto), simula la compra de un producto teniendo suficiente crédito y cambio. Gestiona la excepción.
-
-   Crea un último objeto de tipo `Expendedora` que inicialmente tenga 0 euros de cambio (el resto de valores a tu gusto), simula la compra de un producto para el que la máquina tenga que devolver algún importe, gestiona la excepción.
-
-   Muestra las recaudaciones para las 3 máquinas expendedoras.
-
+   - Crea un Objeto de tipo `Expendedora` e inicializalo con: 12 unidades de stock, 5 euros de cambio y un precio de 3.75 euros. Muestra por pantalla su estado actual.
+   - Simula la introducción por parte del cliente de un billete de 5 euros y muestra el estado de la máquina `Expendedora`.
+   - Simula la compra de un `producto` y muestra la cantidad devuelta.
+   - Simula la introducción de una moneda de 2 euros y solicita la devolución sin realizar ninguna compra y muestra la cantidad devuelta.
+   - Intenta realizar una compra sin tener suficiente crédito y gestiona la excepción.
+   - Crea otro objeto de tipo `Expendedora` que inicialmente tenga 0 unidades de stock (el resto de valores a tu gusto), simula la compra de un producto teniendo suficiente crédito y cambio. Gestiona la excepción.
+   - Crea un último objeto de tipo `Expendedora` que inicialmente tenga 0 euros de cambio (el resto de valores a tu gusto), simula la compra de un producto para el que la máquina tenga que devolver algún importe, gestiona la excepción.
+   - Muestra las recaudaciones para las 3 máquinas expendedoras.
+   
 4. La clase `Surtido` representa una colección de productos. Para ello se usará un atributo `listaProductos`, array de `Productos`. El array se rellenará con los datos de productos extraidos de un fichero de texto y, una vez creado el surtido no será posible añadir o quitar productos. Así, el array de productos estará siempre completo y no es necesario ningún atributo que indique cuantos productos hay en el array.
 
    Se implementarán los siguientes métodos:
@@ -208,15 +201,13 @@ Durante el proceso se pueden producir diversas incidencias, como por ejemplo, qu
    
       - `public String[] getNombresProductos()` Devuelve un array con los nombres de los productos. La posición `0` del array no se utilizará (será `null`)
    
-5. Revisar la clase `Expendedora`. Añadir los atributos y hacer los cambios necesarios en la clase para que sea capaz de dispensar varios productos.
+5. Crea una copia de la clase `Expendedora` y llámala `ExpendedoraSurtido`. Añadir los atributos y hacer los cambios necesarios en la clase para que sea capaz de dispensar varios productos usando la nueva clase `Surtido`. Por ejemplo ya no tienen sentido los atributos stock y precio ya que pertenecen al `Surtido`. Añade también el método `public String toStringSurtido()`, que muestre por pantalla el listado de productos con su nombre, precio y stock para mostrar al cliente que productos puede elegir. El código del producto coincidirá con su posición al leer el surtido.
 
-6. Añadir a la clase el método public Surtido `getSurtido()`, que devuelva el surtido de la máquina (`Objeto` de la clase `Surtido`)
-
-7. Modificar la clase `TestExpendedora` para adaptarla a los cambios hechos en la clase `Expendedora`.
+7. Crea una copia de la clase `TestExpendedora` y nómbrala `TestExpendedora2` para adaptarla a los cambios hechos en la clase `Expendedora` y usando la nueva posibilidad de comprar diferentes productos y usando solamente un único objeto `Expendedora`. Al final en lugar de mostrar la recaudación de las 3 máquinas expendedoras, muestra solo la de la única que hay y muestra el surtido.
 
 # **Los flujos estándar**
 
-1. (clase LeeNombre) Escribir un programa que solicite al usuario su nombre y, utilizando directamente `System.in`, lo lea de teclado y muestre por pantalla un mensaje del estilo "Su nombre es Miguel".  Recuerda que `System.in` es un objeto de tipo `InputStream`. La clase `InputStream` permite **leer bytes** utilizando el método `read()`. Será tarea nuestra ir construyendo un `String` a partir de los bytes leídos. Prueba el programa de manera que el usuario incluya en su nombre algún carácter “extraño”, por ejemplo el símbolo ""€" ¿Funciona bien el programa? ¿Por qué?
+1. (clase LeeNombre) Escribir un programa que solicite al usuario su nombre y, utilizando directamente `System.in`, lo lea de teclado y muestre por pantalla un mensaje del estilo "Su nombre es Miguel".  Recuerda que `System.in` es un objeto de tipo `InputStream`. La clase `InputStream` permite **leer bytes** utilizando el método `read()`. Será tarea nuestra ir construyendo un `String` a partir de los bytes leídos. Prueba el programa de manera que el usuario incluya en su nombre algún carácter “extraño”, por ejemplo el símbolo "€" ¿Funciona bien el programa? ¿Por qué?
 
 2. (clase LeeEdad) Escribir un programa que solicite al usuario su edad y, utilizando directamente `System.in`, la lea de teclado y muestre por pantalla un mensaje del estilo "Su edad es 32 años". En este caso, será tarea nuestra construir un String a partir de los bytes leídos y transformarlo posteriormente en un entero. 
 
