@@ -344,7 +344,37 @@ En el libro Head First Java, describe los buffers de la siguiente forma: "*Si no
 
 Las clases `BufferedReader`, `BufferedWritter`, `BufferedInputStream` y `BufferedOutputStream` permiten realizar buffering. Situadas "por delante" de un stream de fichero acumulan las operaciones de lectura y escritura y cuando hay suficiente información se llevan finalmente al fichero.
 
+> Recuerda la importancia de cerrar los flujos para asegurarte que se vacia el buffer.
+
 Observa el ejemplo [P2_5_Buffers](#usando-buffers-para-leer-y-escribir-de/en-fichero)
+
+## `try` vs `try with resources`
+
+En ocasiones el propio IDE nos sugiere que usemos el bloque `try with resources` en lugar de un simple `try`, así una sentencia como esta:
+
+```java
+FileReader fr = new FileReader(path);
+BufferedReader br = new BufferedReader(fr);
+try {
+    return br.readLine();
+} finally {
+    br.close();
+    fr.close();
+}
+```
+
+Acaba convertida en algo parecido a esta:
+
+```java
+static String readFirstLineFromFile(String path) throws IOException {
+    try (FileReader fr = new FileReader(path);
+         BufferedReader br = new BufferedReader(fr)) {
+        return br.readLine();
+    }
+}	
+```
+
+> La principal diferencia es que hasta java 7 sólo se podía hacer como en la primera versión. Además en la segunda versión nos "ahorramos" tener que cerrar los recursos, puesto que lo realizará automáticamente en caso de que se produzca algún error evitando así el enmascaramiento de excepciones. Por tanto, sigue siendo necesario cerrar el stream por ejemplo al usar un Buffer para que se vacíe totalmente en el fichero de destino.
 
 # Serialización
 
@@ -622,7 +652,7 @@ Observa que:
 - Al crear el stream (`InputReader`) es posible indicar un objeto de tipo `File`
 - La operación `read()` devuelve un entero. Para obtener el carácter correspondiente tenemos que hacer una conversión explícita de tipos.
 - La operación `read()` devuelve -1 cuando no queda información que leer del stream.
-- La guarda del bucle while combina una asignación con una comparación. En primer lugar se realiza la asignación y luego se compara carácter con -1.
+- La guarda del bucle `while` combina una asignación con una comparación. En primer lugar se realiza la asignación y luego se compara carácter con -1.
 - `FileNotFoundException` sucede cuando el fichero no se puede abrir (no existe, permiso denegado, etc), mientras que `IOException` se lanzará si falla la operación `read()`
 
 #### Escritura de un fichero secuencial de texto
@@ -675,9 +705,8 @@ public class P2_5_Buffers {
     final static String SALIDA = "textoMayusculas.txt";
 
     public static void main(String[] args) {
-        try (
-                BufferedReader fe = new BufferedReader(new FileReader(ENTRADA));
-                BufferedWriter fs = new BufferedWriter(new FileWriter(SALIDA))) {
+        try (BufferedReader fe = new BufferedReader(new FileReader(ENTRADA));
+             BufferedWriter fs = new BufferedWriter(new FileWriter(SALIDA))){
             String linea;
             while ((linea = fe.readLine()) != null) {
                 fs.write(linea.toUpperCase());
@@ -696,10 +725,10 @@ public class P2_5_Buffers {
 Observa que:
 
 - Usamos buffers tanto para leer como para escribir. Esto permite minimizar los accesos a disco.
-- Los buffers quedan asociados a un `FileReader` y `FileWriter` respectivamente. Realizamos las operaciones de lectura/escritura sobre las clases Buffered… y cuando es necesario la clase accede internamente al stream que maneja el fichero.
+- Los buffers quedan asociados a un `FileReader` y `FileWriter` respectivamente. Realizamos las operaciones de lectura/escritura sobre las clases `Buffered…` y cuando es necesario la clase accede internamente al stream que maneja el fichero.
 - Es necesario escribir explícitamente los saltos de línea. Esto se hace mediante el método `newLine()`. `newLine()` permite añadir un salto de línea sin preocuparnos de cuál es el carácter de salto de línea. El salto de línea es distinto en distintos sistemas: en unos es `\n`, en otros `\r`, en otros `\n\r`, …
 - `BufferedReader` dispone de un método para leer líneas completas (`readLine()`). Cuando se llega al final del fichero este método devuelve `null`.
-- Fíjate como el bloque *try with resources* creamos varios objetos. Si la creación de cualquiera de ellos falla, se cerrarán todos los stream que se han abierto.
+- Fíjate como el bloque `try with resources` creamos varios objetos. Si la creación de cualquiera de ellos falla, se cerrarán todos los stream que se han abierto.
 
 ### Ficheros binarios
 
@@ -771,14 +800,11 @@ public class P2_7_LecturaSecuencialBinario {
 
     public static void main(String[] args) {
         Scanner tec = new Scanner(System.in);
-        try (
-                DataInputStream fe = new DataInputStream(
-                        new BufferedInputStream(
-                                new FileInputStream("jugadores.dat")));) {
+        try (DataInputStream fe = new DataInputStream(new BufferedInputStream(
+                 new FileInputStream("jugadores.dat")));) {
             while (true) {
                 //Leemos nombre
                 System.out.println(fe.readUTF());
-
                 //leemos y desechamos resto de datos
                 fe.readInt();
                 fe.readDouble();
@@ -796,7 +822,7 @@ public class P2_7_LecturaSecuencialBinario {
 
 Observa que:
 
-- A pesar de que necesitamos solamente el nombre de cada jugador, es necesario leer también el año y la estatura. No es posible acceder al nombre del primer jugador sin leer previamente todos los datos del primer jugador. 
+- A pesar de que necesitamos solamente el nombre de cada jugador, es necesario leer también el año y la estatura. No es posible acceder al nombre del segundo jugador sin leer previamente todos los datos del primer jugador. 
 - La lectura se hace a través de un bucle infinito (`while (true)`), que finalizará cuando se llegue el final del fichero y al leer de nuevo se produzca la excepción `EOFException`
 
 ## Ejemplo de Serialización

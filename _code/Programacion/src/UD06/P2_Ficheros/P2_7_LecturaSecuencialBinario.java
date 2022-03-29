@@ -6,18 +6,18 @@ import java.util.Scanner;
 public class P2_7_LecturaSecuencialBinario {
 
     public static void main(String[] args) {
-        Scanner tec = new Scanner(System.in);
+
         try (
                 DataInputStream fe = new DataInputStream(
                         new BufferedInputStream(
-                                new FileInputStream("jugadores.dat")));) {
+                                new FileInputStream("src/jugadores.dat")));) {
             while (true) {
                 //Leemos nombre
                 System.out.println(fe.readUTF());
 
                 //leemos y desechamos resto de datos
                 fe.readInt();
-                fe.readDouble();
+                System.out.println(fe.readDouble());
             }
         } catch (EOFException e) {
             //Se lanzará cuando se llegue al final del fichero

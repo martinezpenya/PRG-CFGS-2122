@@ -4,8 +4,8 @@ import java.io.*;
 
 public class P2_5_Buffers {
 
-    final static String ENTRADA = "texto.txt";
-    final static String SALIDA = "textoMayusculas.txt";
+    final static String ENTRADA = "src/texto.txt";
+    final static String SALIDA = "src/textoMayusculas.txt";
 
     public static void main(String[] args) {
         try {
@@ -16,6 +16,8 @@ public class P2_5_Buffers {
                 fs.write(linea.toUpperCase());
                 fs.newLine();
             }
+            fe.close();
+            fs.close();
             System.out.println("FIN");
         } catch (FileNotFoundException e) {
             System.out.println("Probrema al abrir el fichero");

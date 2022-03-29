@@ -265,7 +265,7 @@ Los  buffers hacen que las operaciones de lectura-escritura  se realicen inicial
 
     La entrada del usuario terminará cuando se introduzca un nombre vacío.
 
-    **Nota**: Utiliza la clase `Scanner` para leer desde teclado y los métodos `writeDouble`, `writeInt` y `writeUTF` de la clase `DataInputStream` para escribir en el fichero)
+    **Nota**: Utiliza la clase `Scanner` para leer desde teclado y los métodos `writeDouble`, `writeInt` y `writeUTF` de la clase `DataOutput/InputStream` para escribir en el fichero)
 
     Al finalizar el programa, abre el fichero resultante con un editor de texto (notepad o wordpad) ¿La información que contiene es legible?.
 
