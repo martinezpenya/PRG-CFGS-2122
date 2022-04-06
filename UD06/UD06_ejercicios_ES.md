@@ -284,7 +284,7 @@ Los  buffers hacen que las operaciones de lectura-escritura  se realicen inicial
     - Escribe un programa (GuardaLibros) que cree tres libros y los almacene en el fichero `biblioteca.obj`.
     - Las clases deberán implementar el interfaz `Serializable`.
     
-19. (LeeLibros) Escribe una programa que lea los objetos del fichero `biblioteca.obj` y los muestre por pantalla.
+19. (LeeLibros) Escribe un programa que lea los objetos del fichero `biblioteca.obj` y los muestre por pantalla.
 
 # Sockets
 
