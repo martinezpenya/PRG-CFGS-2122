@@ -420,20 +420,20 @@ Observa el package de ejemplo [UD06.P4_Sockets](#ejemplo de sockets)
 
 ## La clase File.
 
-La clase File es una representación abstracta ficheros y carpetas. Cuando creamos en Java un objeto de la clase File en representación de un fichero o carpeta concretos, no creamos el fichero al que se representa. Es decir, el objeto File representa al archivo o carpeta de disco, pero no es el archivo o carpeta de disco.
+La clase `File` es una representación abstracta ficheros y carpetas. Cuando creamos en Java un objeto de la clase `File` en representación de un fichero o carpeta concretos, no creamos el fichero al que se representa. Es decir, el objeto `File` representa al archivo o carpeta de disco, pero no es el archivo o carpeta de disco.
 
-La clase File dispone de métodos que permiten realizar determinadas operaciones sobre los ficheros. Podríamos, por ejemplo, crear un objeto de tipo File que represente a c:\datos\libros.txt y, a través de ese objeto File, realizar consultas relativas al fichero libros.txt, como su tamaño, atributos, etc, o realizar operaciones sobre él: borrarlo, renombrarlo, …
+La clase `File` dispone de métodos que permiten realizar determinadas operaciones sobre los ficheros. Podríamos, por ejemplo, crear un objeto de tipo `File` que represente a `c:\datos\libros.txt` y, a través de ese objeto `File`, realizar consultas relativas al fichero `libros.txt`, como su tamaño, atributos, etc, o realizar operaciones sobre él: borrarlo, renombrarlo, …
 
 ## Constructores:
 
-La clase File tiene varios constructores, que permiten referirse, de varias formas, al archivo que queremos representar:
+La clase `File` tiene varios constructores, que permiten referirse, de varias formas, al archivo que queremos representar:
 
 | Método                                     | Descripción                                                  |
 | ------------------------------------------ | ------------------------------------------------------------ |
-| `public File (String ruta)`                | Crea el objeto File a partir de la ruta indicada. Si se trata de un archivo tendrá que indicar la ruta y el nombre. |
+| `public File (String ruta)`                | Crea el objeto `File` a partir de la ruta indicada. Si se trata de un archivo tendrá que indicar la ruta y el nombre. |
 | `public File (String ruta, String nombre)` | Permite indicar de forma separada la ruta del archivo y su nombre |
 | `public File (File ruta, String nombre)`   | Permite indicar de forma separada la ruta del archivo y su nombre. En este caso la ruta está representada por otro objeto File. |
-| `public File (URI uri)`                    | Crea el objeto File a partir de un objeto URI (UniformResourceIdentifier). Un URI permite representar un elemento siguiendo una sintaxis concreta, un estándar. |
+| `public File (URI uri)`                    | Crea el objeto File a partir de un objeto [URI](https://es.wikipedia.org/wiki/Identificador_de_recursos_uniforme) (Uniform Resource Identifier). Un URI permite representar un elemento siguiendo una sintaxis concreta, un estándar. |
 
 ## Métodos
 
@@ -445,18 +445,26 @@ Aquí exponemos algunos métodos interesantes. Hay otros que puedes consultar en
 | `String getPath()`                                           | Devuelve la ruta del fichero o directorio. La ruta obtenida es dependiente del sistema, es decir, contendrá el carácter de separación de directorios que esté establecido por defecto. Este separador está definido en public static final String separator |
 | `String getAbsolutePath()`                                   | Devuelve la ruta absoluta del fichero o directorio.          |
 | `String getParent()`                                         | Devuelve la ruta del directorio en que se encuentra el fichero o directorio representado. Devuelve null si no hay directorio padre. |
+
 |                                                              | **Para hacer comprobaciones**                                |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
 | `boolean exists()`<br />`Boolean canWrite()`<br /> `Boolean canRead()` <br />`Boolean isFile()`<br /> `Boolean isDirectory()` | Permiten averiguar, respectivamente, si el fichero existe, si se puede escribir en el, si se puede leer de él, si se trata de un fichero o si se trata de un directorio |
+
 |                                                              | **Obtener información de un fichero**                        |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
 | `long length`                                                | Devuelve el tamaño en bytes del archivo. El resultado es indefinido si se consulta sobre un directorio o una unidad. |
 | `long lastModified`                                          | Devuelve la fecha de la última modificación del archivo. Devuelve el número de milisegundos transcurridos desde el 1 de enero de 1970 |
-|                                                              | **Para trabajar con directorios**                            |
-| `Boolean mkdir()`                                            | Crea el directorio al cual representa el objeto File.        |
-| `Boolean mkdirs()`                                           | Crea el directorio al cual representa el objeto File, incluyendo todos aquellos que sean necesarios y no existan. |
-| `String[] list()`                                            | Devuelve un array de Strings con los nombres de los ficheros y directorios que contiene el directorio al que representa el objeto File. |
-| `String[] list(FileNameFilter filtro)`                       | Devuelve un array de Strings con los nombres de los ficheros y directorios que contiene el directorio al que representa el objeto File y que cumplen con determinado filtro. |
-| `public File[] listFiles()`                                  | Devuelve un array de objetos File que representan a los archivos y carpetas contenidos en el directorio al que se refiere el objeto File. |
+
+|                                        | **Para trabajar con directorios**                            |
+| -------------------------------------- | ------------------------------------------------------------ |
+| `Boolean mkdir()`                      | Crea el directorio al cual representa el objeto File.        |
+| `Boolean mkdirs()`                     | Crea el directorio al cual representa el objeto File, incluyendo todos aquellos que sean necesarios y no existan. |
+| `String[] list()`                      | Devuelve un array de `Strings` con los nombres de los ficheros y directorios que contiene el directorio al que representa el objeto File. |
+| `String[] list(FileNameFilter filtro)` | Devuelve un array de `Strings` con los nombres de los ficheros y directorios que contiene el directorio al que representa el objeto File y que cumplen con determinado filtro. |
+| `public File[] listFiles()`            | Devuelve un array de objetos `File` que representan a los archivos y carpetas contenidos en el directorio al que se refiere el objeto File. |
+
 |                                                              | **Para hacer cambios**                                       |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
 | `Boolean renameTo(File nuevoNombre)`                         | Permite renombrar un archivo. Hay que tener en cuenta que la operación puede fracasar por muchas razones, y que será dependiente del sistema: Que no se pueda mover el fichero de un lugar a otro, que ya exista un fichero que coincide con el nuevo, etc. El método devuelve true solo si la operación se ha realizado con éxito. Existe un método move en la clase Files para mover archivos de una forma independiente del sistema. |
 | `Boolean delete()`                                           | Elimina el archivo o la carpeta a la que representa el objeto File. Si se trata de una carpeta tendrá que estar vacía. Devuelve true si la operación tiene éxito. |
 | `Boolean createNewFile()`                                    | Crea un archivo vacío. Devuelve true si la operación se realiza con éxito. |

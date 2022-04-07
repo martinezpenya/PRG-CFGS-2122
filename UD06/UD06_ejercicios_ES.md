@@ -256,12 +256,12 @@ Los  buffers hacen que las operaciones de lectura-escritura  se realicen inicial
 
 # **Streams para información binaria**
 
-14. (Personas) Escribe un programa que, utilizando entre otras la clase `DataOutputStream`, almacene en un fichero llamado personas.dat la información relativa a una serie de personas que va introduciendo el usuario desde teclado:
+14. (Personas) Escribe un programa que, utilizando entre otras la clase `DataOutputStream`, almacene en un fichero llamado `personas.dat` la información relativa a una serie de personas que va introduciendo el usuario desde teclado:
 
-    - Nombre (String)
-    - Edad (entero)
-    - Peso (double)
-    - Estatura (double)
+    - `Nombre` (String)
+    - `Edad` (entero)
+    - `Peso` (double)
+    - `Estatura` (double)
 
     La entrada del usuario terminará cuando se introduzca un nombre vacío.
 
@@ -294,9 +294,9 @@ Los  buffers hacen que las operaciones de lectura-escritura  se realicen inicial
 
 > Para probar algunos de estos ejercicios debes utilizar el archivo `Documentos.zip`. Descárgalo del aula virtual y descomprímelo en la carpeta de cada proyecto que crees.
 
-1. Mostrar información de ficheros
+21. **Mostrar información de ficheros**
 
-   Implementa un programa que pida al usuario introducir por teclado una ruta del sistema de archivos (por ejemplo, "C:/Windows" o "Documentos") y muestre información sobre dicha ruta (ver función más abajo). El proceso se repetirá una y otra vez hasta que el usuario introduzca una ruta vacía (tecla intro). Deberá manejar las posibles excepciones.
+   Implementa un programa que pida al usuario introducir por teclado una ruta del sistema de archivos (por ejemplo, `C:/Windows` o `Documentos`) y muestre información sobre dicha ruta (ver función más abajo). El proceso se repetirá una y otra vez hasta que el usuario introduzca una ruta vacía (tecla intro). Deberá manejar las posibles excepciones.
 
    Necesitarás crear la función `void muestraInfoRuta(File ruta)` que dada una ruta de tipo `File` haga lo siguiente:
 
@@ -304,11 +304,11 @@ Los  buffers hacen que las operaciones de lectura-escritura  se realicen inicial
 
    - Si es un directorio, mostrará por pantalla la lista de directorios y archivos que contiene (sus nombres). Deberá mostrar primero los directorios y luego los archivos.
 
-   - En cualquier caso, añade delante del nombre la etiqueta [*] o [A] para indicar si es un directorio o un archivo respectivamente.
+   - En cualquier caso, añade delante del nombre la etiqueta `[*]` o `[A]` para indicar si es un directorio o un archivo respectivamente.
 
    - Si el path no existe lanzará un `FileNotFoundException`.
 
-2. Mostrar información de ficheros (v2)
+22. **Mostrar información de ficheros (v2)**
 
    Partiendo de una copia del programa anterior, modifica la función `muestraInfoRuta`:
 
@@ -316,18 +316,18 @@ Los  buffers hacen que las operaciones de lectura-escritura  se realicen inicial
 
    - Añade un segundo argumento `boolean info` que cuando sea `true` mostrará, junto a la información de cada directorio o archivo, su tamaño en bytes y la fecha de la última modificación. Cuando `info` sea `false` mostrará la información como en el ejercicio anterior.
 
-3. Renombrando directorios y ficheros
+23. **Renombrando directorios y ficheros**
 
    Implementa un programa que haga lo siguiente:
 
    - Cambiar el nombre de la carpeta `Documentos` a `DOCS`, el de la carpeta `Fotografias` a `FOTOS` y el de la carpeta `Libros` a `LECTURAS`
    - Cambiar el nombre de todos los archivos de las carpetas `FOTOS` y `LECTURAS` quitándole la extensión. Por ejemplo, `astronauta.jpg` pasará a llamarse `astronauta`.
 
-4. Creando (y moviendo) carpetas
+24. **Creando (y moviendo) carpetas**
 
    Implementa un programa que cree, dentro de `Documentos`, dos nuevas carpetas: `Mis Cosas` y `Alfabeto`. Mueve las carpetas `Fotografias` y `Libros` dentro de `Mis Cosas`. Luego crea dentro de `Alfabeto` una carpeta por cada letra del alfabeto (en mayúsculas): `A`, `B`, `C`... `Z`. Te serán de ayuda los códigos numéricos ASCII: [https://elcodigoascii.com.ar](https://elcodigoascii.com.ar/)
 
-5. Borrando archivos
+25. **Borrando archivos**
 
    Implementa un programa con una función `boolean borraTodo(File f)` que borre `f`: Si no existe lanzará una excepción. Si es un archivo lo borrará. Si es un directorio, borrará primero sus archivos y luego el propio directorio (recuerda que para poder borrar un directorio debe estar vacío). Devolverá `true` si pudo borrar el `File f` (`false` si no fué posible).
 
@@ -335,31 +335,31 @@ Los  buffers hacen que las operaciones de lectura-escritura  se realicen inicial
 
    ***Super extra challenge***: Esta función, tal y como está definida, no borrará las subcarpetas que estén dentro de una carpeta (para ello habría que borrar primero el contenido de dichas subcarpetas). ¿Se te ocurre cómo podría hacerse?
 
-6. Máximo y mínimo
+26. **Máximo y mínimo**
 
    Implementa un programa que muestre por pantalla los valores máximos y mínimos del archivo `numeros.txt`.
 
-7. Notas de alumnos
+27. **Notas de alumnos**
 
    El archivo `alumnos_notas.txt` contiene una lista de 10 alumnos y las notas que han obtenido en cada asignatura. El número de asignaturas de cada alumno es variable. Implementa un programa que muestre por pantalla la nota media de cada alumno junto a su nombre y apellido, ordenado por nota media de mayor a menor.
 
-8. Ordenando archivos
+28. **Ordenando archivos**
 
    Implementa un programa que pida al usuario un nombre de archivo `A` para lectura y otro nombre de archivo `B` para escritura. Leerá el contenido del archivo `A` (por ejemplo `usa_personas.txt`) y lo escribirá ordenado alfabéticamente en B (por ejemplo `usa_personas_sorted.txt`).
 
-9. Nombre y apellidos
+29. **Nombre y apellidos**
 
    Implementa un programa que genere aleatoriamente nombres de persona (combinando nombres y apellidos de `usa_nombres.txt` y `usa_apellidos.txt`). Se le pedirá al usuario cuántos nombres de persona desea generar y a qué archivo **añadirlos** (por ejemplo `usa_personas.txt`).
 
-10. Diccionario
+30. **Diccionario**
 
     Implementa un programa que cree la carpeta `Diccionario` con tantos archivos como letras del abecedario (`A.txt`, `B.txt`… `Z.txt`). Introducirá en cada archivo las palabras de `diccionario.txt` que comiencen por dicha letra.
 
-11. Búsqueda en PI
+31. **Búsqueda en PI**
 
     Implementa un programa que pida al usuario un número de cualquier longitud, como por ejemplo "1234", y le diga al usuario si dicho número aparece en el primer millón de decimales del nº pi (están en el archivo `pi-million.txt`). No está permitido utilizar ninguna librería ni clase ni método que realice la búsqueda. Debes implementar el algoritmo de búsqueda tú.
 
-12. Estadísticas
+32. **Estadísticas**
 
     Implementa un programa que lea un documento de texto y muestre por pantalla algunos datos estadísticos: nº de líneas, nº de palabras, nº de caracteres y cuáles son las 10 palabras más comunes (y cuántas veces aparecen). Prueba el programa con los archivos de la carpeta `Libros`.
 
