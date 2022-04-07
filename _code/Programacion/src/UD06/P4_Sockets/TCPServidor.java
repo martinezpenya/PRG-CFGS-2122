@@ -12,8 +12,8 @@ public class TCPServidor {
         Socket clientSocket;
         ObjectInputStream entrada;
         ObjectOutputStream eixida;
-        serverSocket = new ServerSocket(10000);
-        System.out.println("Server iniciado y escuchando en el puerto 10000");
+        serverSocket = new ServerSocket(11000);
+        System.out.println("Server iniciado y escuchando en el puerto 11000");
         while (true) {
             clientSocket = serverSocket.accept();
             entrada = new ObjectInputStream(clientSocket.getInputStream());

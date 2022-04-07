@@ -29,7 +29,7 @@ public class P5_1_Manejo {
                 }
 
                 if (car.isHidden()) {
-                    System.out.println("Carpet aoculta");
+                    System.out.println("Carpet oculta");
                 } else {
                     System.out.println("Carpeta visible");
                 }
@@ -40,7 +40,7 @@ public class P5_1_Manejo {
                     System.out.println(f.getName());
                 }
             } else {
-                System.out.println(car.getAbsolutePath() + " No esunacarpeta");
+                System.out.println(car.getAbsolutePath() + " No es una carpeta");
             }
         } else {
             System.out.println(

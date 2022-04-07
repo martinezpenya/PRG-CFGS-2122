@@ -13,12 +13,15 @@ public class Guardar {
         p3 = new Persona("Josep", 2100.0);
         p4 = new Persona("Marta", 850.0);
 
+        p1.setEdad(55);
         p1.asignaTutor(p2);
         p2.asignaTutor(p3);
         p3.asignaTutor(p4);
+        
+        System.out.println(p1.getEdad());
 
         try {
-            salida = new ObjectOutputStream(new FileOutputStream("empleats.ser"));
+            salida = new ObjectOutputStream(new FileOutputStream("src/empleats.ser"));
             salida.writeObject(p1);
             salida.close();
         } catch (IOException e) {
