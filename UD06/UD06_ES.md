@@ -439,12 +439,12 @@ La clase `File` tiene varios constructores, que permiten referirse, de varias fo
 
 Aquí exponemos algunos métodos interesantes. Hay otros que puedes consultar en la documentación de Java.
 
-|                                                              | **Relacionados con el nombre del fichero**                   |
-| ------------------------------------------------------------ | ------------------------------------------------------------ |
-| `String getName()`                                           | Devuelve el nombre del fichero o directorio al que representa el objeto. (Solo el nombre, sin la ruta) |
-| `String getPath()`                                           | Devuelve la ruta del fichero o directorio. La ruta obtenida es dependiente del sistema, es decir, contendrá el carácter de separación de directorios que esté establecido por defecto. Este separador está definido en public static final String separator |
-| `String getAbsolutePath()`                                   | Devuelve la ruta absoluta del fichero o directorio.          |
-| `String getParent()`                                         | Devuelve la ruta del directorio en que se encuentra el fichero o directorio representado. Devuelve null si no hay directorio padre. |
+|                            | **Relacionados con el nombre del fichero**                   |
+| -------------------------- | ------------------------------------------------------------ |
+| `String getName()`         | Devuelve el nombre del fichero o directorio al que representa el objeto. (Solo el nombre, sin la ruta) |
+| `String getPath()`         | Devuelve la ruta del fichero o directorio. La ruta obtenida es dependiente del sistema, es decir, contendrá el carácter de separación de directorios que esté establecido por defecto. Este separador está definido en public `static final String separator` |
+| `String getAbsolutePath()` | Devuelve la ruta absoluta del fichero o directorio.          |
+| `String getParent()`       | Devuelve la ruta del directorio en que se encuentra el fichero o directorio representado. Devuelve null si no hay directorio padre. |
 
 |                                                              | **Para hacer comprobaciones**                                |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |

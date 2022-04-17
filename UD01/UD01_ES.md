@@ -11,7 +11,8 @@
     typora-copy-images-to:${filename}/../assets
     imgcover:/media/DADES/NextCloud/DOCENCIA/PRG_2122/PRG-CFGS-2122/UD01/assets/cover.png
 ---
-[toc]
+Información leida:David Martinez
+
 # Problemas, algoritmos y programas
 
 ## Problemas
