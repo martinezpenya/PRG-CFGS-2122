@@ -771,7 +771,7 @@ En el ejemplo anterior la cadena texto contiene una serie de letras separadas po
 Ejemplo que crea, rellena y recorre un `ArrayList` de dos formas diferentes. Cabe destacar que, por defecto, el método `System.out.println()` invoca al método `toString()` de los elementos que se le pasen como argumento, por lo que realmente no es necesario utilizar `toString()` dentro de `println()`.
 
 ```java
-package UD07;
+package UD07.P1_1_ArrayList1;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -840,7 +840,7 @@ Tenemos la clase `Producto` con:
 - Métodos `get` y `set` asociados a los atributos.
 
 ```java
-package UD07.ArrayList2;
+package UD07.P1_2_ArrayList2;
 
 public class Producto {
 
@@ -886,7 +886,7 @@ public class Producto {
 En el programa principal creamos una lista de productos y realizamos operaciones sobre ella:
 
 ```java
-package UD07.ArrayList2;
+package UD07.P1_2_ArrayList2;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -956,7 +956,7 @@ Realiza un pequeño programa que pregunte al usuario 5 números diferentes (alma
 Una solución posible podría ser la siguiente. Fíjate en la solución y verás que el uso de conjuntos ha simplificado enormemente el ejercicio, permitiendo al programador o la programadora centrarse en otros aspectos:
 
 ```java
-package UD07;
+package UD07.P2_HashSet;
 
 import java.util.HashSet;
 import java.util.Scanner;
@@ -993,7 +993,7 @@ public class EjemploHashSet {
 Imagínate que Objeto es una clase como la siguiente:
 
 ```java
-package UD07.EjemploComparator1;
+package UD07.P3_Comparator1;
 
 public class Objeto {
 
@@ -1020,7 +1020,7 @@ Imagina que ahora, al añadirlos en un `TreeSet`, estos se tienen que ordenar de
 Una de las posibles soluciones a este problema podría ser la siguiente:
 
 ```java
-package UD07.EjemploComparator1;
+package UD07.P3_Comparator1;
 
 import java.util.Comparator;
 
@@ -1044,7 +1044,7 @@ class ComparadorDeObjetos implements Comparator<Objeto> {
 Y para usarlo tendriamos:
 
 ```java
-package UD07.EjemploComparator1;
+package UD07.P3_Comparator1;
 
 import java.util.TreeSet;
 
@@ -1079,7 +1079,7 @@ Objeto{a=0, b=1}
 Ahora convertiremos la clase `Objeto` para que directamente implemente la interfaz `Comparable`:
 
 ```java
-package UD07.EjemploComparator2;
+package UD07.P4_Comparator2;
 
 public class Objeto implements Comparable<Objeto>{
 
@@ -1114,7 +1114,7 @@ public class Objeto implements Comparable<Objeto>{
 Y lo usamos directamente en la clase `Principal`:
 
 ```java
-package UD07.EjemploComparator2;
+package UD07.P4_Comparator2;
 
 import java.util.TreeSet;
 

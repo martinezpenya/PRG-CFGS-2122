@@ -21,21 +21,21 @@ En algunos casos es posible que no exista relación alguna entre unas clases y o
 
 Se pueden distinguir diversos tipos de relaciones entre clases:
 
-- Clientela. Cuando una clase utiliza objetos de otra clase (por ejemplo al pasarlos como parámetros a través de un método).
-- Composición. Cuando alguno de los atributos de una clase es un objeto de otra clase.
-- Anidamiento. Cuando se definen clases en el interior de otra clase.
-- Herencia. Cuando una clase comparte determinadas características con otra (clase base), añadiéndole alguna funcionalidad específica (especialización).
+- **Clientela**. Cuando una clase utiliza objetos de otra clase (por ejemplo al pasarlos como parámetros a través de un método).
+- **Composición**. Cuando alguno de los atributos de una clase es un objeto de otra clase.
+- **Anidamiento**. Cuando se definen clases en el interior de otra clase.
+- **Herencia**. Cuando una clase comparte determinadas características con otra (clase base), añadiéndole alguna funcionalidad específica (especialización).
 
-La relación de clientela la llevas utilizando desde que has empezado a programar en Java, pues desde tu clase principal (clase con método main ) has estado declarando, creando y utilizando objetos de otras clases. Por ejemplo: si utilizas un objeto String dentro de la clase principal de tu programa,
+La relación de **clientela** la llevas utilizando desde que has empezado a programar en Java, pues desde tu clase principal (clase con método main ) has estado declarando, creando y utilizando objetos de otras clases. Por ejemplo: si utilizas un objeto String dentro de la clase principal de tu programa,
 éste será cliente de la clase String (como sucederá con prácticamente cualquier programa que se escriba en Java). Es la relación fundamental y más habitual entre clases (la utilización de unas clases por parte de otras) y, por supuesto, la que más vas a utilizar tú también, de hecho, ya la has estado
 utilizando y lo seguirás haciendo.
 
-La relación de composición es posible que ya la hayas tenido en cuenta si has definido clases que contenían (tenían como atributos) otros objetos en su interior, lo cual es bastante habitual. Por ejemplo, si escribes una clase donde alguno de sus atributos es un objeto de tipo String , ya se está produciendo una relación de tipo composición (tu clase “tiene” un String , es decir, está compuesta por un objeto String y por algunos elementos más).
+La relación de **composición** es posible que ya la hayas tenido en cuenta si has definido clases que contenían (tenían como atributos) otros objetos en su interior, lo cual es bastante habitual. Por ejemplo, si escribes una clase donde alguno de sus atributos es un objeto de tipo String , ya se está produciendo una relación de tipo composición (tu clase "tiene" un String , es decir, está compuesta por un objeto String y por algunos elementos más).
 
-La relación de anidamiento (o anidación) es quizá menos habitual, pues implica declarar unas clases dentro de otras (clases internas o anidadas). En algunos casos puede resultar útil para tener un nivel más de encapsulamiento (ocultamiento del estado de un objeto (de sus datos miembro o atributos) de manera que sólo se puede cambiar mediante las operaciones (métodos) definidas para ese objeto. Cada objeto está aislado del exterior de manera que se protegen los datos contra su modificación por quien no tenga derecho a acceder a ellos, eliminando efectos secundarios y colaterales no deseados. Este modo de proceder permite que el usuario de una clase pueda obviar la implementación de los métodos y propiedades para concentrarse
+La relación de **anidamiento** (o anidación) es quizá menos habitual, pues implica declarar unas clases dentro de otras (clases internas o anidadas). En algunos casos puede resultar útil para tener un nivel más de encapsulamiento (ocultamiento del estado de un objeto (de sus datos miembro o atributos) de manera que sólo se puede cambiar mediante las operaciones (métodos) definidas para ese objeto. Cada objeto está aislado del exterior de manera que se protegen los datos contra su modificación por quien no tenga derecho a acceder a ellos, eliminando efectos secundarios y colaterales no deseados. Este modo de proceder permite que el usuario de una clase pueda obviar la implementación de los métodos y propiedades para concentrarse
 sólo en cómo usarlos. Por otro lado se evita que el usuario pueda cambiar su estado de manera imprevista e incontrolada)  y ocultación (efecto que se consigue gracias a la encapsulación: se evita la visibilidad de determinados miembros de una clase al resto del código del programa para de ese modo comunicarse con los objetos de la clase únicamente a través de su interfaz (métodos)) de información.
 
-En el caso de la relación de herencia también la has visto ya, pues seguro que has utilizado unas clases que derivaban de otras, sobre todo, en el caso de los objetos que forman parte de las interfaces gráficas. Lo más probable es que hayas tenido que declarar clases que derivaban de algún componente gráfico (JFrame, JDialog, etc.).
+En el caso de la relación de **herencia** también la has visto ya, pues seguro que has utilizado unas clases que derivaban de otras, sobre todo, en el caso de los objetos que forman parte de las interfaces gráficas. Lo más probable es que hayas tenido que declarar clases que derivaban de algún componente gráfico (JFrame, JDialog, etc.).
 
 Podría decirse que tanto la composición como la anidación son casos particulares de clientela, pues en realidad en todos esos casos una clase está haciendo uso de otra (al contener atributos que son objetos de la otra clase, al definir clases dentro de otras clases, al utilizar objetos en el paso de parámetros, al declarar variables locales utilizando otras clases, etc.).
 
@@ -52,7 +52,7 @@ Como puedes observar, la composición puede encadenarse todas las veces que sea 
 
 > La composición se da cuando una clase contiene algún atributo que es una referencia a un objeto de otra clase.
 
-Una forma sencilla de plantearte si la relación que existe entre dos clases A y B es de composición podría ser mediante la expresión idiomática “tiene un”: “la clase A tiene uno o varios objetos de la clase B”, o visto de otro modo: “Objetos de la clase B pueden formar parte de la clase A”. 
+Una forma sencilla de plantearte si la relación que existe entre dos clases A y B es de composición podría ser mediante la expresión idiomática "tiene un": "la clase A tiene uno o varios objetos de la clase B", o visto de otro modo: "Objetos de la clase B pueden formar parte de la clase A". 
 
 Algunos ejemplos de composición podrían ser:
 
@@ -68,7 +68,7 @@ Recuperando algunos de los ejemplos de clases que has utilizado en otras unidade
 
 > ¿Podría decirse que la relación que existe entre la clase Ave y la clase Loro es una relación de composición?
 >
-> No. Aunque claramente existe algún tipo de relación entre ambas, no parece que sea la de composición. No parece que se cumpla la expresión “tiene un”: “Un loro tiene un ave”. Se cumpliría más bien una expresión del tipo “es un”: “Un loro es un ave”. Algunos objetos que cumplirían la relación de composición podrían ser Pico o Alas, pues “un loro tiene un pico y dos alas”, del mismo modo que “un ave tiene pico y dos alas”. Este tipo de relación parece más de herencia (un loro es un tipo de ave).
+> No. Aunque claramente existe algún tipo de relación entre ambas, no parece que sea la de composición. No parece que se cumpla la expresión "tiene un": "Un loro tiene un ave". Se cumpliría más bien una expresión del tipo "es un": "Un loro es un ave". Algunos objetos que cumplirían la relación de composición podrían ser Pico o Alas, pues "un loro tiene un pico y dos alas", del mismo modo que "un ave tiene pico y dos alas". Este tipo de relación parece más de herencia (un loro es un tipo de ave).
 
 ## Herencia
 
@@ -85,7 +85,7 @@ Algunos ejemplos de herencia podrían ser:
 - Un rectángulo es una figura geométrica en el plano (heredará métodos como el cálculo de la superficie o de su perímetro).
 - Un cocodrilo es un reptil (heredará atributos como por ejemplo el número de dientes).
 
-En este caso la expresión idiomática que puedes usar para plantearte si el tipo de relación entre dos clases A y B es de herencia podría ser “es un”: “la clase A es un tipo específico de la clase B” (especialización), o visto de otro modo: “la clase B es un caso general de la clase A” (generalización).
+En este caso la expresión idiomática que puedes usar para plantearte si el tipo de relación entre dos clases A y B es de herencia podría ser "es un": "la clase A es un tipo específico de la clase B" (especialización), o visto de otro modo: "la clase B es un caso general de la clase A" (generalización).
 
 Recuperando algunos ejemplos de clases que ya has utilizado en otras unidades:
 
@@ -110,10 +110,10 @@ Por ejemplo, imagina que dispones de una clase Punto (ya la has utilizado en otr
 En principio parece que la idea pueda funcionar pero es posible que más adelante, si continúas construyendo una jerarquía de clases, observes que puedas llegar a conclusiones incongruentes al suponer que un círculo es una especialización de un punto (un tipo de punto). ¿Todas aquellas figuras que contengan uno o varios puntos deberían ser tipos de punto? ¿Y si tienes varios puntos? ¿Cómo accedes a ellos? ¿Un rectángulo también tiene sentido que herede de un punto? No parece muy buena idea.
 
 Parece que en este caso habría resultado mejor establecer una relación de composición. Analízalo detenidamente: ¿cuál de estas dos situaciones te suena mejor?
-1. “Un círculo es un punto (su centro)”, y por tanto heredará las coordenadas x1 e y1 que tiene todo punto. Además tendrá otras características específicas como el radio o métodos como el cálculo de la longitud de su perímetro o de su área.
-2. “Un círculo tiene un punto (su centro)”, junto con algunos atributos más como por ejemplo el radio. También tendrá métodos para el cálculo de su área o de la longitud de su perímetro.
+1. "Un círculo es un punto (su centro)", y por tanto heredará las coordenadas x1 e y1 que tiene todo punto. Además tendrá otras características específicas como el radio o métodos como el cálculo de la longitud de su perímetro o de su área.
+2. "Un círculo tiene un punto (su centro)", junto con algunos atributos más como por ejemplo el radio. También tendrá métodos para el cálculo de su área o de la longitud de su perímetro.
 
-Parece que en este caso la composición refleja con mayor fidelidad la relación que existe entre ambas clases. Normalmente suele ser suficiente con plantearse las preguntas “¿A es un tipo de B?” o “¿A contiene elementos de tipo B?”.
+Parece que en este caso la composición refleja con mayor fidelidad la relación que existe entre ambas clases. Normalmente suele ser suficiente con plantearse las preguntas "¿A es un tipo de B?" o "¿A contiene elementos de tipo B?".
 
 # Composición
 
@@ -129,7 +129,7 @@ class <nombreClase> {
 }
 ```
 
-En unidades anteriores has trabajado con la clase Punto, que definía las coordenadas de un punto en el plano, y con la clase Rectangulo, que definía una figura de tipo rectángulo también en el plano a partir de dos de sus vértices (inferior izquierdo y superior derecho). Tal y como hemos formalizado ahora los tipos de relaciones entre clases, parece bastante claro que aquí tendrías un caso de composición: “un rectángulo contiene puntos”. Por tanto, podrías ahora redefinir los atributos de la clase Rectangulo (cuatro números reales) como dos objetos de tipo Punto:
+En unidades anteriores has trabajado con la clase `Punto`, que definía las coordenadas de un punto en el plano, y con la clase `Rectangulo`, que definía una figura de tipo rectángulo también en el plano a partir de dos de sus vértices (inferior izquierdo y superior derecho). Tal y como hemos formalizado ahora los tipos de relaciones entre clases, parece bastante claro que aquí tendrías un caso de composición: "un rectángulo contiene puntos". Por tanto, podrías ahora redefinir los atributos de la clase `Rectangulo` (cuatro números reales) como dos objetos de tipo Punto:
 
 ```java
 class Rectangulo {
@@ -139,19 +139,19 @@ class Rectangulo {
 }
 ```
 
-Ahora los métodos de esta clase deberán tener en cuenta que ya no hay cuatro atributos de tipo double, sino dos atributos de tipo Punto (cada uno de los cuales contendrá en su interior dos atributos de tipo double).
+Ahora los métodos de esta clase deberán tener en cuenta que ya no hay cuatro atributos de tipo `double`, sino dos atributos de tipo `Punto` (cada uno de los cuales contendrá en su interior dos atributos de tipo `double`).
 
-Revisa con cuidado el [Ejemplo1](#ejemplo1)
+Revisa con cuidado el [Ejemplo 2.1](#ejemplo-2.1)
 
 ##  Uso de la composición (I). Preservación de la ocultación.
 
 Como ya has observado, la relación de composición no tiene más misterio a la hora de implementarse que simplemente declarar atributos de las clases que necesites dentro de la clase que estés diseñando.
 
-Ahora bien, cuando escribas clases que contienen objetos de otras clases (lo cual será lo más habitual) deberás tener un poco de precaución con aquellos métodos que devuelvan información acerca de los atributos de la clase (métodos “obtenedores” o de tipo get). 
+Ahora bien, cuando escribas clases que contienen objetos de otras clases (lo cual será lo más habitual) deberás tener un poco de precaución con aquellos métodos que devuelvan información acerca de los atributos de la clase (métodos "obtenedores" o de tipo get). 
 
 Como ya viste en la unidad dedicada a la creación de clases, lo normal suele ser declarar los atributos como privados (o protegidos, como veremos un poco más adelante) para ocultarlos a los posibles clientes de la clase (otros objetos que en el futuro harán uso de la clase). Para que otros objetos puedan acceder a la información contenida en los atributos, o al menos a una parte de ella, deberán hacerlo a través de métodos que sirvan de interfaz, de manera que sólo se podrá tener acceso a aquella información que el creador de la clase haya considerado oportuna. Del mismo modo, los atributos solamente serán modificados desde los métodos de la clase, que decidirán cómo y bajo qué circunstancias deben realizarse esas modificaciones. Con esa metodología de acceso se tenía perfectamente separada la parte de manipulación interna de los atributos de la interfaz con el exterior.
 
-Hasta ahora los métodos de tipo get devolvían tipos primitivos, es decir, copias del contenido (a veces con algún tipo de modificación o de formato) que había almacenado en los atributos, pero los atributos seguían “a salvo” como elementos privados de la clase. Pero, a partir de este momento, al tener objetos dentro de las clases y no sólo tipos primitivos, es posible que en un determinado momento interese devolver un objeto completo.
+Hasta ahora los métodos de tipo get devolvían tipos primitivos, es decir, copias del contenido (a veces con algún tipo de modificación o de formato) que había almacenado en los atributos, pero los atributos seguían "a salvo" como elementos privados de la clase. Pero, a partir de este momento, al tener objetos dentro de las clases y no sólo tipos primitivos, es posible que en un determinado momento interese devolver un objeto completo.
 
 Ahora bien, cuando vayas a devolver un objeto habrás de obrar con mucha precaución. Si en un método de la clase devuelves directamente un objeto que es un atributo, estarás ofreciendo directamente una referencia a un objeto atributo que probablemente has definido como privado. ¡De esta forma estás volviendo a hacer público un atributo que inicialmente era privado! 
 
@@ -167,7 +167,7 @@ Debes evitar por todos los medios la devolución de un atributo que sea un objet
 
 Para entender estas situaciones un poco mejor, podemos volver al objeto Rectangulo y observar sus nuevos métodos de tipo get.
 
-Revisa con cuidado el [Ejemplo2](#ejemplo2)
+Revisa con cuidado el [Ejemplo 2.2](#ejemplo-2.2)
 
 ### Uso de la composición (II). Llamadas a constructores.
 
@@ -178,18 +178,18 @@ Otro factor que debes considerar, a la hora de escribir clases que contengan com
 En este caso hay que tener cuidado con las referencias a objetos que se pasan como parámetros para rellenar el contenido de los atributos. Es conveniente hacer una copia de esos objetos y utilizar esas copias para los atributos pues si se utiliza la referencia que se ha pasado como parámetro, el
 código cliente de la clase podría tener acceso a ella sin necesidad de pasar por la interfaz de la clase (volveríamos a dejar abierta una puerta pública a algo que quizá sea privado).
 
-Además, si el objeto parámetro que se pasó al constructor formaba parte de otro objeto, esto podría ocasionar un desagradable efecto colateral si esos objetos son modificados en el futuro desde el código cliente de la clase, ya que no sabes de dónde provienen esos objetos, si fueron creados especialmente para ser usados por el nuevo objeto creado o si pertenecen a otro objeto que podría modificarlos más tarde. Es decir, correrías el riesgo de estar “compartiendo” esos objetos con otras partes del código, sin ningún tipo de control de acceso y con las nefastas consecuencias que eso podría tener: cualquier cambio de ese objeto afectaría a partes del programa supuestamente independientes, que entienden ese objeto como suyo.
+Además, si el objeto parámetro que se pasó al constructor formaba parte de otro objeto, esto podría ocasionar un desagradable efecto colateral si esos objetos son modificados en el futuro desde el código cliente de la clase, ya que no sabes de dónde provienen esos objetos, si fueron creados especialmente para ser usados por el nuevo objeto creado o si pertenecen a otro objeto que podría modificarlos más tarde. Es decir, correrías el riesgo de estar "compartiendo" esos objetos con otras partes del código, sin ningún tipo de control de acceso y con las nefastas consecuencias que eso podría tener: cualquier cambio de ese objeto afectaría a partes del programa supuestamente independientes, que entienden ese objeto como suyo.
 
 > En el fondo los objetos no son más que variables de tipo referencia a la zona de memoria en la que se encuentra toda la información del objeto en sí mismo. Esto es, puedes tener un único objeto y múltiples referencias a él. Pero sólo se trata de un objeto, y cualquier modificación desde una de sus referencias afectaría a todas las demás, pues estamos hablando del mismo objeto.
 
 Recuerda también que sólo se crean objetos cuando se llama a un constructor (uso de new). Si realizas asignaciones o pasos de parámetros, no se están copiando o pasando copias de los objetos, sino simplemente de las referencias, y por tanto se tratará siempre del mismo objeto. 
 
-Se trata de un efecto similar al que sucedía en los métodos de tipo get , pero en este caso en sentido contrario (en lugar de que nuestra clase “regale” al exterior uno de sus atributos objeto mediante una referencia, en esta ocasión se “adueña” de un parámetro objeto que probablemente pertenezca a otro objeto y que es posible que el futuro haga uso de él).
+Se trata de un efecto similar al que sucedía en los métodos de tipo get , pero en este caso en sentido contrario (en lugar de que nuestra clase "regale" al exterior uno de sus atributos objeto mediante una referencia, en esta ocasión se "adueña" de un parámetro objeto que probablemente pertenezca a otro objeto y que es posible que el futuro haga uso de él).
 
 Para entender mejor estos posibles efectos podemos continuar con el ejemplo de la clase Rectangulo que contiene en su interior dos objetos de la clase Punto. En los constructores del rectángulo habrá que incluir todo lo necesario para crear dos instancias de la clase Punto evitando las referencias a
 parámetros (haciendo copias).
 
-Revisa con cuidado el [Ejemplo3](#ejemplo3)
+Revisa con cuidado el [Ejemplo 2.2.1](#ejemplo-2.2.1)
 
 ## Clases anidadas o internas.
 
@@ -248,7 +248,7 @@ Una clase derivada puede ser a su vez clase padre de otra que herede de ella y a
 
 Una clase hija no tiene acceso a los miembros privados de su clase padre, tan solo a los públicos (como cualquier parte del código tendría) y los protegidos (a los que sólo tienen acceso las clases derivadas y las del mismo paquete). Aquellos miembros que sean privados en la clase base también habrán sido heredados, pero el acceso a ellos estará restringido al propio funcionamiento de la superclase y sólo se podrá acceder a ellos si la superclase ha dejado algún medio indirecto para hacerlo (por ejemplo a través de algún método). 
 
-Todos los miembros de la superclase, tanto atributos como métodos, son heredados por la subclase. Algunos de estos miembros heredados podrán ser redefinidos o sobrescritos (overriden) y también podrán añadirse nuevos miembros. De alguna manera podría decirse que estás “ampliando” la clase
+Todos los miembros de la superclase, tanto atributos como métodos, son heredados por la subclase. Algunos de estos miembros heredados podrán ser redefinidos o sobrescritos (overriden) y también podrán añadirse nuevos miembros. De alguna manera podría decirse que estás "ampliando" la clase
 base con características adicionales o modificando algunas de ellas (proceso de especialización).
 
 > Una clase derivada extiende la funcionalidad de la clase base sin tener que volver a escribir el código de la clase base.
@@ -275,7 +275,7 @@ Imagina que tienes una clase `Persona` que contiene atributos como `nombre`, `ap
 public class Persona {
 	String nombre;
 	String apellidos;
-	GregorianCalendar fechaNacim;
+	LocalDate fechaNacim;
 	...
 }
 ```
@@ -292,7 +292,7 @@ public class Alumno extends Persona {
 
 A partir de ahora, un objeto de la clase `Alumno` contendrá los atributos `grupo` y `notaMedia` (propios de la clase `Alumno`), pero también `nombre`, `apellidos` y `fechaNacim` (propios de su clase base `Persona` y que por tanto ha heredado).
 
-Revisa con cuidado el [Ejemplo4](#ejemplo4)
+Revisa con cuidado el [Ejemplo 3.1](#ejemplo-3.1)
 
 ## Acceso a miembros heredados.
 
@@ -311,7 +311,7 @@ Aquí tienes de nuevo el resumen:
 
 > ¡Recuerda que **los modificadores de acceso son excluyentes**! Sólo se puede utilizar uno de ellos en la declaración de un atributo.
 
-Si en el ejemplo anterior de la clase Persona se hubieran definido sus atributos como private:
+Si en el ejemplo anterior de la clase `Persona` se hubieran definido sus atributos como private:
 
 ```java
 public class Persona {
@@ -321,8 +321,7 @@ public class Persona {
 }
 ```
 
-Al definir la clase Alumno como heredera de Persona, no habrías tenido acceso a esos atributos, pudiendo ocasionar un grave problema de operatividad al intentar manipular esa información. Por tanto, en estos casos lo más recomendable habría sido declarar esos atributos como protected o
-bien sin modificador (para que también tengan acceso a ellos otras clases del mismo paquete, si es que se considera oportuno):
+Al definir la clase Alumno como heredera de `Persona`, no habrías tenido acceso a esos atributos, pudiendo ocasionar un grave problema de operatividad al intentar manipular esa información. Por tanto, en estos casos lo más recomendable habría sido declarar esos atributos como `protected` o bien sin modificador (para que también tengan acceso a ellos otras clases del mismo paquete, si es que se considera oportuno):
 
 ```java
 public class Persona {
@@ -334,14 +333,15 @@ public class Persona {
 
 > Sólo en aquellos casos en los que se desea explícitamente que un miembro de una clase no pueda ser accesible desde una clase derivada debería utilizarse el modificador private. En el resto de casos es recomendable utilizar protected, o bien no indicar modificador (acceso a nivel de paquete).
 
-Revisa con cuidado el [Ejemplo5](#ejemplo5)
+Revisa con cuidado el [Ejemplo 3.2](#ejemplo-3.2)
 
 ## Utilización de miembros heredados (I). Atributos.
 
 Los atributos heredados por una clase son, a efectos prácticos, iguales que aquellos que sean definidos específicamente en la nueva clase derivada.
-En el ejemplo anterior la clase Persona disponía de tres atributos y la clase Alumno, que heredaba de ella, añadía dos atributos más. Desde un punto de vista funcional podrías considerar que la clase Alumno tiene cinco atributos: tres por ser Persona (nombre, apellidos, fecha de nacimiento) y otros dos más por ser Alumno (grupo y nota media).
 
-Revisa con cuidado el [Ejemplo6](#ejemplo6)
+En el ejemplo anterior la clase `Persona` disponía de tres atributos y la clase `Alumno`, que heredaba de ella, añadía dos atributos más. Desde un punto de vista funcional podrías considerar que la clase `Alumno` tiene cinco atributos: tres por ser `Persona` (nombre, apellidos, fecha de nacimiento) y otros dos más por ser `Alumno` (grupo y nota media).
+
+Revisa con cuidado el [Ejemplo 3.3](#ejemplo-3.3)
 
 ### Utilización de miembros heredados (II). Métodos.
 
@@ -355,7 +355,7 @@ métodos:
 
 Sin embargo, sólo tendrías que definir esos cuatro últimos (los específicos) pues los genéricos ya los has heredado de la superclase.
 
-Revisa con cuidado el [Ejemplo7](#ejemplo7)
+Revisa con cuidado el [Ejemplo 3.3.1](#ejemplo-3.3.1)
 
 ## Redefinición de métodos heredados.
 
@@ -365,11 +365,11 @@ En cualquier caso, aunque un método sea sobrescrito o redefinido, aún es posib
 
 Los métodos redefinidos pueden ampliar su accesibilidad con respecto a la que ofrezca el método original de la superclase, pero nunca restringirla. Por ejemplo, si un método es declarado como protected o de paquete en la clase base, podría ser redefinido como public en una clase derivada. Los métodos estáticos o de clase no pueden ser sobrescritos. Los originales de la clase base permanecen inalterables a través de toda la jerarquía de herencia.
 
-En el ejemplo de la clase Alumno, podrían redefinirse algunos de los métodos heredados. Por ejemplo, imagina que el método getApellidos devuelva la cadena “Alumno:” junto con los apellidos del alumno. En tal caso habría que rescribir ese método para realizara esa modificación:
+En el ejemplo de la clase Alumno, podrían redefinirse algunos de los métodos heredados. Por ejemplo, imagina que el método getApellidos devuelva la cadena "Alumno:" junto con los apellidos del alumno. En tal caso habría que rescribir ese método para realizara esa modificación:
 
 ```java
 public String getApellidos () {
-	return “Alumno: “ + apellidos;
+	return "Alumno: " + apellidos;
 }
 ```
 
@@ -381,13 +381,13 @@ realmente creando un nuevo método diferente). En el caso del ejemplo anterior q
 public String getApellidos ()
 ```
 
-Revisa con cuidado el [Ejemplo8](#ejemplo8)
+Revisa con cuidado el [Ejemplo 3.4](#ejemplo-3.4)
 
 ## Ampliación de métodos heredados.
 
 Hasta ahora, has visto que para redefinir o sustituir un método de una superclase es suficiente con crear otro método en la subclase que tenga el mismo nombre que el método que se desea sobrescribir. Pero, en otras ocasiones, puede que lo que necesites no sea sustituir completamente el comportamiento del método de la superclase, sino simplemente ampliarlo.
 
-Para poder hacer esto necesitas poder preservar el comportamiento antiguo (el de la superclase) y añadir el nuevo (el de la subclase). Para ello, puedes invocar desde el método “ampliador” de la clase derivada al método “ampliado” de la clase superior (teniendo ambos métodos el mismo nombre). ¿Cómo se puede conseguir eso? Puedes hacerlo mediante el uso de la referencia super.
+Para poder hacer esto necesitas poder preservar el comportamiento antiguo (el de la superclase) y añadir el nuevo (el de la subclase). Para ello, puedes invocar desde el método "ampliador" de la clase derivada al método "ampliado" de la clase superior (teniendo ambos métodos el mismo nombre). ¿Cómo se puede conseguir eso? Puedes hacerlo mediante el uso de la referencia super.
 
 La palabra reservada super es una referencia a la clase padre de la clase en la que te encuentres en cada momento (es algo similar a this, que representaba una referencia a la clase actual). De esta manera, podrías invocar a cualquier método de tu superclase (si es que se tiene acceso a él).
 
@@ -398,8 +398,8 @@ Podría hacerse de una manera tan sencilla como la siguiente:
 ```java
 public void mostrar () {
     super.mostrar ();
-     // Llamada al método “mostrar” de la superclase
-    // A continuación mostramos la información “especializada” de esta subclase
+     // Llamada al método "mostrar" de la superclase
+    // A continuación mostramos la información "especializada" de esta subclase
     System.out.printf ("Grupo: %s\n", this.grupo);
     System.out.printf ("Nota media: %5.2f\n", this.notaMedia);
 }
@@ -407,7 +407,7 @@ public void mostrar () {
 
 Este tipo de ampliaciones de métodos resultan especialmente útiles por ejemplo en el caso de los constructores, donde se podría ir llamando a los constructores de cada superclase encadenadamente hasta el constructor de la clase en la cúspide de la jerarquía (el constructor de la clase Object).
 
-Revisa con cuidado el [Ejemplo8](#ejemplo8)
+Revisa con cuidado el [Ejemplo 3.5](#ejemplo-3.5)
 
 ## Constructores y herencia.
 
@@ -443,7 +443,7 @@ public Alumno (String nombre, String apellidos, GregorianCalendar fechaNacim, St
 
 En realidad se trata de otro recurso más para optimizar la reutilización de código, en este caso el del constructor, que aunque no es heredado, sí puedes invocarlo para no tener que rescribirlo.
 
-Revisa con cuidado el [Ejemplo9](#ejemplo9)
+Revisa con cuidado el [Ejemplo 3.6](#ejemplo-3.6)
 
 ## Creación y utilización de clases derivadas.
 
@@ -518,7 +518,7 @@ Cuando trabajes con clases abstractas debes tener en cuenta:
 - Una clase abstracta sólo puede usarse para crear nuevas clases derivadas. No se puede hacer un new de una clase abstracta. Se produciría un error de compilación.
 - Una clase abstracta puede contener métodos totalmente definidos (no abstractos) y métodos sin definir (métodos abstractos).
 
-Revisa con cuidado el [Ejemplo10](#ejemplo10)
+Revisa con cuidado el [Ejemplo 4.1](#ejemplo-4.1)
 
 ## Métodos abstractos.
 
@@ -530,7 +530,7 @@ Un método se declara como abstracto mediante el uso del modificador abstract (c
 [modificador_acceso] abstract <tipo> <nombreMetodo> ([parámetros]) [excepciones];
 ```
 
-Estos métodos tendrán que ser obligatoriamente redefinidos (en realidad “definidos”, pues aún no tienen contenido) en las clases derivadas. Si en una clase derivada se deja algún método abstracto sin implementar, esa clase derivada será también una clase abstracta.
+Estos métodos tendrán que ser obligatoriamente redefinidos (en realidad "definidos", pues aún no tienen contenido) en las clases derivadas. Si en una clase derivada se deja algún método abstracto sin implementar, esa clase derivada será también una clase abstracta.
 
 > Cuando una clase contiene un método abstracto tiene que declararse como abstracta obligatoriamente.
 
@@ -542,7 +542,7 @@ Debes tener en cuenta al trabajar con métodos abstractos:
 - Un método abstracto no puede ser privado (no se podría implementar, dado que las clases derivadas no tendrían acceso a él).
 - Los métodos abstractos no pueden ser estáticos, pues los métodos estáticos no pueden ser redefinidos (y los métodos abstractos necesitan ser redefinidos).
 
-Revisa con cuidado el [Ejemplo11](#ejemplo11)
+Revisa con cuidado el [Ejemplo 4.2](#ejemplo-4.2)
 
 ## Clases y métodos finales.
 
@@ -607,7 +607,7 @@ Veamos un ejemplo de cada posibilidad:
 
    ```java
    // Referencia constante: siempre se apuntará al mismo objeto Alumno recién creado, aunque este objeto pueda sufrir modificaciones.
-   final Alumno PRIMER_ALUMNO= new Alumno (“Pepe”, “Torres”, 9.55); // Ref. constante
+   final Alumno PRIMER_ALUMNO= new Alumno ("Pepe", "Torres", 9.55); // Ref. constante
    
    // Si la variable no es una referencia (tipo primitivo), sería una constante más (como un atributo constante).
    final int NUMERO_DIEZ= 10; // Valor constante (dentro del ámbito de vida de la variable)
@@ -617,7 +617,7 @@ Veamos un ejemplo de cada posibilidad:
 
   ```java
   void metodoConParametrosFijos (final int par1, final int par2) {
-  	// Los parámetros “par1” y “par2” no podrán sufrir modificaciones aquí dentro
+  	// Los parámetros "par1" y "par2" no podrán sufrir modificaciones aquí dentro
   	...
   }
   ```
@@ -636,7 +636,7 @@ llevados a cabo por A; pero no que A sea de clase B).
 
 Imagina que estás diseñando una aplicación que trabaja con clases que representan distintos tipos de animales. Algunas de las acciones que quieres que lleven a cabo están relacionadas con el hecho de que algunos animales sean depredadores (por ejemplo: observar una presa, perseguirla, comérsela, etc.) o sean presas (observar, huir, esconderse, etc.). Si creas la clase León, esta clase podría implementar una interfaz Depredador, mientras que otras clases como Gacela implementarían las acciones de la interfaz Presa. Por otro lado, podrías tener también el caso de la clase Rana, que implementaría las acciones de la interfaz Depredador (pues es cazador de pequeños insectos), pero también la de Presa (pues puede ser cazado y necesita las acciones necesarias para protegerse).
 
-![image-20220419103525071](/assets/image-20220419103525071.png)
+<img src="/assets/image-20220419103525071.png" alt="image-20220419103525071" style="zoom:75%;" />
 
 ## Concepto de interfaz.
 
@@ -715,7 +715,7 @@ public interface Depredador {
 
 Serán las clases que implementen esta interfaz (León, Leopardo, Cocodrilo, Rana, Lagarto, Hombre, etc.) las que definan cada uno de los métodos por dentro.
 
-Revisa con cuidado el [Ejemplo12](#ejemplo12)
+Revisa con cuidado el [Ejemplo 5.2](#ejemplo-5.2)
 
 ## Implementación de interfaces.
 
@@ -763,7 +763,7 @@ class Rana implements Depredador, Presa {
 
 Y en su interior habría que implementar aquellos métodos que contengan ambas interfaces, tanto las de Depredador (localizar, cazar, etc.) como las de Presa (observar, huir, etc.).
 
-Revisa con cuidado el [Ejemplo12](#ejemplo12)
+Revisa con cuidado el [Ejemplo 5.3](#ejemplo-5.3)
 
 ### [REVISAR***] Un ejemplo de implementación de interfaces: la interfaz ActionListener.
 
@@ -814,7 +814,7 @@ devuelto).
 
 > La utilización de nombres idénticos en diferentes interfaces que pueden ser implementadas a la vez por una misma clase puede causar, además del problema de la colisión de nombres, dificultades de legibilidad en el código, pudiendo dar lugar a confusiones. Si es posible intenta evitar que se produzcan este tipo de situaciones.
 
-Revisa con cuidado el [Ejemplo13](#ejemplo13)
+Revisa con cuidado el [Ejemplo 5.4](#ejemplo-5.4)
 
 ##  Herencia de interfaces.
 
@@ -840,7 +840,9 @@ public interface InterfazCompleja extends InterfazUno, InterfazDos {
 } 
 ```
 
-Revisa con cuidado el [Ejemplo14](#ejemplo14)
+Revisa con cuidado el [Ejemplo 5.5](#ejemplo-5.5)
+
+Y también el [Ejemplo 5.6](#ejemplo-5.6)
 
 # Polimorfismo
 
@@ -904,7 +906,7 @@ En el ejemplo anterior de la clase X y sus subclases A y B, la llamada al métod
 obj.m () // Esta llamada será resuelta en tiempo de ejecución (ligadura dinámica)
 ```
 
-Revisa con cuidado el [Ejemplo15](#ejemplo15)
+Revisa con cuidado el [Ejemplo 6.2](#ejemplo-6.2)
 
 ## Limitaciones de la ligadura dinámica.
 
@@ -916,7 +918,7 @@ Veamos un ejemplo: si dispones de una clase A que es subclase de B y declaras un
 
 En el ejemplo de las clases Persona, Profesor y Alumno, el polimorfismo nos permitiría declarar variables de tipo Persona y más tarde hacer con ellas referencia a objetos de tipo Profesor o Alumno, pero no deberíamos intentar acceder con esa variable a métodos que sean específicos de la clase Profesor o de la clase Alumno, tan solo a métodos que sabemos que van a existir seguro en ambos tipos de objetos (métodos de la superclase Persona).
 
-Revisa con cuidado el [Ejemplo16](#ejemplo16)
+Revisa con cuidado el [Ejemplo 6.3](#ejemplo-6.3)
 
 ## Interfaces y polimorfismo.
 
@@ -1001,56 +1003,97 @@ System.out.printf ("obj.atrib2=%d\n", ((B) obj).atrib2);
 
 # Ejemplos UD08
 
-## Ejemplo1
+## Ejemplo 2.1
 
-Intenta rescribir los siguientes los métodos de la clase Rectangulo teniendo en cuenta ahora su nueva
-estructura de atributos (dos objetos de la clase Punto, en lugar de cuatro elementos de tipo double):
+Intenta rescribir los siguientes los métodos de la clase `Rectangulo` teniendo en cuenta ahora su nueva estructura de atributos (dos objetos de la clase `Punto`, en lugar de cuatro elementos de tipo `double`):
 
-1. Método calcularSuperfice, que calcula y devuelve el área de la superficie encerrada por la figura.
-2. Método calcularPerimetro, que calcula y devuelve la longitud del perímetro de la figura.
+1. Método `calcularSuperfice`, que calcula y devuelve el área de la superficie encerrada por la figura.
+2. Método `calcularPerimetro`, que calcula y devuelve la longitud del perímetro de la figura.
 
-En ambos casos la interfaz no se ve modificada en absoluto (desde fuera su funcionamiento es el mismo), pero internamente deberás tener en cuenta que ya no existen los atributos x1, y1, x2, y2, de tipo double, sino los atributos vertice1 y vertice2 de tipo Punto.
+En ambos casos la interfaz no se ve modificada en absoluto (desde fuera su funcionamiento es el mismo), pero internamente deberás tener en cuenta que ya no existen los atributos `x1`, `y1`, `x2`, `y2`, de tipo `double`, sino los atributos `vertice1` y `vertice2` de tipo `Punto`.
+
+Clase `Punto`:
 
 ```java
-public double calcularSuperficie () {
-    double area, base, altura; // Variables locales
-    base= vertice2.obtenerX () - vertice1.obtenerX (); // Antes era x2 - x1
-    altura= vertice2.obtenerY () - vertice1.obtenerY (); // Antes era y2 - y1
-    area= base * altura;
-    return area;
-}
+package UD08._01_Ejemplo_2_1;
 
-public double CalcularPerimetro () {
-	double perimetro, base, altura; // Variables locales
-    base= vertice2.obtenerX () - vertice1.obtenerX (); // Antes era x2 - x1
-    altura= vertice2.obtenerY () - vertice1.obtenerY (); // Antes era y2 - y1
-    perimetro= 2*base + 2*altura;
-    return perimetro;
+public class Punto {
+    private double x;
+    private double y;
+
+    public Punto(double x, double y) {
+        this.x = x;
+        this.y = y;
+    }
+
+    public double getX() {
+        return x;
+    }
+
+    public void setX(double x) {
+        this.x = x;
+    }
+
+    public double getY() {
+        return y;
+    }
+
+    public void setY(double y) {
+        this.y = y;
+    }
+    
 }
 ```
 
-En la siguiente presentación puedes observar detalladamente el proceso completo de elaboración de
-la clase Rectangulo haciendo uso de la clase Punto:
+Clase `Rectangulo`:
 
-1. Objetos de tipo Rectángulo compuesto por objetos de tipo Punto
+```java
+package UD08._01_Ejemplo_2_1;
+
+public class Punto {
+    private double x;
+    private double y;
+
+    public Punto(double x, double y) {
+        this.x = x;
+        this.y = y;
+    }
+    public double getX() {
+        return x;
+    }
+    public void setX(double x) {
+        this.x = x;
+    }
+    public double getY() {
+        return y;
+    }
+    public void setY(double y) {
+        this.y = y;
+    }   
+}
+```
+
+En la siguiente presentación puedes observar detalladamente el proceso completo de elaboración de la clase `Rectangulo` haciendo uso de la clase `Punto`:
+
+1. Objetos de tipo `Rectángulo` compuesto por objetos de tipo `Punto`
 
 <img src="/assets/image-20220419185440131.png" alt="image-20220419185440131" style="zoom:75%;" />
 
-2. Atributos de un objeto Rectángulo compuesto por objetos de tipo Punto
+2. Atributos de un objeto `Rectángulo` compuesto por objetos de tipo `Punto`
 
 <img src="/assets/image-20220419185525220.png" alt="image-20220419185525220" style="zoom:75%;" />
 
-3. Clase Rectángulo
+3. Clase `Rectángulo`
 
    <img src="/assets/image-20220419185607267.png" alt="image-20220419185607267" style="zoom:75%;" />
 
-4. Método calcularSuperficie
+4. Método `calcularSuperficie`
 
    <img src="/assets/image-20220419185641090.png" alt="image-20220419185641090" style="zoom:75%;" />
 
-## Ejemplo2
+## Ejemplo 2.2
 
-Dada la clase Rectangulo, escribe sus nuevos métodos obtenerVertice1 y obtenerVertice2 para que devuelvan los vértices inferior izquierdo y superior derecho del rectángulo (objetos de tipo Punto), teniendo en cuenta su nueva estructura de atributos (dos objetos de la clase Punto, en lugar de cuatro elementos de tipo double):
+Dada la clase `Rectangulo`, escribe sus nuevos métodos `obtenerVertice1` y `obtenerVertice2` para que devuelvan los vértices inferior izquierdo y superior derecho del rectángulo (objetos de tipo `Punto`), teniendo en cuenta su nueva estructura de atributos (dos objetos de la clase `Punto`, en lugar de cuatro elementos de tipo `double`):
 
 Los métodos de obtención de vértices devolverán objetos de la clase Punto:
 
@@ -1066,46 +1109,82 @@ public Punto obtenerVertice2 (){
 
 Esto funcionaría perfectamente, pero deberías tener cuidado con este tipo de métodos que devuelven directamente una referencia a un objeto atributo que probablemente has definido como privado. Estás de alguna manera haciendo público un atributo que fue declarado como privado.
 
-Para evitar que esto suceda bastaría con crear un nuevo objeto que fuera una copia del atributo que se desea devolver (en este caso un objeto de la clase Punto).
+Para evitar que esto suceda bastaría con crear un nuevo objeto que fuera una copia del atributo que se desea devolver (en este caso un objeto de la clase `Punto`).
 
-Aquí tienes algunas posibilidades:
+Aquí tienes la solución para la nueva clase `Rectangulo`:
 
 ```java
-public Punto obtenerVertice1 (){
-    // Creación de un nuevo punto extrayendo sus atributos
-	double x, y;
-	Punto p;
-    x= this.vertice1.obtenerX();
-    y= this.vertice1.obtenerY();
-    p= new Punto (x,y);
-    return p;
-}
+package UD08._02_Ejemplo_2_2;
 
-public Punto obtenerVertice1 (){
-    // Utilizando el constructor copia de Punto (si es que está definido)
-	Punto p;
-	p= new Punto (this.vertice1); // Uso del constructor copia
-	return p;
+class Rectangulo {
+
+    private Punto vertice1;
+    private Punto vertice2;
+
+    public double calcularSuperficie() {
+        double area, base, altura; // Variables locales
+        base = vertice2.getX() - vertice1.getX(); // Antes era x2 - x1
+        altura = vertice2.getY() - vertice1.getY(); // Antes era y2 - y1
+        area = base * altura;
+        return area;
+    }
+
+    public double CalcularPerimetro() {
+        double perimetro, base, altura; // Variables locales
+        base = vertice2.getX() - vertice1.getX(); // Antes era x2 - x1
+        altura = vertice2.getY() - vertice1.getY(); // Antes era y2 - y1
+        perimetro = 2 * base + 2 * altura;
+        return perimetro;
+    }
+
+    /*
+     * Así no!
+     *
+     * public Punto obtenerVertice1 (){
+     * return vertice1;
+     * }
+     * public Punto obtenerVertice2 (){
+     * return vertice2;
+     * }
+     */
+
+    //Mejor de este modo
+    public Punto obtenerVertice1() {
+        // Creación de un nuevo punto extrayendo sus atributos
+        double x, y;
+        Punto p;
+        x = this.vertice1.getX();
+        y = this.vertice1.getY();
+        p = new Punto(x, y);
+        return p;
+    }
+
+    //O mejor así:
+    public Punto obtenerVertice2() {
+        // Utilizando el constructor copia de Punto (si es que está definido)
+        Punto p;
+        p = new Punto(this.vertice2); // Uso del constructor copia
+        return p;
+    }
 }
 ```
 
 De esta manera, se devuelve un punto totalmente nuevo que podrá ser manipulado sin ningún temor por parte del código cliente de la clase pues es una copia para él.
-Para el método obtenerVertice2 sería exactamente igual.
 
-## Ejemplo3
+## Ejemplo 2.2.1
 
-Intenta rescribir los constructores de la clase Rectangulo teniendo en cuenta ahora su nueva estructura de atributos (dos objetos de la clase Punto, en lugar de cuatro elementos de tipo double):
+Intenta rescribir los constructores de la clase `Rectangulo` teniendo en cuenta ahora su nueva estructura de atributos (dos objetos de la clase `Punto`, en lugar de cuatro elementos de tipo `double`):
 1. Un constructor sin parámetros (para sustituir al constructor por defecto) que haga que los valores iniciales de las esquinas del rectángulo sean (0,0) y (1,1).
-2. Un constructor con cuatro parámetros, x1, y1, x2, y2, que cree un rectángulo con los vértices (x1, y1) y (x2, y2).
-3. Un constructor con dos parámetros, punto1, punto2, que rellene los valores iniciales de los atributos del rectángulo con los valores proporcionados a través de los parámetros.
-4. Un constructor con dos parámetros, base y altura, que cree un rectángulo donde el vértice inferior derecho esté ubicado en la posición (0,0) y que tenga una base y una altura tal y como indican los dos parámetros proporcionados.
+2. Un constructor con cuatro parámetros, `x1`, `y1`, `x2`, `y2`, que cree un rectángulo con los vértices (`x1`, `y1`) y (`x2`, `y2`).
+3. Un constructor con dos parámetros, `punto1`, `punto2`, que rellene los valores iniciales de los atributos del rectángulo con los valores proporcionados a través de los parámetros.
+4. Un constructor con dos parámetros, `base` y `altura`, que cree un rectángulo donde el vértice inferior derecho esté ubicado en la posición (0,0) y que tenga una base y una altura tal y como indican los dos parámetros proporcionados.
 5. Un constructor copia.
 
 POSIBLE SOLUCIÓN
 
-Durante el proceso de creación de un objeto (constructor) de la clase contenedora (en este caso Rectangulo) hay que tener en cuenta también la creación (llamada a constructores) de aquellos objetos que son contenidos (en este caso objetos de la clase Punto).
+Durante el proceso de creación de un objeto (constructor) de la clase contenedora (en este caso `Rectangulo`) hay que tener en cuenta también la creación (llamada a constructores) de aquellos objetos que son contenidos (en este caso objetos de la clase Punto).
 
-En el caso del primer constructor, habrá que crear dos puntos con las coordenadas (0,0) y (1,1) y asignarlos a los atributos correspondientes (vertice1 y vertice2):
+En el caso del primer constructor, habrá que crear dos puntos con las coordenadas (0,0) y (1,1) y asignarlos a los atributos correspondientes (`vertice1` y `vertice2`):
 
 ```java
 public Rectangulo (){
@@ -1123,7 +1202,7 @@ public Rectangulo (double x1, double y1, double x2, double y2){
 }
 ```
 
-En el caso del tercer constructor puedes utilizar directamente los dos puntos que se pasan como parámetros para construir los vértices del rectángulo:
+En el caso del tercer constructor puedes utilizar directamente los dos puntos que se pasan como parámetros para construir los vértices del rectángulo.
 
 Ahora bien, esto podría ocasionar un efecto colateral no deseado si esos objetos de tipo Punto son modificados en el futuro desde el código cliente del constructor (no sabes si esos puntos fueron creados especialmente para ser usados por el rectángulo o si pertenecen a otro objeto que podría modificarlos más tarde).
 
@@ -1134,7 +1213,7 @@ Por tanto, para este caso quizá fuera recomendable crear dos nuevos puntos a im
 
 Aquí tienes las dos posibles versiones:
 
-Constructor que “extrae” los atributos de los parámetros y crea nuevos objetos:
+Constructor que "extrae" los atributos de los parámetros y crea nuevos objetos:
 
 ```java
 public Rectangulo (Punto vertice1, Punto vertice2) {
@@ -1146,15 +1225,13 @@ public Rectangulo (Punto vertice1, Punto vertice2) {
 Constructor que crea los nuevos objetos mediante el constructor copia de los parámetros:
 
 ```java
-public Rectangulo (Punto vertice1, Punto vertice2) {
-	this.vertice1= new Punto (vertice1.obtenerX(), vertice1.obtenerY() );
-	this.vertice2= new Punto (vertice2.obtenerX(), vertice2.obtenerY() );
+public Rectangulo(Punto vertice1, Punto vertice2) {
+    this.vertice1 = new Punto(vertice1.getX(), vertice1.getY());
+    this.vertice2 = new Punto(vertice2.getX(), vertice2.getY());
 }
 ```
 
 En este segundo caso puedes observar la utilidad de los constructores de copia a la hora de tener que clonar objetos (algo muy habitual en las inicializaciones).
-
-Para el caso del constructor que recibe como parámetros la base y la altura, habrá que crear sendos vértices con valores (0,0) y (0 + base, 0 + altura), o lo que es lo mismo: (0,0) y (base, altura).
 
 ```java
 public Rectangulo (Punto vertice1, Punto vertice2) {
@@ -1163,10 +1240,18 @@ public Rectangulo (Punto vertice1, Punto vertice2) {
 }
 ```
 
+Para el caso del constructor que recibe como parámetros la base y la altura, habrá que crear sendos vértices con valores (0,0) y (0 + base, 0 + altura), o lo que es lo mismo: (0,0) y (base, altura).
+
+```java
+public Rectangulo(double base, double altura) {
+    this.vertice1 = new Punto(0,0);
+    this.vertice2 = new Punto(base, altura);
+}
+```
+
 Quedaría finalmente por implementar el constructor copia:
 
 ```java
-// Constructor copia
 public Rectangulo (Rectangulo r) {
     this.vertice1= new Punto (r.obtenerVertice1() );
     this.vertice2= new Punto (r.obtenerVertice2() );
@@ -1174,9 +1259,9 @@ public Rectangulo (Rectangulo r) {
 ```
 
 
-En este caso nuevamente volvemos a clonar los atributos vertice1 y vertice2 del objeto r que se ha pasado como parámetro para evitar tener que compartir esos atributos en los dos rectángulos.
+En este caso nuevamente volvemos a clonar los atributos `vertice1` y `vertice2` del objeto `r` que se ha pasado como parámetro para evitar tener que compartir esos atributos en los dos rectángulos.
 
-## Ejemplo4
+## Ejemplo 3.1
 
 Imagina que también necesitas una clase Profesor, que contará con atributos como nombre, apellidos, fecha de nacimiento, salario y especialidad. ¿Cómo crearías esa nueva clase y qué atributos le añadirías?
 
@@ -1190,349 +1275,398 @@ public class Profesor extends Persona {
 }
 ```
 
-## Ejemplo5
+## Ejemplo 3.2
 
-Rescribe las clases Alumno y Profesor utilizando el modificador protected para sus atributos del mismo modo que se ha hecho para su superclase Persona
-1. Clase Alumno.
-    Se trata simplemente de añadir el modificador de acceso protected a los nuevos atributos que añade la clase.
-
-  ```java
-  public class Alumno extends Persona {
-      protected String grupo;
-      protected double notaMedia;
-      ...
-  }
-  ```
-
-2. Clase Profesor.
-    Exactamente igual que en la clase Alumno.
-
-  ```java
-  public class Profesor extends Persona {
-      protected String especialidad;
-      protected double salario;
-      ...
-  }
-  ```
-
-## Ejemplo6
-
-Dadas las clases Alumno y Profesor que has utilizado anteriormente, implementa métodos get y set en las clases Alumno y Profesor para trabajar con sus cinco atributos (tres heredados más dos específicos).
-
-POSIBLE SOLUCIÓN
-
-1. Clase Alumno.
-
-  Se trata de heredar de la clase Persona y por tanto utilizar con normalidad sus atributos heredados como si pertenecieran a la propia clase (de hecho se puede considerar que le pertenecen, dado que los ha heredado).
-
-  ```java
-  public class Alumno extends Persona {
-  	protected String grupo;
-  	protected double notaMedia;
-      // Método getNombre
-      public String getNombre (){
-          return nombre;
-      }
-      // Método getApellidos
-      public String getApellidos (){
-          return apellidos;
-      }
-      // Método getFechaNacim
-      public GregorianCalendar getFechaNacim (){
-          return this.fechaNacim;
-      }
-      // Método getGrupo
-      public String getGrupo (){
-          return grupo;
-      }
-      // Método getNotaMedia
-      public double getNotaMedia (){
-          return notaMedia;
-      }
-      // Método setNombre
-      public void setNombre (String nombre){
-          this.nombre= nombre;
-      }
-      // Método setApellidos
-      public void setApellidos (String apellidos){
-          this.apellidos= apellidos;
-      }
-      // Método setFechaNacim
-      public void setFechaNacim (GregorianCalendar fechaNacim){
-          this.fechaNacim= fechaNacim;
-      }
-      // Método setGrupo
-      public void setGrupo (String grupo){
-          this.grupo= grupo;
-      }
-      // Método setNotaMedia
-      public void setNotaMedia (double notaMedia){
-          this.notaMedia= notaMedia;
-      }
-  }
-  ```
-
-
-Si te fijas, puedes utilizar sin problema la referencia this a la propia clase con esos atributos heredados, pues pertenecen a la clase: this.nombre, this.apellidos, etc.
-
-2. Clase Profesor.
-
-  Seguimos exactamente el mismo procedimiento que con la clase Alumno.
-
-  ```java
-  public class Profesor extends Profesor {
-      String especialidad;
-      double salario;
-      // Método getNombre
-      public String getNombre (){
-      	return nombre;
-      }
-      // Método getApellidos
-      public String getApellidos (){
-      	return apellidos;
-      }
-      // Método getFechaNacim
-      public GregorianCalendar getFechaNacim (){
-      	return this.fechaNacim;
-      }
-      // Método getEspecialidad
-      public String getEspecialidad (){
-      	return especialidad;
-      }
-      // Método getSalario
-      public double getSalario (){
-      	return salario;
-      }
-      // Método setNombre
-      public void setNombre (String nombre){
-      	this.nombre= nombre;
-      }
-      // Método setApellidos
-      public void setApellidos (String apellidos){
-      	this.apellidos= apellidos;
-      }
-      // Método setFechaNacim
-      public void setFechaNacim (GregorianCalendar fechaNacim){
-      	this.fechaNacim= fechaNacim;
-      }
-      // Método setSalario
-      public void setSalario (double salario){
-      	this.salario= salario;
-      }
-      // Método setESpecialidad
-      public void setESpecialidad (String especialidad){
-      	this.especialidad= especialidad;
-      }
-  }
-  ```
-
-Una conclusión que puedes extraer de este código es que has tenido que escribir los métodos get y set para los tres atributos heredados, pero ¿no habría sido posible definir esos seis métodos en la clase base y así estas dos clases derivadas hubieran también heredado esos métodos? La respuesta es afirmativa y de hecho es como lo vas a hacer a partir de ahora. De esa manera te habrías evitado tener que escribir seis métodos en la clase Alumno y otros seis en la clase Profesor. Así que recuerda: se pueden heredar tanto los atributos como los métodos.
-
-Aquí tienes un ejemplo de cómo podrías haber definido la clase Persona para que luego se hubieran podido heredar de ella sus métodos (y no sólo sus atributos):
-
-```java
-public class Persona {
-    protected String nombre;
-    protected String apellidos;
-    protected GregorianCalendar fechaNacim;
-    // Método getNombre
-    public String getNombre (){
-    	return nombre;
-    }
-    // Método getApellidos
-    public String getApellidos (){
-    	return apellidos;
-    }
-    // Método getFechaNacim
-    public GregorianCalendar getFechaNacim (){
-    	return this.fechaNacim;
-    }
-    // Método setNombre
-    public void setNombre (String nombre){
-    	this.nombre= nombre;
-    }
-    // Método setApellidos
-    public void setApellidos (String apellidos){
-    	this.apellidos= apellidos;
-    }
-    // Método setFechaNacim
-    public void setFechaNacim (GregorianCalendar fechaNacim){
-    	this.fechaNacim= fechaNacim;
-    }
-}
-```
-
-## Ejemplo7
-
-Dadas las clases Persona, Alumno y Profesor que has utilizado anteriormente, implementa métodos get y set en la clase Persona para trabajar con sus tres atributos y en las clases Alumno y Profesor para manipular sus cinco atributos (tres heredados más dos específicos), teniendo en cuenta que los métodos que ya hayas definido para Persona van a ser heredados en Alumno y en Profesor.
-
-1. Clase Persona.
-
-  ```java
-  public class Persona {
-      protected String nombre;
-      protected String apellidos;
-      protected GregorianCalendar fechaNacim;
-      // Método getNombre
-      public String getNombre (){
-      	return nombre;
-      }
-      // Método getApellidos
-      public String getApellidos (){
-      	return apellidos;
-      }
-      // Método getFechaNacim
-      public GregorianCalendar getFechaNacim (){
-      	return this.fechaNacim;
-      }
-      // Método setNombre
-      public void setNombre (String nombre){
-      	this.nombre= nombre;
-      }
-      // Método setApellidos
-      public void setApellidos (String apellidos){
-      	this.apellidos= apellidos;
-      }
-      // Método setFechaNacim
-      public void setFechaNacim (GregorianCalendar fechaNacim){
-      	this.fechaNacim= fechaNacim;
-      }
-  }
-  ```
-
-2. Clase Alumno.
-
-   Al heredar de la clase Persona tan solo es necesario escribir métodos para los nuevos atributos (métodos especializados de acceso a los atributos especializados), pues los métodos genéricos (de acceso a los atributos genéricos) ya forman parte de la clase al haberlos heredado.
+Reescribe las clases `Alumno` y `Profesor` utilizando el modificador protected para sus atributos del mismo modo que se ha hecho para su superclase `Persona`
+1. Clase `Alumno`. Se trata simplemente de añadir el modificador de acceso protected a los nuevos atributos que añade la clase.
 
    ```java
    public class Alumno extends Persona {
        protected String grupo;
        protected double notaMedia;
-       
-       // Método getGrupo
-       public String getGrupo (){
-       	return grupo;
-       }
-       // Método getNotaMedia
-       public double getNotaMedia (){
-       	return notaMedia;
-       }
-       // Método setGrupo
-       public void setGrupo (String grupo){
-       	this.grupo= grupo;
-       }
-       // Método setNotaMedia
-       public void setNotaMedia (double notaMedia){
-       	this.notaMedia= notaMedia;
-       }    
+       ...
    }
    ```
 
-
-   Aquí tienes una demostración práctica de cómo la herencia permite una reutilización eficiente del código, evitando tener que repetir atributos y métodos. Sólo has tenido que escribir cuatro métodos en lugar de diez.
-
-3. Clase Profesor.
-    Seguimos exactamente el mismo procedimiento que con la clase Alumno.
-
-  ```java
-  public class Profesor extends Persona {
-      String especialidad;
-      double salario;
-      // Método getEspecialidad
-      public String getEspecialidad (){
-      	return especialidad;
-      }
-      // Método getSalario
-      public double getSalario (){
-      	return salario;
-      }
-      // Método setSalario
-      public void setSalario (double salario){
-      	this.salario= salario;
-      }
-      // Método setEspecialidad
-      public void setESpecialidad (String especialidad){
-      	this.especialidad= especialidad;
-      }
-  }
-  ```
-
-Dadas las clases Persona, Alumno y Profesor que has utilizado anteriormente, redefine el método getNombre para que devuelva la cadena “Alumno: “, junto con el nombre del alumno, si se trata de un objeto de la clase Alumno o bien “Profesor “, junto con el nombre del profesor, si se trata de un objeto de la clase Profesor.
-1. Clase Alumno.
-
-  Al heredar de la clase Persona tan solo es necesario escribir métodos para los nuevos atributos (métodos especializados de acceso a los atributos especializados), pues los métodos genéricos (de acceso a los atributos genéricos) ya forman parte de la clase al haberlos heredado. Esos son los métodos que se implementaron en el ejercicio anterior (getGrupo, setGrupo, etc.).
-
-  Ahora bien, hay que escribir otro método más, pues tienes que redefinir el método getNombre para que tenga un comportamiento un poco diferente al getNombre que se hereda de la clase base Persona:
-
-  ```java
-  // Método getNombre
-  @Override
-  public String getNombre (){
-  	return “Alumno: “ + this.nombre;
-  }
-  ```
-
-  En este caso podría decirse que se “renuncia” al método heredado para redefinirlo con un
-  comportamiento más especializado y acorde con la clase derivada.
-
-2. Clase Profesor.
-
-  Seguimos exactamente el mismo procedimiento que con la clase Alumno (redefinición del método
-  getNombre).
-
-  ```java
-  // Método getNombre
-  @Override
-  public String getNombre (){
-  	return “Profesor: “ + this.nombre;
-  }
-  ```
-
-## Ejemplo8
-
-Dadas las clases Persona, Alumno y Profesor, define un método mostrar para la clase Persona, que muestre el contenido de los atributos (datos personales) de un objeto de la clase Persona. A continuación, define sendos métodos mostrar especializados para las clases Alumno y Profesor que “amplíen” la funcionalidad del método mostrar original de la clase Persona.
-
-1. Método mostrar de la clase Persona.
+2. Clase `Profesor`. Exactamente igual que en la clase `Alumno`.
 
    ```java
-   public void mostrar () {
-      SimpleDateFormat formatoFecha = new SimpleDateFormat("dd/MM/yyyy");
-      String Stringfecha= formatoFecha.format(this.fechaNacim.getTime());
-      System.out.printf ("Nombre: %s\n", this.nombre);
-      System.out.printf ("Apellidos: %s\n", this.apellidos);
-      System.out.printf ("Fecha de nacimiento: %s\n", Stringfecha);
+   public class Profesor extends Persona {
+       protected String especialidad;
+       protected double salario;
+       ...
    }
    ```
 
-2. Método mostrar de la clase Profesor.
-   Llamamos al método mostrar de su clase padre (Persona) y luego añadimos la funcionalidad específica para la subclase Profesor:
+## Ejemplo 3.3
+
+Dadas las clases Alumno y Profesor que has utilizado anteriormente, implementa métodos get y set en las clases Alumno y Profesor para trabajar con sus cinco atributos (tres heredados más dos específicos).
+
+POSIBLE SOLUCIÓN
+
+1. Clase `Alumno`. Se trata de heredar de la clase Persona y por tanto utilizar con normalidad sus atributos heredados como si pertenecieran a la propia clase (de hecho se puede considerar que le pertenecen, dado que los ha heredado).
+
+   ```java
+   package UD08._06_Ejemplo_3_3;
+   
+   import java.time.LocalDate;
+   
+   public class Alumno extends Persona {
+   
+       protected String grupo;
+       protected double notaMedia;
+   
+       // Método getNombre
+       public String getNombre() {
+           return nombre;
+       }
+   
+       // Método getApellidos
+       public String getApellidos() {
+           return apellidos;
+       }
+   
+       // Método getFechaNacim
+       public LocalDate getFechaNacim() {
+           return this.fechaNacim;
+       }
+   
+       // Método getGrupo
+       public String getGrupo() {
+           return grupo;
+       }
+   
+       // Método getNotaMedia
+       public double getNotaMedia() {
+           return notaMedia;
+       }
+   
+       // Método setNombre
+       public void setNombre(String nombre) {
+           this.nombre = nombre;
+       }
+   
+       // Método setApellidos
+       public void setApellidos(String apellidos) {
+           this.apellidos = apellidos;
+       }
+   
+       // Método setFechaNacim
+       public void setFechaNacim(LocalDate fechaNacim) {
+           this.fechaNacim = fechaNacim;
+       }
+   
+       // Método setGrupo
+       public void setGrupo(String grupo) {
+           this.grupo = grupo;
+       }
+   
+       // Método setNotaMedia
+       public void setNotaMedia(double notaMedia) {
+           this.notaMedia = notaMedia;
+       }
+   }
+   ```
+
+   Si te fijas, puedes utilizar sin problema la referencia `this` a la propia clase con esos atributos heredados, pues pertenecen a la clase: `this.nombre`, `this.apellidos`, etc.
+
+2. Clase `Profesor`. Seguimos exactamente el mismo procedimiento que con la clase Alumno.
+
+   ```java
+   package UD08._06_Ejemplo_3_3;
+   
+   import java.time.LocalDate;
+   
+   public class Profesor extends Persona {
+   
+       String especialidad;
+       double salario;
+   
+       // Método getNombre
+       public String getNombre() {
+           return nombre;
+       }
+   
+       // Método getApellidos
+       public String getApellidos() {
+           return apellidos;
+       }
+   
+       // Método getFechaNacim
+       public LocalDate getFechaNacim() {
+           return this.fechaNacim;
+       }
+   
+       // Método getEspecialidad
+       public String getEspecialidad() {
+           return especialidad;
+       }
+   
+       // Método getSalario
+       public double getSalario() {
+           return salario;
+       }
+   
+       // Método setNombre
+       public void setNombre(String nombre) {
+           this.nombre = nombre;
+       }
+   
+       // Método setApellidos
+       public void setApellidos(String apellidos) {
+           this.apellidos = apellidos;
+       }
+   
+       // Método setFechaNacim
+       public void setFechaNacim(LocalDate fechaNacim) {
+           this.fechaNacim = fechaNacim;
+       }
+   
+       // Método setSalario
+       public void setSalario(double salario) {
+           this.salario = salario;
+       }
+   
+       // Método setESpecialidad
+       public void setESpecialidad(String especialidad) {
+           this.especialidad = especialidad;
+       }
+   }
+   ```
+
+Una conclusión que puedes extraer de este código es que has tenido que escribir los métodos `get` y `set` para los tres atributos heredados, pero ¿no habría sido posible definir esos seis métodos en la clase base y así estas dos clases derivadas hubieran también heredado esos métodos? La respuesta es afirmativa y de hecho es como lo vas a hacer a partir de ahora. De esa manera te habrías evitado tener que escribir seis métodos en la clase `Alumno` y otros seis en la clase `Profesor`. 
+
+> Así que recuerda: **se pueden heredar tanto los atributos como los métodos.**
+
+Aquí tienes un ejemplo de cómo podrías haber definido la clase Persona para que luego se hubieran podido heredar de ella sus métodos (y no sólo sus atributos):
+
+```java
+package UD08._06_Ejemplo_3_3;
+
+import java.time.LocalDate;
+
+public class Persona {
+
+    protected String nombre;
+    protected String apellidos;
+    protected LocalDate fechaNacim;
+
+    // Método getNombre
+    public String getNombre() {
+        return nombre;
+    }
+
+    // Método getApellidos
+    public String getApellidos() {
+        return apellidos;
+    }
+
+    // Método getFechaNacim
+    public LocalDate getFechaNacim() {
+        return this.fechaNacim;
+    }
+
+    // Método setNombre
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    // Método setApellidos
+    public void setApellidos(String apellidos) {
+        this.apellidos = apellidos;
+    }
+
+    // Método setFechaNacim
+    public void setFechaNacim(LocalDate fechaNacim) {
+        this.fechaNacim = fechaNacim;
+    }
+   }
+
+```
+
+## Ejemplo 3.3.1
+
+Dadas las clases `Persona`, `Alumno` y `Profesor` que has utilizado anteriormente, implementa métodos `get` y `set` en la clase `Persona` para trabajar con sus tres atributos y en las clases `Alumno` y `Profesor` para manipular sus cinco atributos (tres heredados más dos específicos), teniendo en cuenta que los métodos que ya hayas definido para `Persona` van a ser heredados en `Alumno` y en `Profesor`.
+
+1. Clase `Persona`.
+
+   ```java
+   package UD08._07_Ejemplo_3_3_1;
+   
+   import java.time.LocalDate;
+   
+   public class Persona {
+   
+       protected String nombre;
+       protected String apellidos;
+       protected LocalDate fechaNacim;
+   
+       // Método getNombre
+       public String getNombre() {
+           return nombre;
+       }
+   
+       // Método getApellidos
+       public String getApellidos() {
+           return apellidos;
+       }
+   
+       // Método getFechaNacim
+       public LocalDate getFechaNacim() {
+           return this.fechaNacim;
+       }
+   
+       // Método setNombre
+       public void setNombre(String nombre) {
+           this.nombre = nombre;
+       }
+   
+       // Método setApellidos
+       public void setApellidos(String apellidos) {
+           this.apellidos = apellidos;
+       }
+   
+        // Método setFechaNacim
+       public void setFechaNacim(LocalDate fechaNacim) {
+           this.fechaNacim = fechaNacim;
+       }
+   }
+   ```
+
+2. Clase `Alumno`. Al heredar de la clase Persona tan solo es necesario escribir métodos para los nuevos atributos (métodos especializados de acceso a los atributos especializados), pues los métodos genéricos (de acceso a los atributos genéricos) ya forman parte de la clase al haberlos heredado.
+
+   ```java
+   package UD08._07_Ejemplo_3_3_1;
+   
+   public class Alumno extends Persona {
+   
+       protected String grupo;
+       protected double notaMedia;
+   
+       // Método getGrupo
+       public String getGrupo() {
+           return grupo;
+       }
+   
+       // Método getNotaMedia
+       public double getNotaMedia() {
+           return notaMedia;
+       }
+   
+       // Método setGrupo
+       public void setGrupo(String grupo) {
+           this.grupo = grupo;
+       }
+   
+       // Método setNotaMedia
+       public void setNotaMedia(double notaMedia) {
+           this.notaMedia = notaMedia;
+       }
+   }
+   
+   ```
+   Aquí tienes una demostración práctica de cómo la herencia permite una reutilización eficiente del código, evitando tener que repetir atributos y métodos. Sólo has tenido que escribir cuatro métodos en lugar de diez.
+
+3. Clase `Profesor`. Seguimos exactamente el mismo procedimiento que con la clase Alumno.
+
+   ```java
+   package UD08._07_Ejemplo_3_3_1;
+   
+   public class Profesor extends Persona {
+   
+       String especialidad;
+       double salario;
+   
+       // Método getEspecialidad
+       public String getEspecialidad() {
+           return especialidad;
+       }
+   
+       // Método getSalario
+       public double getSalario() {
+           return salario;
+       }
+   
+       // Método setSalario
+       public void setSalario(double salario) {
+           this.salario = salario;
+       }
+   
+       // Método setEspecialidad
+       public void setESpecialidad(String especialidad) {
+           this.especialidad = especialidad;
+       }
+   }
+   ```
+
+## Ejemplo 3.4
+
+Dadas las clases `Persona`, `Alumno` y `Profesor` que has utilizado anteriormente, redefine el método `getNombre` para que devuelva la cadena "Alumno: ", junto con el nombre del alumno, si se trata de un objeto de la clase Alumno o bien "Profesor ", junto con el nombre del profesor, si se trata de un objeto de la clase Profesor.
+
+1. Clase `Alumno`. Al heredar de la clase Persona tan solo es necesario escribir métodos para los nuevos atributos (métodos especializados de acceso a los atributos especializados), pues los métodos genéricos (de acceso a los atributos genéricos) ya forman parte de la clase al haberlos heredado. Esos son los métodos que se implementaron en el ejercicio anterior (`getGrupo`, `setGrupo`, etc.).
+
+   Ahora bien, hay que escribir otro método más, pues tienes que redefinir el método `getNombre` para que tenga un comportamiento un poco diferente al `getNombre` que se hereda de la clase base `Persona`:
+
+   ```java
+   // Método getNombre
+   @Override
+   public String getNombre (){
+       return "Alumno: " + this.nombre;
+   }
+   ```
+
+   En este caso podría decirse que se "renuncia" al método heredado para redefinirlo con un   comportamiento más especializado y acorde con la clase derivada.
+
+2. Clase `Profesor`. Seguimos exactamente el mismo procedimiento que con la clase Alumno (redefinición del método `getNombre`).
+
+   ```java
+   // Método getNombre
+   @Override
+   public String getNombre() {
+       return "Profesor: " + this.nombre;
+   }
+   ```
+
+## Ejemplo 3.5
+
+Dadas las clases `Persona`, `Alumno` y `Profesor`, define un método mostrar para la clase Persona, que muestre el contenido de los atributos (datos personales) de un objeto de la clase Persona. A continuación, define sendos métodos mostrar especializados para las clases Alumno y Profesor que "amplíen" la funcionalidad del método mostrar original de la clase Persona.
+1. Método mostrar de la clase `Persona`.
+   ```java
+   public void mostrar () {
+       SimpleDateFormat formatoFecha = new SimpleDateFormat("dd/MM/yyyy");
+       String Stringfecha= formatoFecha.format(this.fechaNacim.getTime());
+   
+       System.out.printf ("Nombre: %s\n", this.nombre);
+       System.out.printf ("Apellidos: %s\n", this.apellidos);
+       System.out.printf ("Fecha de nacimiento: %s\n", Stringfecha);
+   }
+   ```
+
+2. Método mostrar de la clase `Profesor`. Llamamos al método mostrar de su clase padre (`Persona`) y luego añadimos la funcionalidad específica para la subclase `Profesor`:
+    ```java
+   public void mostrar () {
+   	super.mostrar (); // Llamada al método "mostrar" de la superclase
+   
+       // A continuación mostramos la información "especializada" de esta subclase
+   	System.out.printf ("Especialidad: %s\n", this.especialidad);
+   	System.out.printf ("Salario: %7.2f euros\n", this.salario);
+   }
+   ```
+   
+3. Método mostrar de la clase `Alumno`. Llamamos al método mostrar de su clase padre (`Persona`) y luego añadimos la funcionalidad específica para la subclase `Alumno`:
 
    ```java
    public void mostrar () {
        super.mostrar ();
-       // Llamada al método “mostrar” de la superclase
-       // A continuación mostramos la información “especializada” de esta subclase
-       System.out.printf ("Especialidad: %s\n", this.especialidad);
-       System.out.printf ("Salario: %7.2f euros\n", this.salario);
+       // A continuación mostramos la información "especializada" de esta subclase
+       System.out.printf ("Grupo: %s\n", this.grupo);
+       System.out.printf ("Nota media: %5.2f\n", this.notaMedia);
    }
    ```
 
-3. Método mostrar de la clase Alumno.
+## Ejemplo 3.6
 
-  Llamamos al método mostrar de su clase padre (Persona) y luego añadimos la funcionalidad específica para la subclase Alumno:
-
-  ```java
-  public void mostrar () {
-      super.mostrar ();
-      // A continuación mostramos la información “especializada” de esta subclase
-      System.out.printf ("Grupo: %s\n", this.grupo);
-      System.out.printf ("Nota media: %5.2f\n", this.notaMedia);
-  }
-  ```
-
-## Ejemplo9
-
-Escribe un constructor para la clase Profesor que realice una llamada al constructor de su clase base para inicializar sus atributos heredados. Los atributos específicos (no heredados) sí deberán ser inicializados en el propio constructor de la clase Profesor.
+Escribe un constructor para la clase `Profesor` que realice una llamada al constructor de su clase base para inicializar sus atributos heredados. Los atributos específicos (no heredados) sí deberán ser inicializados en el propio constructor de la clase `Profesor`.
 
 ```java
 public Profesor (String nombre, String apellidos, GregorianCalendar fechaNacim, String especialidad, double salario) {
@@ -1542,9 +1676,20 @@ public Profesor (String nombre, String apellidos, GregorianCalendar fechaNacim, 
 }
 ```
 
-## Ejemplo10
+Puedes hacer lo mismo para la clase `Alumno`.
 
-Basándote en la jerarquía de clases de ejemplo (Persona, Alumno, Profesor), que ya has utilizado en otras ocasiones, modifica lo que consideres oportuno para que Persona sea, a partir de ahora, una clase abstracta (no instanciable) y las otras dos clases sigan siendo clases derivadas de ella, pero sí instanciables.
+```java
+public Alumno(String nombre, String apellidos,
+              LocalDate fechaNacim, String grupo, double notaMedia) {
+    super(nombre, apellidos, fechaNacim);
+    this.grupo = grupo;
+    this.notaMedia = notaMedia;
+}
+```
+
+## Ejemplo 4.1
+
+Basándote en la jerarquía de clases de ejemplo (`Persona`, `Alumno`, `Profesor`), que ya has utilizado en otras ocasiones, modifica lo que consideres oportuno para que `Persona` sea, a partir de ahora, una clase abstracta (no instanciable) y las otras dos clases sigan siendo clases derivadas de ella, pero sí instanciables.
 
 En este caso lo único que habría que hacer es añadir el modificador abstract a la clase Persona. El resto de la clase permanecería igual y las clases Alumno y Profesor no tendrían porqué sufrir ninguna modificación.
 
@@ -1552,35 +1697,37 @@ En este caso lo único que habría que hacer es añadir el modificador abstract 
 public abstract class Persona {
     protected String nombre;
     protected String apellidos;
-    protected GregorianCalendar fechaNacim;
+    protected LocalDate fechaNacim;
     ...
 }
 ```
 
-A partir de ahora no podrán existir objetos de la clase Persona. El compilador generaría un error.
+A partir de ahora no podrán existir objetos de la clase `Persona`. El compilador generaría un error.
 
 Localiza en la API de Java algún ejemplo de clase abstracta.
 
 Existen una gran cantidad de clases abstractas en la API de Java. Aquí tienes un par de ejemplos:
 
-- La clase java.awt.Component:
+- La clase `AbstractList`:
     ```java
-    public abstract class Component extends Object
-    implements ImageObserver, MenuContainer, Serializable
+    public abstract class AbstractList<E> extends AbstractCollection<E> implements List<E>
     ```
-
-- La clase javax.swing. AbstractButton:
+    
+    De la que heredan clases instanciable como `Vector` o `ArrayList`.
+    
+- La clase `AbstractSequentialList`:
 
   ```java
-  public abstract class AbstractButton extends JComponent
-  implements ItemSelectable, SwingConstants
+  public abstract class AbstractSequentialList<E> extends AbstractList<E>
   ```
 
-## Ejemplo11
+    Que hereda de `AbstractList` y de la que hereda la clase `LinkedList`
 
-Basándote en la jerarquía de clases Persona, Alumno, Profesor, crea un método abstracto llamado mostrar para la clase Persona. Dependiendo del tipo de persona (alumno o profesor) el método mostrar tendrá que mostrar unos u otros datos personales (habrá que hacer implementaciones específicas en cada clase derivada).
+## Ejemplo 4.2
 
-Una vez hecho esto, implementa completamente las tres clases (con todos sus atributos y métodos) y utilízalas en un pequeño programa de ejemplo que cree un objeto de tipo Alumno y otro de tipo Profesor, los rellene con información y muestre esa información en la pantalla a través del método mostrar.
+Basándote en la jerarquía de clases `Persona`, `Alumno`, `Profesor`, crea un método abstracto llamado `mostrar` para la clase `Persona`. Dependiendo del tipo de persona (`alumno` o `profesor`) el método mostrar tendrá que mostrar unos u otros datos personales (habrá que hacer implementaciones específicas en cada clase derivada).
+
+Una vez hecho esto, implementa completamente las tres clases (con todos sus atributos y métodos) y utilízalas en un pequeño programa de ejemplo que cree un objeto de tipo `Alumno` y otro de tipo `Profesor`, los rellene con información y muestre esa información en la pantalla a través del método mostrar.
 
 Dado que el método mostrar no va a ser implementado en la clase Persona, será declarado como abstracto y no se incluirá su implementación:
 
@@ -1588,135 +1735,185 @@ Dado que el método mostrar no va a ser implementado en la clase Persona, será 
 protected abstract void mostrar ();
 ```
 
-Recuerda que el simple hecho de que la clase Persona contenga un método abstracto hace que sea clase sea abstracta (y deberá indicarse como tal en su declaración): 
+Recuerda que el simple hecho de que la clase `Persona` contenga un método abstracto hace que la clase sea abstracta (y deberá indicarse como tal en su declaración): 
 
 ```java
-public abstract class Persona. 
+public abstract class Persona {
+    ...
 ```
 
-En el caso de la clase Alumno habrá que hacer una implementación específica del método mostrar y
-lo mismo para el caso de la clase Profesor.
+En el caso de la clase `Alumno` habrá que hacer una implementación específica del método mostrar y
+lo mismo para el caso de la clase `Profesor`.
 
-1. Método mostrar para la clase Alumno.
-
-  ```java
-  // Redefinición del método abstracto mostrar en la clase Alumno
-  public void mostrar () {
-      SimpleDateFormat formatoFecha = new SimpleDateFormat("dd/MM/yyyy");
-      String Stringfecha= formatoFecha.format(this.fechaNacim.getTime());
-  }
-  System.out.printf ("Nombre: %s\n", this.nombre);
-  System.out.printf ("Apellidos: %s\n", this.apellidos);
-  System.out.printf ("Fecha de nacimiento: %s\n", Stringfecha);
-  System.out.printf ("Grupo: %s\n", this.grupo);
-  System.out.printf ("Grupo: %5.2f\n", this.notaMedia);
-  ```
-
-2. Método mostrar para la clase Profesor.
+1. Método mostrar para la clase `Alumno`.
 
    ```java
-   // Redefinición del método abstracto mostrar en la clase Profesor
-   public void mostrar () {
-   	SimpleDateFormat formatoFecha = new SimpleDateFormat("dd/MM/yyyy");
-   	String Stringfecha= formatoFecha.format(this.fechaNacim.getTime());
-       System.out.printf ("Nombre: %s\n", this.nombre);
-       System.out.printf ("Apellidos: %s\n", this.apellidos);
-       System.out.printf ("Fecha de nacimiento: %s\n", Stringfecha);
-       System.out.printf ("Especialidad: %s\n", this.especialidad);
-       System.out.printf ("Salario: %7.2f euros\n", this.salario);
+   @Override
+   public void mostrar() {
+       DateTimeFormatter formato = DateTimeFormatter.ofPattern("d/MM/yyyy");
+       String stringfecha = formato.format(this.fechaNacim);
+       System.out.printf("Nombre: %s\n", this.nombre);
+       System.out.printf("Apellidos: %s\n", this.apellidos);
+       System.out.printf("Fecha de nacimiento: %s\n", stringfecha);
+       // A continuación mostramos la información "especializada" de esta subclase
+       System.out.printf("Grupo: %s\n", this.grupo);
+       System.out.printf("Nota media: %5.2f\n", this.notaMedia);
+   }
+   ```
+
+2. Método mostrar para la clase `Profesor`.
+
+   ```java
+   @Override
+   public void mostrar() {
+       DateTimeFormatter formato = DateTimeFormatter.ofPattern("d/MM/yyyy");
+       String stringfecha = formato.format(this.fechaNacim);
+       System.out.printf("Nombre: %s\n", this.nombre);
+       System.out.printf("Apellidos: %s\n", this.apellidos);
+       System.out.printf("Fecha de nacimiento: %s\n", stringfecha);
+       // A continuación mostramos la información "especializada" de esta subclase
+       System.out.printf("Especialidad: %s\n", this.especialidad);
+       System.out.printf("Salario: %7.2f euros\n", this.salario);
    }
    ```
 
 3. Programa de ejemplo de uso.
 
-  Un pequeño programa de ejemplo de uso del método mostrar en estas dos clases podría ser:
+   Un pequeño programa de ejemplo de uso del método mostrar en estas dos clases podría ser:
 
-  ```java
-  // Declaración de objetos
-  Alumno alumno;
-  Profesor profe;
-  // Creación de objetos (llamada a constructores)
-  alumno= new Alumno ("Juan", "Torres", new GregorianCalendar (1990, 10, 6), "1DAM-B",
-  7.5);
-  profe= new Profesor ("Antonio", "Campos", new GregorianCalendar (1970, 8, 15), "Mates", 2000);
-  // Utilización del método mostrar
-  alumno.mostrar();
-  profesor.mostrar();
-  ```
+   ```java
+   package UD08._12_Ejemplo_4_2;
+   
+   import java.time.LocalDate;
+   
+   public class EjemploUso {
+   
+       public static void main(String[] args) {
+           // Declaración de objetos
+           Alumno alumno;
+           Profesor profesor;
+           // Creación de objetos (llamada a constructores)
+           alumno = new Alumno("Juan", "Torres", LocalDate.of(1990, 10, 6), "1DAW",
+                   7.5);
+           profesor = new Profesor("Antonio", "Campos", LocalDate.of(1970, 8, 15),
+                   "Informatica", 2000);
+           // Utilización del método mostrar
+           alumno.mostrar();
+           profesor.mostrar();
+       }
+   }
+   ```
+   La salida debe ser algo parecido a esto:
+   ```sh
+   Nombre: Juan
+   Apellidos: Torres
+   Fecha de nacimiento: 6/10/1990
+   Grupo: 1DAW
+   Nota media:  7,50
+   Nombre: Antonio
+   Apellidos: Campos
+   Fecha de nacimiento: 15/08/1970
+   Especialidad: Informatica
+   Salario: 2000,00 euros
+   ```
 
-## Ejemplo12
+## Ejemplo 5.2
 
-Crea una interfaz en Java cuyo nombre sea Imprimible y que contenga algunos métodos útiles para
-mostrar el contenido de una clase:
+Crea una interfaz en Java cuyo nombre sea `Imprimible` y que contenga algunos métodos útiles para mostrar el contenido de una clase:
 
-1. Método `devolverContenidoString`, que crea un String con una representación de todo el contenido público (o que se decida que deba ser mostrado) del objeto y lo devuelve. El formato será una lista de pares "nombre=valor" de cada atributo separado por comas y la lista completa encerrada entre llaves: "{<nombre_atributo_1>=<valor_atributo_1>, ..., <nombre_atributo_n>=<valor__atributo_n>}".
-2. Método `devolverContenidoArrayList`, que crea un ArrayList de String con una representación de todo el contenido público (o que se decida que deba ser mostrado) del objeto y lo devuelve.
-3. Método `devolverContenidoHashtable`, similar al anterior, pero en lugar devolver en un ArrayList los valores de los atributos, se devuelve en una Hashtable en forma de pares (nombre, valor).
+1. Método `devolverContenidoString`, que crea un `String` con una representación de todo el contenido público (o que se decida que deba ser mostrado) del objeto y lo devuelve. El formato será una lista de pares "nombre=valor" de cada atributo separado por comas y la lista completa encerrada entre llaves: "`{<nombre_atributo_1>=<valor_atributo_1>, ..., <nombre_atributo_n>=<valor__atributo_n>}`".
+2. Método `devolverContenidoArrayList`, que crea un `ArrayList` de `String` con una representación de todo el contenido público (o que se decida que deba ser mostrado) del objeto y lo devuelve.
+3. Método `devolverContenidoHashMap`, similar al anterior, pero en lugar devolver en un `ArrayList` los valores de los atributos, se devuelve en una `HashMap` en forma de pares (`nombre`, `valor`).
 
-Se trata simplemente de declarar la interfaz e incluir en su interior esos tres métodos:
+   Se trata simplemente de declarar la interfaz e incluir en su interior esos tres métodos:
 
-```java
-public interface Imprimible {
-    String devolverContenidoString ();
-    ArrayList devolverContenidoArrayList ();
-    HashTable devolverContenidoHashtable ();
-}
-```
+   ```java
+   package UD08._13_Ejemplo_5_2;
+   
+   import java.util.ArrayList;
+   import java.util.HashMap;
+   
+   public interface Imprimible {
+   
+       String devolverContenidoString();
+   
+       ArrayList devolverContenidoArrayList();
+   
+       HashMap devolverContenidoHashMap();
+   }
+   ```
+   El cómo se implementarán cada uno de esos métodos dependerá exclusivamente de cada clase que decida implementar esta interfaz.
 
+## Ejemplo 5.3
 
-El cómo se implementarán cada uno de esos métodos dependerá exclusivamente de cada clase que decida implementar esta interfaz.
+Haz que las clases `Alumno` y `Profesor` implementen la interfaz `Imprimible` que se ha escrito en el ejercicio anterior.
 
-## Ejemplo13
+La primera opción que se te puede ocurrir es pensar que en ambas clases habrá que indicar que implementan la interfaz `Imprimible` y por tanto definir los métodos que ésta incluye: `devolverContenidoString`, `devolverContenidoHashMap` y `devolverContenidoArrayList`.
 
-Haz que las clases Alumno y Profesor implementen la interfaz Imprimible que se ha escrito en el ejercicio anterior.
+Si las clases `Alumno` y `Profesor` no heredaran de la misma clase habría que hacerlo obligatoriamente así, pues no comparten superclase y precisamente para eso sirven las interfaces: para implementar determinados comportamientos que no pertenecen a la estructura jerárquica de herencia en la que se encuentra una clase (de esta manera, clases que no tienen ninguna relación de herencia podrían compartir interfaz).
 
-La primera opción que se te puede ocurrir es pensar que en ambas clases habrá que indicar que implementan la interfaz Imprimible y por tanto definir los métodos que ésta incluye: devolverContenidoString, devolverContenidoHashtable y devolverContenidoArrayList.
+Pero en este caso podríamos aprovechar que ambas clases sí son subclases de una misma superclase (heredan de la misma) y hacer que la interfaz `Imprimible` sea implementada directamente por la superclase (`Persona`) y de este modo ahorrarnos bastante código. Así no haría falta indicar explícitamente que `Alumno` y `Profesor` implementan la interfaz `Imprimible`, pues lo estarán haciendo de forma implícita al heredar de una clase que ya ha implementado esa interfaz (la clase `Persona`, que es padre de ambas).
 
-Si las clases Alumno y Profesor no heredaran de la misma clase habría que hacerlo obligatoriamente así, pues no comparten superclase y precisamente para eso sirven las interfaces: para implementar determinados comportamientos que no pertenecen a la estructura jerárquica de herencia en la que se encuentra una clase (de esta manera, clases que no tienen ninguna relación de herencia podrían compartir interfaz).
+Una vez que los métodos de la interfaz estén implementados en la clase `Persona`, tan solo habrá que redefinir o ampliar los métodos de la interfaz para que se adapten a cada clase hija específica (`Alumno` o `Profesor`), ahorrándonos tener que escribir varias veces la parte de código que obtiene los atributos genéricos de la clase `Persona`.
 
-Pero en este caso podríamos aprovechar que ambas clases sí son subclases de una misma superclase (heredan de la misma) y hacer que la interfaz Imprimible sea implementada directamente por la superclase (Persona) y de este modo ahorrarnos bastante código. Así no haría falta indicar explícitamente que Alumno y Profesor implementan la interfaz Imprimible, pues lo estarán haciendo de forma implícita al heredar de una clase que ya ha implementado esa interfaz (la clase Persona, que es padre de ambas).
+1. Clase `Persona`.
 
-Una vez que los métodos de la interfaz estén implementados en la clase Persona, tan solo habrá que redefinir o ampliar los métodos de la interfaz para que se adapten a cada clase hija específica (Alumno o Profesor), ahorrándonos tener que escribir varias veces la parte de código que obtiene los atributos genéricos de la clase Persona.
+   Indicamos que se va a implementar la interfaz Imprimible:
 
-1. Clase Persona.
+   ```java
+   public abstract class Persona implements Imprimible {
+   ...
+   ```
 
-  Indicamos que se va a implementar la interfaz Imprimible:
+   Definimos el método `devolverContenidoHashMap` a la manera de como debe ser implementado para la clase Persona. Podría quedar, por ejemplo, así:
 
-  ```java
-  public abstract class Persona implements Imprimible {
-  ...
-  ```
+   ```java
+   @Override
+   public HashMap devolverContenidoHashMap() {
+       // Creamos la HashMap que va a ser devuelta
+       HashMap contenido = new HashMap();
+       // Añadimos los atributos de la clase
+       DateTimeFormatter formato = DateTimeFormatter.ofPattern("d/MM/yyyy");
+       String stringFecha = formato.format(this.fechaNacim);
+       contenido.put("nombre", this.nombre);
+       contenido.put("apellidos", this.apellidos);
+       contenido.put("fechaNacim", stringFecha);
+       // Devolvemos la HashMap
+       return contenido;
+   }
+   ```
 
-  Definimos el método devolverContenidoHashtable a la manera de como debe ser implementado para la clase Persona. Podría quedar, por ejemplo, así:
+   Del mismo modo, definimos también el método `devolverContenidoArrayList`:
 
-  ```java
-  public Hashtable devolverContenidoHashtable () {
-      // Creamos la Hashtable que va a ser devuelta
-      Hashtable contenido= new Hashtable ();
-      // Añadimos los atributos de la clase
-      SimpleDateFormat formatoFecha = new SimpleDateFormat("dd/MM/yyyy");
-      String stringFecha= formatoFecha.format(this.fechaNacim.getTime());
-      contenido.put ("nombre", this.nombre);
-      contenido.put ("apellidos", this.apellidos);
-      contenido.put ("fechaNacim", stringFecha);
-      // Devolvemos la Hashtable
-      return contenido;
-  }
-  ```
+   ```java
+   @Override
+   public ArrayList devolverContenidoArrayList() {
+       // Creamos la ArrayList que va a ser devuelta
+       ArrayList contenido = new ArrayList();
+       // Añadimos los atributos de la clase
+       DateTimeFormatter formato = DateTimeFormatter.ofPattern("d/MM/yyyy");
+       String stringFecha = formato.format(this.fechaNacim);
+       contenido.add(this.nombre);
+       contenido.add(this.apellidos);
+       contenido.add(stringFecha);
+       // Devolvemos la ArrayList
+       return contenido;
+   }
+   ```
 
-  Del mismo modo, definimos también el método devolverContenidoArrayList:
+   Y por último el método `devolverContenidoString`:
 
-  ```java
-  public ArrayList devolverContenidoArrayList () { ... }
-  ```
+   ```java
+   @Override
+   public String devolverContenidoString() {
+       DateTimeFormatter formato = DateTimeFormatter.ofPattern("d/MM/yyyy");
+       String stringFecha = formato.format(this.fechaNacim);
+       String contenido = "{" + this.nombre + ", " + this.apellidos + ", " + stringFecha + "}";
+       return contenido;
+   }
+   ```
 
-  Y por último el método devolverContenidoString:
-
-  ```java
-  public String devolverContenidoString () { ... }
-  ```
-
-2. Clase Alumno.
+2. Clase `Alumno`.
 
    Esta clase hereda de la clase Persona, de manera que heredará los tres métodos anteriores. Tan solo habrá que redefinirlos para que, aprovechando el código ya escrito en la superclase, se añada la funcionalidad específica que aporta esta subclase.
 
@@ -1725,91 +1922,311 @@ Una vez que los métodos de la interfaz estén implementados en la clase Persona
    ...
    ```
 
-   Como puedes observar no ha sido necesario incluir el implements Imprimible, pues el extends Persona lo lleva implícito dado que Persona ya implementaba ese interfaz. Lo que haremos entonces será llamar al método que estamos redefiniendo utilizando la referencia a la superclase super.
+   Como puedes observar no ha sido necesario incluir el `implements Imprimible`, pues el `extends Persona` lo lleva implícito dado que `Persona` ya implementaba ese interfaz. Lo que haremos entonces será llamar al método que estamos redefiniendo utilizando la referencia a la superclase `super`.
 
-   El método devolverContenidoHashtable podría quedar, por ejemplo, así:
+   El método `devolverContenidoHashMap` podría quedar, por ejemplo, así:
 
    ```java
-   public Hashtable devolverContenidoHashtable () {
+   @Override
+   public HashMap devolverContenidoHashMap() {
        // Llamada al método de la superclase
-       Hashtable contenido= super.devolverContenidoHashtable();
+       HashMap contenido = super.devolverContenidoHashMap();
        // Añadimos los atributos específicos de la clase
-       contenido.put ("grupo", this.salario);
-       contenido.put ("notaMedia", this.especialidad);
-       // Devolvemos la Hashtable rellena
+       contenido.put("grupo", this.grupo);
+       contenido.put("notaMedia", this.notaMedia);
+       // Devolvemos la HashMap rellena
        return contenido;
    }
    ```
 
-3. Clase Profesor.
-    En este caso habría que proceder exactamente de la misma manera que con la clase Alumno: redefiniendo los métodos de la interfaz Imprimible para añadir la funcionalidad específica que aporta esta subclase.
+3. Clase `Profesor`.
+    En este caso habría que proceder exactamente de la misma manera que con la clase Alumno: redefiniendo los métodos de la interfaz `Imprimible` para añadir la funcionalidad específica que aporta esta subclase, en este caso mostraremos la redifinición del método `devolverContenidoArrayList()`:
 
-[REVISAR***]
+    ```java
+    @Override
+    public ArrayList devolverContenidoArrayList() {
+        // Llamada al método de la superclase
+        ArrayList contenido = super.devolverContenidoArrayList();
+        // Añadimos los atributos específicos de la clase
+        contenido.add(this.especialidad);
+        contenido.add(this.salario);
+        // Devolvemos la ArrayList
+        return contenido;
+    }
+    ```
 
-Desde el siguiente enlace puedes descargar un ejemplo completo en el que se implementa la interfaz Imprimible en la clase Persona y cómo sus subclases Alumno y Profesor redefinen los métodos de esa interfaz heredada de Persona.
+    y la redefinición del método `devolverContenidoString()`:
 
-## Ejemplo14
+    ```java
+    @Override
+    public String devolverContenidoString() {
+        // Llamada al método de la superclase
+        String contenido = super.devolverContenidoString();
+        //Eliminamos el último carácter, que contiene una llave de cierre.
+        contenido = contenido.substring(0, contenido.length() - 1);
+        contenido = contenido + ", " + this.especialidad + ", " + this.salario + "}";
+        // Devolvemos el String creado.
+        return contenido;
+    }
+    ```
 
-Localiza en la API de Java algún ejemplo de clase que implemente varias interfaces diferentes (puedes consultar la documentación de referencia de la API de Java).
+## Ejemplo 5.4
 
-Existen una gran cantidad de clases en la API de Java que implementan múltiples interfaces. Aquí tienes un par de ejemplos:
+¿Puede una clase implementar varias interfaces diferentes a la vez?
 
-- La clase `javax.swing.JFrame`, que implementa las interfaces `WindowConstants`, `Accessible` y `RootPaneContainer`:
-  - `public class JFrame extends Frame` 
-  - `implements WindowConstants, Accessible, RootPaneContainer`
-- La clase `java.awt.omponent`, que implementa las interfaces `ImageObserver`, `MenuContainer` y `Serializable`:
-  - `public abstract class Component extends Object`
-  - `implements ImageObserver, MenuContainer, Serializable`
+Observa el siguiente esquema UML:
 
-## Ejemplo15
+![uml](/assets/ekpy1.png)
 
-Localiza en la API de Java algún ejemplo de interfaz que herede de una o varias interfaces (puedes consultar la documentación de referencia de la API de Java). 
+Las clases `Kangaroo` y `Lion` implementan varias clases:
 
-Existen una gran cantidad de interfaces en la API de Java que heredan de otras interfaces. Aquí
-tienes un par de ejemplos:
+- `Kangaroo`: `Herbivore`, `TwoLeggedMammal` y `Animal`
+- `Lion`: `Animal`, `FourLeggedMammal`, `Hunter` y `Carnivore`
 
-- La interfaz `java.awt.event.ActionListener`, que hereda de `java.util.EventListener`:
+## Ejemplo 5.5
+
+¿Puede una interfaz heredar de varias interfaces diferentes a la vez?
+
+Observa el siguiente esquema UML:
+
+![uml](/assets/ekpy1.png)
+
+Las interfaces `Human` y `Omnivore` heredan de varias interfaces:
+
+- `Human`: de  `TwoLeggedMammal`, `Omnivore`, `Mammal` y `Hunter`
+- `Omnivore`: `Herbivore` y `Carnivore`
+
+## Ejemplo 5.6
+
+Supongamos una situación en la que nos interesa dejar constancia de que ciertas clases deben implementar una funcionalidad teórica determinada, diferente en cada clase afectada. Estamos hablando, pues, de la definición de un método teórico que algunas clases deberán implementar.
+
+Un ejemplo real puede ser el método `calculoImporteJubilacio()` aplicable, de manera diferente, a muchas tipologías de trabajadores y, por tanto, podríamos pensar en diseñar una clase `Trabajador` en que uno de sus métodos fuera `calculpImporteJubilacion()`. Esta solución es válida si estamos diseñando una jerarquía de clases a partir de la clase `Trabajador` de la que cuelguen las clases correspondientes a las diferentes tipologías de trabajadores (metalúrgicos, hostelería, informáticos, profesores ...). Además, disponemos del concepto de clase abstracta que cada subclase implemente obligatoriamente el método `calculoImporteJubilacion()`.
+
+Pero, ¿y si resulta que ya tenemos las clases `Profesor`, `Informatico`, `Hostelero` en otras jerarquías de clases? La solución consiste en hacer que estas clases derivaran de la clase `Trabajador`, sin abandonar la derivación que pudieran tener, sería factible en lenguajes orientados a objetos que soportaran la herencia múltiple, pero esto no es factible en el lenguaje Java.
+
+Para superar esta limitación, Java proporciona las interfaces.
+
+> Una interfaz es una **maqueta** contenedora de una lista de métodos abstractos y datos miembro (de tipos primitivos o de clases). Los atributos, si existen, son implícitamente consideradas `static` y `final`. Los métodos, si existen, son implícitamente considerados `public`.
+
+Para entender en qué nos pueden ayudar las interface, necesitamos saber:
+
+- Una interfaz puede ser implementada por múltiples clases, de manera similar a como una clase puede ser superclase de múltiples clases.
+
+- Las clases que implementan una interfaz están obligadas a sobrescribir todos los métodos definidos en la interfaz. Si la definición de alguno de los métodos a sobrescribir coincide con la definición de algún método heredado, este desaparece de la clase.
+
+- Una clase puede implementar múltiples interfaces, a diferencia de la derivación, que sólo se permite una única clase base.
+
+- Una interfaz introduce un nuevo tipo de dato, por la que nunca habrá ninguna instancia, pero sí objetos usuarios de la interfaz (objetos de las clases que implementan la interfaz). Todas las clases que implementan una interfaz son compatibles con el tipo introducido por la interfaz.
+
+- Una interfaz no proporciona ninguna funcionalidad a un objeto (ya que la clase que implementa la interfaz es la que debe definir la funcionalidad de todos los métodos), pero en cambio proporciona la posibilidad de formar parte de la funcionalidad de otros objetos (pasándola por parámetro en métodos de otras clases).
+
+- La existencia de las interfaces posibilita la existencia de una jerarquía de tipo (que no debe confundirse con la jerarquía de clases) que permite la herencia múltiple.
+
+- Una interfaz no se puede instanciar, pero sí se puede hacer referencia.
+
+  > Así, si `I` es una interfaz y `C` es una clase que implementa la interfaz, se pueden declarar referencias al tipo `I` que apunten objetos de `C`:
 
   ```java
-  public interface ActionListener extends EventListener
+  I obj = new C (<parámetros>);
   ```
 
--  La interfaz `org.omg.CORBA.Policy`, que hereda de `org.omg.CORBA.PolicyOperations`, `org.omg.CORBA.Object` y `org.omg.CORBOA.portable.IDLEntity`:
+- Las interfaces pueden heredar de otras interfaces y, a diferencia de la derivación de clases, pueden heredar de más de una interfaz.
 
-  ```java
-  public interface Policy extends PolicyOperations, Object, IDLEntity.
-  ```
+Así, si diseñamos la interfaz `Trabajador`, podemos hacer que las clases ya existentes (`Profesor`, `Informatico`, `Hostelero` ...) la implementen y, por tanto, los objetos de estas clases, además de ser objetos de las superclases respectivas, pasan a ser considerados objetos usuarios del tipo `Trabajador`. Con esta actuación nos veremos obligados a implementar el método `calculoImporteJubilacion()` a todas las clases que implementen la interfaz.
 
-## Ejemplo16
+Alguien no experimentado en la gestión de interfaces puede pensar: ¿por qué tanto revuelo con las interfaces si hubiéramos podido diseñar directamente un método llamado `calculoImporteJubilacion()` en las clases afectadas sin necesidad de definir ninguna interfaz?
 
-Imagínate una clase que represente a instrumento musical genérico (Instrumento) y dos subclases que representen tipos de instrumentos específicos (por ejemplo Flauta y Piano). Todas las clases tendrán un método tocarNota, que será específico para cada subclase.
-
-Haz un pequeño programa de ejemplo en Java que utilice el polimorfismo (referencias a la superclase que se convierten en instancias específicas de subclases) y la ligadura dinámica (llamadas a un método que aún no están resueltas en tiempo de compilación) con estas clases que representan instrumentos musicales. Puedes implementar el método tocarNota mediante la escritura de un mensaje en pantalla.
-
-La clase Instrumento podría tener un único método (tocarNota):
+La respuesta radica en el hecho de que la declaración de la interfaz lleva implícita la declaración del tipo `Trabajador` y, por tanto, podremos utilizar los objetos de todas las clases que implementen la interfaz en cualquier método de cualquier clase que tenga algún argumento referencia al tipo `Trabajador` como, por ejemplo, en un hipotético método de una hipotética clase llamada Hacienda:
 
 ```java
-public abstract class Instrumento {
-    public void tocarNota (String nota) {
-    	System.out.printf ("Instrumento: tocar nota %s.\n", nota);
+public void enviarBorradorIRPF(Trabajador t) {...}
+```
+
+Por el hecho de existir la interfaz `Trabajador`, todos los objetos de las clases que la implementan (`Profesor`, `Informatico`, `Hostelero` ...) se pueden pasar como parámetro en las llamadas al método `enviarBorradorIRPF(Trabajador t)`.
+
+La sintaxis para declarar una interfaz es:
+
+```java
+[public] interface <NombreInterfaz> [extends <Nombreinterfaz1>, <Nombreinterfaz2>...] {
+	<CuerpoInterfaz>
+}
+```
+
+Las interfaces también se pueden asignar a un paquete. La inexistencia del modificador de acceso público hace que la interfaz sea accesible a nivel del paquete.
+
+Para los nombres de las interfaces, se aconseja seguir el mismo criterio que para los nombres de las clases. 
+
+> En la documentación de Java, las interfaces se identifican rápidamente entre las clases porque están en cursiva.
+
+El cuerpo de la interfaz es la lista de métodos y/o constantes que contiene la interfaz. Para las constantes no hay que indicar que son `static` y `final` y para los métodos no hay que indicar que son `public`. Estas características se asignan implícitamente.
+
+La sintaxis para declarar una clase que implemente una o más interfaces es:
+
+```java
+[final] [public] class <NombreClase> [extends <NombreClaseBase>] implements <NombreInterfaz1>, <NomInterfaz2>... {
+	<CuerpoDeLaClase>
+}
+```
+
+Los métodos de las interfaces a implementar en la clase deben ser obligatoriamente de acceso público.
+
+Por último, comentar que, como por definición todos los datos miembro que se definen en una interfaz son `static` y `final`, y dado que las interfaz no se pueden instanciar, también resultan una buena herramienta para implantar grupos de constantes.
+
+Así, por ejemplo:
+
+```java
+public interface DiasSemana {
+    int LUNES = 1, MARTES=2, MIERCOLES=3, JUEVES=4;
+    int VIERNES=5, SABADO=6, DOMINGO=7;
+    String[] NOMBRES_DIAS = {"", "lunes", "martes", "miércoles", 
+                             "jueves", "viernes", "sábado", "domingo"};
+}
+```
+
+Esta definición nos permite utilizar las constantes declaradas en cualquier clase que implemente la interfaz, de manera tan simple como:
+
+```java
+System.out.println (DiasSemana.NOMBRES_DIAS[LUNES]);
+```
+
+### Ejemplo de diseño de interfaz e implementación en una clase
+
+Se presentan un par de interfaces que incorporan datos (de tipo primitivo y de referencia en clase) y métodos y una clase que las implementa. En la declaración de la clase se ve que sólo implementa la interfaz `B`, pero como esta interfaz deriva de la interfaz `A` resulta que la clase está implementando las dos interfaces.
+
+```java
+package UD08._17_Ejemplo_5_6;
+
+import java.util.Date;
+
+interface A {
+    Date ULTIMA_CREACION = new Date(0, 0, 1);
+    void metodoA();
+}
+
+interface B extends A {
+    int VALOR_B = 20;
+	// 1 −1 −1900
+    void metodoB();
+}
+
+public class Anexo5Interfaces implements B {
+
+    private long b;
+    private Date fechaCreacion = new Date();
+
+    public Anexo5Interfaces(int factor) {
+        b = VALOR_B * factor;
+        ULTIMA_CREACION.setTime(fechaCreacion.getTime());
+    }
+
+    @Override
+    public void metodoA() {
+        System.out.println("En metodoA, ULTIMA_CREACION = " + ULTIMA_CREACION);
+    }
+    
+    @Override
+    public void metodoB() {
+        System.out.println("En metodoB, b = " + b);
+    }
+
+    public static void main(String args[]) {
+        System.out.println("Inicialmente, ULTIMA_CREACION = " + ULTIMA_CREACION);
+        Anexo5Interfaces obj = new Anexo5Interfaces(5);
+        obj.metodoA();
+        obj.metodoB();
+        A pa = obj;
+        B pb = obj;
     }
 }
 ```
 
-En el caso de las clases Piano y Flauta puede ser similar, heredando de Instrumento y redefiniendo el método tocarNota:
+Si lo ejecutamos obtendremos:
+
+```sh
+Inicialmente, ULTIMA_CREACION = Mon Jan 01 00:00:00 CET 1900
+En metodoA, ULTIMA_CREACION = Thu Aug 26 16:09:47 CEST 2021
+En metodoB, b = 100
+```
+
+El ejemplo sirve para ilustrar algunos puntos:
+
+- Comprobamos que los datos miembro de las interfaces son `static`, ya que en el método `main()` hacemos referencia al dato miembro `ULTIMA_CREACION` sin indicar ningún objeto de la clase.
+- Si hubiéramos intentado modificar los datos `VALOR_B` o `ULTIMA_CREACION` no habríamos podido porque es final, pero en cambio sí podemos modificar el contenido del objeto `Date` apuntado por `ULTIMA_CREACION`, que corresponde al momento temporal de la última creación de un objeto ya cada nueva creación se actualiza su contenido.
+- En las dos últimas instrucciones del método `main()` vemos que podemos declarar variables `pa` y `pb` de las interfaces y utilizarlas para hacer referencia a objetos de la clase `EjemploInterfaz()`.
+
+## Ejemplo 6.2
+
+Imagínate una clase que represente a instrumento musical genérico (`Instrumento`) y dos subclases que representen tipos de instrumentos específicos (por ejemplo Flauta y Piano). Todas las clases tendrán un método tocarNota, que será específico para cada subclase.
+
+Haz un pequeño programa de ejemplo en Java que utilice el polimorfismo (referencias a la superclase que se convierten en instancias específicas de subclases) y la ligadura dinámica (llamadas a un método que aún no están resueltas en tiempo de compilación) con estas clases que representan instrumentos musicales. Puedes implementar el método `tocarNota` mediante la escritura de un mensaje en pantalla.
+
+La clase Instrumento podría tener un único método (`tocarNota`):
 
 ```java
+package UD08._18_Ejemplo_6_2;
+
+public abstract class Instrumento {
+
+    public void tocarNota(String nota) {
+        System.out.format("Instrumento: tocar nota %s.\n", nota);
+    }
+}
+```
+
+En el caso de las clases `Piano` y `Flauta` puede ser similar, heredando de Instrumento y redefiniendo el método tocarNota:
+
+```java
+package UD08._18_Ejemplo_6_2;
+
 public class Flauta extends Instrumento {
+
     @Override
-    public void tocarNota (String nota) {
-    	System.out.printf ("Flauta: tocar nota %s.\n", nota);
+    public void tocarNota(String nota) {
+        System.out.format("Flauta: tocar nota %s.\n", nota);
     }
 }
 
+```
+
+```java
+package UD08._18_Ejemplo_6_2;
+
 public class Piano extends Instrumento {
+
     @Override
-    public void tocarNota (String nota) {
-    	System.out.printf ("Piano: tocar nota %s.\n", nota);
+    public void tocarNota(String nota) {
+        System.out.format("Piano: tocar nota %s.\n", nota);
+    }
+}
+
+```
+
+Creamos una clase para comprobar su funcionamiento EjemploUso:
+
+```java
+package UD08._18_Ejemplo_6_2;
+
+import java.util.Scanner;
+
+public class EjemploUso {
+
+    public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.in);
+        System.out.print("Deseas un Piano o una Flauta (p o f)?: ");
+        char respuesta = teclado.nextLine().toLowerCase().charAt(0);
+
+        Instrumento instrumento1; // Ejemplo de objeto polimórfico (podrá ser Piano o Flauta)
+        if (respuesta == 'p') {
+            // Ejemplo de objeto polimórfico (en este caso va adquirir forma de Piano)
+            instrumento1 = new Piano();
+        } else {
+            // Ejemplo de objeto polimórfico (en este caso va adquirir forma de Flauta)
+            instrumento1 = new Flauta();
+        }
+        // Interpretamos una nota con el objeto instrumento1
+        // No sabemos si se ejecutará el método tocarNota de Piano o de Flauta
+        // (dependerá de la ejecución)
+        instrumento1.tocarNota("do");  // Ejemplo de ligadura dinámica (tiempo de ejecución)
     }
 }
 ```
@@ -1823,31 +2240,29 @@ Instrumento instrumento1; // Ejemplo de objeto polimórfico (podrá ser Piano o 
 Sin embargo, a la hora de instanciar el objeto, utilizamos el constructor de alguna de sus subclases (Piano, Flauta, etc.):
 
 ```java
-if (<condición>) {
+if (respuesta == 'p') {
     // Ejemplo de objeto polimórfico (en este caso va adquirir forma de Piano)
-    instrumento1= new Piano ();
-} else if (<condición>) {
-    // Ejemplo de objeto polimórfico (en este caso va adquirir forma de Flauta)
-    instrumento1= new Flauta ();
+    instrumento1 = new Piano();
 } else {
-    ...
+    // Ejemplo de objeto polimórfico (en este caso va adquirir forma de Flauta)
+    instrumento1 = new Flauta();
 }
 ```
 
-Finalmente, a la hora de invocar el método tocarNota, no sabremos a qué versión (de qué subclase) de tocarNota se estará llamando, pues dependerá del tipo de objeto (subclase) que se haya instanciado. Se estará utilizando por tanto la ligadura dinámica: 
+Finalmente, a la hora de invocar el método `tocarNota`, no sabremos a qué versión (de qué subclase) de `tocarNota` se estará llamando, pues dependerá del tipo de objeto (subclase) que se haya instanciado. Se estará utilizando por tanto la ligadura dinámica: 
 
 ```java
 // Interpretamos una nota con el objeto instrumento1
 // No sabemos si se ejecutará el método tocarNota de Piano o de Flauta
 // (dependerá de la ejecución)
-instrumento1.tocarNota ("do");  // Ejemplo de ligadura dinámica (tiempo de ejecución)
+instrumento1.tocarNota("do");  // Ejemplo de ligadura dinámica (tiempo de ejecución)
 ```
 
-## Ejemplo
+## Ejemplo 6.3
 
-Haz un pequeño programa en Java en el que se declare una variable de tipo Persona, se pidan algunos datos sobre esa persona (nombre, apellidos y si es alumno o si es profesor), y se muestren nuevamente esos datos en pantalla, teniendo en cuenta que esa variable no puede ser instanciada como un objeto de tipo Persona (es una clase abstracta) y que tendrás que instanciarla como Alumno o como Profesor. Recuerda que para poder recuperar sus datos necesitarás hacer uso de la ligadura dinámica y que tan solo deberías acceder a métodos que sean de la superclase.
+Haz un pequeño programa en Java en el que se declare una variable de tipo `Persona`, se pidan algunos datos sobre esa persona (nombre, apellidos y si es alumno o si es profesor), y se muestren nuevamente esos datos en pantalla, teniendo en cuenta que esa variable no puede ser instanciada como un objeto de tipo `Persona` (es una clase abstracta) y que tendrás que instanciarla como `Alumno` o como `Profesor`. Recuerda que para poder recuperar sus datos necesitarás hacer uso de la ligadura dinámica y que tan solo deberías acceder a métodos que sean de la superclase.
 
-Si tuviéramos diferentes variables referencia a objetos de las clases Alumno y Profesortendrías algo así:
+Si tuviéramos diferentes variables referencia a objetos de las clases `Alumno` y `Profesor` tendrías algo así:
 
 ```java
 Alumno obj1;
@@ -1869,18 +2284,61 @@ obj = new Alumno (<parámetros>);
 obj = new Profesor (<parámetros>);
 ```
 
-De esta manera la variable obj obj podría contener una referencia a un objeto de la superclase Persona de subclase Alumno o bien de subclase Profesor (polimorfismo).
+De esta manera la variable obj podría contener una referencia a un objeto de la superclase `Persona` de subclase `Alumno` o bien de subclase `Profesor` (polimorfismo).
 
-Esto significa que independientemente del tipo de subclase que sea (Alumno o Profesor), podrás invocar a métodos de la superclase Persona y durante la ejecución se resolverán como métodos de alguna de sus subclases:
+Esto significa que independientemente del tipo de subclase que sea (`Alumno` o `Profesor`), podrás invocar a métodos de la superclase `Persona` y durante la ejecución se resolverán como métodos de alguna de sus subclases:
 
 ```java
 //En tiempo de compilación no se sabrá de qué subclase de Persona será obj.
 //Habrá que esperar la ejecución para que el entorno lo sepa e invoque al método adecuado.
-System.out.printf ("Contenido del objeto usuario: %s\n", stringContenidoUsuario);
+System.out.format("Contenido del objeto: %s\n", obj.devolverContenidoString());
 ```
 
+Por último recuerda que debes de proporcionar constructores a las subclases `Alumno` y `Profesor` que sean "compatibles" con algunos de los constructores de la superclase `Persona`, pues al llamar a un constructor de una subclase, su formato debe coincidir con el de algún constructor de la superclase (como debe suceder en general con cualquier método que sea invocado utilizando la ligadura dinámica).
 
-Por último recuerda que debes de proporcionar constructores a las subclases Alumno y Profesor que sean "compatibles" con algunos de los constructores de la superclase Persona, pues al llamar a un constructor de una subclase, su formato debe coincidir con el de algún constructor de la superclase (como debe suceder en general con cualquier método que sea invocado utilizando la ligadura dinámica).
+Constructor "compatible" para `Alumno`:
+
+```java
+public Alumno(String nombre, String apellidos, LocalDate fechaNacim) {
+    super(nombre, apellidos, fechaNacim);
+}
+```
+
+y el constructor "compatible" para `Profesor`:
+
+```java
+public Profesor(String nombre, String apellidos, LocalDate fechaNacim) {
+    super(nombre, apellidos, fechaNacim);
+}
+```
+
+Aquí tienes el ejemplo completo de la clase `EjemploUso`:
+
+```java
+package UD08._19_Ejemplo_6_3;
+
+import java.time.LocalDate;
+import java.util.Scanner;
+
+public class EjemploUso {
+
+    public static void main(String[] args) {
+        Persona obj;
+        Scanner teclado = new Scanner(System.in);
+        System.out.print("Deseas crear un Profesor o un Alumno ('p' o 'a')?: ");
+        char respuesta = teclado.nextLine().toLowerCase().charAt(0);
+
+        if (respuesta == 'a') {
+            // Ejemplo de objeto polimórfico (en este caso va adquirir forma de Alumno)
+            obj = new Alumno("Alumno", "Apellidos", LocalDate.of(1977, 3, 8));
+        } else {
+            // Ejemplo de objeto polimórfico (en este caso va adquirir forma de Profesor)
+            obj = new Profesor("Profe", "Apellidos", LocalDate.of(1977, 3, 8));
+        }
+        System.out.format("Contenido del objeto: %s\n", obj.devolverContenidoString());
+    }
+}
+```
 
 # Píldoras informáticas relacionadas
 
