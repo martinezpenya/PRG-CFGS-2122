@@ -122,7 +122,7 @@ interface A {
 
 interface B extends A {
     int VALOR_B = 20;
-	// 1 −1 −1900
+	//1−1 −1900
     void metodoB();
 }
 
