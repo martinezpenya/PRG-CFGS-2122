@@ -14,20 +14,20 @@
 # Ejercicios
 
 1. (**package Varios**) Diseñar la clase Varios con los siguientes métodos **estáticos** que se harán apoyándose en alguna clase de las vistas al estudiar las colecciones de Java:
-   - `int[] quitarDuplicados (int v[])`, que dado un array de enteros devuelva otro array con los mismos valores que el original pero sin duplicados.
-   - `int[] unión1(int v1[], int v2[])`, que dados dos arrays v1 y v2 devuelva otro array con los elementos que están en v1 o que están en v2, sin que ningún elemento se repita.
+   - `int[] quitarDuplicados (int[] v)`, que dado un array de enteros devuelva otro array con los mismos valores que el original pero sin duplicados.
+   - `int[] union1(int[] v1, int[] v2)`, que dados dos arrays v1 y v2 devuelva otro array con los elementos que están en v1 o que están en v2, sin que ningún elemento se repita.
    - `int[] unión2(int v1[], int v2[])`, que dados dos arrays v1 y v2 devuelva otro array con los elementos que están en v1 o que están en v2. En este caso, si hay elementos duplicados se mantendrán.
-   - `int[] intersección(int v1[], int v2[])`, que dados dos arrays v1 y v2 devuelva otro array con los elementos que aparecen en los dos arrays. Cada elemento común aparecerá una sola vez en el resultado.
+   - `int[] interseccion(int v1[], int v2[])`, que dados dos arrays v1 y v2 devuelva otro array con los elementos que aparecen en los dos arrays. Cada elemento común aparecerá una sola vez en el resultado.
    - `int[] diferencia1 (int v1[], int v2[])`, que dados dos arrays v1 y v2 devuelva otro array con los elementos que de v1 que no están en v2. En caso de haber elementos duplicados en v1 estos se mantendrán en el resultado.
-   - `int[] diferencia2 (int v1[], int v2[])`, que dados dos arrays v1 y v2 devuelva otro array con los elementos que de v1 que no están en v2. El array resultante no tendrá elementos duplicados.
+   - `int[] diferencia2 (int v1[], int v2[])`, que dados dos arrays v1 y v2 devuelva otro array con los elementos de v1 que no están en v2. El array resultante no tendrá elementos duplicados.
 
 2. (**package Biblioteca**) Se quiere hacer una aplicación en la que los usuarios van a hacer búsquedas de libros para saber si se  encuentran en los fondos de la biblioteca. El funcionamiento básico sería algo así: Al iniciarse la aplicación todo el catálogo de libros se cargaría en memoria y a partir de ese momento los usuarios pueden realizar búsquedas por título, que interesa que sean lo más rápidas posibles. Nunca se insertan nuevos libros durante la ejecución de la aplicación.
 
    - Diseña la clase `Libro` con los métodos que consideres oportunos y los siguientes atributos:
 
      - `Titulo` (String): Es el dato que identifica al libro.
-     - `Autor` (String)
-     - `Estantería` (String): Estantería de la biblioteca en la que se encuentra el libro  
+     - `Autor` (String): Autor del libro.
+     - `Estantería` (String): Estantería de la biblioteca en la que se encuentra el libro.
 
    - Diseña la clase `CatalogoLibros` como una colección de libros. Utiliza el tipo de colección que crees que más se ajusta a los requisitos de la aplicación justificando la elección. Implementa los siguients métodos:
 
@@ -35,7 +35,7 @@
 
      - `public String buscar(Libro l)`: Dado un libro, lo busca en el Catálogo y devuelve la estantería en la que se encuentra el libro o null si el libro no está en el Catálogo.
 
-3. (**package Academia**) Se quiere diseñar una clase Academia . De una Academia se conoce  su nombre, dirección y las Aulas que tiene (Necesitas también generar la clase Aula).  
+3. (**package Academia**) Se quiere diseñar una clase Academia. De una Academia se conoce  su nombre, dirección y las Aulas que tiene (Necesitas también generar la clase Aula).  
 
   Definir la clase Academia utilizando una **Collection** para almacenar las aulas. El tipo de colección a utilizar se decidirá teniendo en cuenta que éstas se quieren mantener ordenadas según el criterio del método compareTo de la clase Aula. Implementar los atributos, el constructor, y los siguientes métodos:
 
@@ -121,7 +121,7 @@
 - Comprobar si el `ArrayList` `copiaArrayList` está vacio.
 - Convertir el `ArrayList` `misNumeros` en un `Array` y recorrerlo con un bucle mejorado.
 
-**Actividad 2**. Un cine precisa una aplicación para controlar las personas de la cola para los estrenos de películas. Debemos crear una lista con la edad de las personas de la lista y tendremos que calcular la entrada según la edad de la persona (mínimo 5 años). Para la edad de la persona se generan aleatoriamente números entre 5 y 60 años. Al final, deberemos mostrar la cantidad total recaudada. El número de personas de la cola se elige al azar entre 0 y 50.
+**Actividad 2**. Un cine precisa una aplicación para controlar las personas de la cola para los estrenos de películas. Debemos crear una lista con la edad de las personas de la cola y tendremos que calcular la entrada según la edad de la persona (mínimo 5 años). Para la edad de la persona se generan aleatoriamente números entre 5 y 60 años. Al final, deberemos mostrar la cantidad total recaudada. El número de personas de la cola se elige al azar entre 0 y 50.
 
 La lista de precios se basa en la siguiente tabla.
 
@@ -130,6 +130,14 @@ La lista de precios se basa en la siguiente tabla.
 | Entre 5 y 10 años  | 5 €    |
 | Entre 11 y 17 años | 7.5 €  |
 | Mayor de 18 años   | 9.5 €  |
+
+Como comprobación imprime el número de personas, el precio total y la lista de edades. Por ejemplo:
+
+```sh
+Hay un total de 6 personas en la cola.
+El precio total es de 57,00 euros
+[18, 36, 50, 35, 28, 55]
+```
 
 **Actividad 3**. Un supermercado nos pide que hagamos una aplicación que almacene los productos comprados. La aplicación debe almacenar Productos (clase) y cada producto al crearse contiene una cantidad, un precio (generados aleatoriamente). El nombre del producto será básico (producto1, producto2, producto3, etc.). Calcular el precio total de una lista de entre 1 y 10 productos (aleatorio). Mostrar un ticket con todo lo vendido y el precio final.
 

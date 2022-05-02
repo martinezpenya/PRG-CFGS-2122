@@ -17,7 +17,7 @@ Cuando el volumen de datos a manejar por una aplicación es elevado, no basta co
 
 Pero, ¿qué ocurre cuando en una aplicación tenemos que gestionar varios pedidos a la vez? Lo mismo ocurre en otros casos. Para poder realizar ciertas aplicaciones se necesita poder manejar datos que van más allá de meros datos simples (números y letras). A veces, los datos que tiene que manejar la aplicación son datos compuestos, es decir, datos que están compuestos a su vez de varios datos más simples. Por ejemplo, un pedido está compuesto por varios datos, los datos podrían ser el cliente que hace el pedido, la dirección de entrega, la fecha requerida de entrega y los artículos del pedido.
 
-Los datos compuestos son un tipo de estructura de datos, y en realidad ya los has manejado. Las clases son un ejemplo de estructuras de datos que permiten almacenar datos compuestos, y el objeto en sí, la instancia de una clase, sería el dato compuesto. Pero, a veces, los datos tienen estructuras aún más complejas, y son necesarias soluciones adicionales. 
+Los datos compuestos son un tipo de estructura de datos, y en realidad ya los has manejado. Las clases son un ejemplo de estructuras de datos que permiten almacenar datos compuestos, y el objeto en sí, la instancia de una clase, sería el dato compuesto. Pero, a veces, los datos tienen estructuras aún más complejas, y son necesarias soluciones adicionales.
 
 Aquí podrás aprender esas soluciones adicionales. Esas soluciones consisten básicamente en la capacidad de poder manejar varios datos del mismo o diferente tipo de forma dinámica y flexible.
 
@@ -31,29 +31,29 @@ Un listado de números que aumenta o decrece en tamaño es una de las cosas que 
 
 Pasaremos por alto las clases y los objetos, pues ya los has visto con anterioridad, pero debes saber que las clases en sí mismas son la evolución de un tipo de estructuras de datos conocidas como datos compuestos (también llamadas registros). Las clases, además de aportar la ventaja de agrupar datos relacionados entre sí en una misma estructura (característica aportada por los datos compuestos), permiten agregar métodos que manejen dichos datos, ofreciendo una herramienta de programación sin igual. Pero todo esto ya lo sabías. 
 
-Las estructuras de almacenamiento, en general, se pueden clasificar de varias formas. Por ejemplo, atendiendo a si pueden almacenar datos de diferente tipo, o si solo pueden almacenar datos de un solo tipo, se pueden distinguir:
+Las estructuras de almacenamiento, en general, se pueden clasificar de varias formas. Por ejemplo, atendiendo a **si pueden almacenar datos de diferente tipo, o si solo pueden almacenar datos de un solo tipo**, se pueden distinguir:
 
-- Estructuras con capacidad de almacenar varios datos del mismo tipo: varios números, varios caracteres, etc. Ejemplos de estas estructuras son los arrays, las cadenas de caracteres, las listas y los conjuntos.
-- Estructuras con capacidad de almacenar varios datos de distinto tipo: números, fechas, cadenas de caracteres, etc., todo junto dentro de una misma estructura. Ejemplos de este tipo de estructuras son las clases.
+- **Estructuras con capacidad de almacenar varios datos del mismo tipo**: varios números, varios caracteres, etc. Ejemplos de estas estructuras son los arrays, las cadenas de caracteres, las listas y los conjuntos.
+- **Estructuras con capacidad de almacenar varios datos de distinto tipo**: números, fechas, cadenas de caracteres, etc., todo junto dentro de una misma estructura. Ejemplos de este tipo de estructuras son las clases.
 
-Otra forma de clasificar las estructuras de almacenamiento va en función de si pueden o no cambiar de tamaño de forma dinámica:
+Otra forma de clasificar las estructuras de almacenamiento va **en función de si pueden o no cambiar de tamaño** de forma dinámica:
 
-- Estructuras cuyo tamaño se establece en el momento de la creación o definición y su tamaño no puede variar después. Ejemplos de estas estructuras son los arrays y las matrices (arrays multimensionales).
-- Estructuras cuyo tamaño es variable (conocidas como estructuras dinámicas). Su tamaño crece o decrece según las necesidades de forma dinámica. Es el caso de las listas, árboles, conjuntos y, como veremos también, el caso de algunos tipos de cadenas de caracteres.
+- **Estructuras cuyo tamaño se establece en el momento de la creación o definición y su tamaño no puede variar después**. Ejemplos de estas estructuras son los arrays y las matrices (arrays multimensionales).
+- **Estructuras cuyo tamaño es variable (conocidas como estructuras dinámicas). Su tamaño crece o decrece según las necesidades de forma dinámica**. Es el caso de las listas, árboles, conjuntos y, como veremos también, el caso de algunos tipos de cadenas de caracteres.
 
-Por último, atendiendo a la forma en la que los datos se ordenan dentro de la estructura, podemos diferenciar varios tipos de estructuras:
+Por último, atendiendo a **la forma en la que los datos se ordenan** dentro de la estructura, podemos diferenciar varios tipos de estructuras:
 
-- Estructuras que no se ordenan de por sí, y debe ser el programador el encargado de ordenar los datos si fuera necesario. Un ejemplo de estas estructuras son los arrays.
-- Estructuras ordenadas. Se trata de estructuras que al incorporar un dato nuevo a todos los datos existentes, este se almacena en una posición concreta que irá en función del orden. El orden establecido en la estructura puede variar dependiendo de las necesidades del programa:
+- **Estructuras que no se ordenan de por sí**, y debe ser el programador el encargado de ordenar los datos si fuera necesario. Un ejemplo de estas estructuras son los arrays.
+- **Estructuras ordenadas**. Se trata de estructuras que al incorporar un dato nuevo a todos los datos existentes, este se almacena en una posición concreta que irá en función del orden. El orden establecido en la estructura puede variar dependiendo de las necesidades del programa:
   alfabético, orden numérico de mayor a menor, momento de inserción, etc.
 
 Todavía no conoces mucho de las estructuras, y probablemente todo te suena raro y extraño. No te preocupes, poco a poco irás descubriéndolas. Verás que son sencillas de utilizar y muy cómodas.
 
 ## Clases y métodos genéricos
 
-¿Cree es qué el código es más legible al utilizar genéricos o qué se complica? La verda ad es que al principio cuesta, pero después, el código se entiende mejor que si  se empieza a a insertar conversiones de tipo.
+¿Cree es qué el código es más legible al utilizar genéricos o qué se complica? La verdad es que al principio cuesta, pero después, el código se entiende mejor que si  se empieza a a insertar conversiones de tipo.
 
-Las clases genéric cas son equivalentes a los  métodos genéricos pero a nivel de e clase, permiten definir un parámetro de tipo o genérico que se podrá usar a lo largo de toda la clase, facilitando así crear clases genéricas que  son capaces de trabajar con diferentes tipos de datos base. Para crear una clase genérica se especifican los parámetros de e tipo al lado del nombre e de la clase:
+Las clases genéricas son equivalentes a los  métodos genéricos pero a nivel de e clase, permiten definir un parámetro de tipo o genérico que se podrá usar a lo largo de toda la clase, facilitando así crear clases genéricas que  son capaces de trabajar con diferentes tipos de datos base. Para crear una clase genérica se especifican los parámetros de e tipo al lado del nombre e de la clase:
 
 ```java
  public class Util<T> {
@@ -68,8 +68,8 @@ Las clases genéric cas son equivalentes a los  métodos genéricos pero a nivel
 }
 ```
 
-En el ejemplo anterior, la clase `Util` contiene el método invertir cuya función es invertir el orden de los elementos de cualquier array, sea del l tipo que sea. Para usar esa clase genérica hay que crear un objeto o instancia de dicha clase especificando el tipo base entre los símbolos menor que (“<”) y
-mayor que (“>”), justo detrás del nombre e de la clase. Veamos un ejemplo:
+En el ejemplo anterior, la clase `Util` contiene el método `invertir` cuya función es invertir el orden de los elementos de cualquier `array`, sea del tipo que sea. Para usar esa clase genérica hay que crear un objeto o instancia de dicha clase especificando el tipo base entre los símbolos menor que ("`<`") y
+mayor que ("`>`"), justo detrás del nombre e de la clase. Veamos un ejemplo:
 
 ```java
 Integer[] numeros={0,1,2,3,4,5,6,7,8,9};
@@ -82,18 +82,18 @@ for (int i=0;i<numeros.length;i++){
 
 Como puedes observar, el uso de genéricos es sencillo, tanto a nivel de clase como a nivel de método.
 
-Simplemente, a la hora de crear una instancia de una clase genérica, hay que especificar el tipo, tanto en la definición (`Util <integer> u`) como en la creación (`new Util<Integer r>()`).
+Simplemente, a la hora de crear una instancia de una clase genérica, hay que especificar el tipo, tanto en la definición (`Util<Integer> u`) como en la creación (`new Util<Integer>()`).
 
 Los genéricos los vamos a usar ampliamente a partir de ahora a, aplicados a un montón de clases genéricas que tiene Java y que son de gran utilidad, por lo que es conveniente que aprendas bien a usar una clase genérica.
 
-> Los parámetros de tipo de las clases genéricas solo pueden ser clases, no pueden ser jamás tipos de datos primitivos como `int`, `short`, `double`, etc. En su lugar, debemos usa ar sus clases envoltorio (wrappers) `Integer`, `Short`, `Double`, etc.
+> Los parámetros de tipo de las clases genéricas solo pueden ser clases, no pueden ser jamás tipos de datos primitivos como `int`, `short`, `double`, etc. En su lugar, debemos usar sus clases envoltorio (wrappers) `Integer`, `Short`, `Double`, etc.
 
 Todavía hay un montón de cosas más sobre los métodos y las clases genéricas que deberías saber. A continuación se muestran algunos usos interesantes de los genéricos:
 
 - Dos o más parámetros de tipo (I):
 
   ```java
-  public class util{
+  public class Util<T,M>{
       public static <T,M> int sumaDeLongitudes (T[] a, M[] b){
           return a.length+b.length;
       }
@@ -107,7 +107,7 @@ Todavía hay un montón de cosas más sobre los métodos y las clases genéricas
   ```java
   Integer[] a1={0,1,2,3,4};
   Double[] a2={0d,1d,2d,3d,4d};
-  util.<Integer,Double>sumaDeLongitudes(a1,a2);
+  Util.<Integer,Double>sumaDeLongitudes(a1,a2);
   ```
 
   > Usar un método o una clase con dos o más parámetros genéricos es sencillo, a la hora de invocar al método o crear la clase, se indican los tipos base separados por coma.
@@ -135,7 +135,7 @@ Todavía hay un montón de cosas más sobre los métodos y las clases genéricas
 - Métodos con tipos adicionales:
 
   ```java
-  class Utilt<A>{
+  class Util<A,B>{
       A a;
       Util (A a){
           this.a=a;
@@ -168,7 +168,7 @@ Todavía hay un montón de cosas más sobre los métodos y las clases genéricas
   Terna <Integer,Double,Float> t=new Terna<>(a1,d1,f1);
   ```
 
-  > A partir de Java 7 es posible usar el operador diamante <> para simplificar la instanciación o creación de nuevos objetos a partir de clases genéricas. Cuidado, esto solo es posible a partir de Java 7.
+  > A partir de Java 7 es posible usar el operador diamante <> para simplificar la instanciación o creación de nuevos objetos a partir de clases genéricas. **Cuidado, esto solo es posible a partir de Java 7**.
 
 - Limitación de tipos
 
@@ -234,30 +234,28 @@ Todavía hay un montón de cosas más sobre los métodos y las clases genéricas
 
 Las colecciones definen un conjunto de interfaces, clases genéricas y algoritmos que permiten manejar grupos de objetos, todo ello enfocado a potenciar la reusabilidad del software y facilitar las tareas de programación. Te parecerá increíble el tiempo que se ahorra empleando colecciones y cómo se reduce la complejidad del software usándolas adecuadamente. Las colecciones permiten almacenar y manipular grupos de objetos que, a priori, están relacionados entre sí (aunque no es obligatorio que estén relacionados, lo lógico es que si se almacenan juntos es porque tienen alguna relación entre sí), pudiendo trabajar con cualquier tipo de objeto (de ahí que se empleen los genéricos en las colecciones).
 
-Además las colecciones permiten realizar algunas operaciones útiles sobre los elementos almacenados, tales como búsqueda u ordenación. En algunos casos es necesario que los objetos almacenados cumplan algunas condiciones (que implementen algunas interfaces), para poder hacer
-uso de estos algoritmos. 
+Además las colecciones permiten realizar algunas operaciones útiles sobre los elementos almacenados, tales como búsqueda u ordenación. En algunos casos es necesario que los objetos almacenados cumplan algunas condiciones (que implementen algunas interfaces), para poder hacer uso de estos algoritmos. 
 
-Las colecciones son en general elementos de programación que están disponibles en muchos lenguajes de programación. En algunos lenguajes de programación su uso es algo más complejo (como es el caso de C++), pero en Java su uso es bastante sencillo, es algo que descubrirás a lo largo
-de lo que queda de tema.
+Las colecciones son en general elementos de programación que están disponibles en muchos lenguajes de programación. En algunos lenguajes de programación su uso es algo más complejo (como es el caso de C++), pero en Java su uso es bastante sencillo.
 
 Las colecciones en Java parten de una serie de interfaces básicas. Cada interfaz define un modelo de colección y las operaciones que se pueden llevar a cabo sobre los datos almacenados, por lo que es necesario conocerlas. La interfaz inicial, a través de la cual se han construido el resto de colecciones, es la interfaz `java.util.Collection`, que define las operaciones comunes a todas las colecciones derivadas. A continuación se muestran las operaciones más importantes definidas por esta interfaz, ten en cuenta que `Collection` es una interfaz genérica donde `<E>` es el parámetro de tipo (podría ser cualquier clase):
 
--  Método `int size()` : retorna el número de elementos de la colección.
-- Método `boolean isEmpty()` : retornará verdadero si la colección está vacía.
-- Método `boolean contains (Object element)`: retornará verdadero si la colección tiene el elemento pasado como parámetro.
-- Método `boolean add(E element)` : permitirá añadir elementos a la colección.
-- Método `boolean remove (Object element)` : permitirá eliminar elementos de la colección.
-- Método `Iterator<E> iterator()`: permitirá crear un iterador para recorrer los elementos de la colección. Esto se ve más adelante, no te preocupes.
-- Método `Object[] toArray()`: permite pasar la colección a un array de objetos tipo Object.
-- Método `containsAll(Collection<?> c)`: permite comprobar si una colección contiene los elementos existentes en otra colección, si es así, retorna verdadero.
-- Método `addAll (Collection<? extends E> c)`: permite añadir todos los elementos de una colección a otra colección, siempre que sean del mismo tipo (o deriven del mismo tipo base).
-- Método `boolean removeAll(Collection<?> c)`: si los elementos de la colección pasada como parámetro están en nuestra colección, se eliminan, el resto se quedan.
-- Método `boolean retainAll(Collection<?> c)`: si los elementos de la colección pasada como parámetro están en nuestra colección, se dejan, el resto se eliminan.
-- Método `void clear()`: vacíar la colección.
+-  **Método `int size()`** : retorna el número de elementos de la colección.
+- **Método `boolean isEmpty()`** : retornará verdadero si la colección está vacía.
+- **Método `boolean contains (Object element)`**: retornará verdadero si la colección tiene el elemento pasado como parámetro.
+- **Método `boolean add(E element)`** : permitirá añadir elementos a la colección.
+- **Método `boolean remove(Object element)`** : permitirá eliminar elementos de la colección.
+- **Método `Iterator<E> iterator()`**: permitirá crear un iterador para recorrer los elementos de la colección. Esto se ve más adelante, no te preocupes.
+- **Método `Object[] toArray()`**: permite pasar la colección a un array de objetos tipo Object.
+- **Método `containsAll(Collection<?> c)`**: permite comprobar si una colección contiene los elementos existentes en otra colección, si es así, retorna verdadero.
+- **Método `addAll(Collection<?> extends E> c)`**: permite añadir todos los elementos de una colección a otra colección, siempre que sean del mismo tipo (o deriven del mismo tipo base).
+- **Método `boolean removeAll(Collection<?> c)`**: si los elementos de la colección pasada como parámetro están en nuestra colección, se eliminan, el resto se quedan.
+- **Método `boolean retainAll(Collection<?> c)`**: si los elementos de la colección pasada como parámetro están en nuestra colección, se dejan, el resto se eliminan.
+- **Método `void clear()`**: vaciar la colección.
 
-Más adelante veremos cómo se usan estos métodos, será cuando veamos las implementaciones (clases genéricas que implementan alguna de las interfaces derivadas de la interfaz `Collection`).
+Más adelante veremos cómo se usan estos métodos, será cuando veamos las implementaciones  (clases genéricas que implementan alguna de las interfaces derivadas de la interfaz `Collection`).
 
-## Conjuntos
+## Conjuntos (sets)
 
 ¿Con qué relacionarías los conjuntos? Seguro que con las matemáticas. Los conjuntos son  un tipo de colección que no admite  duplicados,  derivados  del concepto matemático de conjunto.
 
@@ -269,7 +267,7 @@ La interfaz `java.util.Set` define cómo deben ser los conjuntos, y extiende la 
 
   **Inconvenientes**: necesitan bastante memoria y no almacenan los objetos de forma ordenada (al contrario pueden aparecer completamente desordenados).
 
-- `java.util.LinkedHashSet`. Conjunto que almacena objetos combinando tablas hash , para un acceso rápido a los datos, y listas enlazadas (estructura de datos que almacena los objetos enlazándolos entre sí a través de un apuntador de memoria o puntero, manteniendo un orden, que generalmente es el de momento de inserción, pero que puede ser otro. Cada dato se almacena en una estructura llamada nodo en la que existe un campo, generalmente llamado siguiente, que contiene la dirección de memoria del siguiente nodo (con el siguiente dato)) para conservar el orden. El orden de almacenamiento es el de inserción, por lo que se puede decir que es una estructura ordenada a medias.
+- `java.util.LinkedHashSet`. Conjunto que almacena objetos combinando tablas hash, para un acceso rápido a los datos, y listas enlazadas (estructura de datos que almacena los objetos enlazándolos entre sí a través de un apuntador de memoria o puntero, manteniendo un orden, que generalmente es el del momento de inserción, pero que puede ser otro. Cada dato se almacena en una estructura llamada nodo en la que existe un campo, generalmente llamado siguiente, que contiene la dirección de memoria del siguiente nodo (con el siguiente dato)) para conservar el orden. El orden de almacenamiento es el de inserción, por lo que se puede decir que es una estructura ordenada a medias.
   **Inconvenientes**: necesitan bastante memoria y es algo más lenta que `HashSet` .
 
 - `java.util.TreeSet`. Conjunto que almacena los objetos usando unas estructuras conocidas como árboles rojo‐negro. Son más lentas que los dos tipos anteriores. pero tienen una gran ventaja: los datos almacenados se ordenan por valor. Es decir, que aunque se inserten los elementos de forma desordenada, internamente se ordenan dependiendo del valor de cada uno.
@@ -279,20 +277,23 @@ Poco a poco, iremos viendo que son las listas enlazadas y los árboles (no profu
 Para crear un conjunto, simplemente creamos el `HashSet` indicando el tipo de objeto que va a almacenar, dado que es una clase genérica que puede trabajar con cualquier tipo de dato debemos crearlo como sigue (no olvides hacer la importación de `java.util.HashSet` primero):
 ```java
 HashSet<Integer> conjunto=new HashSet<Integer>();
+HashSet<Integer> conjunto=new HashSet<>(); //a partir de Java 7
 ```
 
 Después podremos ir almacenando objetos dentro del conjunto usando el método `add` (definido por la interfaz `Set`). Los objetos que se pueden insertar serán siempre del tipo especificado al crear el conjunto:
 
 ```java
 Integer n=new Integer(10);
-if (!conjunto.add(n)) System.out.println("Número ya en la lista.");
+if (!conjunto.add(n)){
+	System.out.println("Número ya en la lista.");
+}
 ```
 
-Si el elemento ya está en el conjunto, el método `add` retornará false indicando que no se pueden insertar duplicados. Si todo va bien, retornará true.
+Si el elemento ya está en el conjunto, el método `add` retornará `false` indicando que no se pueden insertar duplicados. Si todo va bien, retornará `true`.
 
 ### Acceso
 
-Y ahora te preguntarás, ¿cómo accedo a los elementos almacenados en un conjunto? Para obtener los elementos almacenados en un conjunto hay que usar iteradores, que permiten obtener los elementos del conjunto uno a uno de forma secuencial (no hay otra forma de acceder a los elementos de un conjunto, es su inconveniente). Los iteradores se ven en mayor profundidad más adelante, de momento, vamos a usar iteradores de forma transparente, a través de una estructura for especial, denominada bucle “ for-each ” o bucle “para cada”. En el siguiente código se usa un bucle foreach, en él la variable i va tomando todos los valores almacenados en el conjunto hasta que llega al último:
+Y ahora te preguntarás, ¿cómo accedo a los elementos almacenados en un conjunto? Para obtener los elementos almacenados en un conjunto hay que usar iteradores, que permiten obtener los elementos del conjunto uno a uno de forma secuencial (no hay otra forma de acceder a los elementos de un conjunto, es su inconveniente). Los iteradores se ven en mayor profundidad más adelante, de momento, vamos a usar iteradores de forma transparente, a través de una estructura for especial, denominada bucle " for-each " o bucle "para cada". En el siguiente código se usa un bucle foreach, en él la variable i va tomando todos los valores almacenados en el conjunto hasta que llega al último:
 
 ```java
 for (Integer i: conjunto) {
@@ -302,7 +303,7 @@ for (Integer i: conjunto) {
 
 Como ves la estructura `for-each` es muy sencilla: la palabra `for` seguida de "(`tipo variable:colección`)" y el cuerpo del bucle; `tipo` es el tipo del objeto sobre el que se ha creado la colección, `variable` pues es la variable donde se almacenará cada elemento de la colección y `coleccion` la colección en sí. Los bucles `for-each` se pueden usar para todas las colecciones.
 
-### LinkedHashSet y TreeSet
+### `LinkedHashSet` y `TreeSet`
 
 ¿En qué se diferencian las estructuras `LinkedHashSet` y `TreeSet` de la estructura `HashSet` ? Ya se comento antes, y es básicamente en su funcionamiento interno.
 
@@ -324,7 +325,7 @@ En la figura de abajo se puede apreciar un árbol donde cada nodo puede tener do
 
 Los árboles son estructuras complejas de manejar y que permiten operaciones muy sofisticadas. Los árboles usados en los `TreeSet`, los árboles rojo‐negro, son árboles auto-ordenados, es decir, que al insertar un elemento, este queda ordenado por su valor de forma que al recorrer el árbol, pasando por todos los nodos, los elementos salen ordenados. El ejemplo mostrado en la imagen es simplemente un árbol binario, el más simple de todos.
 
-Nuevamente, no se va a profundizar en las operaciones que se pueden realizar en un árbol a nivel interno (inserción de nodos, eliminación de nodos, búsqueda de un valor, etc.). Nos aprovecharemos de las colecciones para hacer uso de su potencial. En la siguiente tabla tienes un uso comparado de `TreeSet` y `LinkedHashSet` . Su creación es similar a como se hace con `HashSet` , simplemente sustituyendo el nombre de la clase HashSet por una de las otras. Ni `TreeSet` , ni `LinkedHashSet` admiten duplicados, y se usan los mismos métodos ya vistos antes, los existentes en la interfaz Set (que es la interfaz que implementan).
+Nuevamente, no se va a profundizar en las operaciones que se pueden realizar en un árbol a nivel interno (inserción de nodos, eliminación de nodos, búsqueda de un valor, etc.). Nos aprovecharemos de las colecciones para hacer uso de su potencial. En la siguiente tabla tienes un uso comparado de `TreeSet` y `LinkedHashSet` . Su creación es similar a como se hace con `HashSet` , simplemente sustituyendo el nombre de la clase `HashSet` por una de las otras. Ni `TreeSet` , ni `LinkedHashSet` admiten duplicados, y se usan los mismos métodos ya vistos antes, los existentes en la interfaz `Set` (que es la interfaz que implementan).
 
 - Conjunto `TreeSet`:
 
@@ -387,7 +388,11 @@ En el ejemplo anterior, el literal de número se convierte automáticamente a la
 
   ![image-20220415121303990](/assets/union.png)
 
-  Todos los del conjunto A, añadiendo los del B, pero sin repetir los que ya están: 5, 7, 9, 10, 19 y 20.
+  Todos los del conjunto A, añadiendo los del B, pero sin repetir los que ya están: 
+
+  ```sh
+  5, 7, 9, 10, 19 y 20.
+  ```
 
 - **Diferencia**. Eliminar los elementos del conjunto B que puedan estar en el conjunto A.
 
@@ -397,7 +402,11 @@ En el ejemplo anterior, el literal de número se convierte automáticamente a la
 
   ![image-20220415121500468](/assets/diferencia.png)
 
-  Todos los elementos del conjunto A, que no estén en el conjunto B: 9, 19.
+  Todos los elementos del conjunto A, que no estén en el conjunto B: 
+
+  ```sh
+  9, 19.
+  ```
 
 - **Intersección**. Retiene los elementos comunes a ambos conjuntos.
 
@@ -407,7 +416,11 @@ En el ejemplo anterior, el literal de número se convierte automáticamente a la
 
   ![image-20220415121631282](/assets/interseccion.png)
 
-  Todos los elementos del conjunto A, que también están en el conjunto B: 5 y 7.
+  Todos los elementos del conjunto A, que también están en el conjunto B:
+  
+  ```sh
+  5 y 7.
+  ```
 
 > Recuerda, estas operaciones son comunes a todas las colecciones.
 
@@ -447,10 +460,10 @@ TreeSet<Objeto> ts=new TreeSet<Objeto>(new ComparadorDeObjetos());
 
 ¿En qué se diferencia una lista de un conjunto? Las listas son elementos de programación un poco más avanzados que los conjuntos. Su ventaja es que amplían el conjunto de operaciones de las colecciones añadiendo operaciones extra, veamos algunas de ellas:
 
-- Las listas si pueden almacenar duplicados, si no queremos duplicados, hay que verificar manualmente que el elemento no esté en la lista antes de su inserción.
-- Acceso posicional. Podemos acceder a un elemento indicando su posición en la lista.
-- Búsqueda. Es posible buscar elementos en la lista y obtener su posición. En los conjuntos, al ser colecciones sin aportar nada nuevo, solo se podía comprobar si un conjunto contenía o no un elemento de la lista, retornando verdadero o falso. Las listas mejoran este aspecto.
-- Extracción de sublistas. Es posible obtener una lista que contenga solo una parte de los elementos de forma muy sencilla.
+- Las listas si **pueden almacenar duplicados**, si no queremos duplicados, hay que verificar manualmente que el elemento no esté en la lista antes de su inserción.
+- **Acceso posicional**. Podemos acceder a un elemento indicando su posición en la lista.
+- **Búsqueda**. Es posible buscar elementos en la lista y obtener su posición. En los conjuntos, al ser colecciones sin aportar nada nuevo, solo se podía comprobar si un conjunto contenía o no un elemento de la lista, retornando verdadero o falso. Las listas mejoran este aspecto.
+- **Extracción de sublistas**. Es posible obtener una lista que contenga solo una parte de los elementos de forma muy sencilla.
 
 En Java, para las listas se dispone de una interfaz llamada `java.util.List`, y dos implementaciones (`java.util.LinkedList` y `java.util.ArrayList`), con diferencias significativas entre ellas. Los métodos de la interfaz `List`, que obviamente estarán en todas las implementaciones, y que permiten las operaciones anteriores son:
 
@@ -463,7 +476,7 @@ En Java, para las listas se dispone de una interfaz llamada `java.util.List`, y 
 - `int lastIndexOf(Object o)`. El método `lastIndexOf` nos permite obtener la última ocurrencia del objeto en la lista (dado que la lista si puede almacenar duplicados).
 - `List<E> subList(int from, int to)`. El método `subList` genera una sublista (una vista parcial de la lista) con los elementos comprendidos entre la posición inicial (incluida) y la posición final (no incluida).
 
-Ten en cuenta que los elementos de una lista empiezan a numerarse por 0. Es decir, que el primer elemento de la lista es el 0. Ten en cuenta también que List es una interfaz genérica, por lo que `<E>` corresponde con el tipo base usado como parámetro genérico al crear la lista.
+Ten en cuenta que los elementos de una lista empiezan a numerarse por 0. Es decir, que el primer elemento de la lista es el 0. Ten en cuenta también que `List` es una interfaz genérica, por lo que `<E>` corresponde con el tipo base usado como parámetro genérico al crear la lista.
 
 ### Uso
 
@@ -512,15 +525,17 @@ Lo mismo ocurre al añadir un elemento, se añade en la sublista y en la lista o
 
 ### `LinkedList` y `ArrayList`
 
-¿Y en qué se diferencia un LinkedList de un ArrayList ? Los LinkedList utilizan listas doblemente enlazadas, que son listas enlazadas (como se vio en un apartado anterior), pero que permiten ir hacia atrás en la lista de elementos. Los elementos de la lista se encapsulan en los llamados nodos.
+¿Y en qué se diferencia un `LinkedList` de un `ArrayList` ? 
+
+Los **`LinkedList`** utilizan listas doblemente enlazadas, que son listas enlazadas (como se vio en un apartado anterior), pero que permiten ir hacia atrás en la lista de elementos. Los elementos de la lista se encapsulan en los llamados nodos.
 
 Los nodos van enlazados unos a otros para no perder el orden y no limitar el tamaño de almacenamiento. Tener un doble enlace significa que en cada nodo se almacena la información de cuál es el siguiente nodo y además, de cuál es el nodo anterior. Si un nodo no tiene nodo siguiente o nodo  anterior, se almacena null o nulo para ambos casos.
 
-No es el caso de los ArrayList. Estos se implementan utilizando arrays que se van redimensionando conforme se necesita más espacio o menos. La redimensión es transparente a nosotros, no nos enteramos cuando se produce, pero eso redunda en una diferencia de rendimiento notable dependiendo del uso. Los ArrayList son más rápidos en cuanto a acceso a los elementos, acceder a un elemento según su posición es más rápido en un array que en una lista doblemente enlazada (hay que recorrer la lista). En cambio, eliminar un elemento implica muchas más operaciones en un array que en una lista enlazada de cualquier tipo.
+No es el caso de los **`ArrayList`**. Estos se implementan utilizando arrays que se van redimensionando conforme se necesita más espacio o menos. La redimensión es transparente a nosotros, no nos enteramos cuando se produce, pero eso redunda en una diferencia de rendimiento notable dependiendo del uso. Los ArrayList son más rápidos en cuanto a acceso a los elementos, acceder a un elemento según su posición es más rápido en un array que en una lista doblemente enlazada (hay que recorrer la lista). En cambio, eliminar un elemento implica muchas más operaciones en un array que en una lista enlazada de cualquier tipo.
 
-¿Y esto que quiere decir? Que si se van a realizar muchas operaciones de eliminación de elementos sobre la lista, conviene usar una lista enlazada ( LinkedList ), pero si no se van a realizar muchas eliminaciones, sino que solamente se van a insertar y consultar elementos por posición, conviene usar una lista basada en arrays redimensionados (ArrayList ).
+¿Y esto que quiere decir? Que si se van a realizar muchas operaciones de eliminación de elementos sobre la lista, conviene usar una lista enlazada (`LinkedList`), pero si no se van a realizar muchas eliminaciones, sino que solamente se van a insertar y consultar elementos por posición, conviene usar una lista basada en arrays redimensionados (`ArrayList` ).
 
-LinkedList tiene otras ventajas que nos puede llevar a su uso. Implementa las interfaces java.util.Queue y java.util.Deque . Dichas interfaces permiten hacer uso de las listas como si fueran una cola de prioridad o una pila, respectivamente.
+`LinkedList` tiene otras ventajas que nos puede llevar a su uso. Implementa las interfaces `java.util.Queue` y `java.util.Deque` . Dichas interfaces permiten hacer uso de las listas como si fueran una cola de prioridad o una pila, respectivamente.
 
 Las colas, también conocidas como colas de prioridad, son una lista pero que aportan métodos para trabajar de forma diferente. ¿Tú sabes lo que es hacer cola para que te atiendan en una ventanilla? 
 
@@ -536,14 +551,16 @@ Las pilas, mucho menos usadas, son todo lo contrario a las listas. Una pila es i
 
 A la hora de usar las listas, hay que tener en cuenta un par de detalles, ¿sabes cuáles? Es sencillo, pero importante.
 
-No es lo mismo usar las colecciones (listas y conjuntos) con objetos inmutables (Strings, Integer, etc.) que con objetos mutables. Los objetos inmutables no pueden ser modificados después de su creación, por lo que cuando se incorporan a la lista, a través de los métodos add , se pasan por copia (es decir, se realiza una copia de los mismos). En cambio los objetos mutables (como las clases que tú puedes crear), no se copian, y eso puede producir efectos no deseados. 
+No es lo mismo usar las colecciones (listas y conjuntos) con objetos inmutables (`Strings`, `Integer`, etc.) que con objetos mutables. Los objetos inmutables no pueden ser modificados después de su creación, por lo que cuando se incorporan a la lista, a través de los métodos `add` , se pasan por copia (es decir, se realiza una copia de los mismos). En cambio los objetos mutables (como las clases que tú puedes crear), no se copian, y eso puede producir efectos no deseados. 
 
 Imagínate la siguiente clase, que contiene un número:
 
 ```java
 class Test {
 	public Integer num;
-	Test (int num) { this.num=new Integer(num); }
+	Test (int num) {
+        this.num=new Integer(num); 
+    }
 }
 ```
 
@@ -578,7 +595,7 @@ En Java existe la interfaz `java.util.Map` que define los métodos que deben ten
 Los mapas utilizan clases genéricas para dar extensibilidad y flexibilidad, y permiten definir un tipo base para la clave, y otro tipo diferente para el valor. Veamos un ejemplo de como crear un mapa, que es extensible a los otros dos tipos de mapas:
 
 ```java
-HashMap<String,Integer> t=new HashMap<String,Integer>();
+HashMap<String,Integer> t = new HashMap<String,Integer>();
 ```
 
 El mapa anterior permite usar cadenas como llaves y almacenar de forma asociada a cada llave, un número entero. Veamos los métodos principales de la interfaz `Map`, disponibles en todas las implementaciones. En los ejemplos, `V` es el tipo base usado para el valor (`Value`) y `K` el tipo base usado para la llave (`Key`):
@@ -598,7 +615,7 @@ El mapa anterior permite usar cadenas como llaves y almacenar de forma asociada 
 
 ¿Qué son los iteradores realmente? Son un mecanismo que nos permite recorrer todos los elementos de una colección de forma sencilla, de forma secuencial, y de forma segura. Los mapas, como no derivan de la interfaz Collection realmente, no tienen iteradores, pero como veremos, existe un truco interesante.
 
-Los iteradores permiten recorrer las colecciones de dos formas: bucles for‐each (existentes en Java a partir de la versión 1.5) y a través de un bucle normal creando un iterador. Como los bucles for-each ya los hemos visto antes (y ha quedado patente su simplicidad), nos vamos a centrar en el otro método, especialmente útil en versiones antiguas de Java. Ahora la pregunta es, ¿cómo se crea un iterador? Pues invocando el método “iterator()” de cualquier colección.
+Los iteradores permiten recorrer las colecciones de dos formas: bucles for‐each (existentes en Java a partir de la versión 1.5) y a través de un bucle normal creando un iterador. Como los bucles for-each ya los hemos visto antes (y ha quedado patente su simplicidad), nos vamos a centrar en el otro método, especialmente útil en versiones antiguas de Java. Ahora la pregunta es, ¿cómo se crea un iterador? Pues invocando el método "iterator()" de cualquier colección.
 
 Veamos un ejemplo (en el ejemplo t es una colección cualquiera):
 
@@ -756,7 +773,7 @@ Para poder realizar esta operación, usaremos el método `split` de la clase `St
 
 ```java
 String texto="Z,B,A,X,M,O,P,U";
-String []partes=texto.split(",");
+String[] partes=texto.split(",");
 Arrays.sort(partes);
 ```
 
