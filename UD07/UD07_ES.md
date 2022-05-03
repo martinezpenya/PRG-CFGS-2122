@@ -493,7 +493,9 @@ t.add(3); // Añade otro elemento al final de la lista.
 t.add(1,2); // Añade en la posición 1 el elemento 2.
 t.add(t.get(1)+t.get(2)); // Suma los valores contenidos en la posición 1 y 2, y lo agrega al final.
 t.remove(0); // Elimina el primer elementos de la lista.
-for (Integer i: t) System.out.println("Elemento:" + i); // Muestra la lista.
+for (Integer i: t){
+    System.out.println("Elemento:" + i); // Muestra la lista.
+}
 ```
 
 En el ejemplo anterior, se realizan muchas operaciones, ¿cuál será el contenido de la lista al final? Pues será 2, 3 y 5. En el ejemplo cabe destacar el uso del bucle `for-each` , recuerda que se puede usar en cualquier colección.
@@ -513,7 +515,11 @@ ejemplo algo más difícil:
 al.addAll(0, t.subList(1, t.size()));
 ```
 
-Este ejemplo es especial porque usa sublistas. Se usa el método `size` para obtener el tamaño de la lista. Después el método `subList` para extraer una sublista de la lista (que incluía en origen los números 2, 3 y 5), desde la posición 1 hasta el final de la lista (lo cual dejaría fuera al primer elemento). Y por último, se usa el método `addAll` para añadir todos los elementos de la sublista al `ArrayList` anterior.
+Este ejemplo es especial porque usa sublistas. Se usa el método `size` para obtener el tamaño de la lista. Después el método `subList` para extraer una sublista de la lista (que incluía en origen los números 2, 3 y 5), desde la posición 1 hasta el final de la lista (lo cual dejaría fuera al primer elemento). Y por último, se usa el método `addAll` para añadir todos los elementos de la sublista al `ArrayList` anterior. Y quedaria:
+
+```sh
+3, 5, 10 y 12.
+```
 
 Debes saber que las operaciones aplicadas a una sublista repercuten sobre la lista original. Por ejemplo, si ejecutamos el método `clear` sobre una sublista, se borrarán todos los elementos de la sublista, pero también se borrarán dichos elementos de la lista original: 
 
@@ -572,7 +578,9 @@ Test p2=new Test(12); // Se crea otro objeto Test donde el entero que contiene v
 LinkedList<Test> lista=new LinkedList<Test>(); // Creamos una lista enlazada para objetos tipo Test.
 lista.add(p1); // Añadimos el primero objeto test.
 lista.add(p2); // Añadimos el segundo objeto test.
-for (Test p:lista) System.out.println(p.num); // Mostramos la lista de objetos.
+for (Test p:lista){
+	System.out.println(p.num); // Mostramos la lista de objetos.
+}
 ```
 
 ¿Qué mostraría por pantalla el código anterior? Simplemente mostraría los números 11 y 12. Ahora bien, ¿qué pasa si modificamos el valor de uno de los números de los objetos test? ¿Qué se mostrará al ejecutar el siguiente código?
@@ -615,9 +623,9 @@ El mapa anterior permite usar cadenas como llaves y almacenar de forma asociada 
 
 ¿Qué son los iteradores realmente? Son un mecanismo que nos permite recorrer todos los elementos de una colección de forma sencilla, de forma secuencial, y de forma segura. Los mapas, como no derivan de la interfaz Collection realmente, no tienen iteradores, pero como veremos, existe un truco interesante.
 
-Los iteradores permiten recorrer las colecciones de dos formas: bucles for‐each (existentes en Java a partir de la versión 1.5) y a través de un bucle normal creando un iterador. Como los bucles for-each ya los hemos visto antes (y ha quedado patente su simplicidad), nos vamos a centrar en el otro método, especialmente útil en versiones antiguas de Java. Ahora la pregunta es, ¿cómo se crea un iterador? Pues invocando el método "iterator()" de cualquier colección.
+Los iteradores permiten recorrer las colecciones de dos formas: bucles `for‐each` (existentes en Java a partir de la versión 1.5) y a través de un bucle normal creando un iterador. Como los bucles `for-each` ya los hemos visto antes (y ha quedado patente su simplicidad), nos vamos a centrar en el otro método, especialmente útil en versiones antiguas de Java. Ahora la pregunta es, ¿cómo se crea un iterador? Pues invocando el método "`iterator()`" de cualquier colección.
 
-Veamos un ejemplo (en el ejemplo t es una colección cualquiera):
+Veamos un ejemplo (en el ejemplo `t` es una colección cualquiera):
 
 ```java
 Iterator<Integer> it=t.iterator();
@@ -764,7 +772,7 @@ Ordenar ahora la lista de artículos es sencillo, fíjate que fácil: `Collectio
 | **Rellenar una lista o array.**  | Rellena una lista o array copiando el mismo valor en  todos los elementos del array o lista. Útil para reiniciar una lista o array. | `Collections.fill (lista,elemento);`<br />`Arrays.fill (array,elemento);` |
 | **Búsqueda binaria.**            | Permite realizar búsquedas rápidas en un una lista o array ordenados. Es necesario que la lista o array estén ordenados, sino lo están, la búsqueda no tendrá éxito. | `Collections.binarySearch(lista,elemento);`<br />`Arrays.binarySearch(array, elemento);` |
 | **Convertir un array a lista.**  | Permite rápidamente convertir un array a una lista de elementos,  extremadamente útil. No se especifica el tipo de lista retornado (no es ArrayList ni LinkedList), solo se especifica que retorna una lista que implementa  la  interfaz `java.util.List`. | `List lista=Arrays.asList(array);`  <br />Si el tipo de dato almacenado en el array es  conocido (`Integer` por ejemplo), es  conveniente especificar el tipo de objeto de  la lista: <br />`List<Integer>lista  =  Arrays.asList(array);` |
-| **Convertir una lista a array.** | Permite convertir una lista en array. Esto se puede realizar en todas las colecciones, y no es un método de la clase `Collections`, sino propio de la interfaz `Collection`. Es conveniente que sepas de su existencia. | Para este ejemplo, supondremos que los  elementos de la lista son números, dado  que hay que crear un array del tipo  almacenado en la lista, y del tamaño de la  lista: <br />`Integer[]  array=new Integer[lista.size()];`<br />`lista.toArray(array);` |
+| **Convertir una lista a array.** | Permite convertir una lista en array. Esto se puede realizar en todas las colecciones, y no es un método de la clase `Collections`, sino propio de la interfaz `Collection`. Es conveniente que sepas de su existencia. | Para este ejemplo, supondremos que los  elementos de la lista son números, dado  que hay que crear un array del tipo  almacenado en la lista, y del tamaño de la  lista: <br />`Integer[] array=new Integer[lista.size()];`<br />`lista.toArray(array);` |
 | **Dar la vuelta.**               | Da la vuelta a una lista, poniéndola en orden inverso al que tiene. | `Collections.reverse(lista);`                                |
 
 Otra operación que no se ha visto hasta ahora es la dividir una cadena en partes. Cuando una cadena está formada internamente por trozos de texto claramente delimitados por un separador (una coma, un punto y coma o cualquier otro), es posible dividir la cadena y obtener cada uno de los trozos de texto por separado en un array de cadenas.
