@@ -15,7 +15,7 @@ public class Principal {
         Producto p5 = new Producto("Carne", 2);
 
         //Definir un ArrayList
-        ArrayList lista = new ArrayList();
+        ArrayList<Producto> lista = new ArrayList<Producto>();
 
         //Colocar instancias de producto en ArrayList
         lista.add(p1);
@@ -29,16 +29,43 @@ public class Principal {
         //Añadimos "Carne" en la última posición
         lista.add(p5);
 
+        
+        //Imprimir el contenido del ArrayList
+        System.out.println(" - Lista con " + lista.size() + " elementos");
+
+        
+        
+        //Definir Iterator  para extraer/imprimir valores
+        //si queremos utilizar un for con el iterador no hace falta poner el incremento
+        for (Iterator<Producto> it = lista.iterator(); it.hasNext();) {
+            Producto p = it.next();
+            System.out.println(p.getNombre() + " : " + p.getCantidad());
+        }
+        //Salida:
+        // - Lista con 6 elementos
+        //Pan : 6
+        //Carne : 2
+        //Leche : 2
+        //Manzanas : 5
+        //Brocoli : 2
+        //Carne : 2
+
+        p5.setCantidad(99); //cambiamos la cantidad al producto, cambiará la lista?
+
+        ((Producto)lista.get(1)).setCantidad(66); //
+        
+        System.out.println(p5.getCantidad());
+        
         //Imprimir el contenido del ArrayList
         System.out.println(" - Lista con " + lista.size() + " elementos");
 
         //Definir Iterator  para extraer/imprimir valores
         //si queremos utilizar un for con el iterador no hace falta poner el incremento
-        for (Iterator it = lista.iterator(); it.hasNext();) {
-            Producto p = (Producto) it.next();
+        for (Iterator<Producto> it = lista.iterator(); it.hasNext();) {
+            Producto p = it.next();
             System.out.println(p.getNombre() + " : " + p.getCantidad());
         }
-
+        
         //Eliminar todos los valores del ArrayList
         lista.clear();
         System.out.println(" - Lista final con " + lista.size() + " elementos");

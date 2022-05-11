@@ -6,8 +6,10 @@ public class Principal {
 
     public static void main(String[] args) {
         TreeSet<Objeto> ts = new TreeSet<Objeto>(new ComparadorDeObjetos());
-
-        ts.add(new Objeto(0, 1));
+        
+        Objeto o1= new Objeto(0, 1);
+        ts.add(o1);
+        
         ts.add(new Objeto(1, 2));
         ts.add(new Objeto(4, 5));
         ts.add(new Objeto(2, 3));

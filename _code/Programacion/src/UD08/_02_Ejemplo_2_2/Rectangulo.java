@@ -25,10 +25,10 @@ class Rectangulo {
      * Así no!
      *
      * public Punto obtenerVertice1 (){
-     * return vertice1;
+     *  return vertice1;
      * }
      * public Punto obtenerVertice2 (){
-     * return vertice2;
+     *  return vertice2;
      * }
      */
 
@@ -46,8 +46,11 @@ class Rectangulo {
     //O mejor así:
     public Punto obtenerVertice2() {
         // Utilizando el constructor copia de Punto (si es que está definido)
-        Punto p;
-        p = new Punto(this.vertice2); // Uso del constructor copia
-        return p;
+        //Punto p;
+        //p = new Punto(this.vertice2); // Uso del constructor copia
+        //return p;
+        
+        //o más corto:
+        return new Punto(this.vertice2); 
     }
 }

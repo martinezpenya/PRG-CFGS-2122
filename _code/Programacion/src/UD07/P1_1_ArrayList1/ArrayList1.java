@@ -40,5 +40,11 @@ public class ArrayList1 {
         while (it.hasNext()) {
             System.out.print(it.next()); //obtengo el siguiente elemento
         }//imprime; unodosdos2trescuatro
+
+        System.out.println();
+
+        for (Object s : l) {
+            System.out.print(s);
+        }//imprime; unodosdos2trescuatro
     }
 }

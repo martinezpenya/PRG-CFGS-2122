@@ -635,18 +635,17 @@ Fíjate que se ha especificado un parámetro para el tipo de dato genérico en e
 
 Para recorrer y gestionar la colección, el iterador ofrece tres métodos básicos:
 
-- `boolean hasNext()`. Retornará true si le quedan más elementos a la colección por visitar. False en
-  caso contrario.
-- `E next()`. Retornará el siguiente elemento de la colección, si no existe siguiente elemento, lanzará una excepción ( NoSuchElementException para ser exactos), con lo que conviene chequear primero si el siguiente elemento existe.
+- `boolean hasNext()`. Retornará true si le quedan más elementos a la colección por visitar. False en caso contrario.
+- `E next()`. Retornará el siguiente elemento de la colección, si no existe siguiente elemento, lanzará una excepción ( `NoSuchElementException` para ser exactos), con lo que conviene chequear primero si el siguiente elemento existe.
 - `remove()`. Elimina de la colección el último elemento retornado en la última invocación de next (no es necesario pasarselo por parámetro). Cuidado, si next no ha sido invocado todavía, saltará una incomoda excepción.
 
 ¿Cómo recorreríamos una colección con estos métodos? Pues de una forma muy sencilla, un simple bucle mientras (`while`) con la condición `hasNext()` nos permite hacerlo:
 
 ```java
-while (it.hasNext()) // Mientras que haya un siguiente elemento, seguiremos en el bucle.
+while (it.hasNext()) // Mientras haya siguiente elemento, seguiremos en el bucle.
 {
-	Integer t=it.next(); // Escogemos el siguiente elemento.
-	if (t%2==0) it.remove(); //Si es necesario, podemos eliminar el elemento extraído de la lista.
+	Integer n=it.next(); // Escogemos el siguiente elemento.
+	if (n%2==0) it.remove(); //Si es par, eliminamos el elemento de la lista.
 }
 ```
 
@@ -655,22 +654,24 @@ impares.
 
 > Las listas permiten acceso posicional a través de los métodos `get` y `set`, y acceso secuencial a través de iteradores, ¿cuál es para tí la forma más cómoda de recorrer todos los elementos? ¿Un acceso posicional a través un bucle `for (i=0;i<lista.size();i++)` o un acceso secuencial usando un bucle `while (iterador.hasNext())`?
 
-¿Qué inconvenientes tiene usar los iteradores sin especificar el tipo de objeto? En el siguiente ejemplo, se genera una lista con los números del 0 al 10. De la lista, se eliminan aquellos que son pares y solo se dejan los impares. En el ejemplo de la izquierda se especifica el tipo de objeto del iterador, en el ejemplo de la derecha no, observa el uso de la conversión de tipos en la línea 6.
+¿Qué inconvenientes tiene usar los iteradores sin especificar el tipo de objeto? En el siguiente ejemplo, se genera una lista con los números del 0 al 10. De la lista, se eliminan aquellos que son pares y solo se dejan los impares. En el primer ejemplo se especifica el tipo de objeto del iterador, en el segundo ejemplo  no, observa el uso de la conversión de tipos en la línea 7.
 
 Ejemplo indicando el tipo de objeto de iterador.
 
 ```java
-ArrayList <Integer> lista=new ArrayList<Integer>();
+ArrayList<Integer> lista=new ArrayList<Integer>();
 for (int i=0;i<10;i++){
 	lista.add(i);  
 }
+//lista: [0,1,2,3,4,5,6,7,8,9]
 Iterator<Integer> it=lista.iterator();
 while (it.hasNext()) {
-	Integer t=it.next();
-	if (t%2==0){
+	Integer n=it.next();
+	if (n%2==0){
     	it.remove();  
     }
 }
+//lista: [1,3,5,7,9]
 ```
 
 Ejemplo no indicando el tipo de objeto del iterador,
@@ -682,8 +683,8 @@ for (int i=0;i<10;i++){
 }
 Iterator it=lista.iterator();
 while (it.hasNext()) {
-	Integer t=(Integer)it.next();
- 	if (t%2==0){
+	Integer n=(Integer)it.next();
+ 	if (n%2==0){
     	it.remove();   
     }
 }
@@ -696,7 +697,7 @@ Usar genéricos aporta grandes ventajas, pero usándolos adecuadamente.
 Para recorrer los mapas con iteradores, hay que hacer un pequeño truco. Usamos el método `entrySet` que ofrecen los mapas para generar un conjunto con las entradas (pares de llave‐valor), o bien, el método `keySet` para generar un conjunto con las llaves existentes en el mapa. Veamos como sería para el segundo caso, el más sencillo:
 
 ```java
-HashMap<Integer,Integer> mapa=new HashMap<Integer,Integer>test();
+HashMap<Integer,Integer> mapa=new HashMap<Integer,Integer>();
 for (int i=0;i<10;i++){
 	mapa.put(i, i); // Insertamos datos de prueba en el mapa.   
 }
@@ -771,18 +772,21 @@ Ordenar ahora la lista de artículos es sencillo, fíjate que fácil: `Collectio
 | **Desordenar una lista.**        | Desordena una lista, este método no está disponible para arrays. | `Collections.shuffle (lista);`                               |
 | **Rellenar una lista o array.**  | Rellena una lista o array copiando el mismo valor en  todos los elementos del array o lista. Útil para reiniciar una lista o array. | `Collections.fill (lista,elemento);`<br />`Arrays.fill (array,elemento);` |
 | **Búsqueda binaria.**            | Permite realizar búsquedas rápidas en un una lista o array ordenados. Es necesario que la lista o array estén ordenados, sino lo están, la búsqueda no tendrá éxito. | `Collections.binarySearch(lista,elemento);`<br />`Arrays.binarySearch(array, elemento);` |
-| **Convertir un array a lista.**  | Permite rápidamente convertir un array a una lista de elementos,  extremadamente útil. No se especifica el tipo de lista retornado (no es ArrayList ni LinkedList), solo se especifica que retorna una lista que implementa  la  interfaz `java.util.List`. | `List lista=Arrays.asList(array);`  <br />Si el tipo de dato almacenado en el array es  conocido (`Integer` por ejemplo), es  conveniente especificar el tipo de objeto de  la lista: <br />`List<Integer>lista  =  Arrays.asList(array);` |
+| **Convertir un array a lista.**  | Permite rápidamente convertir un array a una lista de elementos,  extremadamente útil. No se especifica el tipo de lista retornado (no es `ArrayList` ni `LinkedList`), solo se especifica que retorna una lista que implementa  la  interfaz `java.util.List`. | `List lista = Arrays.asList(array);`  <br />Si el tipo de dato almacenado en el array es conocido (`Integer` por ejemplo), es  conveniente especificar el tipo de objeto de  la lista: <br />`List<Integer> lista = Arrays.asList(array);` |
 | **Convertir una lista a array.** | Permite convertir una lista en array. Esto se puede realizar en todas las colecciones, y no es un método de la clase `Collections`, sino propio de la interfaz `Collection`. Es conveniente que sepas de su existencia. | Para este ejemplo, supondremos que los  elementos de la lista son números, dado  que hay que crear un array del tipo  almacenado en la lista, y del tamaño de la  lista: <br />`Integer[] array=new Integer[lista.size()];`<br />`lista.toArray(array);` |
 | **Dar la vuelta.**               | Da la vuelta a una lista, poniéndola en orden inverso al que tiene. | `Collections.reverse(lista);`                                |
+| **Imprimir un array o lista**    |                                                              | lista.toString()<br />Arrays.toString(array)                 |
 
-Otra operación que no se ha visto hasta ahora es la dividir una cadena en partes. Cuando una cadena está formada internamente por trozos de texto claramente delimitados por un separador (una coma, un punto y coma o cualquier otro), es posible dividir la cadena y obtener cada uno de los trozos de texto por separado en un array de cadenas.
+Otra operación que ya se ha visto en algún ejemplo anterior es la de dividir una cadena en partes. Cuando una cadena está formada internamente por trozos de texto claramente delimitados por un separador (una coma, un punto y coma o cualquier otro), es posible dividir la cadena y obtener cada uno de los trozos de texto por separado en un array de cadenas.
 
 Para poder realizar esta operación, usaremos el método `split` de la clase `String` . El delimitador o separador es una expresión regular, único argumento del método `split`, y puede ser obviamente todo lo complejo que sea necesario:
 
 ```java
 String texto="Z,B,A,X,M,O,P,U";
 String[] partes=texto.split(",");
-Arrays.sort(partes);
+//partes={"Z", "B", "A", "X", "M", "O", "P", "U"}
+Arrays.sort(partes);//lo ordenamos
+//partes={"Z", "B", "A", "X", "M", "O", "P", "U"}
 ```
 
 En el ejemplo anterior la cadena texto contiene una serie de letras separadas por comas. La cadena se ha dividido con el método `split` , y se ha guardado cada carácter por separado en un `array`. Después se ha ordenado el `array`. ¡Increíble lo que se puede llegar a hacer con solo tres líneas de código!

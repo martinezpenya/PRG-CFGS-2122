@@ -319,7 +319,7 @@
 1. Crear una clase Genericos (proyecto Genéricos, paquete Genericos) que incorpore los métodos genéricos que se indican a continuación. Los métodos creados serán *public* *static.* En el proyecto se creará además la clase o clases necesarias para probar los métodos desarrollados.
    1. `Object minimo (Object o1, Object o2)`, que devuelva el mínimo de dos objetos cualesquiera (que se suponen del mismo tipo). Una vez desarrollado, prueba el método para obtener el mínimo de dos objetos Integer. Pruébalo también para obtener el mínimo entre un Objeto Integer y un objeto String. En éste último caso, el programa ¿da error de ejecución? Si es así, explica por qué.
    2. `Object maximo (Object o1, Object o2)`, que devuelva el maximo de dos objetos cualesquiera (que se suponen del mismo tipo).
-   3. `Object minimo (Object v[])`, que devuelva el mínimo de un array de objetos cualesquiera (que se suponen del mismo tipo). Al respecto de éste último comentario, ¿Se puede poner en un array de Object objetos de distinto tipo, como por ejemplo Strings, Ingeter, ...? En caso afirmativo, ¿funcionaría el método desarrollado con un array construido así?
+   3. `Object minimo (Object v[])`, que devuelva el mínimo de un array de objetos cualesquiera (que se suponen del mismo tipo). Al respecto de éste último comentario, ¿Se puede poner en un array de Object objetos de distinto tipo, como por ejemplo Strings, Integer, ...? En caso afirmativo, ¿funcionaría el método desarrollado con un array construido así?
    4. `Object maximo (Object v[])`, que devuelva el maximo de un array de objetos cualesquiera (que se suponen del mismo tipo).
    5. `int numVeces(Object v[], Object x)` que devuelva el el numero de apariciones del objeto x en el array v.
    6. `int numVecesOrdenado(Object v[], Object x)` que devuelva el el numero de apariciones del objeto x en el array v **ordenado ascendentemente**.
@@ -449,7 +449,7 @@ Implementa una clase llamada **Inventario** que utilizaremos para almacenar refe
 Esta clase debe cumplir con los siguientes requisitos: 
 
 - En la tienda existirán 4 tipos de animales: perros, gatos, loros y canarios. 
-- Los animales deben almacenarse en un ArrayList privado dentro de la clase **Inventario**. 
+- Los animales deben almacenarse en un `ArrayList` privado dentro de la clase **Inventario**. 
 - La clase debe permitir realizar las siguientes acciones:
   - Mostrar la lista de animales (solo tipo y nombre, 1 línea por animal).
   - Mostrar todos los datos de un animal concreto.

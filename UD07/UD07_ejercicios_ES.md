@@ -83,13 +83,13 @@
      - Solicitar al usuario una frase. Traducir, usando la estructura de datos anterior, cada palabra de la frase y formar con ellas la frase traducida.
      - Mostrar la frase traducida al usuario.
 
-6. (**paquete  `ListaAdmitidos`**) Una serie de personas han solicitado realizar un curso de inglés. De las que han sido admitidas se quiere almacenar su nif, su nombre y su nivel en un HashSet. En el HashSet se almacenarán objetos de la clase Inscripción
+6. (**paquete  `ListaAdmitidos`**) Una serie de personas han solicitado realizar un curso de inglés. De las que han sido admitidas se quiere almacenar su nif, su nombre y su nivel en un `HashSet`. En el `HashSet` se almacenarán objetos de la clase Inscripción
 
    - Implementa la clase `Incripción` para representar el nif, nombre y nivel de un solicitante. Además de los atributos implementa aquellos métodos que consideres necesarios.
 
    - Escribe un programa (clase `ComprobarAdmision`) que  
 
-     - Defina un HashSet de Inscripciones, llamado *admitidas*.
+     - Defina un `HashSet` de Inscripciones, llamado `admitidas`.
 
      - Añada varias inscripciones (invéntate los datos).
 
@@ -107,7 +107,7 @@
 - Mostrar el valor de la posición 5.
 - Añadir el valor 8 en la posición 4.
 - Cambiar el valor de la posición 1 por 9.
-- Eliminar el valor 5. ( `misNumeros.remove(new Integer(5))` )
+- Eliminar el valor 5. (`misNumeros.remove(new Integer(5))` )
 - Eliminar el valor de la posición 3.
 - Recorrer el array con un bucle for.
 - Recorrer el array con un bucle `Iterator`.
@@ -141,11 +141,11 @@ El precio total es de 57,00 euros
 
 **Actividad 3**. Un supermercado nos pide que hagamos una aplicación que almacene los productos comprados. La aplicación debe almacenar Productos (clase) y cada producto al crearse contiene una cantidad, un precio (generados aleatoriamente). El nombre del producto será básico (producto1, producto2, producto3, etc.). Calcular el precio total de una lista de entre 1 y 10 productos (aleatorio). Mostrar un ticket con todo lo vendido y el precio final.
 
-**Actividad 4**. Desarrollar un sistema de gestión de pacientes. Tendremos un archivador dónde iremos guardando todas las fichas de los pacientes. Las fichas contienen la siguiente información: nombre, apellidos y edad.
+**Actividad 4**. Desarrollar un sistema de gestión de pacientes. Tendremos un archivador dónde iremos guardando todas las fichas de los pacientes. Las fichas contienen la siguiente información: nombre, apellidos y edad
 
 Todas las fichas que vayamos creando, se podrán guardar o eliminar del archivador. Al archivador también le podremos pedir un listado. Este listado consistirá en visualizar por pantalla el número de fichas guardadas, así como el contenido de las fichas.
 
-La clase `GestionPacientes` tiene un método `main` en el que se crea un archivador, dos o tres fichas que se guardarán en el archivador, se listará el contenido, se eliminará alguna ficha y se volverá a listar su contenido. Todas las clases se guardarán en el paquete gestionpacientes.
+La clase `GestionPacientes` tiene un método `main` en el que se crea un archivador, dos o tres fichas que se guardarán en el archivador, se listará el contenido, se eliminará alguna ficha y se volverá a listar su contenido. Todas las clases se guardarán en el paquete `gestionpacientes`.
 
 **Actividad 5**. Crear una estructura `Map` llamada divisas, que almacene pares de moneda y valor al cambio en euros. Por ejemplo Dólar: 0,81€
 

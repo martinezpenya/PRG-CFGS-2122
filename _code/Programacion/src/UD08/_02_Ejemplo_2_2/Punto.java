@@ -1,7 +1,5 @@
 package UD08._02_Ejemplo_2_2;
 
-import UD08._01_Ejemplo_2_1.*;
-
 public class Punto {
     private double x;
     private double y;
@@ -15,6 +13,7 @@ public class Punto {
         x= p.getX();
         y= p.getY();
     }    
+    
     public double getX() {
         return x;
     }
