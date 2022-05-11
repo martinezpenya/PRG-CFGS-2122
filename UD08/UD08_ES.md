@@ -26,14 +26,12 @@ Se pueden distinguir diversos tipos de relaciones entre clases:
 - **Anidamiento**. Cuando se definen clases en el interior de otra clase.
 - **Herencia**. Cuando una clase comparte determinadas características con otra (clase base), añadiéndole alguna funcionalidad específica (especialización).
 
-La relación de **clientela** la llevas utilizando desde que has empezado a programar en Java, pues desde tu clase principal (clase con método main ) has estado declarando, creando y utilizando objetos de otras clases. Por ejemplo: si utilizas un objeto String dentro de la clase principal de tu programa,
-éste será cliente de la clase String (como sucederá con prácticamente cualquier programa que se escriba en Java). Es la relación fundamental y más habitual entre clases (la utilización de unas clases por parte de otras) y, por supuesto, la que más vas a utilizar tú también, de hecho, ya la has estado
+La relación de **clientela** la llevas utilizando desde que has empezado a programar en Java, pues desde tu clase principal (clase con método main ) has estado declarando, creando y utilizando objetos de otras clases. Por ejemplo: si utilizas un objeto String dentro de la clase principal de tu programa, éste será cliente de la clase String (como sucederá con prácticamente cualquier programa que se escriba en Java). Es la relación fundamental y más habitual entre clases (la utilización de unas clases por parte de otras) y, por supuesto, la que más vas a utilizar tú también, de hecho, ya la has estado
 utilizando y lo seguirás haciendo.
 
-La relación de **composición** es posible que ya la hayas tenido en cuenta si has definido clases que contenían (tenían como atributos) otros objetos en su interior, lo cual es bastante habitual. Por ejemplo, si escribes una clase donde alguno de sus atributos es un objeto de tipo String , ya se está produciendo una relación de tipo composición (tu clase "tiene" un String , es decir, está compuesta por un objeto String y por algunos elementos más).
+La relación de **composición** es posible que ya la hayas tenido en cuenta si has definido clases que contenían (tenían como atributos) otros objetos en su interior, lo cual es bastante habitual. Por ejemplo, si escribes una clase donde alguno de sus atributos es un objeto de tipo `String` , ya se está produciendo una relación de tipo composición (tu clase "tiene" un `String` , es decir, está compuesta por un objeto `String` y por algunos elementos más).
 
-La relación de **anidamiento** (o anidación) es quizá menos habitual, pues implica declarar unas clases dentro de otras (clases internas o anidadas). En algunos casos puede resultar útil para tener un nivel más de encapsulamiento (ocultamiento del estado de un objeto (de sus datos miembro o atributos) de manera que sólo se puede cambiar mediante las operaciones (métodos) definidas para ese objeto. Cada objeto está aislado del exterior de manera que se protegen los datos contra su modificación por quien no tenga derecho a acceder a ellos, eliminando efectos secundarios y colaterales no deseados. Este modo de proceder permite que el usuario de una clase pueda obviar la implementación de los métodos y propiedades para concentrarse
-sólo en cómo usarlos. Por otro lado se evita que el usuario pueda cambiar su estado de manera imprevista e incontrolada)  y ocultación (efecto que se consigue gracias a la encapsulación: se evita la visibilidad de determinados miembros de una clase al resto del código del programa para de ese modo comunicarse con los objetos de la clase únicamente a través de su interfaz (métodos)) de información.
+La relación de **anidamiento** (o anidación) es quizá menos habitual, pues implica declarar unas clases dentro de otras (clases internas o anidadas). En algunos casos puede resultar útil para tener un nivel más de encapsulamiento (ocultamiento del estado de un objeto, de sus datos miembro o atributos) de manera que sólo se puede cambiar mediante las operaciones (métodos) definidas para ese objeto. Cada objeto está aislado del exterior de manera que se protegen los datos contra su modificación por quien no tenga derecho a acceder a ellos, eliminando efectos secundarios y colaterales no deseados. Este modo de proceder permite que el usuario de una clase pueda obviar la implementación de los métodos y propiedades para concentrarse sólo en cómo usarlos. Por otro lado se evita que el usuario pueda cambiar su estado de manera imprevista e incontrolada) y ocultación de información (efecto que se consigue gracias a la encapsulación: se evita la visibilidad de determinados miembros de una clase al resto del código del programa para de ese modo comunicarse con los objetos de la clase únicamente a través de su interfaz/métodos).
 
 En el caso de la relación de **herencia** también la has visto ya, pues seguro que has utilizado unas clases que derivaban de otras, sobre todo, en el caso de los objetos que forman parte de las interfaces gráficas. Lo más probable es que hayas tenido que declarar clases que derivaban de algún componente gráfico (JFrame, JDialog, etc.).
 
@@ -43,10 +41,10 @@ A lo largo de la unidad, irás viendo distintas posibilidades de implementación
 
 ## Composición
 
-Cuando en un sistema de información, una determinada entidad A contiene a otra B como una de sus partes, se suele decir que se está produciendo una relación de composición. Es decir, el objeto de la clase A contiene a uno o varios objetos de la clase B.
+Cuando en un sistema de información, una determinada entidad `A` contiene a otra `B` como una de sus partes, se suele decir que se está produciendo una relación de composición. Es decir, el objeto de la clase `A` contiene a uno o varios objetos de la clase `B`.
 
-Por ejemplo, si describes una entidad País compuesta por una serie de atributos, entre los cuales se encuentra una lista de comunidades autónomas, podrías decir que los objetos de la clase País contienen varios objetos de la clase ComunidadAutonoma. Por otro lado, los objetos de la clase
-ComunidadAutonoma podrían contener como atributos objetos de la clase Provincia, la cual a su vez también podría contener objetos de la clase Municipio.
+Por ejemplo, si describes una entidad `País` compuesta por una serie de atributos, entre los cuales se encuentra una lista de comunidades autónomas, podrías decir que los objetos de la clase `País` contienen varios objetos de la clase `ComunidadAutonoma`. Por otro lado, los objetos de la clase
+`ComunidadAutonoma` podrían contener como atributos objetos de la clase `Provincia`, la cual a su vez también podría contener objetos de la clase `Municipio`.
 
 Como puedes observar, la composición puede encadenarse todas las veces que sea necesario hasta llegar a objetos básicos del lenguaje o hasta tipos primitivos que ya no contendrán otros objetos en su interior. Ésta es la forma más habitual de definir clases: mediante otras clases ya definidas anteriormente. Es una manera eficiente y sencilla de gestionar la reutilización de todo el código ya escrito. Si se definen clases que describen entidades distinguibles y con funciones claramente definidas, podrán utilizarse cada vez que haya que representar objetos similares dentro de otras clases.
 
@@ -64,9 +62,8 @@ Recuperando algunos de los ejemplos de clases que has utilizado en otras unidade
 
 - Una clase Rectangulo podría contener en su interior dos objetos de la clase Punto para almacenar los vértices inferior izquierdo y superior derecho.
 - Una clase Empleado podría contener en su interior un objeto de la clase DNI para almacenar su DNI/NIF, y otro objeto de la clase CuentaBancaria para guardar la cuenta en la que se realizan los ingresos en nómina.
-- Una clase JFrame (javax.Swing.JFrame) de la interfaz gráfica contiene en su interior referencias a objetos de las clases JRootPane , JMenuBar o JLayeredPane , pues contiene menús, paneles, etc.
 
-> ¿Podría decirse que la relación que existe entre la clase Ave y la clase Loro es una relación de composición?
+> ¿Podría decirse que la relación que existe entre la clase `Ave` y la clase `Loro` es una relación de composición?
 >
 > No. Aunque claramente existe algún tipo de relación entre ambas, no parece que sea la de composición. No parece que se cumpla la expresión "tiene un": "Un loro tiene un ave". Se cumpliría más bien una expresión del tipo "es un": "Un loro es un ave". Algunos objetos que cumplirían la relación de composición podrían ser Pico o Alas, pues "un loro tiene un pico y dos alas", del mismo modo que "un ave tiene pico y dos alas". Este tipo de relación parece más de herencia (un loro es un tipo de ave).
 
@@ -90,20 +87,20 @@ En este caso la expresión idiomática que puedes usar para plantearte si el tip
 Recuperando algunos ejemplos de clases que ya has utilizado en otras unidades:
 
 - Una ventana en una aplicación gráfica puede ser una clase que herede de JFrame (componente Swing: javax.swing.JFrame), de esta manera esa clase será un marco que dispondrá de todos los métodos y atributos de JFrame mas aquéllos que tú decidas incorporarle al rellenarlo de componentes gráficos.
-- Una caja de diálogo puede ser un tipo de  JDialog  (otro componente  Swing: javax.swing.JDialog).
+- Una caja de diálogo puede ser un tipo de JDialog (otro componente Swing: javax.swing.JDialog).
 
 En Java, la clase Object (dentro del paquete java.lang) define e implementa el comportamiento común a todas las clases (incluidas aquellas que tú escribas). Como recordarás, ya se dijo que en Java cualquier clase deriva en última instancia de la clase Object.
 
 Todas las clases tienen una clase padre, que a su vez también posee una superclase, y así sucesivamente hasta llegar a la clase Object . De esta manera, se construye lo que habitualmente se conoce como una jerarquía de clases, que en el caso de Java tendría a la clase Object en la raíz.
 
-> Cuando escribas una clase en Java, puedes hacer que herede de una determinada clase padre (mediante el uso de extends) o bien no indicar ninguna herencia. En tal caso, aunque no indiques explícitamente ningún tipo de herencia, el compilador asumirá entonces de manera implícita que tu clase hereda de la clase Object, que define e implementa el comportamiento común a todas las clases.
+> Cuando escribas una clase en Java, puedes hacer que herede de una determinada clase padre (mediante el uso de `extends`) o bien no indicar ninguna herencia. En tal caso, aunque no indiques explícitamente ningún tipo de herencia, el compilador asumirá entonces de manera implícita que tu clase hereda de la clase `Object`, que define e implementa el comportamiento común a todas las clases.
 
 ## ¿Herencia o composición?
 
 Cuando escribas tus propias clases, debes intentar tener claro en qué casos utilizar la composición y cuándo la herencia:
 
-- Composición: cuando una clase está formada por objetos de otras clases. En estos casos se incluyen objetos de esas clases, pero no necesariamente se comparten características con ellos (no se heredan características de esos objetos, sino que directamente se utilizarán sus atributos y sus métodos). Esos objetos incluidos no son más que atributos miembros de la clase que se está definiendo.
-- Herencia: cuando una clase cumple todas las características de otra. En estos casos la clase derivada es una especialización (o particularización, extensión o restricción) de la clase base. Desde otro punto de vista se diría que la clase base es una generalización de las clases derivadas.
+- **Composición**: cuando una clase está formada por objetos de otras clases. En estos casos se incluyen objetos de esas clases, pero no necesariamente se comparten características con ellos (no se heredan características de esos objetos, sino que directamente se utilizarán sus atributos y sus métodos). Esos objetos incluidos no son más que atributos miembros de la clase que se está definiendo.
+- **Herencia**: cuando una clase cumple todas las características de otra. En estos casos la clase derivada es una especialización (o particularización, extensión o restricción) de la clase base. Desde otro punto de vista se diría que la clase base es una generalización de las clases derivadas.
 
 Por ejemplo, imagina que dispones de una clase Punto (ya la has utilizado en otras ocasiones) y decides definir una nueva clase llamada Círculo. Dado que un punto tiene como atributos sus coordenadas en plano (x1, y1), decides que es buena idea aprovechar esa información e incorporarla en la clase Circulo que estás escribiendo. Para ello utilizas la herencia, de manera que al derivar la clase Círculo de la clase Punto, tendrás disponibles los atributos x1 e y1. Ahora solo faltaría añadirle algunos atributos y métodos más como por ejemplo el radio del círculo, el cálculo de su área y su perímetro, etc. 
 
@@ -123,9 +120,10 @@ Para indicar que una clase contiene objetos de otra clase no es necesaria ningun
 
 ```java
 class <nombreClase> {
-    [modificadores] <NombreClase1> nombreAtributo1;
-    [modificadores] <NombreClase2> nombreAtributo2;
-    ...
+  [modificadores] <NombreClase1> nombreAtributo1;
+  [modificadores] <NombreClase2> nombreAtributo2;
+  <NombreClase3>[] listado;
+  ...
 }
 ```
 
@@ -133,9 +131,9 @@ En unidades anteriores has trabajado con la clase `Punto`, que definía las coor
 
 ```java
 class Rectangulo {
-    private Punto vertice1;
-    private Punto vertice2;
-    ...
+  private Punto vertice1;
+  private Punto vertice2;
+  ...
 }
 ```
 
@@ -147,7 +145,7 @@ Revisa con cuidado el [Ejemplo 2.1](#ejemplo-2.1)
 
 Como ya has observado, la relación de composición no tiene más misterio a la hora de implementarse que simplemente declarar atributos de las clases que necesites dentro de la clase que estés diseñando.
 
-Ahora bien, cuando escribas clases que contienen objetos de otras clases (lo cual será lo más habitual) deberás tener un poco de precaución con aquellos métodos que devuelvan información acerca de los atributos de la clase (métodos "obtenedores" o de tipo get). 
+Ahora bien, cuando escribas clases que contienen objetos de otras clases (lo cual será lo más habitual) deberás tener un poco de precaución con aquellos métodos que devuelvan información acerca de los atributos de la clase (métodos "consultores" o de tipo get). 
 
 Como ya viste en la unidad dedicada a la creación de clases, lo normal suele ser declarar los atributos como privados (o protegidos, como veremos un poco más adelante) para ocultarlos a los posibles clientes de la clase (otros objetos que en el futuro harán uso de la clase). Para que otros objetos puedan acceder a la información contenida en los atributos, o al menos a una parte de ella, deberán hacerlo a través de métodos que sirvan de interfaz, de manera que sólo se podrá tener acceso a aquella información que el creador de la clase haya considerado oportuna. Del mismo modo, los atributos solamente serán modificados desde los métodos de la clase, que decidirán cómo y bajo qué circunstancias deben realizarse esas modificaciones. Con esa metodología de acceso se tenía perfectamente separada la parte de manipulación interna de los atributos de la interfaz con el exterior.
 
@@ -163,7 +161,7 @@ Para evitar ese tipo de situaciones (ofrecer al exterior referencias a objetos p
 Por último, debes tener en cuenta que es posible que en algunos casos sí se necesite realmente la referencia al atributo original (algo muy habitual en el caso de atributos estáticos). En tales casos, no habrá problema en devolver directamente el atributo para que el código llamante (cliente) haga el
 uso que estime oportuno de él.
 
-Debes evitar por todos los medios la devolución de un atributo que sea un objeto (estarías dando directamente una referencia al atributo, visible y manipulable desde fuera), salvo que se trate de un caso en el que deba ser así.
+> Debes evitar por todos los medios la devolución de un atributo que sea un objeto (estarías dando directamente una referencia al atributo, visible y manipulable desde fuera), salvo que se trate de un caso en el que deba ser así.
 
 Para entender estas situaciones un poco mejor, podemos volver al objeto Rectangulo y observar sus nuevos métodos de tipo get.
 
@@ -175,8 +173,7 @@ Otro factor que debes considerar, a la hora de escribir clases que contengan com
 
 > El constructor de la clase contenedora debe invocar a los constructores de las clases de los objetos contenidos.
 
-En este caso hay que tener cuidado con las referencias a objetos que se pasan como parámetros para rellenar el contenido de los atributos. Es conveniente hacer una copia de esos objetos y utilizar esas copias para los atributos pues si se utiliza la referencia que se ha pasado como parámetro, el
-código cliente de la clase podría tener acceso a ella sin necesidad de pasar por la interfaz de la clase (volveríamos a dejar abierta una puerta pública a algo que quizá sea privado).
+En este caso hay que tener cuidado con las referencias a objetos que se pasan como parámetros para rellenar el contenido de los atributos. Es conveniente hacer una copia de esos objetos y utilizar esas copias para los atributos pues si se utiliza la referencia que se ha pasado como parámetro, el código cliente de la clase podría tener acceso a ella sin necesidad de pasar por la interfaz de la clase (volveríamos a dejar abierta una puerta pública a algo que quizá sea privado).
 
 Además, si el objeto parámetro que se pasó al constructor formaba parte de otro objeto, esto podría ocasionar un desagradable efecto colateral si esos objetos son modificados en el futuro desde el código cliente de la clase, ya que no sabes de dónde provienen esos objetos, si fueron creados especialmente para ser usados por el nuevo objeto creado o si pertenecen a otro objeto que podría modificarlos más tarde. Es decir, correrías el riesgo de estar "compartiendo" esos objetos con otras partes del código, sin ningún tipo de control de acceso y con las nefastas consecuencias que eso podría tener: cualquier cambio de ese objeto afectaría a partes del programa supuestamente independientes, que entienden ese objeto como suyo.
 
@@ -184,7 +181,7 @@ Además, si el objeto parámetro que se pasó al constructor formaba parte de ot
 
 Recuerda también que sólo se crean objetos cuando se llama a un constructor (uso de new). Si realizas asignaciones o pasos de parámetros, no se están copiando o pasando copias de los objetos, sino simplemente de las referencias, y por tanto se tratará siempre del mismo objeto. 
 
-Se trata de un efecto similar al que sucedía en los métodos de tipo get , pero en este caso en sentido contrario (en lugar de que nuestra clase "regale" al exterior uno de sus atributos objeto mediante una referencia, en esta ocasión se "adueña" de un parámetro objeto que probablemente pertenezca a otro objeto y que es posible que el futuro haga uso de él).
+Se trata de un efecto similar al que sucedía en los métodos de tipo get, pero en este caso en sentido contrario (en lugar de que nuestra clase "regale" al exterior uno de sus atributos objeto mediante una referencia, en esta ocasión se "adueña" de un parámetro objeto que probablemente pertenezca a otro objeto y que es posible que el futuro haga uso de él).
 
 Para entender mejor estos posibles efectos podemos continuar con el ejemplo de la clase Rectangulo que contiene en su interior dos objetos de la clase Punto. En los constructores del rectángulo habrá que incluir todo lo necesario para crear dos instancias de la clase Punto evitando las referencias a
 parámetros (haciendo copias).
@@ -197,18 +194,18 @@ En algunos lenguajes, es posible definir una clase dentro de otra clase (clases 
 
 ```java
 class claseContenedora {
-    // Cuerpo de la clase
+  // Cuerpo de la clase
+  ...
+  class claseInterna {
+    // Cuerpo de la clase interna
     ...
-    class claseInterna {
-        // Cuerpo de la clase interna
-        ...
-    }
+  }
 }
 ```
 
 Se pueden distinguir varios tipos de clases internas:
 
-- Clases internas estáticas (o clases anidadas), declaradas con el modificador static.
+- Clases internas estáticas (o clases anidadas), declaradas con el modificador `static`.
 - Clases internas miembro, conocidas habitualmente como clases internas. Declaradas al máximo nivel de la clase contenedora y no estáticas.
 - Clases internas locales, que se declaran en el interior de un bloque de código (normalmente dentro de un método).
 - Clases anónimas, similares a las internas locales, pero sin nombre (sólo existirá un objeto de ellas y, al no tener nombre, no tendrán constructores). Se suelen usar en la gestión de eventos en los interfaces gráficos.
@@ -216,12 +213,12 @@ Se pueden distinguir varios tipos de clases internas:
 
 ```java
 class claseContenedora {
-    ...
-    static class claseAnidadaEstatica {
-	    ...
-    }
-    class claseInterna {
-    	...
+  ...
+  static class claseAnidadaEstatica {
+	  ...
+  }
+  class claseInterna {
+  	...
 	}
 }
 ```
@@ -284,9 +281,9 @@ Es posible que, más adelante, necesites una clase `Alumno` que compartirá esos
 
 ```java
 public class Alumno extends Persona {
-    String grupo;
-    double notaMedia;
-    ...
+  String grupo;
+  double notaMedia;
+  ...
 }
 ```
 
@@ -315,9 +312,9 @@ Si en el ejemplo anterior de la clase `Persona` se hubieran definido sus atribut
 
 ```java
 public class Persona {
-    private String nombre;
-    private String apellidos;
-    ...
+  private String nombre;
+  private String apellidos;
+  ...
 }
 ```
 
@@ -325,9 +322,9 @@ Al definir la clase Alumno como heredera de `Persona`, no habrías tenido acceso
 
 ```java
 public class Persona {
-    protected String nombre;
-    protected String apellidos;
-    ...
+  protected String nombre;
+  protected String apellidos;
+  ...
 }
 ```
 
@@ -373,8 +370,7 @@ public String getApellidos () {
 }
 ```
 
-Cuando sobrescribas un método heredado en Java puedes incluir la anotación `@Override`. Esto indicará al compilador que tu intención es sobrescribir el método de la clase padre. De este modo, si te equivocas (por ejemplo, al escribir el nombre del método) y no lo estás realmente sobrescribiendo, el compilador producirá un error y así podrás darte cuenta del fallo. En cualquier caso, no es necesario indicar `@Override`, pero puede resultar de ayuda a la hora de localizar este tipo de errores (crees que has sobrescrito un método heredado y al confundirte en una letra estás
-realmente creando un nuevo método diferente). En el caso del ejemplo anterior quedaría:
+Cuando sobrescribas un método heredado en Java puedes incluir la anotación `@Override`. Esto indicará al compilador que tu intención es sobrescribir el método de la clase padre. De este modo, si te equivocas (por ejemplo, al escribir el nombre del método) y no lo estás realmente sobrescribiendo, el compilador producirá un error y así podrás darte cuenta del fallo. En cualquier caso, no es necesario indicar `@Override`, pero puede resultar de ayuda a la hora de localizar este tipo de errores (crees que has sobrescrito un método heredado y al confundirte en una letra estás realmente creando un nuevo método diferente). En el caso del ejemplo anterior quedaría:
 
 ```java
 @Override
@@ -397,11 +393,11 @@ Podría hacerse de una manera tan sencilla como la siguiente:
 
 ```java
 public void mostrar () {
-    super.mostrar ();
-     // Llamada al método "mostrar" de la superclase
-    // A continuación mostramos la información "especializada" de esta subclase
-    System.out.printf ("Grupo: %s\n", this.grupo);
-    System.out.printf ("Nota media: %5.2f\n", this.notaMedia);
+  super.mostrar ();
+   // Llamada al método "mostrar" de la superclase
+  // A continuación mostramos la información "especializada" de esta subclase
+  System.out.printf ("Grupo: %s\n", this.grupo);
+  System.out.printf ("Nota media: %5.2f\n", this.notaMedia);
 }
 ```
 
@@ -419,15 +415,15 @@ Si no se incluye una llamada a super() dentro del constructor, el compilador inc
 
 En el caso del constructor por defecto (el que crea el compilador si el programador no ha escrito ninguno), el compilador añade lo primero de todo, antes de la inicialización de los atributos a sus valores por defecto, una llamada al constructor de la clase base mediante la referencia super.
 
-A la hora de destruir un objeto (método finalize) es importante llamar a los finalizadores en el orden inverso a como fueron llamados los constructores (primero se liberan los recursos de la clase derivada y después los de la clase base mediante la llamada super.finalize()).
+A la hora de destruir un objeto (método `finalize`) es importante llamar a los finalizadores en el orden inverso a como fueron llamados los constructores (primero se liberan los recursos de la clase derivada y después los de la clase base mediante la llamada `super.finalize()`).
 
 Si la clase Persona tuviera un constructor de este tipo:
 
 ```java
 public Persona (String nombre, String apellidos, GregorianCalendar fechaNacim) {
-    this.nombe= nombre;
-    this.apellidos= apellidos;
-    this.fechaNacim= new GregorianCalendar (fechaNacim);
+  this.nombe= nombre;
+  this.apellidos= apellidos;
+  this.fechaNacim= new GregorianCalendar (fechaNacim);
 }
 ```
 
@@ -441,7 +437,7 @@ public Alumno (String nombre, String apellidos, GregorianCalendar fechaNacim, St
 }
 ```
 
-En realidad se trata de otro recurso más para optimizar la reutilización de código, en este caso el del constructor, que aunque no es heredado, sí puedes invocarlo para no tener que rescribirlo.
+En realidad se trata de otro recurso más para optimizar la reutilización de código, en este caso el del constructor, que aunque no es heredado, sí puedes invocarlo para no tener que reescribirlo.
 
 Revisa con cuidado el [Ejemplo 3.6](#ejemplo-3.6)
 
@@ -459,9 +455,9 @@ Todas las clases en Java son descendentes (directos o indirectos) de la clase Ob
 - La capacidad de convertirse a cadenas.
 - La habilidad de devolver la clase del objeto.
 
-Entre los métodos que incorpora la clase Object y que por tanto hereda cualquier clase en Java tienes:
+Entre los métodos que incorpora la clase `Object` y que por tanto hereda cualquier clase en Java tienes:
 
-Principales métodos de la clase Object
+Principales métodos de la clase `Object`:
 
 | Método                      | Descripción                                                  |
 | --------------------------- | ------------------------------------------------------------ |
@@ -472,7 +468,7 @@ Principales métodos de la clase Object
 | int hashCode ()             | Devuelve un código hash para el objeto.                      |
 | toString ()                 | Devuelve una representación del objeto en forma de String.   |
 
-La clase Object representa la superclase que se encuentra en la cúspide de la jerarquía de herencia en Java. Cualquier clase (incluso las que tú implementes) acaban heredando de ella.
+La clase `Object`representa la superclase que se encuentra en la cúspide de la jerarquía de herencia en Java. Cualquier clase (incluso las que tú implementes) acaban heredando de ella.
 
 ## Herencia múltiple.
 
@@ -480,8 +476,7 @@ En determinados casos podrías considerar la posibilidad de que se necesite here
 
 El problema en estos casos es la posibilidad que existe de que se produzcan ambigüedades, así, si tuviéramos miembros con el mismo identificador en clases base diferentes, en tal caso, ¿qué miembro se hereda? Para evitar esto, los compiladores suelen solicitar que ante casos de ambigüedad, se especifique de manera explícita la clase de la cual se quiere utilizar un determinado miembro que pueda ser ambiguo.
 
-Ahora bien, la posibilidad de herencia múltiple no está disponible en todos los lenguajes orientados a objetos, ¿lo estará en Java? La respuesta es
-negativa.
+Ahora bien, la posibilidad de herencia múltiple no está disponible en todos los lenguajes orientados a objetos, ¿lo estará en Java? La respuesta es negativa.
 
 ![image-20220418115420435](/assets/image-20220418115420435.png)
 
@@ -586,12 +581,12 @@ Veamos un ejemplo de cada posibilidad:
 
   ```java
   public class ClaseEjemplo {
-      // Valor constante conocido en tiempo de compilación
-      final double PI= 3.14159265;
-      
-      // Valor constante conocido solamente en tiempo de ejecución
-      final int SEMILLA= (int) Math.random()*10+1;
-      ...
+    // Valor constante conocido en tiempo de compilación
+    final double PI= 3.14159265;
+    
+    // Valor constante conocido solamente en tiempo de ejecución
+    final int SEMILLA= (int) Math.random()*10+1;
+    ...
   }
   ```
 
@@ -600,7 +595,7 @@ Veamos un ejemplo de cada posibilidad:
    ```java
    public final metodoNoRedefinible (int parametro1) { // Método "no redefinible"
    	...
-   }  
+   } 
    ```
 
 4. Modificador en una variable referencia.
@@ -881,7 +876,7 @@ obj = ClaseA ();
 // La variable obj adquiere la forma de la subclase B.
 obj = ClaseB ();
 ...
-    
+  
 // Zona donde se utiliza el método m sin saber realmente qué subclase se está utilizando.
 // (Sólo se sabrá durante la ejecución del programa)
 
@@ -940,7 +935,7 @@ Con este tipo de referencia podrías luego apuntar a objetos tanto de tipo Profe
 // En algunas circunstancias podría suceder esto:
 obj= new Alumno (nombre, apellidos, fecha, grupo, nota); // Polimorfismo con interfaces
 ...
-    
+  
 // En otras circunstancias podría suceder esto:
 obj= new Profesor (nombre, apellidos, fecha, especialidad, salario); // Polimorfismo con interfaces
 ...
@@ -1018,30 +1013,30 @@ Clase `Punto`:
 package UD08._01_Ejemplo_2_1;
 
 public class Punto {
-    private double x;
-    private double y;
+  private double x;
+  private double y;
 
-    public Punto(double x, double y) {
-        this.x = x;
-        this.y = y;
-    }
+  public Punto(double x, double y) {
+    this.x = x;
+    this.y = y;
+  }
 
-    public double getX() {
-        return x;
-    }
+  public double getX() {
+    return x;
+  }
 
-    public void setX(double x) {
-        this.x = x;
-    }
+  public void setX(double x) {
+    this.x = x;
+  }
 
-    public double getY() {
-        return y;
-    }
+  public double getY() {
+    return y;
+  }
 
-    public void setY(double y) {
-        this.y = y;
-    }
-    
+  public void setY(double y) {
+    this.y = y;
+  }
+  
 }
 ```
 
@@ -1051,25 +1046,25 @@ Clase `Rectangulo`:
 package UD08._01_Ejemplo_2_1;
 
 public class Punto {
-    private double x;
-    private double y;
+  private double x;
+  private double y;
 
-    public Punto(double x, double y) {
-        this.x = x;
-        this.y = y;
-    }
-    public double getX() {
-        return x;
-    }
-    public void setX(double x) {
-        this.x = x;
-    }
-    public double getY() {
-        return y;
-    }
-    public void setY(double y) {
-        this.y = y;
-    }   
+  public Punto(double x, double y) {
+    this.x = x;
+    this.y = y;
+  }
+  public double getX() {
+    return x;
+  }
+  public void setX(double x) {
+    this.x = x;
+  }
+  public double getY() {
+    return y;
+  }
+  public void setY(double y) {
+    this.y = y;
+  }  
 }
 ```
 
@@ -1103,7 +1098,7 @@ public Punto obtenerVertice1 (){
 }
 
 public Punto obtenerVertice2 (){
-    return vertice2;
+  return vertice2;
 }
 ```
 
@@ -1118,54 +1113,54 @@ package UD08._02_Ejemplo_2_2;
 
 class Rectangulo {
 
-    private Punto vertice1;
-    private Punto vertice2;
+  private Punto vertice1;
+  private Punto vertice2;
 
-    public double calcularSuperficie() {
-        double area, base, altura; // Variables locales
-        base = vertice2.getX() - vertice1.getX(); // Antes era x2 - x1
-        altura = vertice2.getY() - vertice1.getY(); // Antes era y2 - y1
-        area = base * altura;
-        return area;
-    }
+  public double calcularSuperficie() {
+    double area, base, altura; // Variables locales
+    base = vertice2.getX() - vertice1.getX(); // Antes era x2 - x1
+    altura = vertice2.getY() - vertice1.getY(); // Antes era y2 - y1
+    area = base * altura;
+    return area;
+  }
 
-    public double CalcularPerimetro() {
-        double perimetro, base, altura; // Variables locales
-        base = vertice2.getX() - vertice1.getX(); // Antes era x2 - x1
-        altura = vertice2.getY() - vertice1.getY(); // Antes era y2 - y1
-        perimetro = 2 * base + 2 * altura;
-        return perimetro;
-    }
+  public double CalcularPerimetro() {
+    double perimetro, base, altura; // Variables locales
+    base = vertice2.getX() - vertice1.getX(); // Antes era x2 - x1
+    altura = vertice2.getY() - vertice1.getY(); // Antes era y2 - y1
+    perimetro = 2 * base + 2 * altura;
+    return perimetro;
+  }
 
-    /*
-     * Así no!
-     *
-     * public Punto obtenerVertice1 (){
-     * return vertice1;
-     * }
-     * public Punto obtenerVertice2 (){
-     * return vertice2;
-     * }
-     */
+  /*
+   * Así no!
+   *
+   * public Punto obtenerVertice1 (){
+   * return vertice1;
+   * }
+   * public Punto obtenerVertice2 (){
+   * return vertice2;
+   * }
+   */
 
-    //Mejor de este modo
-    public Punto obtenerVertice1() {
-        // Creación de un nuevo punto extrayendo sus atributos
-        double x, y;
-        Punto p;
-        x = this.vertice1.getX();
-        y = this.vertice1.getY();
-        p = new Punto(x, y);
-        return p;
-    }
+  //Mejor de este modo
+  public Punto obtenerVertice1() {
+    // Creación de un nuevo punto extrayendo sus atributos
+    double x, y;
+    Punto p;
+    x = this.vertice1.getX();
+    y = this.vertice1.getY();
+    p = new Punto(x, y);
+    return p;
+  }
 
-    //O mejor así:
-    public Punto obtenerVertice2() {
-        // Utilizando el constructor copia de Punto (si es que está definido)
-        Punto p;
-        p = new Punto(this.vertice2); // Uso del constructor copia
-        return p;
-    }
+  //O mejor así:
+  public Punto obtenerVertice2() {
+    // Utilizando el constructor copia de Punto (si es que está definido)
+    Punto p;
+    p = new Punto(this.vertice2); // Uso del constructor copia
+    return p;
+  }
 }
 ```
 
@@ -1197,8 +1192,8 @@ Para el segundo constructor habrá que crear dos puntos con las coordenadas x1, 
 
 ```java
 public Rectangulo (double x1, double y1, double x2, double y2){
-    this.vertice1= new Punto (x1, y1);
-    this.vertice2= new Punto (x2, y2);
+  this.vertice1= new Punto (x1, y1);
+  this.vertice2= new Punto (x2, y2);
 }
 ```
 
@@ -1226,8 +1221,8 @@ Constructor que crea los nuevos objetos mediante el constructor copia de los par
 
 ```java
 public Rectangulo(Punto vertice1, Punto vertice2) {
-    this.vertice1 = new Punto(vertice1.getX(), vertice1.getY());
-    this.vertice2 = new Punto(vertice2.getX(), vertice2.getY());
+  this.vertice1 = new Punto(vertice1.getX(), vertice1.getY());
+  this.vertice2 = new Punto(vertice2.getX(), vertice2.getY());
 }
 ```
 
@@ -1244,8 +1239,8 @@ Para el caso del constructor que recibe como parámetros la base y la altura, ha
 
 ```java
 public Rectangulo(double base, double altura) {
-    this.vertice1 = new Punto(0,0);
-    this.vertice2 = new Punto(base, altura);
+  this.vertice1 = new Punto(0,0);
+  this.vertice2 = new Punto(base, altura);
 }
 ```
 
@@ -1253,8 +1248,8 @@ Quedaría finalmente por implementar el constructor copia:
 
 ```java
 public Rectangulo (Rectangulo r) {
-    this.vertice1= new Punto (r.obtenerVertice1() );
-    this.vertice2= new Punto (r.obtenerVertice2() );
+  this.vertice1= new Punto (r.obtenerVertice1() );
+  this.vertice2= new Punto (r.obtenerVertice2() );
 }
 ```
 
@@ -1269,9 +1264,9 @@ Está claro que un Profesor es otra especialización de Persona, al igual que lo
 
 ```java
 public class Profesor extends Persona {
-    String especialidad;
-    double salario;
-    ...
+  String especialidad;
+  double salario;
+  ...
 }
 ```
 
@@ -1282,9 +1277,9 @@ Reescribe las clases `Alumno` y `Profesor` utilizando el modificador protected p
 
    ```java
    public class Alumno extends Persona {
-       protected String grupo;
-       protected double notaMedia;
-       ...
+     protected String grupo;
+     protected double notaMedia;
+     ...
    }
    ```
 
@@ -1292,9 +1287,9 @@ Reescribe las clases `Alumno` y `Profesor` utilizando el modificador protected p
 
    ```java
    public class Profesor extends Persona {
-       protected String especialidad;
-       protected double salario;
-       ...
+     protected String especialidad;
+     protected double salario;
+     ...
    }
    ```
 
@@ -1313,58 +1308,58 @@ POSIBLE SOLUCIÓN
    
    public class Alumno extends Persona {
    
-       protected String grupo;
-       protected double notaMedia;
+     protected String grupo;
+     protected double notaMedia;
    
-       // Método getNombre
-       public String getNombre() {
-           return nombre;
-       }
+     // Método getNombre
+     public String getNombre() {
+       return nombre;
+     }
    
-       // Método getApellidos
-       public String getApellidos() {
-           return apellidos;
-       }
+     // Método getApellidos
+     public String getApellidos() {
+       return apellidos;
+     }
    
-       // Método getFechaNacim
-       public LocalDate getFechaNacim() {
-           return this.fechaNacim;
-       }
+     // Método getFechaNacim
+     public LocalDate getFechaNacim() {
+       return this.fechaNacim;
+     }
    
-       // Método getGrupo
-       public String getGrupo() {
-           return grupo;
-       }
+     // Método getGrupo
+     public String getGrupo() {
+       return grupo;
+     }
    
-       // Método getNotaMedia
-       public double getNotaMedia() {
-           return notaMedia;
-       }
+     // Método getNotaMedia
+     public double getNotaMedia() {
+       return notaMedia;
+     }
    
-       // Método setNombre
-       public void setNombre(String nombre) {
-           this.nombre = nombre;
-       }
+     // Método setNombre
+     public void setNombre(String nombre) {
+       this.nombre = nombre;
+     }
    
-       // Método setApellidos
-       public void setApellidos(String apellidos) {
-           this.apellidos = apellidos;
-       }
+     // Método setApellidos
+     public void setApellidos(String apellidos) {
+       this.apellidos = apellidos;
+     }
    
-       // Método setFechaNacim
-       public void setFechaNacim(LocalDate fechaNacim) {
-           this.fechaNacim = fechaNacim;
-       }
+     // Método setFechaNacim
+     public void setFechaNacim(LocalDate fechaNacim) {
+       this.fechaNacim = fechaNacim;
+     }
    
-       // Método setGrupo
-       public void setGrupo(String grupo) {
-           this.grupo = grupo;
-       }
+     // Método setGrupo
+     public void setGrupo(String grupo) {
+       this.grupo = grupo;
+     }
    
-       // Método setNotaMedia
-       public void setNotaMedia(double notaMedia) {
-           this.notaMedia = notaMedia;
-       }
+     // Método setNotaMedia
+     public void setNotaMedia(double notaMedia) {
+       this.notaMedia = notaMedia;
+     }
    }
    ```
 
@@ -1379,58 +1374,58 @@ POSIBLE SOLUCIÓN
    
    public class Profesor extends Persona {
    
-       String especialidad;
-       double salario;
+     String especialidad;
+     double salario;
    
-       // Método getNombre
-       public String getNombre() {
-           return nombre;
-       }
+     // Método getNombre
+     public String getNombre() {
+       return nombre;
+     }
    
-       // Método getApellidos
-       public String getApellidos() {
-           return apellidos;
-       }
+     // Método getApellidos
+     public String getApellidos() {
+       return apellidos;
+     }
    
-       // Método getFechaNacim
-       public LocalDate getFechaNacim() {
-           return this.fechaNacim;
-       }
+     // Método getFechaNacim
+     public LocalDate getFechaNacim() {
+       return this.fechaNacim;
+     }
    
-       // Método getEspecialidad
-       public String getEspecialidad() {
-           return especialidad;
-       }
+     // Método getEspecialidad
+     public String getEspecialidad() {
+       return especialidad;
+     }
    
-       // Método getSalario
-       public double getSalario() {
-           return salario;
-       }
+     // Método getSalario
+     public double getSalario() {
+       return salario;
+     }
    
-       // Método setNombre
-       public void setNombre(String nombre) {
-           this.nombre = nombre;
-       }
+     // Método setNombre
+     public void setNombre(String nombre) {
+       this.nombre = nombre;
+     }
    
-       // Método setApellidos
-       public void setApellidos(String apellidos) {
-           this.apellidos = apellidos;
-       }
+     // Método setApellidos
+     public void setApellidos(String apellidos) {
+       this.apellidos = apellidos;
+     }
    
-       // Método setFechaNacim
-       public void setFechaNacim(LocalDate fechaNacim) {
-           this.fechaNacim = fechaNacim;
-       }
+     // Método setFechaNacim
+     public void setFechaNacim(LocalDate fechaNacim) {
+       this.fechaNacim = fechaNacim;
+     }
    
-       // Método setSalario
-       public void setSalario(double salario) {
-           this.salario = salario;
-       }
+     // Método setSalario
+     public void setSalario(double salario) {
+       this.salario = salario;
+     }
    
-       // Método setESpecialidad
-       public void setESpecialidad(String especialidad) {
-           this.especialidad = especialidad;
-       }
+     // Método setESpecialidad
+     public void setESpecialidad(String especialidad) {
+       this.especialidad = especialidad;
+     }
    }
    ```
 
@@ -1447,40 +1442,40 @@ import java.time.LocalDate;
 
 public class Persona {
 
-    protected String nombre;
-    protected String apellidos;
-    protected LocalDate fechaNacim;
+  protected String nombre;
+  protected String apellidos;
+  protected LocalDate fechaNacim;
 
-    // Método getNombre
-    public String getNombre() {
-        return nombre;
-    }
+  // Método getNombre
+  public String getNombre() {
+    return nombre;
+  }
 
-    // Método getApellidos
-    public String getApellidos() {
-        return apellidos;
-    }
+  // Método getApellidos
+  public String getApellidos() {
+    return apellidos;
+  }
 
-    // Método getFechaNacim
-    public LocalDate getFechaNacim() {
-        return this.fechaNacim;
-    }
+  // Método getFechaNacim
+  public LocalDate getFechaNacim() {
+    return this.fechaNacim;
+  }
 
-    // Método setNombre
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
+  // Método setNombre
+  public void setNombre(String nombre) {
+    this.nombre = nombre;
+  }
 
-    // Método setApellidos
-    public void setApellidos(String apellidos) {
-        this.apellidos = apellidos;
-    }
+  // Método setApellidos
+  public void setApellidos(String apellidos) {
+    this.apellidos = apellidos;
+  }
 
-    // Método setFechaNacim
-    public void setFechaNacim(LocalDate fechaNacim) {
-        this.fechaNacim = fechaNacim;
-    }
-   }
+  // Método setFechaNacim
+  public void setFechaNacim(LocalDate fechaNacim) {
+    this.fechaNacim = fechaNacim;
+  }
+  }
 
 ```
 
@@ -1497,39 +1492,39 @@ Dadas las clases `Persona`, `Alumno` y `Profesor` que has utilizado anteriorment
    
    public class Persona {
    
-       protected String nombre;
-       protected String apellidos;
-       protected LocalDate fechaNacim;
+     protected String nombre;
+     protected String apellidos;
+     protected LocalDate fechaNacim;
    
-       // Método getNombre
-       public String getNombre() {
-           return nombre;
-       }
+     // Método getNombre
+     public String getNombre() {
+       return nombre;
+     }
    
-       // Método getApellidos
-       public String getApellidos() {
-           return apellidos;
-       }
+     // Método getApellidos
+     public String getApellidos() {
+       return apellidos;
+     }
    
-       // Método getFechaNacim
-       public LocalDate getFechaNacim() {
-           return this.fechaNacim;
-       }
+     // Método getFechaNacim
+     public LocalDate getFechaNacim() {
+       return this.fechaNacim;
+     }
    
-       // Método setNombre
-       public void setNombre(String nombre) {
-           this.nombre = nombre;
-       }
+     // Método setNombre
+     public void setNombre(String nombre) {
+       this.nombre = nombre;
+     }
    
-       // Método setApellidos
-       public void setApellidos(String apellidos) {
-           this.apellidos = apellidos;
-       }
+     // Método setApellidos
+     public void setApellidos(String apellidos) {
+       this.apellidos = apellidos;
+     }
    
-        // Método setFechaNacim
-       public void setFechaNacim(LocalDate fechaNacim) {
-           this.fechaNacim = fechaNacim;
-       }
+      // Método setFechaNacim
+     public void setFechaNacim(LocalDate fechaNacim) {
+       this.fechaNacim = fechaNacim;
+     }
    }
    ```
 
@@ -1540,28 +1535,28 @@ Dadas las clases `Persona`, `Alumno` y `Profesor` que has utilizado anteriorment
    
    public class Alumno extends Persona {
    
-       protected String grupo;
-       protected double notaMedia;
+     protected String grupo;
+     protected double notaMedia;
    
-       // Método getGrupo
-       public String getGrupo() {
-           return grupo;
-       }
+     // Método getGrupo
+     public String getGrupo() {
+       return grupo;
+     }
    
-       // Método getNotaMedia
-       public double getNotaMedia() {
-           return notaMedia;
-       }
+     // Método getNotaMedia
+     public double getNotaMedia() {
+       return notaMedia;
+     }
    
-       // Método setGrupo
-       public void setGrupo(String grupo) {
-           this.grupo = grupo;
-       }
+     // Método setGrupo
+     public void setGrupo(String grupo) {
+       this.grupo = grupo;
+     }
    
-       // Método setNotaMedia
-       public void setNotaMedia(double notaMedia) {
-           this.notaMedia = notaMedia;
-       }
+     // Método setNotaMedia
+     public void setNotaMedia(double notaMedia) {
+       this.notaMedia = notaMedia;
+     }
    }
    
    ```
@@ -1574,28 +1569,28 @@ Dadas las clases `Persona`, `Alumno` y `Profesor` que has utilizado anteriorment
    
    public class Profesor extends Persona {
    
-       String especialidad;
-       double salario;
+     String especialidad;
+     double salario;
    
-       // Método getEspecialidad
-       public String getEspecialidad() {
-           return especialidad;
-       }
+     // Método getEspecialidad
+     public String getEspecialidad() {
+       return especialidad;
+     }
    
-       // Método getSalario
-       public double getSalario() {
-           return salario;
-       }
+     // Método getSalario
+     public double getSalario() {
+       return salario;
+     }
    
-       // Método setSalario
-       public void setSalario(double salario) {
-           this.salario = salario;
-       }
+     // Método setSalario
+     public void setSalario(double salario) {
+       this.salario = salario;
+     }
    
-       // Método setEspecialidad
-       public void setESpecialidad(String especialidad) {
-           this.especialidad = especialidad;
-       }
+     // Método setEspecialidad
+     public void setESpecialidad(String especialidad) {
+       this.especialidad = especialidad;
+     }
    }
    ```
 
@@ -1611,11 +1606,11 @@ Dadas las clases `Persona`, `Alumno` y `Profesor` que has utilizado anteriorment
    // Método getNombre
    @Override
    public String getNombre (){
-       return "Alumno: " + this.nombre;
+     return "Alumno: " + this.nombre;
    }
    ```
 
-   En este caso podría decirse que se "renuncia" al método heredado para redefinirlo con un   comportamiento más especializado y acorde con la clase derivada.
+   En este caso podría decirse que se "renuncia" al método heredado para redefinirlo con un  comportamiento más especializado y acorde con la clase derivada.
 
 2. Clase `Profesor`. Seguimos exactamente el mismo procedimiento que con la clase Alumno (redefinición del método `getNombre`).
 
@@ -1623,7 +1618,7 @@ Dadas las clases `Persona`, `Alumno` y `Profesor` que has utilizado anteriorment
    // Método getNombre
    @Override
    public String getNombre() {
-       return "Profesor: " + this.nombre;
+     return "Profesor: " + this.nombre;
    }
    ```
 
@@ -1633,12 +1628,12 @@ Dadas las clases `Persona`, `Alumno` y `Profesor`, define un método mostrar par
 1. Método mostrar de la clase `Persona`.
    ```java
    public void mostrar () {
-       SimpleDateFormat formatoFecha = new SimpleDateFormat("dd/MM/yyyy");
-       String Stringfecha= formatoFecha.format(this.fechaNacim.getTime());
+     SimpleDateFormat formatoFecha = new SimpleDateFormat("dd/MM/yyyy");
+     String Stringfecha= formatoFecha.format(this.fechaNacim.getTime());
    
-       System.out.printf ("Nombre: %s\n", this.nombre);
-       System.out.printf ("Apellidos: %s\n", this.apellidos);
-       System.out.printf ("Fecha de nacimiento: %s\n", Stringfecha);
+     System.out.printf ("Nombre: %s\n", this.nombre);
+     System.out.printf ("Apellidos: %s\n", this.apellidos);
+     System.out.printf ("Fecha de nacimiento: %s\n", Stringfecha);
    }
    ```
 
@@ -1647,7 +1642,7 @@ Dadas las clases `Persona`, `Alumno` y `Profesor`, define un método mostrar par
    public void mostrar () {
    	super.mostrar (); // Llamada al método "mostrar" de la superclase
    
-       // A continuación mostramos la información "especializada" de esta subclase
+     // A continuación mostramos la información "especializada" de esta subclase
    	System.out.printf ("Especialidad: %s\n", this.especialidad);
    	System.out.printf ("Salario: %7.2f euros\n", this.salario);
    }
@@ -1657,10 +1652,10 @@ Dadas las clases `Persona`, `Alumno` y `Profesor`, define un método mostrar par
 
    ```java
    public void mostrar () {
-       super.mostrar ();
-       // A continuación mostramos la información "especializada" de esta subclase
-       System.out.printf ("Grupo: %s\n", this.grupo);
-       System.out.printf ("Nota media: %5.2f\n", this.notaMedia);
+     super.mostrar ();
+     // A continuación mostramos la información "especializada" de esta subclase
+     System.out.printf ("Grupo: %s\n", this.grupo);
+     System.out.printf ("Nota media: %5.2f\n", this.notaMedia);
    }
    ```
 
@@ -1680,10 +1675,10 @@ Puedes hacer lo mismo para la clase `Alumno`.
 
 ```java
 public Alumno(String nombre, String apellidos,
-              LocalDate fechaNacim, String grupo, double notaMedia) {
-    super(nombre, apellidos, fechaNacim);
-    this.grupo = grupo;
-    this.notaMedia = notaMedia;
+       LocalDate fechaNacim, String grupo, double notaMedia) {
+  super(nombre, apellidos, fechaNacim);
+  this.grupo = grupo;
+  this.notaMedia = notaMedia;
 }
 ```
 
@@ -1695,10 +1690,10 @@ En este caso lo único que habría que hacer es añadir el modificador abstract 
 
 ```java
 public abstract class Persona {
-    protected String nombre;
-    protected String apellidos;
-    protected LocalDate fechaNacim;
-    ...
+  protected String nombre;
+  protected String apellidos;
+  protected LocalDate fechaNacim;
+  ...
 }
 ```
 
@@ -1721,7 +1716,7 @@ Existen una gran cantidad de clases abstractas en la API de Java. Aquí tienes u
   public abstract class AbstractSequentialList<E> extends AbstractList<E>
   ```
 
-    Que hereda de `AbstractList` y de la que hereda la clase `LinkedList`
+   Que hereda de `AbstractList` y de la que hereda la clase `LinkedList`
 
 ## Ejemplo 4.2
 
@@ -1739,7 +1734,7 @@ Recuerda que el simple hecho de que la clase `Persona` contenga un método abstr
 
 ```java
 public abstract class Persona {
-    ...
+  ...
 ```
 
 En el caso de la clase `Alumno` habrá que hacer una implementación específica del método mostrar y
@@ -1750,14 +1745,14 @@ lo mismo para el caso de la clase `Profesor`.
    ```java
    @Override
    public void mostrar() {
-       DateTimeFormatter formato = DateTimeFormatter.ofPattern("d/MM/yyyy");
-       String stringfecha = formato.format(this.fechaNacim);
-       System.out.printf("Nombre: %s\n", this.nombre);
-       System.out.printf("Apellidos: %s\n", this.apellidos);
-       System.out.printf("Fecha de nacimiento: %s\n", stringfecha);
-       // A continuación mostramos la información "especializada" de esta subclase
-       System.out.printf("Grupo: %s\n", this.grupo);
-       System.out.printf("Nota media: %5.2f\n", this.notaMedia);
+     DateTimeFormatter formato = DateTimeFormatter.ofPattern("d/MM/yyyy");
+     String stringfecha = formato.format(this.fechaNacim);
+     System.out.printf("Nombre: %s\n", this.nombre);
+     System.out.printf("Apellidos: %s\n", this.apellidos);
+     System.out.printf("Fecha de nacimiento: %s\n", stringfecha);
+     // A continuación mostramos la información "especializada" de esta subclase
+     System.out.printf("Grupo: %s\n", this.grupo);
+     System.out.printf("Nota media: %5.2f\n", this.notaMedia);
    }
    ```
 
@@ -1766,14 +1761,14 @@ lo mismo para el caso de la clase `Profesor`.
    ```java
    @Override
    public void mostrar() {
-       DateTimeFormatter formato = DateTimeFormatter.ofPattern("d/MM/yyyy");
-       String stringfecha = formato.format(this.fechaNacim);
-       System.out.printf("Nombre: %s\n", this.nombre);
-       System.out.printf("Apellidos: %s\n", this.apellidos);
-       System.out.printf("Fecha de nacimiento: %s\n", stringfecha);
-       // A continuación mostramos la información "especializada" de esta subclase
-       System.out.printf("Especialidad: %s\n", this.especialidad);
-       System.out.printf("Salario: %7.2f euros\n", this.salario);
+     DateTimeFormatter formato = DateTimeFormatter.ofPattern("d/MM/yyyy");
+     String stringfecha = formato.format(this.fechaNacim);
+     System.out.printf("Nombre: %s\n", this.nombre);
+     System.out.printf("Apellidos: %s\n", this.apellidos);
+     System.out.printf("Fecha de nacimiento: %s\n", stringfecha);
+     // A continuación mostramos la información "especializada" de esta subclase
+     System.out.printf("Especialidad: %s\n", this.especialidad);
+     System.out.printf("Salario: %7.2f euros\n", this.salario);
    }
    ```
 
@@ -1788,19 +1783,19 @@ lo mismo para el caso de la clase `Profesor`.
    
    public class EjemploUso {
    
-       public static void main(String[] args) {
-           // Declaración de objetos
-           Alumno alumno;
-           Profesor profesor;
-           // Creación de objetos (llamada a constructores)
-           alumno = new Alumno("Juan", "Torres", LocalDate.of(1990, 10, 6), "1DAW",
-                   7.5);
-           profesor = new Profesor("Antonio", "Campos", LocalDate.of(1970, 8, 15),
-                   "Informatica", 2000);
-           // Utilización del método mostrar
-           alumno.mostrar();
-           profesor.mostrar();
-       }
+     public static void main(String[] args) {
+       // Declaración de objetos
+       Alumno alumno;
+       Profesor profesor;
+       // Creación de objetos (llamada a constructores)
+       alumno = new Alumno("Juan", "Torres", LocalDate.of(1990, 10, 6), "1DAW",
+           7.5);
+       profesor = new Profesor("Antonio", "Campos", LocalDate.of(1970, 8, 15),
+           "Informatica", 2000);
+       // Utilización del método mostrar
+       alumno.mostrar();
+       profesor.mostrar();
+     }
    }
    ```
    La salida debe ser algo parecido a esto:
@@ -1809,7 +1804,7 @@ lo mismo para el caso de la clase `Profesor`.
    Apellidos: Torres
    Fecha de nacimiento: 6/10/1990
    Grupo: 1DAW
-   Nota media:  7,50
+   Nota media: 7,50
    Nombre: Antonio
    Apellidos: Campos
    Fecha de nacimiento: 15/08/1970
@@ -1835,11 +1830,11 @@ Crea una interfaz en Java cuyo nombre sea `Imprimible` y que contenga algunos m�
    
    public interface Imprimible {
    
-       String devolverContenidoString();
+     String devolverContenidoString();
    
-       ArrayList devolverContenidoArrayList();
+     ArrayList devolverContenidoArrayList();
    
-       HashMap devolverContenidoHashMap();
+     HashMap devolverContenidoHashMap();
    }
    ```
    El cómo se implementarán cada uno de esos métodos dependerá exclusivamente de cada clase que decida implementar esta interfaz.
@@ -1870,16 +1865,16 @@ Una vez que los métodos de la interfaz estén implementados en la clase `Person
    ```java
    @Override
    public HashMap devolverContenidoHashMap() {
-       // Creamos la HashMap que va a ser devuelta
-       HashMap contenido = new HashMap();
-       // Añadimos los atributos de la clase
-       DateTimeFormatter formato = DateTimeFormatter.ofPattern("d/MM/yyyy");
-       String stringFecha = formato.format(this.fechaNacim);
-       contenido.put("nombre", this.nombre);
-       contenido.put("apellidos", this.apellidos);
-       contenido.put("fechaNacim", stringFecha);
-       // Devolvemos la HashMap
-       return contenido;
+     // Creamos la HashMap que va a ser devuelta
+     HashMap contenido = new HashMap();
+     // Añadimos los atributos de la clase
+     DateTimeFormatter formato = DateTimeFormatter.ofPattern("d/MM/yyyy");
+     String stringFecha = formato.format(this.fechaNacim);
+     contenido.put("nombre", this.nombre);
+     contenido.put("apellidos", this.apellidos);
+     contenido.put("fechaNacim", stringFecha);
+     // Devolvemos la HashMap
+     return contenido;
    }
    ```
 
@@ -1888,16 +1883,16 @@ Una vez que los métodos de la interfaz estén implementados en la clase `Person
    ```java
    @Override
    public ArrayList devolverContenidoArrayList() {
-       // Creamos la ArrayList que va a ser devuelta
-       ArrayList contenido = new ArrayList();
-       // Añadimos los atributos de la clase
-       DateTimeFormatter formato = DateTimeFormatter.ofPattern("d/MM/yyyy");
-       String stringFecha = formato.format(this.fechaNacim);
-       contenido.add(this.nombre);
-       contenido.add(this.apellidos);
-       contenido.add(stringFecha);
-       // Devolvemos la ArrayList
-       return contenido;
+     // Creamos la ArrayList que va a ser devuelta
+     ArrayList contenido = new ArrayList();
+     // Añadimos los atributos de la clase
+     DateTimeFormatter formato = DateTimeFormatter.ofPattern("d/MM/yyyy");
+     String stringFecha = formato.format(this.fechaNacim);
+     contenido.add(this.nombre);
+     contenido.add(this.apellidos);
+     contenido.add(stringFecha);
+     // Devolvemos la ArrayList
+     return contenido;
    }
    ```
 
@@ -1906,10 +1901,10 @@ Una vez que los métodos de la interfaz estén implementados en la clase `Person
    ```java
    @Override
    public String devolverContenidoString() {
-       DateTimeFormatter formato = DateTimeFormatter.ofPattern("d/MM/yyyy");
-       String stringFecha = formato.format(this.fechaNacim);
-       String contenido = "{" + this.nombre + ", " + this.apellidos + ", " + stringFecha + "}";
-       return contenido;
+     DateTimeFormatter formato = DateTimeFormatter.ofPattern("d/MM/yyyy");
+     String stringFecha = formato.format(this.fechaNacim);
+     String contenido = "{" + this.nombre + ", " + this.apellidos + ", " + stringFecha + "}";
+     return contenido;
    }
    ```
 
@@ -1929,13 +1924,13 @@ Una vez que los métodos de la interfaz estén implementados en la clase `Person
    ```java
    @Override
    public HashMap devolverContenidoHashMap() {
-       // Llamada al método de la superclase
-       HashMap contenido = super.devolverContenidoHashMap();
-       // Añadimos los atributos específicos de la clase
-       contenido.put("grupo", this.grupo);
-       contenido.put("notaMedia", this.notaMedia);
-       // Devolvemos la HashMap rellena
-       return contenido;
+     // Llamada al método de la superclase
+     HashMap contenido = super.devolverContenidoHashMap();
+     // Añadimos los atributos específicos de la clase
+     contenido.put("grupo", this.grupo);
+     contenido.put("notaMedia", this.notaMedia);
+     // Devolvemos la HashMap rellena
+     return contenido;
    }
    ```
 
@@ -1945,13 +1940,13 @@ Una vez que los métodos de la interfaz estén implementados en la clase `Person
     ```java
     @Override
     public ArrayList devolverContenidoArrayList() {
-        // Llamada al método de la superclase
-        ArrayList contenido = super.devolverContenidoArrayList();
-        // Añadimos los atributos específicos de la clase
-        contenido.add(this.especialidad);
-        contenido.add(this.salario);
-        // Devolvemos la ArrayList
-        return contenido;
+      // Llamada al método de la superclase
+      ArrayList contenido = super.devolverContenidoArrayList();
+      // Añadimos los atributos específicos de la clase
+      contenido.add(this.especialidad);
+      contenido.add(this.salario);
+      // Devolvemos la ArrayList
+      return contenido;
     }
     ```
 
@@ -1960,13 +1955,13 @@ Una vez que los métodos de la interfaz estén implementados en la clase `Person
     ```java
     @Override
     public String devolverContenidoString() {
-        // Llamada al método de la superclase
-        String contenido = super.devolverContenidoString();
-        //Eliminamos el último carácter, que contiene una llave de cierre.
-        contenido = contenido.substring(0, contenido.length() - 1);
-        contenido = contenido + ", " + this.especialidad + ", " + this.salario + "}";
-        // Devolvemos el String creado.
-        return contenido;
+      // Llamada al método de la superclase
+      String contenido = super.devolverContenidoString();
+      //Eliminamos el último carácter, que contiene una llave de cierre.
+      contenido = contenido.substring(0, contenido.length() - 1);
+      contenido = contenido + ", " + this.especialidad + ", " + this.salario + "}";
+      // Devolvemos el String creado.
+      return contenido;
     }
     ```
 
@@ -1993,7 +1988,7 @@ Observa el siguiente esquema UML:
 
 Las interfaces `Human` y `Omnivore` heredan de varias interfaces:
 
-- `Human`: de  `TwoLeggedMammal`, `Omnivore`, `Mammal` y `Hunter`
+- `Human`: de `TwoLeggedMammal`, `Omnivore`, `Mammal` y `Hunter`
 - `Omnivore`: `Herbivore` y `Carnivore`
 
 ## Ejemplo 5.6
@@ -2076,10 +2071,10 @@ Así, por ejemplo:
 
 ```java
 public interface DiasSemana {
-    int LUNES = 1, MARTES=2, MIERCOLES=3, JUEVES=4;
-    int VIERNES=5, SABADO=6, DOMINGO=7;
-    String[] NOMBRES_DIAS = {"", "lunes", "martes", "miércoles", 
-                             "jueves", "viernes", "sábado", "domingo"};
+  int LUNES = 1, MARTES=2, MIERCOLES=3, JUEVES=4;
+  int VIERNES=5, SABADO=6, DOMINGO=7;
+  String[] NOMBRES_DIAS = {"", "lunes", "martes", "miércoles", 
+               "jueves", "viernes", "sábado", "domingo"};
 }
 ```
 
@@ -2099,44 +2094,44 @@ package UD08._17_Ejemplo_5_6;
 import java.util.Date;
 
 interface A {
-    Date ULTIMA_CREACION = new Date(0, 0, 1);
-    void metodoA();
+  Date ULTIMA_CREACION = new Date(0, 0, 1);
+  void metodoA();
 }
 
 interface B extends A {
-    int VALOR_B = 20;
+  int VALOR_B = 20;
 	// 1 −1 −1900
-    void metodoB();
+  void metodoB();
 }
 
 public class Anexo5Interfaces implements B {
 
-    private long b;
-    private Date fechaCreacion = new Date();
+  private long b;
+  private Date fechaCreacion = new Date();
 
-    public Anexo5Interfaces(int factor) {
-        b = VALOR_B * factor;
-        ULTIMA_CREACION.setTime(fechaCreacion.getTime());
-    }
+  public Anexo5Interfaces(int factor) {
+    b = VALOR_B * factor;
+    ULTIMA_CREACION.setTime(fechaCreacion.getTime());
+  }
 
-    @Override
-    public void metodoA() {
-        System.out.println("En metodoA, ULTIMA_CREACION = " + ULTIMA_CREACION);
-    }
-    
-    @Override
-    public void metodoB() {
-        System.out.println("En metodoB, b = " + b);
-    }
+  @Override
+  public void metodoA() {
+    System.out.println("En metodoA, ULTIMA_CREACION = " + ULTIMA_CREACION);
+  }
+  
+  @Override
+  public void metodoB() {
+    System.out.println("En metodoB, b = " + b);
+  }
 
-    public static void main(String args[]) {
-        System.out.println("Inicialmente, ULTIMA_CREACION = " + ULTIMA_CREACION);
-        Anexo5Interfaces obj = new Anexo5Interfaces(5);
-        obj.metodoA();
-        obj.metodoB();
-        A pa = obj;
-        B pb = obj;
-    }
+  public static void main(String args[]) {
+    System.out.println("Inicialmente, ULTIMA_CREACION = " + ULTIMA_CREACION);
+    Anexo5Interfaces obj = new Anexo5Interfaces(5);
+    obj.metodoA();
+    obj.metodoB();
+    A pa = obj;
+    B pb = obj;
+  }
 }
 ```
 
@@ -2167,9 +2162,9 @@ package UD08._18_Ejemplo_6_2;
 
 public abstract class Instrumento {
 
-    public void tocarNota(String nota) {
-        System.out.format("Instrumento: tocar nota %s.\n", nota);
-    }
+  public void tocarNota(String nota) {
+    System.out.format("Instrumento: tocar nota %s.\n", nota);
+  }
 }
 ```
 
@@ -2180,10 +2175,10 @@ package UD08._18_Ejemplo_6_2;
 
 public class Flauta extends Instrumento {
 
-    @Override
-    public void tocarNota(String nota) {
-        System.out.format("Flauta: tocar nota %s.\n", nota);
-    }
+  @Override
+  public void tocarNota(String nota) {
+    System.out.format("Flauta: tocar nota %s.\n", nota);
+  }
 }
 
 ```
@@ -2193,10 +2188,10 @@ package UD08._18_Ejemplo_6_2;
 
 public class Piano extends Instrumento {
 
-    @Override
-    public void tocarNota(String nota) {
-        System.out.format("Piano: tocar nota %s.\n", nota);
-    }
+  @Override
+  public void tocarNota(String nota) {
+    System.out.format("Piano: tocar nota %s.\n", nota);
+  }
 }
 
 ```
@@ -2210,24 +2205,24 @@ import java.util.Scanner;
 
 public class EjemploUso {
 
-    public static void main(String[] args) {
-        Scanner teclado = new Scanner(System.in);
-        System.out.print("Deseas un Piano o una Flauta (p o f)?: ");
-        char respuesta = teclado.nextLine().toLowerCase().charAt(0);
+  public static void main(String[] args) {
+    Scanner teclado = new Scanner(System.in);
+    System.out.print("Deseas un Piano o una Flauta (p o f)?: ");
+    char respuesta = teclado.nextLine().toLowerCase().charAt(0);
 
-        Instrumento instrumento1; // Ejemplo de objeto polimórfico (podrá ser Piano o Flauta)
-        if (respuesta == 'p') {
-            // Ejemplo de objeto polimórfico (en este caso va adquirir forma de Piano)
-            instrumento1 = new Piano();
-        } else {
-            // Ejemplo de objeto polimórfico (en este caso va adquirir forma de Flauta)
-            instrumento1 = new Flauta();
-        }
-        // Interpretamos una nota con el objeto instrumento1
-        // No sabemos si se ejecutará el método tocarNota de Piano o de Flauta
-        // (dependerá de la ejecución)
-        instrumento1.tocarNota("do");  // Ejemplo de ligadura dinámica (tiempo de ejecución)
+    Instrumento instrumento1; // Ejemplo de objeto polimórfico (podrá ser Piano o Flauta)
+    if (respuesta == 'p') {
+      // Ejemplo de objeto polimórfico (en este caso va adquirir forma de Piano)
+      instrumento1 = new Piano();
+    } else {
+      // Ejemplo de objeto polimórfico (en este caso va adquirir forma de Flauta)
+      instrumento1 = new Flauta();
     }
+    // Interpretamos una nota con el objeto instrumento1
+    // No sabemos si se ejecutará el método tocarNota de Piano o de Flauta
+    // (dependerá de la ejecución)
+    instrumento1.tocarNota("do"); // Ejemplo de ligadura dinámica (tiempo de ejecución)
+  }
 }
 ```
 
@@ -2241,11 +2236,11 @@ Sin embargo, a la hora de instanciar el objeto, utilizamos el constructor de alg
 
 ```java
 if (respuesta == 'p') {
-    // Ejemplo de objeto polimórfico (en este caso va adquirir forma de Piano)
-    instrumento1 = new Piano();
+  // Ejemplo de objeto polimórfico (en este caso va adquirir forma de Piano)
+  instrumento1 = new Piano();
 } else {
-    // Ejemplo de objeto polimórfico (en este caso va adquirir forma de Flauta)
-    instrumento1 = new Flauta();
+  // Ejemplo de objeto polimórfico (en este caso va adquirir forma de Flauta)
+  instrumento1 = new Flauta();
 }
 ```
 
@@ -2255,7 +2250,7 @@ Finalmente, a la hora de invocar el método `tocarNota`, no sabremos a qué vers
 // Interpretamos una nota con el objeto instrumento1
 // No sabemos si se ejecutará el método tocarNota de Piano o de Flauta
 // (dependerá de la ejecución)
-instrumento1.tocarNota("do");  // Ejemplo de ligadura dinámica (tiempo de ejecución)
+instrumento1.tocarNota("do"); // Ejemplo de ligadura dinámica (tiempo de ejecución)
 ```
 
 ## Ejemplo 6.3
@@ -2300,7 +2295,7 @@ Constructor "compatible" para `Alumno`:
 
 ```java
 public Alumno(String nombre, String apellidos, LocalDate fechaNacim) {
-    super(nombre, apellidos, fechaNacim);
+  super(nombre, apellidos, fechaNacim);
 }
 ```
 
@@ -2308,7 +2303,7 @@ y el constructor "compatible" para `Profesor`:
 
 ```java
 public Profesor(String nombre, String apellidos, LocalDate fechaNacim) {
-    super(nombre, apellidos, fechaNacim);
+  super(nombre, apellidos, fechaNacim);
 }
 ```
 
@@ -2322,21 +2317,21 @@ import java.util.Scanner;
 
 public class EjemploUso {
 
-    public static void main(String[] args) {
-        Persona obj;
-        Scanner teclado = new Scanner(System.in);
-        System.out.print("Deseas crear un Profesor o un Alumno ('p' o 'a')?: ");
-        char respuesta = teclado.nextLine().toLowerCase().charAt(0);
+  public static void main(String[] args) {
+    Persona obj;
+    Scanner teclado = new Scanner(System.in);
+    System.out.print("Deseas crear un Profesor o un Alumno ('p' o 'a')?: ");
+    char respuesta = teclado.nextLine().toLowerCase().charAt(0);
 
-        if (respuesta == 'a') {
-            // Ejemplo de objeto polimórfico (en este caso va adquirir forma de Alumno)
-            obj = new Alumno("Alumno", "Apellidos", LocalDate.of(1977, 3, 8));
-        } else {
-            // Ejemplo de objeto polimórfico (en este caso va adquirir forma de Profesor)
-            obj = new Profesor("Profe", "Apellidos", LocalDate.of(1977, 3, 8));
-        }
-        System.out.format("Contenido del objeto: %s\n", obj.devolverContenidoString());
+    if (respuesta == 'a') {
+      // Ejemplo de objeto polimórfico (en este caso va adquirir forma de Alumno)
+      obj = new Alumno("Alumno", "Apellidos", LocalDate.of(1977, 3, 8));
+    } else {
+      // Ejemplo de objeto polimórfico (en este caso va adquirir forma de Profesor)
+      obj = new Profesor("Profe", "Apellidos", LocalDate.of(1977, 3, 8));
     }
+    System.out.format("Contenido del objeto: %s\n", obj.devolverContenidoString());
+  }
 }
 ```
 
@@ -2351,9 +2346,9 @@ public class EjemploUso {
 - [Curso Java. Clases Abstractas II. Vídeo 46](https://youtu.be/LDZUBY0mxv8)
 - [Curso Java. Modificadores de acceso. Clase Object. Vídeo 47](https://youtu.be/eQWnegzD6ug)
 - [Curso Java. Interfaces y clases internas. Interfaces I. Vídeo 49](https://youtu.be/8xF_BSpSATw)
-- [Curso Java. Interfaces y clases internas  Interfaces II. Vídeo 50](https://youtu.be/59Tpg7XbIEo)
-- [Curso Java. Interfaces y clases internas  Interfaces III. Vídeo 51](https://youtu.be/MTdly6e-jPU)
-- [Curso Java. Interfaces y clases internas  Interfaces IV. Vídeo 52](https://youtu.be/0fifCsOYbXw)
+- [Curso Java. Interfaces y clases internas Interfaces II. Vídeo 50](https://youtu.be/59Tpg7XbIEo)
+- [Curso Java. Interfaces y clases internas Interfaces III. Vídeo 51](https://youtu.be/MTdly6e-jPU)
+- [Curso Java. Interfaces y clases internas Interfaces IV. Vídeo 52](https://youtu.be/0fifCsOYbXw)
 - [Curso Java. Interfaces y clases internas. Clases internas I. Vídeo 53](https://youtu.be/rQS5P63GTU8)
 - [Curso Java. Interfaces y clases internas. Clases internas II. Vídeo 54](https://youtu.be/dA5pIY4Na_0)
 
