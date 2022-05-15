@@ -9,7 +9,6 @@
   footer:${currentFileName}.pdf - ${author} - ${IES} - ${pageNo}/${pageCount}
   typora-root-url:${filename}/../
   typora-copy-images-to:${filename}/../assets
-
 ---
 
 [toc]
@@ -46,19 +45,20 @@
         - tiene un método `devolver` que incrementa el número de copias disponibles.
         - `toString()` devuelve todos los datos del `JuegoEnAlquiler`
       - `JuegoEnVenta`
-        - `Constructor` que recibe todos sus datos tiene un método vender, que decrementa el número de copias disponibles.
+        - `Constructor` que recibe todos sus datos 
+        - tiene un método `vender`, que decrementa el número de copias disponibles.
         - `toString()` devuelve todos los datos del `JuegoEnVenta`
    
 3. La **Fabrica Nacional de Moneda y Timbre** quiere almacenar cierta información técnica del dinero (billetes y monedas) que emite. En concreto, le interesa:
 
-   - `Valor`: Valor de la moneda o billete ,en euros.(double)
-   - `Año de emisión`: Año en que fué emitida la moneda o billete. (int)
+   - `Valor`: Valor de la moneda o billete, en euros. (`double`)
+   - `Año de emisión`: Año en que fué emitida la moneda o billete. (`int`)
    - De las monedas, 
-     - `Diámetro`: Diámetro de la moneda, en milímetros. (double)
-     - `Peso`: Peso de la moneda, en gramos (double)
+     - `Diámetro`: Diámetro de la moneda, en milímetros. (`double`)
+     - `Peso`: Peso de la moneda, en gramos (`double`)
    - De los billetes.
-     - `Altura del billete`, en mm (double)
-     - `Anchura del billete`, en mm (double).
+     - `Altura del billete`, en mm (`double`)
+     - `Anchura del billete`, en mm (`double`).
 
    a) Diseñar la clase abstracta `Dinero` y sus subclases `Moneda` y `Billete`, desarrollando:
 
@@ -118,10 +118,9 @@
       - Si una clase se define final no se puede instanciar.
    10. - Un método definido final y abstract resultaría inútil, puesto que nunca se podría implementar en las subclases.
        - Un método definido final y abstract podría resultar útil.
-   11. - Una clase definida final y abstract resultaría inútil, puesto que no se podría
-         instanciar ni heredar de ella..
+   11. - Una clase definida final y abstract resultaría inútil, puesto que no se podría instanciar ni heredar de ella..
        - Una clase definida final y abstract podría resultar útil.
-
+   
 6. Dada las siguientes **definiciónes de clases**:
 
    ```java
@@ -189,12 +188,12 @@
 
    **Responde** a las siguientes cuestiones justificando las respuestas. 
 
-   1. ¿Es necesario el uso de this en el contructor de la clase Estudiante?
-   1. ¿Es necesario el uso de super en el método toString de la clase Estudiante?
-   1. Si quitásemos el constructor de la clase Estudiante ¿daría un error de compilación?
-   1. En el método toString de la clase Empleado ¿por qué es incorrecto el acceso que se hace al atributo nombre? ¿Cómo se tendría que definir nombre en la clase Persona para evitar el error?
-   1. ¿Qué consecuencia tiene que algunos métodos de la clase Persona se hayan definido final?
-   1. Si el método toString no se hubiera definido en ninguna de las tres clases ¿daría error el sout del método main?
+   1. ¿Es necesario el uso de `this` en el contructor de la clase `Estudiante`?
+   1. ¿Es necesario el uso de `super` en el método `toString` de la clase `Estudiante`?
+   1. Si quitásemos el constructor de la clase `Estudiante` ¿daría un error de compilación?
+   1. En el método `toString` de la clase `Empleado` ¿por qué es incorrecto el acceso que se hace al atributo `nombre`? ¿Cómo se tendría que definir `nombre` en la clase `Persona` para evitar el error?
+   1. ¿Qué consecuencia tiene que algunos métodos de la clase `Persona` se hayan definido `final`?
+   1. Si el método `toString` no se hubiera definido en ninguna de las tres clases ¿daría error el `sout` del método `main`?
 
 # Ejercicios Polimorfismo
 
