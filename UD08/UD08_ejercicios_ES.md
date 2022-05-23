@@ -232,13 +232,13 @@
    Indicar **qué líneas** del siguiente fragmento de programa **producirán errores de compilación**,
 
    ```java
-   public static void main(String a[]){
+   public static void main(String[] args){
    	Montador m1 = new Carpintero();
    	Montador m2 = new Albañil();
    	Obrero o1 = new Carpintero();
    	Obrero o2 = new Albañil();
    	o1.montar("Mesa");
-    o2.levantarMuro();
+    	o2.levantarMuro();
    	m1.saludar();
    	m1.montar("Silla");
    	((Albañil)o2).levantarMuro();
@@ -259,8 +259,8 @@
 
    ```java
    class Base {
-   	String metodo1() {return "Base. metodo1()";}
-   	String metodo2(String s) {return "Base. metodo1(" + s + ")";}
+   	String metodo1() {return "Base.metodo1()";}
+   	String metodo2(String s) {return "Base.metodo1(" + s + ")";}
    }
    
    public interface TipoI{
@@ -308,7 +308,7 @@
    }
    ```
 
-   **Señalar los errores de compilación** existentes
+   **Señalar los errores **existentes.
 
    **Una vez corregido** el programa, **escribir la salida** por pantalla resultado de su ejecución.
 
@@ -430,36 +430,36 @@ El diagrama UML sería:
     Mascota: + void habla()
     
     class Ave{
-      -pico
-      -vuela
-      +volar()
+      - String pico
+      - boolean vuela
+      + void volar()
     }
     <<abstract>> Ave
     
     class Perro{
-     -raza
-     -pulgas
-     +muestra()
-     +habla()
+     - String raza
+     - boolean tienePulgas
+     + void muestra()
+     + void habla()
     }
     class Gato{
-     -color
-     -peloLargo
-     +muestra()
-     +habla()
+     - String color
+     - boolean peloLargo
+     + void muestra()
+     + void habla()
     }
     class Loro{
-     -origen
-     -habla
-     +muestra()
-     +habla()
-     +volar()
+     - String origen
+     - boolean habla
+     + void muestra()
+     + void habla()
+     + void volar()
     }   
     class Canario{
-     -color
-     -canta
-     +muestra()
-     +habla()
+     - String color
+     - boolean canta
+     + void muestra()
+     + void habla()
      +volar()
     }     
  ```
