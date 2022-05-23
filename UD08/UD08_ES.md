@@ -1011,19 +1011,19 @@ ClaseX obj; // Objeto de tipo X (superclase)
 
 // Zona del programa donde se instancia un objeto de tipo A (subclase) y se le asigna a la referencia obj.
 // La variable obj adquiere la forma de la subclase A.
-obj = ClaseA ();
+obj = new ClaseA();
 ...
 
 // Otra zona del programa.
 // Aquí se instancia un objeto de tipo B (subclase) y se le asigna a la referencia obj.
 // La variable obj adquiere la forma de la subclase B.
-obj = ClaseB ();
+obj = new ClaseB();
 ...
  
 // Zona donde se utiliza el método m sin saber realmente qué subclase se está utilizando.
 // (Sólo se sabrá durante la ejecución del programa)
 
-obj.m ()
+obj.m()
  // Llamada al método m (sin saber si será el método m de A o de B).
 ...
 ```
@@ -1108,7 +1108,7 @@ Por ejemplo, imagina que tienes una clase `Animal` y una clase `Besugo`, subclas
 class Animal {
 	public String nombre;
 }
-class Besugo extends ClaseA {
+class Besugo extends Animal {
 	public double peso;
 }
 ```
@@ -1117,10 +1117,10 @@ A continuación declaras una variable referencia a la clase `Animal` (superclase
 
 ```java
 Animal obj; // Referencia a objetos de la clase Animal
-obj= new Besugo (); // Referencia a objetos clase Animal, pero apunta realmente a objeto clase Besugo (polimorfismo)
+obj= new Besugo(); // Referencia a objetos clase Animal, pero apunta realmente a objeto clase Besugo (polimorfismo)
 ```
 
-El objeto que acabas de crear como instancia de la clase `Besugo` (subclase de `Animal`) contiene más información que la que la referencia `obj` te permite en principio acceder sin que el compilador genere un error (pues es de clase `Animal`). En concreto los objetos de la clase `Besugo` disponen de `nombre` y `peso`, mientras que los objetos de la clase `A` sólo de `nombre`. Para acceder a esa información adicional de la clase especializada (`peso`) tendrás que realizar una conversión explícita (casting):
+El objeto que acabas de crear como instancia de la clase `Besugo` (subclase de `Animal`) contiene más información que la que la referencia `obj` te permite en principio acceder sin que el compilador genere un error (pues es de clase `Animal`). En concreto los objetos de la clase `Besugo` disponen de `nombre` y `peso`, mientras que los objetos de la clase `Animal` sólo de `nombre`. Para acceder a esa información adicional de la clase especializada (`peso`) tendrás que realizar una conversión explícita (casting):
 
 ```java
 // Casting del tipo Animal al tipo Besugo (funcionará bien porque el objeto es realmente del tipo B)
@@ -1138,7 +1138,7 @@ obj= new Animal (); // Referencia a objetos de la clase Animal, y apunta realmen
 System.out.printf ("obj.nombre=%s\n", ((Besugo) obj).nombre);
 
 // ¡Error en ejecución! (la clase Animal no tiene peso). Producirá una ClassCastException.
-System.out.printf ("obj.peso=%f\n", ((B) obj).peso);
+System.out.printf ("obj.peso=%f\n", ((Besugo) obj).peso);
 ```
 
 # Ejemplos UD08
@@ -2341,7 +2341,7 @@ public class Piano extends Instrumento {
 
 ```
 
-Creamos una clase para comprobar su funcionamiento EjemploUso:
+Creamos una clase para comprobar su funcionamiento `EjemploUso`:
 
 ```java
 package UD08._18_Ejemplo_6_2;

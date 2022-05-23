@@ -424,10 +424,10 @@ El diagrama UML sería:
     Mascota: -int edad
     Mascota: -String estado
     Mascota: -String fechaNacimiento
-    Mascota: +void: muestra()
-    Mascota: +void: cumpleaños()
-    Mascota: + void: morir()
-    Mascota: + void: habla()
+    Mascota: +void muestra()
+    Mascota: +void cumpleaños()
+    Mascota: + void morir()
+    Mascota: + void habla()
     
     class Ave{
       -pico
