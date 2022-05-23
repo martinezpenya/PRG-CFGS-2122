@@ -71,10 +71,10 @@
 
 4. Un **centro comercial** quiere mostrar cierta información sobre los televisores que vende. Los televisores pueden ser de dos tipos: de tubo o LCD. En concreto, de cada televisor le interesa mostrar
 
-   - Marca (String)
-   - Modelo (String)
+   - Marca (`String`)
+   - Modelo (`String`)
    - Precio en euros
-   - Pulgadas de la pantalla (double).
+   - Pulgadas de la pantalla (`double`).
    - Resolución: La resolución se mide de forma distinta en los televisores de tubo que en los televisores LCD.
      - En los TV de tubo se mide en lineas.
      - En los TV LCD se mide pixels horizontales x pixels verticales.
@@ -140,10 +140,10 @@
      return "Nombre: " + nombre + "Edad " + edad;
      }
      public final String getNombre (){
-     return nombre;
+     	return nombre;
      }
      public final int getEdad(){
-     return edad;
+    	 return edad;
      }
    }
    ```
@@ -157,7 +157,7 @@
        this.creditos = c;
      }
      public String toString(){
-     return super.toString() + "\nCreditos: "+ creditos;
+     	return super.toString() + "\nCreditos: "+ creditos;
      }
    }
    ```
@@ -415,26 +415,25 @@ El diagrama UML sería:
 
 ```mermaid
  classDiagram
-   Astros <|-- Planetas
-   Astros <|-- Satelites
+   Astro <|-- Planeta
+   Astro <|-- Satelite
    
-   Astros : -radio_ecuatorial
-   Astros : -rotacion_eje
-   Astros: -masa
-   Astros: -temperatura_media
-   Astros: -gravedad
-   Astros: +muestra()
-   <<abstract>> Astros
-   class Planetas{
-     -distancia_al_sol
-     -orbita_al_sol
-     -tiene_satelites
+   Astro : -double radio_ecuatorial
+   Astro : -double rotacion_eje
+   Astro : -double masa
+   Astro: -double temperatura_media
+   Astro: -double gravedad
+   Astro: +muestra()
+   <<abstract>> Astro
+   class Planeta{
+     -double distancia_al_sol
+     -double orbita_al_sol
+     -ArrayList<Satelite> satelites
      +muestra()
    }
-   class Satelites{
-    -distancia_al_planeta
-    -orbita_planetaria
-    -planeta_al_que_pertenece
+   class Satelite{
+    -double distancia_al_planeta
+    -double orbita_planetaria
     +muestra()
    }
 ```
@@ -463,27 +462,27 @@ El diagrama UML sería:
 
  ```mermaid
   classDiagram
-    Mascotas <|-- Aves
-    Mascotas <|-- Perro
-    Mascotas <|-- Gato
-    Aves <|-- Loro
-    Aves <|-- Canario
+    Mascota <|-- Ave
+    Mascota <|-- Perro
+    Mascota <|-- Gato
+    Ave <|-- Loro
+    Ave <|-- Canario
  
-    Mascotas : -nombre
-    Mascotas : -edad
-    Mascotas: -estado
-    Mascotas: -fechaNacimiento
-    Mascotas: +muestra()
-    Mascotas: +cumpleaños()
-    Mascotas: +morir()
-    Mascotas: +habla()
+    Mascota: -String nombre
+    Mascota: -int edad
+    Mascota: -String estado
+    Mascota: -String fechaNacimiento
+    Mascota: +void: muestra()
+    Mascota: +void: cumpleaños()
+    Mascota: + void: morir()
+    Mascota: + void: habla()
     
-    class Aves{
+    class Ave{
       -pico
       -vuela
       +volar()
     }
-    <<abstract>> Aves
+    <<abstract>> Ave
     
     class Perro{
      -raza
@@ -501,7 +500,7 @@ El diagrama UML sería:
      -origen
      -habla
      +muestra()
-     +saluda()
+     +habla()
      +volar()
     }   
     class Canario{
