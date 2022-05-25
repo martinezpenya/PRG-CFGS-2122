@@ -15,7 +15,9 @@
 
 1. (`CuentaLineas`) Escribe un programa que, sin utilizar la clase `Scanner`, muestre el número de lineas que contiene un fichero de texto. El nombre del fichero se solicitará al usuario al comienzo de la ejecución. 
 
-2. (`CuentaPalabras`) Escribe un programa que, sin utilizar la clase Scanner, muestre el número de palabras que contiene un fichero de texto. El nombre del fichero se solicitará al usuario al comienzo de la ejecución. Sugerencia: Lee el fichero, línea a línea y utiliza la clase StringTokenizer o bien el método split de la clase String para averiguar el nº de palabras.
+2. (`CuentaPalabras`) Escribe un programa que, sin utilizar la clase `Scanner`, muestre el número de palabras que contiene un fichero de texto. El nombre del fichero se solicitará al usuario al comienzo de la ejecución. 
+
+   > Sugerencia: Lee el fichero, línea a línea y utiliza la clase `StringTokenizer` o bien el método `split` de la clase `String` para averiguar el nº de palabras.
 
 3. (`Censura`) Escribir un programa que sustituya por otras, ciertas palabras de un fichero de texto. Para ello, se desarrollará y llamará al método `void aplicaCensura(String entrada, String censura, String salida),` que lee de un fichero de entrada y mediante un fichero de censura, crea el correspondiente fichero modificado. Por ejemplo:
 
@@ -29,19 +31,21 @@
 
    ```
    lugar sitio
-   acordarme recordar
+   quiero debo
    hidalgo noble
    ```
 
    Fichero de salida:
 
    ```
-   En un sitio de la Mancha, de cuyo nombre no quiero recordar, no ha mucho tiempo que vivía un noble de los de lanza en astillero
+   En un sitio de la Mancha, de cuyo nombre no debo acordarme, no ha mucho tiempo que vivía un noble de los de lanza en astillero
    ```
 
-4. (`Concatenar1`) Escribe un programa que dados dos ficheros de texto f1 y f2 confeccione un tercer fichero f3 cuyo contenido sea el de f1 y a continuación el de f2.
+   > Valora la posibilidad de cargar el fichero de censura en un mapa o par clave, valor.
 
-5. (`Concatenar2`) Escribe un programa que dados dos ficheros de texto f1 y f2, añada al final de f1 el contenido de f2. Es decir, como el ejercicio anterior, pero sin producir un nuevo fichero.
+4. (`Concatenar1`) Escribe un programa que dados dos ficheros de texto `f1` y `f2` confeccione un tercer fichero `f3` cuyo contenido sea el de `f1` y a continuación el de `f2`.
+
+5. (`Concatenar2`) Escribe un programa que dados dos ficheros de texto `f1` y `f2`, añada al final de `f1` el contenido de `f2`. Es decir, como el ejercicio anterior, pero sin producir un nuevo fichero.
 
 6. (`Iguales`) Escribir un programa que compruebe si el contenido de dos ficheros es idéntico. Puesto que no sabemos de qué tipo de ficheros se trata, (de texto, binarios, …) habrá que hacer una comparación byte por byte.
 
