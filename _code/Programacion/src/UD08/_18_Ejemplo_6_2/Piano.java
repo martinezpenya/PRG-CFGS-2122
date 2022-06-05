@@ -6,4 +6,9 @@ public class Piano extends Instrumento {
     public void tocarNota(String nota) {
         System.out.format("Piano: tocar nota %s.\n", nota);
     }
+    
+    @Override
+    public void estirarCuerda(){
+        System.out.println("cuerda estirada");
+    }
 }

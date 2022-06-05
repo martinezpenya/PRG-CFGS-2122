@@ -6,4 +6,9 @@ public class Flauta extends Instrumento {
     public void tocarNota(String nota) {
         System.out.format("Flauta: tocar nota %s.\n", nota);
     }
+    
+    @Override
+    public void tocarAgudo(){
+        System.out.println("agudo");
+    }
 }

@@ -234,15 +234,15 @@
    ```java
    public static void main(String[] args){
    	Montador m1 = new Carpintero();
-   	Montador m2 = new Albañil();
+   	-Montador m2 = new Albañil();
    	Obrero o1 = new Carpintero();
    	Obrero o2 = new Albañil();
-   	o1.montar("Mesa");
-    	o2.levantarMuro();
-   	m1.saludar();
-   	m1.montar("Silla");
+   	-o1.montar("Mesa");((Carpintero)o1).montar("mesa");
+    	-o2.levantarMuro();//((Albañil)o2).levantarMuro();
+   	-m1.saludar();//podemos hacer casting?
+   	m1.montar("Silla");//llamaremos a montar de Carpintero
    	((Albañil)o2).levantarMuro();
-   	((Albañil)o1).levantarMuro();
+   	((Albañil)o1).levantarMuro();//?
    }
    ```
 
@@ -400,15 +400,16 @@ Esta clase debe cumplir con los siguientes requisitos:
 
 - En la tienda existirán 4 tipos de animales: perros, gatos, loros y canarios. 
 - Los animales deben almacenarse en un `ArrayList` privado dentro de la clase **Inventario**. 
-- La clase debe permitir realizar las siguientes acciones:
-  - Mostrar la lista de animales (solo tipo y nombre, 1 línea por animal).
-  - Mostrar todos los datos de un animal concreto.
-  - Mostrar todos los datos de todos los animales.
-  - Insertar animales en el inventario. 
-  - Eliminar animales del inventario. 
-  - Vaciar el inventario. 
+  - La clase debe permitir realizar las siguientes acciones:
+    - Mostrar la lista de animales (solo tipo y nombre, 1 línea por animal).
+    - Mostrar todos los datos de un animal concreto.
+    - Mostrar todos los datos de todos los animales.
+    - Insertar animales en el inventario. 
+    - Eliminar animales del inventario. 
+    - Vaciar el inventario. 
 
-Implementa las demás clases necesarias para la clase Inventario.
+
+Implementa las demás clases necesarias para usar la clase `Inventario`.
 
 El diagrama UML sería:
 

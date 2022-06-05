@@ -20,6 +20,9 @@ public class EjemploUso {
         // Interpretamos una nota con el objeto instrumento1
         // No sabemos si se ejecutará el método tocarNota de Piano o de Flauta
         // (dependerá de la ejecución)
+        instrumento1.tocarAgudo();
+        instrumento1.estirarCuerda();
         instrumento1.tocarNota("do");  // Ejemplo de ligadura dinámica (tiempo de ejecución)
+
     }
 }
