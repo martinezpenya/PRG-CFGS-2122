@@ -34,3 +34,9 @@
 # Converting from `MD` (MarkDown) to `PDF`
 
 More info in [fromMD2PDF](https://github.com/martinezpenya/fromMD2PDF) repository.
+
+
+
+# License
+
+[ PRG 21-22 ](https://github.com/martinezpenya/PRG-CFGS-2122) © 2021   by  [ David Martinez ](http://www.martinezpenya.es) is licensed under [ Attribution-NonCommercial-ShareAlike 4.0 International ](http://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1)
