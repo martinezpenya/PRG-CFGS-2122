@@ -458,7 +458,7 @@ Justo antes de que un objeto sea eliminado por el recolector de basura, se ejecu
 System.runFinalization();
 ```
 
-# Utilización de Métodos
+# Utilización de Métodos.
 
 Los métodos, junto con los atributos, forman parte de la estructura interna de un objeto. Los métodos contienen la declaración de variables locales y las operaciones que se pueden realizar para el objeto, y que son ejecutadas cuando el método es invocado. Se definen en el cuerpo de la clase y posteriormente son instanciados para convertirse en métodos instancia de un objeto.
 
